@@ -1,0 +1,2 @@
+module Spud::UserSessionsHelper
+end
