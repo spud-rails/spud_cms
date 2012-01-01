@@ -4,16 +4,33 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{spud_cms}
+  s.name = "spud_cms"
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.date = %q{2011-12-15}
+  s.date = "2012-01-01"
   s.files = [
+    "app/assets/images/spud/admin/contacts_thumb.png",
+    "app/assets/images/spud/admin/pages_thumb.png",
+    "app/assets/images/spud/admin/posts_thumb.png",
+    "app/assets/javascripts/spud/admin/pages.js",
     "app/assets/javascripts/spud/admin/users.js",
     "app/assets/javascripts/spud/user_sessions.js",
+    "app/assets/stylesheets/spud/admin/pages.css",
+    "app/controllers/spud/admin/pages_controller.rb",
+    "app/helpers/spud/admin/pages_helper.rb",
     "app/helpers/spud/admin/users_helper.rb",
     "app/helpers/spud/user_sessions_helper.rb",
+    "app/models/category.rb",
+    "app/models/custom_field.rb",
+    "app/models/media.rb",
+    "app/models/menu.rb",
+    "app/models/menu_item.rb",
+    "app/models/page.rb",
+    "app/models/post.rb",
+    "app/models/post_category.rb",
+    "app/models/template.rb",
+    "app/views/spud/admin/pages/index.html.erb",
     "config/application.rb",
     "config/boot.rb",
     "config/routes.rb",
@@ -21,19 +38,22 @@ Gem::Specification.new do |s|
     "lib/spud_cms/engine.rb"
   ]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.6.2}
-  s.summary = %q{Spud CMS Engine}
+  s.rubygems_version = "1.8.10"
+  s.summary = "Spud CMS Engine"
 
   if s.respond_to? :specification_version then
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<spud_admin>, [">= 0"])
+      s.add_runtime_dependency(%q<paperclip>, [">= 0"])
     else
       s.add_dependency(%q<spud_admin>, [">= 0"])
+      s.add_dependency(%q<paperclip>, [">= 0"])
     end
   else
     s.add_dependency(%q<spud_admin>, [">= 0"])
+    s.add_dependency(%q<paperclip>, [">= 0"])
   end
 end
 
