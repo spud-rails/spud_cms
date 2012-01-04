@@ -1,0 +1,12 @@
+<%=content_for :data_controls do%>
+<%=link_to "New Page",new_spud_admin_page_path(),:class => "button",:title => "New Page"%>
+<%end%>
+<%=content_for :detail do%>
+	<div class="page_list">
+			<%@pages.each do |page|%>
+				<%=render :partial => "page_row",:locals => {:page => page}%>
+			<%end%>
+
+	</div>
+
+<%end%>

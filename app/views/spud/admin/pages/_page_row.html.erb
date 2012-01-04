@@ -1,0 +1,18 @@
+<div class="page_row">
+					
+	<span class="row_meta"><%=prefix if defined? prefix%><%=link_to page.name,spud_admin_pages_path(:id => page.id)%></span>
+
+	<span class="edit_controls"><%=link_to "Edit",edit_spud_admin_page_path(:id => page.id), :title => "Edit Page",:class => 'button'%>&nbsp;&nbsp;<%=link_to "Remove",spud_admin_page_path(:id => page.id),:method => :delete,:class => 'button',:confirm => "Are you sure you want to remove this page?"%></span>
+	<br style="clear:both;"/>
+</div>
+<%if !page.spud_pages.all.blank?%>
+	
+		<div class="left_guide">
+	
+	<%page.spud_pages.each do |spud_page|%>
+		<%=render :partial => 'page_row',:locals => {:page => spud_page}%>
+	<%end%>
+	
+		</div>
+	
+<%end%>

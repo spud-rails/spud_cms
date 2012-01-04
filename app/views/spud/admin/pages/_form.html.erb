@@ -1,0 +1,57 @@
+<fieldset>
+<ol>
+<li><%=f.label :name, :required=>true%>
+  <%=f.text_field :name,:title => "",:size=>40%>
+  <%=error_message_on "page","name"%>
+</li>
+<li><%=f.label :url_name, "Perma Link"%>
+  <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
+  <%=error_message_on "page","url_name"%>
+</li>
+
+<li><%=f.label :spud_page_id, "Parent Page"%>
+  <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(@page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
+  <%=error_message_on "page","spud_page_id"%>
+</li>
+<li><%=f.label :template_id, "Template"%>
+  <%=f.select :template_id,options_for_select(SpudTemplate.all,@page.template_id),{:include_blank => 'Default'},{:title => ""}%>
+  <%=error_message_on "page","template_id"%>
+</li>
+
+</ol>
+</fieldset>
+<div class="formtabs">
+	<ul class="formtab_buttons">
+	</ul>
+	<%=f.fields_for :spud_page_partials do |b|%>
+		<div class="formtab">
+			<%=b.hidden_field :name,:class => "tab_name"%>
+		
+			<%=b.text_area :content,:class => "wysiwym"%>
+		</div>
+	<%end%>
+</div>
+
+
+<fieldset>
+<legend>Meta Information</legend>
+<p>These fields are used to notify search engines about important keywords and the appropriate description to display in a search result.</p>
+<ol>
+<li><%=f.label :meta_keywords,"Keywords"%>
+  <%=f.text_field :meta_keywords,:title => "",:size=>40%>
+  <%=error_message_on "page","meta_keywords"%>
+</li>
+
+<li><%=f.label :meta_description,"Description"%>
+  <%=f.text_area :meta_description,:rows => 4,:cols=>100%>
+  <%=error_message_on "page","meta_description"%>
+</li>
+<li><%=f.label :visibility%>
+		<%=f.select :visibility, [["Public",0],["Private",1]]%>
+		</li>
+		<li><%=f.label :published%>
+		<%=f.check_box :published%>
+		</li>
+</ol>
+</fieldset>
+
