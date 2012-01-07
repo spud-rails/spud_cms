@@ -3,7 +3,7 @@
 
   <%=form_for @page,:url => spud_admin_pages_path(),:html=>{:class=>"right_aligned_form"} do |f|%>
     <%=render :partial => "form",:locals => {:f => f}%>
-    <fieldset class="submit"><%=f.submit :class => "wymupdate"%> or <%=link_to "cancel",request.referer,:class => "close_dialog"%></fieldset>
+    <fieldset class="submit"><%=f.submit :class => "wymupdate"%> or <%=link_to "cancel",request.referer%></fieldset>
   <%end%>
 
   <script type="text/javascript">

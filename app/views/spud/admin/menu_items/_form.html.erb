@@ -1,0 +1,27 @@
+<fieldset>
+<ol>
+<li><%=f.label :name, :required=>true%>
+  <%=f.text_field :name,:title => "",:size=>40%>
+  <%=error_message_on "menu_item","name"%>
+</li>
+<li><%=f.label :menu_order, :required=>true%>
+  <%=f.text_field :menu_order,:title => "",:size=>5%>
+  <%=error_message_on "menu_item","menu_order"%>
+</li>
+<li><%=f.label :spud_page_id, "Page"%>
+  <%=f.select :spud_page_id,options_for_select(SpudPage.all,@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => ""}%>
+  <%=error_message_on "menu_item","spud_page_id"%>
+</li>
+<li><%=f.label :url%>
+  <%=f.text_field :url,:title => "",:size=>40%>
+  <%=error_message_on "menu_item","url"%>
+</li>
+<li><%=f.label :parent, "Parent Menu"%>
+  <%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu_item,@menu),@menu_item.parent_id),{:include_blank => "#{@menu.name}"},{:title => ""}%>
+  <%=error_message_on "menu_item","parent"%>
+</li>
+</ol>
+</fieldset>
+
+
+

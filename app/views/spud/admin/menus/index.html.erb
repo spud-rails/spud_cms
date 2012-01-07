@@ -1,0 +1,24 @@
+<%=content_for :data_controls do%>
+<%=link_to "New Menu",new_spud_admin_menu_path(),:class => "button",:title => "New Menu"%>
+<%end%>
+<%=content_for :detail do%>
+	<div class="page_list">
+			<%@menus.each do |menu|%>
+				<div class="page_row">
+					
+					<span class="row_meta"><%=link_to menu.name,spud_admin_menu_menu_items_path(:menu_id => menu.id)%></span>
+
+					<span class="edit_controls">
+						<%=link_to "Edit",edit_spud_admin_menu_path(:id => menu.id),:class => 'button'%>
+						<%=link_to "Remove",spud_admin_menu_path(:id => menu.id),:method => :delete,:class => 'button',:confirm => "Are you sure you want to remove this menu and all items associated with it?"%>
+					</span>
+					<br style="clear:both;"/>
+				</div>
+			<%end%>
+			<%=will_paginate @menus%>
+
+	</div>
+
+
+	
+<%end%>

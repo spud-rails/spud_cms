@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  value: MyText
+  spud_inquiry_id: 1
+
+two:
+  name: MyString
+  value: MyText
+  spud_inquiry_id: 1

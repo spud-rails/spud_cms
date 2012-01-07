@@ -6,7 +6,7 @@
 			<%@pages.each do |page|%>
 				<%=render :partial => "page_row",:locals => {:page => page}%>
 			<%end%>
-
+			<%=will_paginate @pages%>
 	</div>
 
 <%end%>

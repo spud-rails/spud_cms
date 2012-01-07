@@ -1,0 +1,12 @@
+<%=content_for :data_controls do%>
+<%=link_to "New Menu Item",new_spud_admin_menu_menu_item_path(),:class => "button",:title => "New Menu Item"%>
+<%end%>
+<%=content_for :detail do%>
+	<div class="page_list">
+			<%@menu_items.each do |menu_item|%>
+				<%=render :partial => "menu_item_row",:locals => {:menu_item => menu_item}%>
+			<%end%>
+			<%=will_paginate @menu_items%>
+	</div>
+
+<%end%>
