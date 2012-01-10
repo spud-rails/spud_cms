@@ -7,6 +7,8 @@ begin
         gem.add_dependency 'spud_admin'
 	gem.add_dependency 'paperclip'
 	gem.add_dependency 'aws-s3'
+	gem.authors = "David Estes"
+	gem.email = "destes@redwindsw.com"
         # other fields that would normally go in your gemspec
         # like authors, email and has_rdoc can also be included here
 	end
