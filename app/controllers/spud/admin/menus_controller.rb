@@ -1,5 +1,5 @@
 class Spud::Admin::MenusController < Spud::Admin::ApplicationController
-	layout 'spud/admin/detail'
+	layout 'spud/admin/cms/detail'
 	add_breadcrumb "Menus", :spud_admin_menus_path
 	before_filter :load_menu,:only => [:edit,:update,:show,:destroy]
 	

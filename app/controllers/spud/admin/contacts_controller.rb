@@ -1,6 +1,6 @@
 class Spud::Admin::ContactsController < Spud::Admin::ApplicationController
 	add_breadcrumb "Contacts", :spud_admin_media_path
-	layout 'spud/admin/detail'
+	layout 'spud/admin/cms/detail'
 	def index
 		@page_thumbnail = "spud/admin/contacts_thumb.png"
 		@page_name = "Contacts"

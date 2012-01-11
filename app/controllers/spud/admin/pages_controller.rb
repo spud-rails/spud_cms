@@ -1,5 +1,5 @@
 class Spud::Admin::PagesController < Spud::Admin::ApplicationController
-	layout 'spud/admin/detail'
+	layout 'spud/admin/cms/detail'
 	add_breadcrumb "Pages", :spud_admin_pages_path
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
 	
