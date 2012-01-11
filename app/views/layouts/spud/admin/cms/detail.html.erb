@@ -1,4 +1,5 @@
 <%=content_for :head do%>
+  <%= javascript_include_tag "wymeditor/jquery.wymeditor.pack" %>
   <%= javascript_include_tag "spud/admin/cms/application" %>
 <%end%>
 <%= render :template => 'layouts/spud/admin/detail' %>
