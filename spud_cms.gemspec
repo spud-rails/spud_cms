@@ -9,13 +9,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-01-10"
+  s.date = "2012-01-11"
   s.email = "destes@redwindsw.com"
   s.files = [
     "app/assets/images/spud/admin/contacts_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/dat_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/doc_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/file_thumbs.psd",
     "app/assets/images/spud/admin/files_thumbs/jpg_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/mp3_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/pdf_thumb.png",
@@ -142,6 +141,7 @@ Gem::Specification.new do |s|
     "app/models/spud_post.rb",
     "app/models/spud_post_category.rb",
     "app/models/spud_template.rb",
+    "app/views/pages/show.html.erb",
     "app/views/spud/admin/contacts/index.html.erb",
     "app/views/spud/admin/media/index.html.erb",
     "app/views/spud/admin/media/new.html.erb",
