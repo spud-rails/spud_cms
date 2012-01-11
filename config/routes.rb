@@ -10,6 +10,6 @@ Rails.application.routes.draw do
    	end
    end
    
-   resource :page
+   match ":id", "pages#show",:controller => "pages",:action => "show"
 end
 

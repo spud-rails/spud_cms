@@ -1,5 +1,10 @@
-<%=@page.spud_page_partials.each do |page_partial|%>
-	<%=content_for page_partial.name.downcase.underscore.to_sym%>
+<%@page.spud_page_partials.each do |page_partial|%>
+	
+	<%if(page_partial.name.downcase == 'body')%>
 		<%=page_partial.content.html_safe%>
+	<%else%>
+		<%=content_for page_partial.name.downcase.underscore.to_sym do%>
+			<%=page_partial.content.html_safe%>
+		<%end%>
 	<%end%>
 <%end%>

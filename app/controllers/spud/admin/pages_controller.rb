@@ -32,7 +32,8 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 			flash[:notice] = "Page Saved successfully"
 			redirect_to spud_admin_pages_url() and return
 		else
-			flash[:error] = "Error rendering page"
+			flash[:error] = "Error creating page"
+			@error_object_name = "page"
 			render :action => "new"
 		end
 	end

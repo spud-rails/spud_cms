@@ -46,8 +46,9 @@ class SpudPage < ActiveRecord::Base
 
      def generate_url_name
      	if !self.use_custom_url_name || self.url_name.blank?
-          self.url_name = self.title.gsub(/[^a-zA-Z0-9\ ]/," ").gsub(/\ \ +/," ").gsub(/\ /,"-").downcase
+          self.url_name = self.name.gsub(/[^a-zA-Z0-9\ ]/," ").gsub(/\ \ +/," ").gsub(/\ /,"-").downcase
           self.use_custom_url_name = false
       	end
+      	return true
      end
 end
