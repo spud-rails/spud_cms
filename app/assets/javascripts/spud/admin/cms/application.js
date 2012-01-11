@@ -4,6 +4,6 @@
 
 $(document).ready(function() {
        $('textarea.wysiwym').wymeditor({
-         
+        	basePath:'/assets/wymeditor/'
        });
    });
