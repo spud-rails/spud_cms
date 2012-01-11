@@ -9,7 +9,7 @@
   <%=error_message_on "menu_item","menu_order"%>
 </li>
 <li><%=f.label :spud_page_id, "Page"%>
-  <%=f.select :spud_page_id,options_for_select(SpudPage.all,@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => ""}%>
+  <%=f.select :spud_page_id,options_for_select(SpudPage.all.collect{|page| [page.name,page.id]},@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => ""}%>
   <%=error_message_on "menu_item","spud_page_id"%>
 </li>
 <li><%=f.label :url%>
