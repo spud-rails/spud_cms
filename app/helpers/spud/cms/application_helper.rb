@@ -35,7 +35,7 @@ module Spud::Cms::ApplicationHelper
 				menu = menu.where(:name => options[:name])
 			end
 			if options.has_key?(:id)
-				content = "<ul id='#{options.id}'>"
+				content = "<ul id='#{options[:id]}'>"
 			else
 				content = "<ul>"
 			end
