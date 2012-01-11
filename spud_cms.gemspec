@@ -27,72 +27,8 @@ Gem::Specification.new do |s|
     "app/assets/images/spud/admin/menus_thumb.png",
     "app/assets/images/spud/admin/pages_thumb.png",
     "app/assets/images/spud/admin/posts_thumb.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-blockquote.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-h1.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-h2.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-h3.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-h4.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-h5.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-h6.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-p.png",
-    "app/assets/images/wymeditor/iframe/default/lbl-pre.png",
-    "app/assets/images/wymeditor/iframe/default/wymiframe.css",
-    "app/assets/images/wymeditor/iframe/default/wymiframe.html",
-    "app/assets/images/wymeditor/skins/compact/icons.png",
-    "app/assets/images/wymeditor/skins/default/icons.png",
-    "app/assets/images/wymeditor/skins/minimal/images/bg.header.gif",
-    "app/assets/images/wymeditor/skins/minimal/images/bg.selector.silver.gif",
-    "app/assets/images/wymeditor/skins/minimal/images/bg.wymeditor.png",
-    "app/assets/images/wymeditor/skins/minimal/images/icons.silver.gif",
-    "app/assets/images/wymeditor/skins/silver/images/bg.header.gif",
-    "app/assets/images/wymeditor/skins/silver/images/bg.selector.silver.gif",
-    "app/assets/images/wymeditor/skins/silver/images/bg.wymeditor.png",
-    "app/assets/images/wymeditor/skins/silver/images/icons.silver.gif",
-    "app/assets/images/wymeditor/skins/twopanels/icons.png",
-    "app/assets/images/wymeditor/skins/wymeditor_icon.png",
     "app/assets/javascripts/pages.js",
     "app/assets/javascripts/spud/admin/cms/application.js",
-    "app/assets/javascripts/wymeditor/jquery.wymeditor.min.js",
-    "app/assets/javascripts/wymeditor/lang/bg.js",
-    "app/assets/javascripts/wymeditor/lang/ca.js",
-    "app/assets/javascripts/wymeditor/lang/cs.js",
-    "app/assets/javascripts/wymeditor/lang/cy.js",
-    "app/assets/javascripts/wymeditor/lang/de.js",
-    "app/assets/javascripts/wymeditor/lang/en.js",
-    "app/assets/javascripts/wymeditor/lang/es.js",
-    "app/assets/javascripts/wymeditor/lang/fa.js",
-    "app/assets/javascripts/wymeditor/lang/fi.js",
-    "app/assets/javascripts/wymeditor/lang/fr.js",
-    "app/assets/javascripts/wymeditor/lang/gl.js",
-    "app/assets/javascripts/wymeditor/lang/he.js",
-    "app/assets/javascripts/wymeditor/lang/hr.js",
-    "app/assets/javascripts/wymeditor/lang/hu.js",
-    "app/assets/javascripts/wymeditor/lang/it.js",
-    "app/assets/javascripts/wymeditor/lang/nb.js",
-    "app/assets/javascripts/wymeditor/lang/nl.js",
-    "app/assets/javascripts/wymeditor/lang/nn.js",
-    "app/assets/javascripts/wymeditor/lang/pl.js",
-    "app/assets/javascripts/wymeditor/lang/pt-br.js",
-    "app/assets/javascripts/wymeditor/lang/pt.js",
-    "app/assets/javascripts/wymeditor/lang/ru.js",
-    "app/assets/javascripts/wymeditor/lang/sv.js",
-    "app/assets/javascripts/wymeditor/lang/tr.js",
-    "app/assets/javascripts/wymeditor/lang/zh_cn.js",
-    "app/assets/javascripts/wymeditor/plugins/embed/jquery.wymeditor.embed.js",
-    "app/assets/javascripts/wymeditor/plugins/fullscreen/icon_fullscreen.gif",
-    "app/assets/javascripts/wymeditor/plugins/fullscreen/jquery.wymeditor.fullscreen.js",
-    "app/assets/javascripts/wymeditor/plugins/hovertools/jquery.wymeditor.hovertools.js",
-    "app/assets/javascripts/wymeditor/plugins/resizable/jquery.wymeditor.resizable.js",
-    "app/assets/javascripts/wymeditor/plugins/resizable/readme.txt",
-    "app/assets/javascripts/wymeditor/plugins/tidy/README",
-    "app/assets/javascripts/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js",
-    "app/assets/javascripts/wymeditor/plugins/tidy/tidy.php",
-    "app/assets/javascripts/wymeditor/plugins/tidy/wand.png",
-    "app/assets/javascripts/wymeditor/skins/compact/skin.js",
-    "app/assets/javascripts/wymeditor/skins/default/skin.js",
-    "app/assets/javascripts/wymeditor/skins/minimal/skin.js",
-    "app/assets/javascripts/wymeditor/skins/silver/skin.js",
-    "app/assets/javascripts/wymeditor/skins/twopanels/skin.js",
     "app/assets/stylesheets/pages.css",
     "app/assets/stylesheets/spud/admin/contacts.css",
     "app/assets/stylesheets/spud/admin/media.css",
@@ -100,11 +36,6 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/spud/admin/menus.css",
     "app/assets/stylesheets/spud/admin/pages.css",
     "app/assets/stylesheets/spud/admin/posts.css",
-    "app/assets/stylesheets/wymeditor/skins/compact/skin.css",
-    "app/assets/stylesheets/wymeditor/skins/default/skin.css",
-    "app/assets/stylesheets/wymeditor/skins/minimal/skin.css",
-    "app/assets/stylesheets/wymeditor/skins/silver/skin.css",
-    "app/assets/stylesheets/wymeditor/skins/twopanels/skin.css",
     "app/controllers/pages_controller.rb",
     "app/controllers/spud/admin/contacts_controller.rb",
     "app/controllers/spud/admin/media_controller.rb",
@@ -170,15 +101,18 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<spud_admin>, [">= 0"])
       s.add_runtime_dependency(%q<paperclip>, [">= 0"])
       s.add_runtime_dependency(%q<aws-s3>, [">= 0"])
+      s.add_runtime_dependency(%q<wymeditor-rails>, [">= 0"])
     else
       s.add_dependency(%q<spud_admin>, [">= 0"])
       s.add_dependency(%q<paperclip>, [">= 0"])
       s.add_dependency(%q<aws-s3>, [">= 0"])
+      s.add_dependency(%q<wymeditor-rails>, [">= 0"])
     end
   else
     s.add_dependency(%q<spud_admin>, [">= 0"])
     s.add_dependency(%q<paperclip>, [">= 0"])
     s.add_dependency(%q<aws-s3>, [">= 0"])
+    s.add_dependency(%q<wymeditor-rails>, [">= 0"])
   end
 end
 

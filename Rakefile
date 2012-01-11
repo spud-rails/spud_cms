@@ -7,6 +7,7 @@ begin
         gem.add_dependency 'spud_admin'
 	gem.add_dependency 'paperclip'
 	gem.add_dependency 'aws-s3'
+	gem.add_dependency 'wymeditor-rails'
 	gem.authors = "David Estes"
 	gem.email = "destes@redwindsw.com"
         # other fields that would normally go in your gemspec
