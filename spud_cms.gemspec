@@ -29,6 +29,77 @@ Gem::Specification.new do |s|
     "app/assets/images/spud/admin/posts_thumb.png",
     "app/assets/javascripts/pages.js",
     "app/assets/javascripts/spud/admin/cms/application.js",
+    "app/assets/libs/wymeditor/iframe/default/lbl-blockquote.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-h1.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-h2.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-h3.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-h4.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-h5.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-h6.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-p.png",
+    "app/assets/libs/wymeditor/iframe/default/lbl-pre.png",
+    "app/assets/libs/wymeditor/iframe/default/wymiframe.css",
+    "app/assets/libs/wymeditor/iframe/default/wymiframe.html",
+    "app/assets/libs/wymeditor/jquery.wymeditor.pack.js",
+    "app/assets/libs/wymeditor/lang/bg.js",
+    "app/assets/libs/wymeditor/lang/ca.js",
+    "app/assets/libs/wymeditor/lang/cs.js",
+    "app/assets/libs/wymeditor/lang/cy.js",
+    "app/assets/libs/wymeditor/lang/de.js",
+    "app/assets/libs/wymeditor/lang/en.js",
+    "app/assets/libs/wymeditor/lang/es.js",
+    "app/assets/libs/wymeditor/lang/fa.js",
+    "app/assets/libs/wymeditor/lang/fi.js",
+    "app/assets/libs/wymeditor/lang/fr.js",
+    "app/assets/libs/wymeditor/lang/gl.js",
+    "app/assets/libs/wymeditor/lang/he.js",
+    "app/assets/libs/wymeditor/lang/hr.js",
+    "app/assets/libs/wymeditor/lang/hu.js",
+    "app/assets/libs/wymeditor/lang/it.js",
+    "app/assets/libs/wymeditor/lang/nb.js",
+    "app/assets/libs/wymeditor/lang/nl.js",
+    "app/assets/libs/wymeditor/lang/nn.js",
+    "app/assets/libs/wymeditor/lang/pl.js",
+    "app/assets/libs/wymeditor/lang/pt-br.js",
+    "app/assets/libs/wymeditor/lang/pt.js",
+    "app/assets/libs/wymeditor/lang/ru.js",
+    "app/assets/libs/wymeditor/lang/sv.js",
+    "app/assets/libs/wymeditor/lang/tr.js",
+    "app/assets/libs/wymeditor/lang/zh_cn.js",
+    "app/assets/libs/wymeditor/plugins/embed/jquery.wymeditor.embed.js",
+    "app/assets/libs/wymeditor/plugins/fullscreen/icon_fullscreen.gif",
+    "app/assets/libs/wymeditor/plugins/fullscreen/jquery.wymeditor.fullscreen.js",
+    "app/assets/libs/wymeditor/plugins/hovertools/jquery.wymeditor.hovertools.js",
+    "app/assets/libs/wymeditor/plugins/resizable/jquery.wymeditor.resizable.js",
+    "app/assets/libs/wymeditor/plugins/resizable/readme.txt",
+    "app/assets/libs/wymeditor/plugins/tidy/README",
+    "app/assets/libs/wymeditor/plugins/tidy/jquery.wymeditor.tidy.js",
+    "app/assets/libs/wymeditor/plugins/tidy/tidy.php",
+    "app/assets/libs/wymeditor/plugins/tidy/wand.png",
+    "app/assets/libs/wymeditor/skins/compact/icons.png",
+    "app/assets/libs/wymeditor/skins/compact/skin.css",
+    "app/assets/libs/wymeditor/skins/compact/skin.js",
+    "app/assets/libs/wymeditor/skins/default/icons.png",
+    "app/assets/libs/wymeditor/skins/default/skin.css",
+    "app/assets/libs/wymeditor/skins/default/skin.js",
+    "app/assets/libs/wymeditor/skins/minimal/images/bg.header.gif",
+    "app/assets/libs/wymeditor/skins/minimal/images/bg.selector.silver.gif",
+    "app/assets/libs/wymeditor/skins/minimal/images/bg.wymeditor.png",
+    "app/assets/libs/wymeditor/skins/minimal/images/icons.silver.gif",
+    "app/assets/libs/wymeditor/skins/minimal/skin.css",
+    "app/assets/libs/wymeditor/skins/minimal/skin.js",
+    "app/assets/libs/wymeditor/skins/silver/COPYING",
+    "app/assets/libs/wymeditor/skins/silver/README",
+    "app/assets/libs/wymeditor/skins/silver/images/bg.header.gif",
+    "app/assets/libs/wymeditor/skins/silver/images/bg.selector.silver.gif",
+    "app/assets/libs/wymeditor/skins/silver/images/bg.wymeditor.png",
+    "app/assets/libs/wymeditor/skins/silver/images/icons.silver.gif",
+    "app/assets/libs/wymeditor/skins/silver/skin.css",
+    "app/assets/libs/wymeditor/skins/silver/skin.js",
+    "app/assets/libs/wymeditor/skins/twopanels/icons.png",
+    "app/assets/libs/wymeditor/skins/twopanels/skin.css",
+    "app/assets/libs/wymeditor/skins/twopanels/skin.js",
+    "app/assets/libs/wymeditor/skins/wymeditor_icon.png",
     "app/assets/stylesheets/pages.css",
     "app/assets/stylesheets/spud/admin/contacts.css",
     "app/assets/stylesheets/spud/admin/media.css",
@@ -101,18 +172,15 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<spud_admin>, [">= 0"])
       s.add_runtime_dependency(%q<paperclip>, [">= 0"])
       s.add_runtime_dependency(%q<aws-s3>, [">= 0"])
-      s.add_runtime_dependency(%q<wymeditor-rails>, [">= 0"])
     else
       s.add_dependency(%q<spud_admin>, [">= 0"])
       s.add_dependency(%q<paperclip>, [">= 0"])
       s.add_dependency(%q<aws-s3>, [">= 0"])
-      s.add_dependency(%q<wymeditor-rails>, [">= 0"])
     end
   else
     s.add_dependency(%q<spud_admin>, [">= 0"])
     s.add_dependency(%q<paperclip>, [">= 0"])
     s.add_dependency(%q<aws-s3>, [">= 0"])
-    s.add_dependency(%q<wymeditor-rails>, [">= 0"])
   end
 end
 
