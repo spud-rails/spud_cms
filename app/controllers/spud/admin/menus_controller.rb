@@ -36,15 +36,15 @@ class Spud::Admin::MenusController < Spud::Admin::ApplicationController
 	def edit
 		@page_thumbnail = "spud/admin/menus_thumb.png"
 		@page_name = "Edit #{@menu.name}"
-		add_breadcrumb "#{@menu.name}", :spud_admin_menu_menu_items_path
-		add_breadcrumb "Edit", :edit_spud_admin_menu_path
+		
+		add_breadcrumb "Edit #{@menu.name}", :edit_spud_admin_menu_path
 	end
 
 	def update
 		@page_thumbnail = "spud/admin/menus_thumb.png"
 		@page_name = "Edit #{@menu.name}"
-		add_breadcrumb "#{@menu.name}", :spud_admin_menu_menu_items_path
-		add_breadcrumb "Edit", :edit_spud_admin_menu_path
+		
+		add_breadcrumb "Edit #{@menu.name}", :edit_spud_admin_menu_path
 		if @menu.update_attributes(params[:spud_menu])
 			flash[:notice] = "Menu saved successfully"
 			redirect_to spud_admin_menu_menu_items_url(:menu_id => @menu.id)
