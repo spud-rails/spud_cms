@@ -1,3 +1,10 @@
+<%=content_for :head do%>
+	<meta name="description" content="" />
+
+	  <meta name="keywords" content="Specialty,Gases, Purity Plus,Pure,Mixed,Special Applications,Equipment,Cryogenic,Cylinder,Valves,rare,calibration,food and beverage,medical,emission" />
+<%end%>
+
+<h2><%=@page.name%></h2>
 <%@page.spud_page_partials.each do |page_partial|%>
 	
 	<%if(page_partial.name.downcase == 'body')%>
