@@ -30,6 +30,15 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 		else
 			@menu_item.parent_type = "SpudMenuItem"
 		end
+		if @menu_item.name.blank? && !@menu_item.spud_page.blank?
+			@menu_item.name = @menu_item.spud_page.name
+		end
+		if @menu_item.menu_order.blank?
+			highest_sibling = @menu_item.parent.spud_menu_items.order("menu_order desc").first
+			if !highest_sibling.blank?
+				@menu_item.menu_order = highest_sibling.menu_order + 1
+			end
+		end
 		if @menu_item.save
 			flash[:notice] = "Menu Created successfully!"
 			redirect_to spud_admin_menu_menu_items_url() and return
