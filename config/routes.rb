@@ -10,6 +10,6 @@ Rails.application.routes.draw do
    	end
    end
    
-   match ":id", "pages#show",:controller => "pages",:action => "show"
+   match ":id", "pages#show",:controller => "pages",:action => "show", :as => "page"
 end
 
