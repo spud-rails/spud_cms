@@ -15,7 +15,7 @@ module Spud::Cms::ApplicationHelper
 			content = "<ul>"
 		end
 		
-		pages.each do |page|
+		pages.order(:page_order).each do |page|
 			content += "<li><a href='#{page_path(:url_name => page.url_name)}'>#{page.name}</a>"
 			content += sp_list_page(page)
 			content += "</li>"
@@ -47,7 +47,7 @@ module Spud::Cms::ApplicationHelper
 			return ""
 		end
 
-		menu.spud_menu_items.each do |item|
+		menu.spud_menu_items.order(:menu_order).each do |item|
 			content += "<li><a href='#{item.spud_page_id ? page_path(:url_name => item.spud_page.url_name) : item.url}'>#{item.name}</a>"
 			content += sp_list_menu_item(item)
 			content += "</li>"
@@ -61,7 +61,7 @@ private
 			return ""
 		end
 		content = "<ul>"
-		item.spud_menu_items.each do |item|
+		item.spud_menu_items.order(:menu_order).each do |item|
 			content += "<li><a href='#{item.spud_page_id ? page_path(:url_name => item.spud_page.url_name) : item.url}'>#{item.name}</a>"
 			content += sp_list_menu_item(item)
 			content += "</li>"
@@ -74,7 +74,7 @@ private
 			return ""
 		end
 		content = "<ul>"
-		page.spud_pages.each do |page|
+		page.spud_pages.order(:page_order).each do |page|
 			content += "<li><a href='#{page_path(:url_name => page.url_name)}'>#{page.name}</a>"
 			content += sp_list_page(page)
 			content += "</li>"
