@@ -27,6 +27,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		@page_thumbnail = "spud/admin/pages_thumb.png"
 		@page_name = "New Page"
 		@page = SpudPage.new(params[:spud_page])
+		
 		if @page.save
 			flash[:notice] = "Page Saved successfully"
 			redirect_to spud_admin_pages_url() and return

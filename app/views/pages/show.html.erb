@@ -1,0 +1,5 @@
+<%=@page.spud_page_partials.each do |page_partial|%>
+	<%=content_for page_partial.name.downcase.underscore.to_sym%>
+		<%=page_partial.content.html_safe%>
+	<%end%>
+<%end%>

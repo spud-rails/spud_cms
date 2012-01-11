@@ -6,8 +6,11 @@ class SpudPage < ActiveRecord::Base
 	has_many :spud_custom_fields,:as => :parent,:dependent => :destroy
 	belongs_to :created_by_user,:class_name => "SpudUser",:foreign_key => :created_by
 	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
+
+	before_validation :generate_url_name
 	validates :name,:presence => true
-	
+	validates :url_name,:presence => true, :uniqueness => true
+
 	accepts_nested_attributes_for :spud_custom_fields
 	accepts_nested_attributes_for :spud_page_partials
 	scope :parent_pages,  where(:spud_page_id => nil)
@@ -38,4 +41,13 @@ class SpudPage < ActiveRecord::Base
 		end
 		return options
 	end
+
+
+
+     def generate_url_name
+     	if !self.use_custom_url_name || self.url_name.blank?
+          self.url_name = self.title.gsub(/[^a-zA-Z0-9\ ]/," ").gsub(/\ \ +/," ").gsub(/\ /,"-").downcase
+          self.use_custom_url_name = false
+      	end
+     end
 end

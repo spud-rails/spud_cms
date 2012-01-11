@@ -4,8 +4,8 @@
   <%=f.text_field :name,:title => "",:size=>40%>
   <%=error_message_on "page","name"%>
 </li>
-<li><%=f.label :url_name, "Perma Link"%>
-  <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
+<li><%=f.label :url_name, "Perma Link",:disabled => true%>
+  <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%><%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
   <%=error_message_on "page","url_name"%>
 </li>
 
