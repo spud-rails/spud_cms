@@ -1,0 +1,31 @@
+<fieldset>
+<ol>
+<li><%=f.label :name, :required=>true%>
+  <%=f.text_field :name,:title => "",:size=>40%>
+  <%=error_message_on "template","name"%>
+</li>
+
+
+<li><%=f.label :base_layout, "Base Layout"%>
+  <%=f.text_field :base_layout%>
+</li>
+<li><%=f.label :content, "Content"%>
+  <%=f.text_area :content, :rows => 20,:cols => 110%>
+</li>
+<li><%=f.label :page_parts, "Page Parts"%>
+  <%=f.text_field :page_parts%>
+</li>
+
+
+</ol>
+</fieldset>
+
+
+<script type="text/javascript">
+	var editor = CodeMirror.fromTextArea(document.getElementById("spud_template_content"), {
+        lineNumbers: true,
+        mode: "application/x-ejs",
+        matchBrackets: true,
+        theme:'night'
+      });
+</script>

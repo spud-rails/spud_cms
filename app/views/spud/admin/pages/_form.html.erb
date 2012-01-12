@@ -14,7 +14,7 @@
   <%=error_message_on "page","spud_page_id"%>
 </li>
 <li><%=f.label :template_id, "Template"%>
-  <%=f.select :template_id,options_for_select(SpudTemplate.all,@page.template_id),{:include_blank => 'Default'},{:title => ""}%>
+  <%=f.select :template_id,options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id),{:include_blank => 'Default'},{:title => ""}%>
   <%=error_message_on "page","template_id"%>
 </li>
 
