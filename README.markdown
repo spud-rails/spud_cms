@@ -9,8 +9,8 @@ Installation/Usage
 
 1. In your Gemfile add the following
 
-```gem 'spud_admin', :git => "git@github.com:davydotcom/spud_core_admin.git"
-
+```
+gem 'spud_admin', :git => "git@github.com:davydotcom/spud_core_admin.git"
 gem 'spud_cms', :git => "git@github.com:davydotcom/spud_cms.git"
 ```
 
