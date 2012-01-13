@@ -27,6 +27,7 @@ Routing your home page to the CMS engine is fairly straight forward.
 in your applications routes.rb file add
 
 ```root :to => "pages#show", :id => "home"```
+
 Where "home" is the page name you wish to use.
 
 Pages will default render to the 'application' layout of your application. You can change this by using templates to specify base layouts.
