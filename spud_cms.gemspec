@@ -9,10 +9,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-01-12"
+  s.date = "2012-01-17"
   s.email = "destes@redwindsw.com"
+  s.extra_rdoc_files = [
+    "README.markdown"
+  ]
   s.files = [
-    "app/assets/images/spud/admin/contacts_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/dat_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/doc_thumb.png",
     "app/assets/images/spud/admin/files_thumbs/jpg_thumb.png",
@@ -105,7 +107,6 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/pages.css",
     "app/assets/stylesheets/spud/admin/cms/application.css",
     "app/controllers/pages_controller.rb",
-    "app/controllers/spud/admin/contacts_controller.rb",
     "app/controllers/spud/admin/media_controller.rb",
     "app/controllers/spud/admin/menu_items_controller.rb",
     "app/controllers/spud/admin/menus_controller.rb",
@@ -125,8 +126,6 @@ Gem::Specification.new do |s|
     "app/helpers/spud/user_sessions_helper.rb",
     "app/models/spud_category.rb",
     "app/models/spud_custom_field.rb",
-    "app/models/spud_inquiry.rb",
-    "app/models/spud_inquiry_field.rb",
     "app/models/spud_media.rb",
     "app/models/spud_menu.rb",
     "app/models/spud_menu_item.rb",
