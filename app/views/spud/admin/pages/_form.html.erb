@@ -48,10 +48,14 @@
 </li>
 <li><%=f.label :visibility%>
 		<%=f.select :visibility, [["Public",0],["Private",1]]%>
-		</li>
-		<li><%=f.label :published%>
-		<%=f.check_box :published%>
-		</li>
+</li>
+<li><%=f.label :published%>
+<%=f.check_box :published%>
+</li>
+<li><%=f.label :notes,"Notes"%>
+  <%=f.text_area :notes,:rows => 4,:cols=>100%>
+  <%=error_message_on "page","notes"%>
+</li>
 </ol>
 </fieldset>
 
