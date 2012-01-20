@@ -1,7 +1,7 @@
 class SpudMedia < ActiveRecord::Base
 	has_attached_file :attachment,
-     :storage => :s3,
-     :s3_credentials => "#{Rails.root}/config/s3.yml",
+     :storage => SpudAdmin::Engine.paperclip_storage,
+     :s3_credentials => SpudAdmin::Engine.s3_credentials,
      :path => ":class/:id/attachment/:basename.:extension"
 
      def image_from_type
