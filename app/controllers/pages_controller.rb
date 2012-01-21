@@ -1,9 +1,14 @@
 class PagesController < ApplicationController
 	def show
-		@page = SpudPage.where(:url_name => params[:id]).includes([:spud_template,:spud_page_partials,:spud_custom_fields]).first
+		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
+		@page = SpudPage.where(:url_name => url_name).includes([:spud_template,:spud_page_partials,:spud_custom_fields]).first
 		if @page.blank?
 			flash[:error] = "Page not found"
-			redirect_to root_url() and return
+			if !params[:id].blank?
+				redirect_to root_url() and return
+			else
+				return
+			end
 		end
 		layout = 'application'
 

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
    		resources :contacts
    	end
    end
-   
+   root :to => 'pages#show'
    match ":id", :controller => "pages",:action => "show", :as => "page"
 end
 

@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-01-18"
+  s.date = "2012-01-21"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"
@@ -161,6 +161,7 @@ Gem::Specification.new do |s|
     "config/boot.rb",
     "config/routes.rb",
     "lib/spud_cms.rb",
+    "lib/spud_cms/configuration.rb",
     "lib/spud_cms/engine.rb"
   ]
   s.require_paths = ["lib"]
