@@ -1,24 +1,10 @@
 <fieldset>
-<ol>
-<li><%=f.label :name, :required=>true%>
-  <%=f.text_field :name,:title => "",:size=>40%>
-  <%=error_message_on "page","name"%>
-</li>
-<li><%=f.label :url_name, "Perma Link",:disabled => true%>
-  <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%><%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
-  <%=error_message_on "page","url_name"%>
-</li>
-
-<li><%=f.label :spud_page_id, "Parent Page"%>
-  <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(@page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
-  <%=error_message_on "page","spud_page_id"%>
-</li>
-<li><%=f.label :template_id, "Template"%>
-  <%=f.select :template_id,options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id),{:include_blank => 'Default'},{:title => ""}%>
-  <%=error_message_on "page","template_id"%>
-</li>
-
-</ol>
+  <legend>Page Title</legend>
+  <p>
+      <%=error_message_on "page","name"%>
+    	<%=f.label :name, :required=>true, :style => "display:none;" %>
+      <%=f.text_field :name, :class => "full-width" %>
+  </p>
 </fieldset>
 <div class="formtabs">
 	<ul class="formtab_buttons">
@@ -31,27 +17,49 @@
 		</div>
 	<%end%>
 </div>
-
-
+<br />
 <fieldset>
-<legend>Meta Information</legend>
-<p>These fields are used to notify search engines about important keywords and the appropriate description to display in a search result.</p>
-<ol>
-<li><%=f.label :meta_keywords,"Keywords"%>
-  <%=f.text_field :meta_keywords,:title => "",:size=>40%>
-  <%=error_message_on "page","meta_keywords"%>
-</li>
-
-<li><%=f.label :meta_description,"Description"%>
-  <%=f.text_area :meta_description,:rows => 4,:cols=>100%>
-  <%=error_message_on "page","meta_description"%>
-</li>
-<li><%=f.label :visibility%>
-		<%=f.select :visibility, [["Public",0],["Private",1]]%>
-		</li>
-		<li><%=f.label :published%>
-		<%=f.check_box :published%>
-		</li>
-</ol>
+  <legend>Advanced Settings (optional)</legend>
+  <ol>
+    <li>
+      <%=error_message_on "page","template_id"%>
+      <%=f.label :template_id, "Template"%>
+      <%=f.select :template_id,options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id),{:include_blank => 'Default'},{:title => ""}%>
+    </li>
+    <li>
+      <%=error_message_on "page","spud_page_id"%>
+      <%=f.label :spud_page_id, "Parent Page"%>
+      <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(@page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
+    </li>
+    <li>
+      <%=error_message_on "page","url_name"%>
+      <%=f.label :url_name, "Perma Link",:disabled => true%>
+      <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%><%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
+    </li>
+  </ol>
+</fieldset>
+<fieldset>
+  <legend>Meta Information (optional)</legend>
+  <p>These fields are used to notify search engines about important keywords and the appropriate description to display in a search result.</p>
+  <ol>
+    <li>
+      <%=f.label :meta_keywords,"Keywords"%>
+      <%=f.text_field :meta_keywords,:title => "" %>
+      <%=error_message_on "page","meta_keywords"%>
+    </li>
+    <li>
+      <%=f.label :meta_description,"Description"%>
+      <%=f.text_area :meta_description,:rows => 4,:cols=>75%>
+      <%=error_message_on "page","meta_description"%>
+    </li>
+    <li>
+      <%=f.label :visibility%>
+  		<%=f.select :visibility, [["Public",0],["Private",1]]%>
+  	</li>
+  	<li>
+      <%=f.label :published%>
+  		<%=f.check_box :published%>
+  	</li>
+  </ol>
 </fieldset>
 
