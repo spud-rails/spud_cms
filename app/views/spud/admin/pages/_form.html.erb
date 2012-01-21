@@ -60,6 +60,11 @@
       <%=f.label :published%>
   		<%=f.check_box :published%>
   	</li>
+    <li>
+      <%=error_message_on "page","notes"%>
+      <%=f.label :notes,"Notes"%>
+      <%=f.text_area :notes,:rows => 4,:cols=>75 %>
+    </li>
   </ol>
 </fieldset>
 
