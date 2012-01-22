@@ -1,6 +1,3 @@
-require 'spud_cms'
-require 'rails'
-require 'action_controller'
 require 'spud_admin'
 require 'paperclip'
 require 'codemirror-rails'
