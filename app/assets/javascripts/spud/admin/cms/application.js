@@ -7,8 +7,23 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-$(document).ready(function() {
-       $('textarea.wysiwym').wymeditor({
-        	basePath:'/assets/wymeditor/'
-       });
-   });
+$(function() {
+	var initWysiwym = function() {
+		$('textarea.wysiwym').wymeditor({
+			basePath:'/assets/wymeditor/'
+		});
+	}
+	initWysiwym();
+	
+	$("#spud_page_template_id").bind('change', function() {
+		var $this = $(this);
+		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
+			$('.formtabs').tabs('destroy');
+			$("#page_partials_form").replaceWith(data)
+			initFormTabs();
+			initWysiwym();
+		}, 'text').error(function(jqXHR) {
+			$('<p> Error: ' + jqXHR.responseText + '</p>').dialog();
+		});
+	});
+});

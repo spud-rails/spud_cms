@@ -6,13 +6,12 @@
       <%=f.text_field :name, :class => "full-width" %>
   </p>
 </fieldset>
-<div class="formtabs">
+<div id="page_partials_form" class="formtabs">
 	<ul class="formtab_buttons">
 	</ul>
 	<%=f.fields_for :spud_page_partials do |b|%>
 		<div class="formtab">
 			<%=b.hidden_field :name,:class => "tab_name"%>
-		
 			<%=b.text_area :content,:class => "wysiwym"%>
 		</div>
 	<%end%>
@@ -24,7 +23,7 @@
     <li>
       <%=error_message_on "page","template_id"%>
       <%=f.label :template_id, "Template"%>
-      <%=f.select :template_id,options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id),{:include_blank => 'Default'},{:title => ""}%>
+      <%=f.select :template_id, options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_page_path(@page) }%>
     </li>
     <li>
       <%=error_message_on "page","spud_page_id"%>

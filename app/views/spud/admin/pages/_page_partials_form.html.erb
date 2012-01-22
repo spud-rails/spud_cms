@@ -1,0 +1,18 @@
+<div id="page_partials_form" class="formtabs">
+	<ul class="formtab_buttons">
+	</ul>
+	<% last_index = 0 %>
+	<% spud_page_partials.each_with_index do |spud_page_partial, index| %>
+		<div class="formtab">
+			<input type="hidden" class="tab_name" name="spud_page[spud_page_partials_attributes][<%= index %>][name]" value="<%= spud_page_partial.name %>" />
+			<textarea class="wysiwym" name="spud_page[spud_page_partials_attributes][<%= index %>][content]">
+				<%= spud_page_partial.content %>
+			</textarea>
+		</div>
+		<% last_index = index + 1 %>
+	<% end %>
+	<% remove_page_partials.each_with_index do |spud_page_partial, index| %>
+		<input type="hidden" name="spud_page[spud_page_partials_attributes][<%= last_index + index %>][id]" value="<%= spud_page_partial.id %>" />
+		<input type="hidden" name="spud_page[spud_page_partials_attributes][<%= last_index + index %>][_destroy]", value="1" />
+	<% end %>
+</div>

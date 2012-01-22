@@ -73,6 +73,39 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 			format.html { redirect_to spud_admin_pages_url()}
 		end
 	end
+  
+  def page_parts
+    template =  params[:template] && !params[:template].blank? ? SpudTemplate.where(:id => params[:template]).first : nil
+    page = SpudPage.where(:id => params[:id]).includes(:spud_page_partials).first
+    if !page.blank?
+      old_page_partials = Array.new(page.spud_page_partials)
+      new_page_partials = []
+      if !template.blank? && !template.page_parts.blank?
+        template.page_parts.split(',').each do |page_part|
+          new_page_partials << page.spud_page_partials.build(:name => page_part.strip)
+        end
+      else
+        new_page_partials << page.spud_page_partials.build(:name => 'body')
+      end
+      new_page_partials.each do |partial|
+        old_partial = old_page_partials.select {|pp| partial.name.strip.downcase == pp.name.strip.downcase }
+        partial.content = old_partial[0].content if !old_partial.blank?
+      end
+    else
+      message = "Page not found."
+      response.status = 500
+    end
+    
+    respond_to do |format|
+      format.js {
+        if response.status == 200
+          render(:partial => 'page_partials_form', :locals => {:spud_page_partials => new_page_partials, :remove_page_partials => old_page_partials})
+        else
+          render(:text => message)
+        end
+      }
+    end
+  end
 
 private
 	def load_page

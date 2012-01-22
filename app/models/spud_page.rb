@@ -12,7 +12,7 @@ class SpudPage < ActiveRecord::Base
 	validates :url_name,:presence => true, :uniqueness => true
 
 	accepts_nested_attributes_for :spud_custom_fields
-	accepts_nested_attributes_for :spud_page_partials
+	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  where(:spud_page_id => nil)
 
 
