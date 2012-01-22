@@ -2,7 +2,7 @@ Rails.application.routes.draw do
    namespace :spud do
    	namespace :admin do
    	  resources :pages do
-        get :page_parts, :on => :member
+        get :page_parts, :on => :collection
       end
       resources :templates 
    		resources :media
