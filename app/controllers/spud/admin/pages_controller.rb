@@ -47,6 +47,14 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		if @page.spud_page_partials.blank?
 			@page.spud_page_partials.new(:name => "Body")
 		end
+		if !@page.spud_template.blank?
+			@page.spud_template.page_parts.split(",").each do |part|
+				partial = @page.spud_page_partials.select{|p| p.name == part}
+				if partial.blank?
+					@page.spud_page_partials.new(:name => part)
+				end
+			end
+		end
 	end
 
 	def update
