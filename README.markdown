@@ -45,13 +45,14 @@ Adding Your Own Engines
 -----------------------
 
 Creating a rails engine that ties into spud admin is fairly straight forward
-In your new engine add spud_admin as a dependency and right after your engine require line call.
+In your new engine add spud_admin as a dependency and create an initializer inside your engine class as such:
 
-	SpudAdmin::Engine.add_admin_application({
-		:name => "Media",
-		:thumbnail => "spud/admin/media_thumb.png",
-		:url => "/spud/admin/media",
-		:order => 3})
+		initializer :admin do
+			Spud::Core.configure do |config|
+			config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0}]
+
+			end
+		end
 
 You can use the layouts provided with spud admin by using 'spud/admin/application' or 'spud/admin/detail' layouts
 
