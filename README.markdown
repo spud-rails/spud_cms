@@ -24,9 +24,16 @@ Installation/Usage
 Routing to the CMS Engine
 --------------------------
 Routing your home page to the CMS engine is fairly straight forward.
-in your applications routes.rb file add
+in your applications environment.rb file add a configure block as such
 
-```root :to => "pages#show", :id => "home"```
+
+		Spud::Cms.configure do |config|
+			config.menus_enabled = true
+			config.templates_enabled = false
+			config.root_page_name = "home"
+		end
+
+
 
 Where "home" is the page name you wish to use.
 
