@@ -15,7 +15,7 @@ Installation/Usage
 2. Run bundle install
 3. Copy in database migrations to your new rails project
 
-		bundle exec rake spud_admin:install:migrations
+		bundle exec rake spud_core:install:migrations
 		bundle exec rake spud_cms:install:migrations
 		rake db:migrate
 
