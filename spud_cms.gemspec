@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-01-22"
+  s.date = "2012-01-24"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"
@@ -154,6 +154,7 @@ Gem::Specification.new do |s|
     "app/views/spud/admin/pages/edit.html.erb",
     "app/views/spud/admin/pages/index.html.erb",
     "app/views/spud/admin/pages/new.html.erb",
+    "app/views/spud/admin/pages/show.html.erb",
     "app/views/spud/admin/templates/_form.html.erb",
     "app/views/spud/admin/templates/edit.html.erb",
     "app/views/spud/admin/templates/index.html.erb",
@@ -166,7 +167,7 @@ Gem::Specification.new do |s|
     "lib/spud_cms/engine.rb"
   ]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.10"
+  s.rubygems_version = "1.8.15"
   s.summary = "Spud CMS Engine"
 
   if s.respond_to? :specification_version then
