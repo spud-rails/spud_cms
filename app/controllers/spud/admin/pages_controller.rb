@@ -10,6 +10,27 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	end
 
 	def show
+			
+		
+		if @page.blank?
+			flash[:error] = "Page not found"
+			if !params[:id].blank?
+				redirect_to spud_admin_pages_url() and return
+			else
+				return
+			end
+		end
+		
+		layout = 'application'
+
+
+		if !@page.spud_template.blank?
+			if !@page.spud_template.base_layout.blank?
+				layout = @page.spud_template.base_layout
+			end
+			@inline = @page.spud_template.content
+		end
+		render :layout => layout
 	end
 
 	def new
@@ -19,7 +40,10 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		@page_name = "New Page"
 		@templates = SpudTemplate.all
 		@page = SpudPage.new
-		@page.spud_page_partials.new(:name => "Body")
+		Spud::Cms.default_page_parts.each do |part|
+			@page.spud_page_partials.new(:name => part)
+		end
+		
 		# @page.spud_page_partials.new(:name => "Sidebar")
 	end
 
@@ -45,7 +69,9 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		@page_name = "Edit Page"
 		@templates = SpudTemplate.all
 		if @page.spud_page_partials.blank?
-			@page.spud_page_partials.new(:name => "Body")
+			Spud::Cms.default_page_parts.each do |part|
+				@page.spud_page_partials.new(:name => part)
+			end
 		end
 		if !@page.spud_template.blank?
 			@page.spud_template.page_parts.split(",").each do |part|
@@ -93,7 +119,10 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
         new_page_partials << page.spud_page_partials.build(:name => page_part.strip)
       end
     else
-      new_page_partials << page.spud_page_partials.build(:name => 'body')
+    	Spud::Cms.default_page_parts.each do |part|
+			new_page_partials << page.spud_page_partials.build(:name => part)
+		end
+      
     end
     new_page_partials.each do |partial|
       old_partial = old_page_partials.select {|pp| partial.name.strip.downcase == pp.name.strip.downcase }
