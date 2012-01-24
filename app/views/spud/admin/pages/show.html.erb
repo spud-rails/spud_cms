@@ -15,7 +15,7 @@
 	<%if(page_partial.name.downcase == 'body' && Spud::Cms.yield_body_as_content_block == false)%>
 		<%=page_partial.content.html_safe%>
 	<%else%>
-		<%=content_for page_partial.name.downcase.underscore.to_sym do%>
+		<%=content_for page_partial.name.parameterize.underscore.to_sym do%>
 			<%=page_partial.content.html_safe%>
 		<%end%>
 	<%end%>
