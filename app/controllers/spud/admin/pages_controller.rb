@@ -1,11 +1,11 @@
 class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	layout 'spud/admin/cms/detail'
 	add_breadcrumb "Pages", :spud_admin_pages_path
+	belongs_to_spud_app :pages
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
 	
 	def index
-		@page_thumbnail = "spud/admin/pages_thumb.png"
-		@page_name = "Pages"
+		
 		@pages = SpudPage.where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
 	end
 
@@ -36,8 +36,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	def new
 		add_breadcrumb "New", :new_spud_admin_page_path
 
-		@page_thumbnail = "spud/admin/pages_thumb.png"
-		@page_name = "New Page"
+		
 		@templates = SpudTemplate.all
 		@page = SpudPage.new
 		Spud::Cms.default_page_parts.each do |part|
@@ -48,8 +47,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	end
 
 	def create
-		@page_thumbnail = "spud/admin/pages_thumb.png"
-		@page_name = "New Page"
+		
 		@page = SpudPage.new(params[:spud_page])
 		
 		if @page.save
@@ -65,8 +63,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	def edit
 		add_breadcrumb "#{@page.name}", :spud_admin_page_path
 		add_breadcrumb "Edit", :edit_spud_admin_page_path
-		@page_thumbnail = "spud/admin/pages_thumb.png"
-		@page_name = "Edit Page"
+		
 		@templates = SpudTemplate.all
 		if @page.spud_page_partials.blank?
 			Spud::Cms.default_page_parts.each do |part|

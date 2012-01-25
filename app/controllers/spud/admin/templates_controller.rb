@@ -1,74 +1,47 @@
 class Spud::Admin::TemplatesController < Spud::Admin::ApplicationController
 	layout 'spud/admin/cms/detail'
 	add_breadcrumb "Templates", :spud_admin_templates_path
+	belongs_to_spud_app :templates
 	before_filter :load_template,:only => [:edit,:update,:show,:destroy]
 	
 
 	def index
-		@page_thumbnail = "spud/admin/templates_thumb.png"
-		@page_name = "Templates"
 		flash.now[:warning] = "Templates are an advanced way to create modified pages and require some experience in HTML and Ruby."
 		@templates = SpudTemplate.order(:name).paginate :page => params[:page]
-
+		respond_with @templates
 	end
 
 	def new
 		add_breadcrumb "New", :new_spud_admin_template_path
-		@page_thumbnail = "spud/admin/templates_thumb.png"
-		@page_name = "New Template"
 		@template = SpudTemplate.new(:base_layout => "application",:page_parts => "Body")
+		respond_with @template
 	end
 
 	def create
 		add_breadcrumb "New", :new_spud_admin_template_path
-		@page_thumbnail = "spud/admin/templates_thumb.png"
-		@page_name = "New Template"
 
 		@template = SpudTemplate.new(params[:spud_template])
-		if @template.save
-			flash[:notice] = "Template created successfully!"
-			redirect_to spud_admin_templates_url() and return
-		else
-			flash.now[:error] = "Error creating template!"
-			@error_object_name = "template"
-			render :action => "new"
-		end
+		
+		flash[:notice] = "Template created successfully!" if @template.save
+		
+		respond_with @template, :location => spud_admin_templates_url
 	end
 
 	def edit
 		add_breadcrumb "Edit #{@template.name}", :edit_spud_admin_template_path
-		@page_thumbnail = "spud/admin/templates_thumb.png"
-		@page_name = "Edit #{@template.name}"
-
+		respond_with @template
 	end
 
 	def update
 		add_breadcrumb "Edit #{@template.name}", :edit_spud_admin_template_path
-		@page_thumbnail = "spud/admin/templates_thumb.png"
-		@page_name = "Edit #{@template.name}"
-		if @template.update_attributes(params[:spud_template])
-			flash[:notice] = "Template updated successfully"
-			redirect_to spud_admin_templates_url() and return
-		else
-			flash.now[:error] = "Error saving template"
-			render :action => "edit"
-		end
+		flash[:notice] = "Template updated successfully" if @template.update_attributes(params[:spud_template])
+		respond_with @template, :location => spud_admin_templates_url
 	end
 
 
 	def destroy
-		status = 500
-		if @template.destroy
-			status = 200
-		end
-		respond_to do |format|
-			format.js {render :status => status}
-			format.html {
-				flash[:notice] = "Template removed!" if status == 200
-				flash[:error] = "Error removing Template!" if status == 500
-				redirect_to spud_admin_templates_url and return
-			}
-		end
+		flash[:notice] = "Template removed" if @template.destroy
+		respond_with @template, :location => spud_admin_templates_url
 	end
 
 private
