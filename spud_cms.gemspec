@@ -40,7 +40,6 @@ Gem::Specification.new do |s|
     "app/controllers/spud/admin/menu_items_controller.rb",
     "app/controllers/spud/admin/menus_controller.rb",
     "app/controllers/spud/admin/pages_controller.rb",
-    "app/controllers/spud/admin/posts_controller.rb",
     "app/controllers/spud/admin/templates_controller.rb",
     "app/helpers/pages_helper.rb",
     "app/helpers/spud/admin/contacts_helper.rb",
