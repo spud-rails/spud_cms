@@ -21,14 +21,7 @@ module Spud
       end
      end
      initializer :assets do |config| 
-    	Rails.application.config.assets.precompile += [ 
-    	     "jquery.wymeditor.pack.js",
-           "wymeditor/*", 
-           "wymeditor/lang/*", 
-           "wymeditor/skins/default/*", 
-           "wymeditor/skins/default/**/*",
-           "spud/admin/cms*"
-        ]
+    	Rails.application.config.assets.precompile += ["spud/admin/cms*"]
   	 end
 
   end 
