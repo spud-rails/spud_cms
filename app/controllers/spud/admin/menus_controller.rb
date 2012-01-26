@@ -8,7 +8,6 @@ class Spud::Admin::MenusController < Spud::Admin::ApplicationController
 		@menus = SpudMenu.order(:name).paginate :page => params[:page]
 		respond_with @menus
 	end
-
 	
 
 	def new
@@ -20,9 +19,7 @@ class Spud::Admin::MenusController < Spud::Admin::ApplicationController
 	def create
 		add_breadcrumb "New", :new_spud_admin_menu_path
 		@menu = SpudMenu.new(params[:spud_menu])
-		
 		flash[:notice] = "New menu created" if @menu.save
-
 		respond_with @menu,:location => spud_admin_menu_menu_items_url(:menu_id => @menu.id)
 	end
 
@@ -44,7 +41,7 @@ class Spud::Admin::MenusController < Spud::Admin::ApplicationController
 
 private
 	def load_menu
-		@menu = SpudMenu.where(:id => params[:id]).first
+		@menu = SpudMenu.find(params[:id])
 		if @menu.blank?
 			flash[:error] = "Menu not found!"
 			redirect_to spud_admin_menus_url() and return false

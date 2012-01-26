@@ -13,7 +13,7 @@ class PagesController < ApplicationController
 		if @page.is_private?
 			before_filter :require_user
 		end
-		layout = 'application'
+		layout = Spud::Cms.default_page_layout
 
 
 		if !@page.spud_template.blank?

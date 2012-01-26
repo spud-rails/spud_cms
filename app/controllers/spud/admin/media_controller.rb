@@ -4,14 +4,11 @@ class Spud::Admin::MediaController < Spud::Admin::ApplicationController
 	belongs_to_spud_app :media
 	before_filter :load_media,:only => [:edit,:update,:show,:destroy]
 	def index
-		# @page_thumbnail = "spud/admin/media_thumb.png"
-		@page_name = "Media"
 		@media = SpudMedia.order("created_at DESC").paginate :page => params[:page]
 		respond_with @media
 	end
 
 	def new
-		# @page_thumbnail = "spud/admin/media_thumb.png"
 		@page_name = "New Media"
 		add_breadcrumb "New", :new_spud_admin_medium_path
 		@media = SpudMedia.new
@@ -19,7 +16,6 @@ class Spud::Admin::MediaController < Spud::Admin::ApplicationController
 	end
 
 	def create
-		# @page_thumbnail = "spud/admin/media_thumb.png"
 		@page_name = "New Media"
 		add_breadcrumb "New", :new_spud_admin_medium_path
 		@media = SpudMedia.new(params[:spud_media])
@@ -29,7 +25,6 @@ class Spud::Admin::MediaController < Spud::Admin::ApplicationController
 	end
 
 	def show
-		# @page_thumbnail = "spud/admin/media_thumb.png"
 		@page_name = "Media: #{@media.attachment_file_name}"
 		add_breadcrumb @media.attachment_file_name, :new_spud_admin_media_path
 		respond_with @media
