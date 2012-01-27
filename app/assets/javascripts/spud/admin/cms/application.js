@@ -8,13 +8,8 @@
 // All this logic will automatically be available in application.js.
 
 $(function() {
-	var initWysiwym = function() {
-		$('textarea.wysiwym').wymeditor({
-			basePath:'/assets/wymeditor/'
-		});
-	}
 	initWysiwym();
-	
+
 	$("#spud_page_template_id").bind('change', function() {
 		var $this = $(this);
 		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
