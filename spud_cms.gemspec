@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-01-26"
+  s.date = "2012-01-27"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"
@@ -33,14 +33,17 @@ Gem::Specification.new do |s|
     "app/assets/javascripts/pages.js",
     "app/assets/javascripts/spud/admin/cms/application.js",
     "app/assets/javascripts/spud/admin/templates.js",
+    "app/assets/javascripts/spud/cms/sitemaps.js",
     "app/assets/stylesheets/pages.css",
     "app/assets/stylesheets/spud/admin/cms/application.css",
+    "app/assets/stylesheets/spud/cms/sitemaps.css",
     "app/controllers/pages_controller.rb",
     "app/controllers/spud/admin/media_controller.rb",
     "app/controllers/spud/admin/menu_items_controller.rb",
     "app/controllers/spud/admin/menus_controller.rb",
     "app/controllers/spud/admin/pages_controller.rb",
     "app/controllers/spud/admin/templates_controller.rb",
+    "app/controllers/spud/cms/sitemaps_controller.rb",
     "app/helpers/pages_helper.rb",
     "app/helpers/spud/admin/contacts_helper.rb",
     "app/helpers/spud/admin/media_helper.rb",
@@ -51,6 +54,7 @@ Gem::Specification.new do |s|
     "app/helpers/spud/admin/templates_helper.rb",
     "app/helpers/spud/admin/users_helper.rb",
     "app/helpers/spud/cms/application_helper.rb",
+    "app/helpers/spud/cms/sitemaps_helper.rb",
     "app/helpers/spud/user_sessions_helper.rb",
     "app/models/spud_custom_field.rb",
     "app/models/spud_media.rb",
@@ -84,6 +88,7 @@ Gem::Specification.new do |s|
     "app/views/spud/admin/templates/edit.html.erb",
     "app/views/spud/admin/templates/index.html.erb",
     "app/views/spud/admin/templates/new.html.erb",
+    "app/views/spud/cms/sitemaps/show.xml.builder",
     "config/application.rb",
     "config/boot.rb",
     "config/routes.rb",

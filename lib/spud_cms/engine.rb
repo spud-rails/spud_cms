@@ -18,6 +18,10 @@ module Spud
           if Spud::Cms.templates_enabled
             config.admin_applications += [{:name => "Templates",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/templates",:order => 4}]
           end
+          if Spud::Cms.enable_sitemap == true
+            config.sitemap_urls += [:spud_cms_sitemap_url]
+          end
+          
       end
      end
      initializer :assets do |config| 

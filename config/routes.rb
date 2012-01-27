@@ -11,8 +11,12 @@ Rails.application.routes.draw do
    		end
    		resources :contacts
    	end
+      namespace :cms do
+         resource :sitemap,:only => "show"
+      end
    end
    root :to => 'pages#show'
    match ":id", :controller => "pages",:action => "show", :as => "page"
+
 end
 

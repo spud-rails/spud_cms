@@ -15,6 +15,7 @@ class SpudPage < ActiveRecord::Base
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  where(:spud_page_id => nil)
 	scope :published_pages, where(:published => true)
+	scope :public, where(:visibility => 0)
 
 	def options_tree(options,depth,current_page = nil)
 		sub_pages = self.spud_pages
