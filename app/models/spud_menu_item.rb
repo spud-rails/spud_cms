@@ -1,7 +1,9 @@
 class SpudMenuItem < ActiveRecord::Base
 	belongs_to :parent, :polymorphic=>true
+	belongs_to :spud_menu
 	belongs_to :spud_page
 	has_many :spud_menu_items,:as => :parent,:dependent => :destroy
+
 	validates :name,:presence => true
 	validates :parent_type,:presence => true
 	validates :parent_id,:presence => true

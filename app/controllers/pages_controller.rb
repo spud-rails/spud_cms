@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 	def show
 		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
-		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials,:spud_custom_fields]).first
+		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials]).first
 		if @page.blank?
 			flash[:error] = "Page not found"
 			if !params[:id].blank?

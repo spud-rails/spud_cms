@@ -24,6 +24,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 		@page_thumbnail = "spud/admin/menus_thumb.png"
 		@page_name = "New Menu Item"
 		@menu_item = SpudMenuItem.new(params[:spud_menu_item])
+		@menu_item.spud_menu_id = @menu.id
 		if params[:spud_menu_item][:parent_id].blank?
 			@menu_item.parent_id = @menu.id
 			@menu_item.parent_type = "SpudMenu"
@@ -68,7 +69,10 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 		else
 			params[:spud_menu_item][:parent_type] = "SpudMenuItem"
 		end
-		if @menu_item.update_attributes(params[:spud_menu_item])
+		@menu_item.attributes = params[:spud_menu_item]
+		@menu_item.spud_menu_id = @menu.id
+		if @menu_item.save
+			
 			flash[:notice] = "Menu saved successfully!"
 			redirect_to spud_admin_menu_menu_items_url() and return
 
