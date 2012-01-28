@@ -8,10 +8,7 @@ module Spud
 
      initializer :admin do
       Spud::Core.configure do |config|
-          config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0},
-            {:name => "Media",:thumbnail => "spud/admin/media_thumb.png",:url => "/spud/admin/media",:order => 3}
-            
-          ]
+          config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0}]
           if Spud::Cms.menus_enabled
             config.admin_applications += [{:name => "Menus",:thumbnail => "spud/admin/menus_thumb.png",:url => "/spud/admin/menus",:order => 2}]
           end
