@@ -19,6 +19,10 @@
   <%=f.text_field :url,:title => "",:size=>40%>
   <%=error_message_on "menu_item","url"%>
 </li>
+<li><%=f.label :classes%>
+  <%=f.text_field :classes,:title => "",:size=>40%>
+  <%=error_message_on "menu_item","classes"%>
+</li>
 <li><%=f.label :parent, "Parent Menu"%>
   <%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu_item,@menu),@menu_item.parent_id),{:include_blank => "#{@menu.name}"},{:title => ""}%>
   <%=error_message_on "menu_item","parent"%>
