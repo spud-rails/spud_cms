@@ -9,23 +9,12 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-01-27"
+  s.date = "2012-01-28"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"
   ]
   s.files = [
-    "app/assets/images/spud/admin/files_thumbs/dat_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/doc_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/jpg_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/mp3_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/pdf_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/png_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/ppt_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/txt_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/xls_thumb.png",
-    "app/assets/images/spud/admin/files_thumbs/zip_thumb.png",
-    "app/assets/images/spud/admin/media_thumb.png",
     "app/assets/images/spud/admin/menus_thumb.png",
     "app/assets/images/spud/admin/pages_thumb.png",
     "app/assets/images/spud/admin/posts_thumb.png",
@@ -38,7 +27,6 @@ Gem::Specification.new do |s|
     "app/assets/stylesheets/spud/admin/cms/application.css",
     "app/assets/stylesheets/spud/cms/sitemaps.css",
     "app/controllers/pages_controller.rb",
-    "app/controllers/spud/admin/media_controller.rb",
     "app/controllers/spud/admin/menu_items_controller.rb",
     "app/controllers/spud/admin/menus_controller.rb",
     "app/controllers/spud/admin/pages_controller.rb",
@@ -57,7 +45,6 @@ Gem::Specification.new do |s|
     "app/helpers/spud/cms/sitemaps_helper.rb",
     "app/helpers/spud/user_sessions_helper.rb",
     "app/models/spud_custom_field.rb",
-    "app/models/spud_media.rb",
     "app/models/spud_menu.rb",
     "app/models/spud_menu_item.rb",
     "app/models/spud_page.rb",
@@ -66,8 +53,6 @@ Gem::Specification.new do |s|
     "app/views/layouts/spud/admin/cms/detail.html.erb",
     "app/views/pages/show.html.erb",
     "app/views/spud/admin/contacts/index.html.erb",
-    "app/views/spud/admin/media/index.html.erb",
-    "app/views/spud/admin/media/new.html.erb",
     "app/views/spud/admin/menu_items/_form.html.erb",
     "app/views/spud/admin/menu_items/_menu_item_row.html.erb",
     "app/views/spud/admin/menu_items/edit.html.erb",
