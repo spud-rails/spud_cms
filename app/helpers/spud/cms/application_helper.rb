@@ -57,7 +57,7 @@ module Spud::Cms::ApplicationHelper
 		
 
 		grouped_items["SpudMenu"].sort_by{|p| p.menu_order}.each do |item|
-			content += "<li><a href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"
+			content += "<li><a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"
 			content += sp_list_menu_item(child_items,item.id)
 			content += "</li>"
 		end
@@ -92,7 +92,7 @@ private
 		end
 		content = "<ul>"
 		page.spud_pages.order(:page_order).each do |page|
-			content += "<li><a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
+			content += "<li><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
 			content += sp_list_page(page)
 			content += "</li>"
 		end
