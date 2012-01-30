@@ -1,5 +1,4 @@
 require 'spud_admin'
-require 'paperclip'
 require 'codemirror-rails'
 module Spud
   module Cms
