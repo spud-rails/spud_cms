@@ -1,4 +1,4 @@
-require 'spud_admin'
+require 'spud_core'
 require 'codemirror-rails'
 module Spud
   module Cms
