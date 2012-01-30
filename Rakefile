@@ -6,6 +6,7 @@ begin
         gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*"]
         gem.add_dependency 'spud_admin'
 	gem.add_dependency 'codemirror-rails'
+  gem.add_dependency 'paperclip', '~> 2.5.2'
 	gem.authors = "David Estes"
 	gem.email = "destes@redwindsw.com"
         # other fields that would normally go in your gemspec
