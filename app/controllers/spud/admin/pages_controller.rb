@@ -139,7 +139,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 
 private
 	def load_page
-		@page = SpudPage.where(:id => params[:id]).includes(:spud_custom_fields,:spud_page_partials).first
+		@page = SpudPage.where(:id => params[:id]).includes(:spud_page_partials).first
 		if @page.blank?
 			flash[:error] = "Page not found!"
 			redirect_to spud_admin_pages_url() and return false

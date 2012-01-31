@@ -13,7 +13,7 @@ class Spud::Admin::TemplatesController < Spud::Admin::ApplicationController
 
 	def new
 		add_breadcrumb "New", :new_spud_admin_template_path
-		@template = SpudTemplate.new(:base_layout => "application",:page_parts => "Body")
+		@template = SpudTemplate.new(:base_layout => Spud::Cms.default_page_layout,:page_parts => Spud::Cms.default_page_parts.join(","))
 		respond_with @template
 	end
 

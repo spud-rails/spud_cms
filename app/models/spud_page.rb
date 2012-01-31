@@ -3,7 +3,6 @@ class SpudPage < ActiveRecord::Base
 	belongs_to :spud_template,:foreign_key => :template_id
 	has_many :spud_pages, :dependent => :nullify
 	has_many :spud_page_partials,:dependent => :destroy
-	has_many :spud_custom_fields,:as => :parent,:dependent => :destroy
 	belongs_to :created_by_user,:class_name => "SpudUser",:foreign_key => :created_by
 	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
 
@@ -11,7 +10,6 @@ class SpudPage < ActiveRecord::Base
 	validates :name,:presence => true
 	validates :url_name,:presence => true, :uniqueness => true
 
-	accepts_nested_attributes_for :spud_custom_fields
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  where(:spud_page_id => nil)
 	scope :published_pages, where(:published => true)
@@ -46,8 +44,19 @@ class SpudPage < ActiveRecord::Base
 
 
      def generate_url_name
+     	return false if self.name.blank?
      	if !self.use_custom_url_name || self.url_name.blank?
-          self.url_name = self.name.gsub(/[^a-zA-Z0-9\ ]/," ").gsub(/\ \ +/," ").gsub(/\ /,"-").downcase
+     	  
+     	  url_name = self.name.parameterize.downcase
+			if !self.use_custom_url_name
+				url_names = SpudPage.all.collect{|p| p.url_name}
+				counter = 1
+				while url_names.include?(url_name) do
+		     	  	url_name = self.name.parameterize.downcase + "-#{counter}"
+		     	  	counter += 1
+				end
+	     	end
+          self.url_name = url_name
           self.use_custom_url_name = false
       	end
       	return true
