@@ -17,6 +17,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 		@page_name = "New Menu Item"
 		
 		@menu_item = @menu.spud_menu_items.new
+		
 	end
 
 	def create

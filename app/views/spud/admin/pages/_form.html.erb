@@ -30,7 +30,7 @@
     <li>
       <%=error_message_on "page","spud_page_id"%>
       <%=f.label :spud_page_id, "Parent Page"%>
-      <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(@page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
+      <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
     </li>
     <li>
       <%=error_message_on "page","url_name"%>

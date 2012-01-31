@@ -21,17 +21,52 @@ class SpudMenuItem < ActiveRecord::Base
 	    end
 	    return options
 	end
+	def self.grouped(menu)
+		return menu.spud_menu_items_combined.group_by(&:parent_type)
+	end
 
-	def self.options_tree_for_item(item,menu)
-		items = menu.spud_menu_items
-		items = items.where(["id != ?",item.id]) if !item.blank? && !item.id.blank?
+	# Returns an array of pages in order of heirarchy
+	# 	:fitler Filters out a page by ID, and all of its children
+	#   :value Pick an attribute to be used in the value field, defaults to ID
+	def self.options_tree_for_item(menu,config={})
+		collection = config[:collection] || self.grouped(menu)
+		level 		 = config[:level] 		 || 0
+		parent_id  = config[:parent_id]  || nil
+		parent_type  = config[:parent_type]  || 'SpudMenu'
+		filter 		 = config[:filter] 		 || nil
+		value      = config[:value]			 || :id
+		list 			 = []
+		if parent_type == 'SpudMenu' && collection[parent_type]
+			item_collection = collection['SpudMenuItem'].group_by(&:parent_id) if collection['SpudMenuItem']
+			collection[parent_type].each do |c|
+				if filter.blank? || c.id != filter.id
+					list << [level.times.collect{ '- ' }.join('') + c.name, c[value]]
+					list += self.options_tree_for_item(menu,{:collection => item_collection, :parent_id => c.id, :level => level+1, :filter => filter,:parent_type => "SpudMenuItem"})
+				end
+			end
+		else
+			if collection[parent_id]
+				collection[parent_id].each do |c|
+					if filter.blank? || c.id != filter.id
+						list << [level.times.collect{ '- ' }.join('') + c.name, c[value]]
+						list += self.options_tree_for_item(menu,{:collection => collection, :parent_id => c.id, :level => level+1, :filter => filter,:parent_type => "SpudMenuItem"})
+					end
+				end
+			end
+		end
+		
+		return list
+	end
+	# def self.options_tree_for_item(item,menu)
+	# 	items = menu.spud_menu_items
+	# 	items = items.where(["id != ?",item.id]) if !item.blank? && !item.id.blank?
 			
 
-		options = []
-		items.each do |item|
-		  options << ["#{item.name}",item.id]
-		  options = item.options_tree(options,1,item)
-		end
-		return options
-	end
+	# 	options = []
+	# 	items.each do |item|
+	# 	  options << ["#{item.name}",item.id]
+	# 	  options = item.options_tree(options,1,item)
+	# 	end
+	# 	return options
+	# end
 end

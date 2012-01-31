@@ -9,7 +9,7 @@
   <%=error_message_on "menu_item","menu_order"%>
 </li>
 <li><%=f.label :spud_page_id, "Page"%>
-    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(nil),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
+    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
   <%=error_message_on "menu_item","spud_page_id"%>
 </li>
 
@@ -24,7 +24,7 @@
   <%=error_message_on "menu_item","classes"%>
 </li>
 <li><%=f.label :parent, "Parent Menu"%>
-  <%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu_item,@menu),@menu_item.parent_id),{:include_blank => "#{@menu.name}"},{:title => ""}%>
+  <%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu,:filter => @menu_item),@menu_item.parent_type == 'SpudMenuItem' ? @menu_item.parent_id : nil),{:include_blank => "#{@menu.name}"},{:title => ""}%>
   <%=error_message_on "menu_item","parent"%>
 </li>
 </ol>

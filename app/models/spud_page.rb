@@ -15,32 +15,31 @@ class SpudPage < ActiveRecord::Base
 	scope :published_pages, where(:published => true)
 	scope :public, where(:visibility => 0)
 
-	def options_tree(options,depth,current_page = nil)
-		sub_pages = self.spud_pages
-		sub_pages = sub_pages.where(["id != ?",current_page.id]) if !current_page.blank? && !current_page.id.blank?
-	    if(sub_pages.blank?)
-	      return options
-	    end
-	    sub_pages.each do |page|
-	      options << ["#{'-'*depth} #{page.name}",page.id]
-	      options = page.options_tree(options,depth+1,current_page)
-	    end
-	    return options
+
+	def self.grouped
+		return all.group_by(&:spud_page_id)
 	end
 
-	def self.options_tree_for_page(page)
-		pages = SpudPage.parent_pages
-		pages = pages.where(["id != ?",page.id]) if !page.blank? && !page.id.blank?
-			
-
-		options = []
-		pages.each do |sub_page|
-		  options << ["#{sub_page.name}",sub_page.id]
-		  options = sub_page.options_tree(options,1,page)
+	# Returns an array of pages in order of heirarchy
+	# 	:fitler Filters out a page by ID, and all of its children
+	#   :value Pick an attribute to be used in the value field, defaults to ID
+	def self.options_tree_for_page(config={})
+		collection = config[:collection] || self.grouped
+		level 		 = config[:level] 		 || 0
+		parent_id  = config[:parent_id]  || nil
+		filter 		 = config[:filter] 		 || nil
+		value      = config[:value]			 || :id
+		list 			 = []
+		if collection[parent_id]
+			collection[parent_id].each do |c|
+				if filter.blank? || c.id != filter.id
+					list << [level.times.collect{ '- ' }.join('') + c.name, c[value]]
+					list += self.options_tree_for_page({:collection => collection, :parent_id => c.id, :level => level+1, :filter => filter})
+				end
+			end
 		end
-		return options
+		return list
 	end
-
 
 
      def generate_url_name
