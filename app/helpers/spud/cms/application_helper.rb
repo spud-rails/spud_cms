@@ -1,23 +1,31 @@
 module Spud::Cms::ApplicationHelper
 	def sp_list_pages(options = {})
-		pages = SpudPage.parent_pages
+		pages = SpudPage.public.published_pages
+		start_page = nil
 		if !options.blank?
 			if options.has_key?(:exclude)
 				
 				pages = pages.where(["name NOT IN (?)",options[:exclude]])
 			end
+			if options.has_key?(:start_page_id)
+				start_page = options[:start_page_id]
+			end
 			if options.has_key?(:id)
-				content = "<ul id='#{options.id}'>"
+				content = "<ul id='#{options[:id]}'>"
 			else
 				content = "<ul>"
 			end
 		else
 			content = "<ul>"
 		end
-		
-		pages.order(:page_order).each do |page|
+
+		pages = pages.all.group_by(&:spud_page_id)
+		if pages[start_page].blank?
+			return ""
+		end
+		pages[start_page].sort_by{|p| p.page_order}.each do |page|
 			content += "<li><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
-			content += sp_list_page(page)
+			content += sp_list_page(page,pages)
 			content += "</li>"
 		end
 		content += "</ul>"
@@ -86,14 +94,14 @@ private
 		content += "</ul>"
 		return content.html_safe
 	end
-	def sp_list_page(page)
-		if page.spud_pages.count == 0
+	def sp_list_page(page,collection)
+		if collection[page.id].blank?
 			return ""
 		end
 		content = "<ul>"
-		page.spud_pages.order(:page_order).each do |page|
+		collection[page.id].sort_by{|p| p.page_order}.each do |page|
 			content += "<li><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
-			content += sp_list_page(page)
+			content += sp_list_page(page,collection)
 			content += "</li>"
 		end
 		content += "</ul>"
