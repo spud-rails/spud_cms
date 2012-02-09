@@ -48,7 +48,11 @@ class SpudPage < ActiveRecord::Base
      	  
      	  url_name = self.name.parameterize.downcase
 			if !self.use_custom_url_name
-				url_names = SpudPage.where("id != #{self.id}").all.collect{|p| p.url_name}
+				pages = SpudPage
+				if !self.id.blank?
+					pages = pages.where("id != #{self.id}")
+				end
+				url_names = pages.all.collect{|p| p.url_name}
 				counter = 1
 				while url_names.include?(url_name) do
 		     	  	url_name = self.name.parameterize.downcase + "-#{counter}"
