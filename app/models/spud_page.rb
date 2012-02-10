@@ -1,4 +1,5 @@
 class SpudPage < ActiveRecord::Base
+	searchable
 	belongs_to :spud_page
 	belongs_to :spud_template,:foreign_key => :template_id
 	has_many :spud_pages, :dependent => :nullify
