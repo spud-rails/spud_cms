@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "spud_cms"
-  s.version = "0.3.3"
+  s.version = "0.3.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-02-10"
+  s.date = "2012-02-13"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"

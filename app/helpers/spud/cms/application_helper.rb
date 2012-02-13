@@ -34,7 +34,7 @@ module Spud::Cms::ApplicationHelper
 
 
 	def sp_list_menu(options = {})
-
+		max_depth = 0
 		menu = SpudMenu
 		if !options.blank?
 			if options.has_key?(:menu_id)
@@ -47,6 +47,9 @@ module Spud::Cms::ApplicationHelper
 				content = "<ul id='#{options[:id]}'>"
 			else
 				content = "<ul>"
+			end
+			if options.has_key?(:max_depth)
+				max_depth = options[:max_depth]
 			end
 		else
 			content = "<ul>"
@@ -66,7 +69,9 @@ module Spud::Cms::ApplicationHelper
 
 		grouped_items["SpudMenu"].sort_by{|p| p.menu_order}.each do |item|
 			content += "<li><a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"
-			content += sp_list_menu_item(child_items,item.id)
+			if max_depth == 0 || max_depth > 1
+				content += sp_list_menu_item(child_items,item.id,2,max_depth)
+			end
 			content += "</li>"
 		end
 		# menu.spud_menu_items.order(:menu_order).each do |item|
@@ -78,7 +83,7 @@ module Spud::Cms::ApplicationHelper
 		return content.html_safe
 	end
 private
-	def sp_list_menu_item(items,item_id)
+	def sp_list_menu_item(items,item_id,depth,max_depth)
 
 		spud_menu_items = items[item_id]
 		if spud_menu_items == nil
@@ -88,7 +93,9 @@ private
 		
 		spud_menu_items.sort_by{|p| p.menu_order}.each do |item|
 			content += "<li><a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"
-			content += sp_list_menu_item(items,item.id)
+			if max_depth == 0 || max_depth > depth
+				content += sp_list_menu_item(items,item.id,depth+1,max_depth)
+			end
 			content += "</li>"
 		end
 		content += "</ul>"
