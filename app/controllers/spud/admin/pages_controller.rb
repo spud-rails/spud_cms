@@ -7,6 +7,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	def index
 		
 		@pages = SpudPage.where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
+		respond_with @pages
 	end
 
 	def show
@@ -19,8 +20,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 			else
 				return
 			end
-		end
-		
+		end		
 		layout = 'application'
 
 
@@ -42,22 +42,13 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		Spud::Cms.default_page_parts.each do |part|
 			@page.spud_page_partials.new(:name => part)
 		end
-		
-		# @page.spud_page_partials.new(:name => "Sidebar")
+		respond_with @page		
 	end
 
 	def create
-		
 		@page = SpudPage.new(params[:spud_page])
-		
-		if @page.save
-			flash[:notice] = "Page Saved successfully"
-			redirect_to spud_admin_pages_url() and return
-		else
-			flash[:error] = "Error creating page"
-			@error_object_name = "page"
-			render :action => "new"
-		end
+		flash[:notice] = "Page Saved successfully" if @page.save
+		respond_with @page,:location => spud_admin_pages_url
 	end
 
 	def edit

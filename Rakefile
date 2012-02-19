@@ -4,10 +4,10 @@ begin
         gem.name = "spud_cms"
         gem.summary = "Spud CMS Engine"
         gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*"]
-        gem.add_dependency 'spud_core','>= 0.5.2'
-	gem.add_dependency 'codemirror-rails'
-	gem.authors = "David Estes"
-	gem.email = "destes@redwindsw.com"
+        gem.add_dependency 'spud_core','>= 0.5.3'
+    	gem.add_dependency 'codemirror-rails'
+    	gem.authors = "David Estes"
+    	gem.email = "destes@redwindsw.com"
         # other fields that would normally go in your gemspec
         # like authors, email and has_rdoc can also be included here
 	end

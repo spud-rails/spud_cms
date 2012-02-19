@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-02-13"
+  s.date = "2012-02-19"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"
@@ -32,18 +32,7 @@ Gem::Specification.new do |s|
     "app/controllers/spud/admin/pages_controller.rb",
     "app/controllers/spud/admin/templates_controller.rb",
     "app/controllers/spud/cms/sitemaps_controller.rb",
-    "app/helpers/pages_helper.rb",
-    "app/helpers/spud/admin/contacts_helper.rb",
-    "app/helpers/spud/admin/media_helper.rb",
-    "app/helpers/spud/admin/menu_items_helper.rb",
-    "app/helpers/spud/admin/menus_helper.rb",
-    "app/helpers/spud/admin/pages_helper.rb",
-    "app/helpers/spud/admin/posts_helper.rb",
-    "app/helpers/spud/admin/templates_helper.rb",
-    "app/helpers/spud/admin/users_helper.rb",
     "app/helpers/spud/cms/application_helper.rb",
-    "app/helpers/spud/cms/sitemaps_helper.rb",
-    "app/helpers/spud/user_sessions_helper.rb",
     "app/models/spud_menu.rb",
     "app/models/spud_menu_item.rb",
     "app/models/spud_page.rb",
@@ -51,7 +40,6 @@ Gem::Specification.new do |s|
     "app/models/spud_template.rb",
     "app/views/layouts/spud/admin/cms/detail.html.erb",
     "app/views/pages/show.html.erb",
-    "app/views/spud/admin/contacts/index.html.erb",
     "app/views/spud/admin/menu_items/_form.html.erb",
     "app/views/spud/admin/menu_items/_menu_item_row.html.erb",
     "app/views/spud/admin/menu_items/edit.html.erb",
@@ -89,14 +77,14 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<spud_core>, [">= 0.5.2"])
+      s.add_runtime_dependency(%q<spud_core>, [">= 0.5.3"])
       s.add_runtime_dependency(%q<codemirror-rails>, [">= 0"])
     else
-      s.add_dependency(%q<spud_core>, [">= 0.5.2"])
+      s.add_dependency(%q<spud_core>, [">= 0.5.3"])
       s.add_dependency(%q<codemirror-rails>, [">= 0"])
     end
   else
-    s.add_dependency(%q<spud_core>, [">= 0.5.2"])
+    s.add_dependency(%q<spud_core>, [">= 0.5.3"])
     s.add_dependency(%q<codemirror-rails>, [">= 0"])
   end
 end

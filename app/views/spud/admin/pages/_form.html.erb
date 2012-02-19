@@ -1,7 +1,7 @@
+<%=error_messages_for(f.object)%>
 <fieldset>
   <legend>Page Title</legend>
   <p>
-      <%=error_message_on "page","name"%>
     	<%=f.label :name, :required=>true, :style => "display:none;" %>
       <%=f.text_field :name, :class => "full-width" %>
   </p>
@@ -22,18 +22,18 @@
   <ol>
      <%if Spud::Cms.templates_enabled%>
     	<li>
-      	<%=error_message_on "page","template_id"%>
+      	
       	<%=f.label :template_id, "Template"%>
       	<%=f.select :template_id, options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
   	  </li>
       <%end%>
     <li>
-      <%=error_message_on "page","spud_page_id"%>
+      
       <%=f.label :spud_page_id, "Parent Page"%>
       <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
     </li>
     <li>
-      <%=error_message_on "page","url_name"%>
+      
       <%=f.label :url_name, "Perma Link",:disabled => true%>
       <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%><%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
     </li>
@@ -46,12 +46,12 @@
     <li>
       <%=f.label :meta_keywords,"Keywords"%>
       <%=f.text_field :meta_keywords,:title => "" %>
-      <%=error_message_on "page","meta_keywords"%>
+      
     </li>
     <li>
       <%=f.label :meta_description,"Description"%>
       <%=f.text_area :meta_description,:rows => 4,:cols=>75%>
-      <%=error_message_on "page","meta_description"%>
+      
     </li>
     <li>
       <%=f.label :visibility%>
@@ -62,7 +62,6 @@
   		<%=f.check_box :published%>
   	</li>
     <li>
-      <%=error_message_on "page","notes"%>
       <%=f.label :notes,"Notes"%>
       <%=f.text_area :notes,:rows => 4,:cols=>75 %>
     </li>
