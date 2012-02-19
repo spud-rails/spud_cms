@@ -45,7 +45,7 @@ class SpudPage < ActiveRecord::Base
 
      def generate_url_name
      	# return false if self.name.blank?
-     	return if self.name.blank?
+     	return true if self.name.blank?
      	if !self.use_custom_url_name || self.url_name.blank?
      	  
      	  url_name = self.name.parameterize.downcase
@@ -64,7 +64,7 @@ class SpudPage < ActiveRecord::Base
           self.url_name = url_name
           self.use_custom_url_name = false
       	end
-      	# return true
+      	return true
      end
 
      def is_private?
