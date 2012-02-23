@@ -10,7 +10,7 @@ xml.urlset :xmlns => 'http://www.sitemaps.org/schemas/sitemap/0.9' do
       else
         xml.loc page_url(:id => page.url_name)
       end
-      xml.lastmod page.updated_at.strftime('%Y-%m-%d')
+      xml.lastmod page.updated_at.xmlschema
     end
   end
 end
