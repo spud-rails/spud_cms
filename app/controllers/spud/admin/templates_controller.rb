@@ -33,6 +33,7 @@ class Spud::Admin::TemplatesController < Spud::Admin::ApplicationController
 	end
 
 	def update
+		clear_action_cache
 		add_breadcrumb "Edit #{@template.name}", :edit_spud_admin_template_path
 		flash[:notice] = "Template updated successfully" if @template.update_attributes(params[:spud_template])
 		
@@ -41,6 +42,7 @@ class Spud::Admin::TemplatesController < Spud::Admin::ApplicationController
 
 
 	def destroy
+		clear_action_cache
 		flash[:notice] = "Template removed" if @template.destroy
 		
 		respond_with @template, :location => spud_admin_templates_url
@@ -54,4 +56,16 @@ private
 			redirect_to spud_admin_templates_url and return false
 		end
 	end
+
+	def clear_action_cache
+		if(Spud::Cms.enable_full_page_caching == false)
+			return
+		end
+		if !@template.spud_pages.blank?
+			@template.spud_pages.each do |page|
+				expire_action page_path(:id => page.url_name)
+			end
+		end
+	end
+
 end
