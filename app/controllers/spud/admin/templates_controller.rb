@@ -35,12 +35,14 @@ class Spud::Admin::TemplatesController < Spud::Admin::ApplicationController
 	def update
 		add_breadcrumb "Edit #{@template.name}", :edit_spud_admin_template_path
 		flash[:notice] = "Template updated successfully" if @template.update_attributes(params[:spud_template])
+		
 		respond_with @template, :location => spud_admin_templates_url
 	end
 
 
 	def destroy
 		flash[:notice] = "Template removed" if @template.destroy
+		
 		respond_with @template, :location => spud_admin_templates_url
 	end
 

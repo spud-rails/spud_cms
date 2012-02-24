@@ -5,7 +5,7 @@
 	<% spud_page_partials.each_with_index do |spud_page_partial, index| %>
 		<div class="formtab">
 			<input type="hidden" class="tab_name" name="spud_page[spud_page_partials_attributes][<%= index %>][name]" value="<%= spud_page_partial.name %>" />
-			<textarea class="wysiwym" name="spud_page[spud_page_partials_attributes][<%= index %>][content]">
+			<textarea class="wysiwym tinymce" name="spud_page[spud_page_partials_attributes][<%= index %>][content]">
 				<%= spud_page_partial.content %>
 			</textarea>
 		</div>

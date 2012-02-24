@@ -12,7 +12,7 @@
 	<%=f.fields_for :spud_page_partials do |b|%>
 		<div class="formtab">
 			<%=b.hidden_field :name,:class => "tab_name"%>
-			<%=b.text_area :content,:class => "wysiwym"%>
+			<%=b.text_area :content,:class => "wysiwym tinymce"%>
 		</div>
 	<%end%>
 </div>

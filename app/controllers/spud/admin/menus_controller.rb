@@ -30,6 +30,7 @@ class Spud::Admin::MenusController < Spud::Admin::ApplicationController
 
 	def update
 		add_breadcrumb "Edit #{@menu.name}", :edit_spud_admin_menu_path
+		
 		flash[:notice] = "Menu saved successfully" if @menu.update_attributes(params[:spud_menu])
 		respond_with @menu,:location => spud_admin_menu_menu_items_url(:menu_id => @menu.id)
 	end

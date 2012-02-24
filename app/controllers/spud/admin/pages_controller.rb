@@ -72,6 +72,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	end
 
 	def update
+		expire_page page_path(:id => @page.url_name)
 		if @page.update_attributes(params[:spud_page])
 			flash[:notice] = "Page updated successfully!"
 			redirect_to spud_admin_pages_url() and return
@@ -84,6 +85,8 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 
 	def destroy
 		status = 500
+		expire_page page_path(:id => @page.url_name)
+
 		if @page.destroy
 			flash[:notice] = "Page removed successfully!"
 			status = 200

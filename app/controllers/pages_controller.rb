@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+	caches_page :show,:expires_in => Spud::Cms.page_cache_expires_in, :if => Proc.new { |c| Spud::Cms.enable_full_page_caching }
 	def show
 		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
 		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials]).first

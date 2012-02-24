@@ -40,7 +40,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 			end
 		end
 		flash[:notice] = "Menu Created successfully!" if @menu_item.save
-		
+
 		respond_with @menu_item,:location => spud_admin_menu_menu_items_url
 	end
 
@@ -72,6 +72,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 	def destroy
 		
 		flash[:notice] = "Menu Item removed!" if @menu_item.destroy
+
 		respond_with @menu_item,:location => spud_admin_menu_menu_items_url
 	end
 private
