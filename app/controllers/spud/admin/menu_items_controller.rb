@@ -99,15 +99,17 @@ private
 	end
 
 	def clear_action_cache
+
 		if(Spud::Cms.enable_full_page_caching == false)
 			return
 		end
-		@pages = SpudPage.published_pages.all
-		if !@pages.blank?
-			@pages.each do |page|
-				expire_action page_url(:id => page.url_name)
-			end
-		end
+		Rails.cache.clear
+		# @pages = SpudPage.published_pages.all
+		# if !@pages.blank?
+		# 	@pages.each do |page|
+		# 		expire_action page_url(:id => page.url_name)
+		# 	end
+		# end
 	end
 	
 

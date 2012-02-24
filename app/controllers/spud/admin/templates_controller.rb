@@ -61,11 +61,12 @@ private
 		if(Spud::Cms.enable_full_page_caching == false)
 			return
 		end
-		if !@template.spud_pages.blank?
-			@template.spud_pages.each do |page|
-				expire_action page_path(:id => page.url_name)
-			end
-		end
+		Rails.cache.clear
+		# if !@template.spud_pages.blank?
+		# 	@template.spud_pages.each do |page|
+		# 		expire_action page_path(:id => page.url_name)
+		# 	end
+		# end
 	end
 
 end
