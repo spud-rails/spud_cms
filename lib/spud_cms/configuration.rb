@@ -11,7 +11,7 @@ module Spud
     self.default_page_parts = ["Body"]
   	self.yield_body_as_content_block = false    
     self.enable_full_page_caching = false
-    self.page_cache_expires_in = 2.hours
+    self.page_cache_expires_in = 120.minutes
     self.enable_sitemap = true
   end
 end
