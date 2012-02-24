@@ -4,7 +4,7 @@ begin
         gem.name = "spud_cms"
         gem.summary = "Spud CMS Engine"
         gem.files = Dir["{lib}/**/*", "{app}/**/*", "{config}/**/*"]
-        gem.add_dependency 'spud_core','>= 0.6.0'
+        gem.add_dependency 'spud_core','>= 0.6.3'
     	gem.add_dependency 'codemirror-rails'
     	gem.authors = "David Estes"
     	gem.email = "destes@redwindsw.com"
