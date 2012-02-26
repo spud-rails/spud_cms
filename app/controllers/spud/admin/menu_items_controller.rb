@@ -4,7 +4,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 	layout 'spud/admin/cms/detail'
 	before_filter :load_menu
 	before_filter :load_menu_item, :only => [:edit,:update,:show,:destroy]
-
+	cache_sweeper :page_sweeper,:only => [:create,:update,:destroy]
 	def index
 		@page_name = "Menu Items"
 		@menu_items = @menu.spud_menu_items.order(:menu_order).includes(:spud_menu_items).paginate :page => params[:page]
@@ -20,7 +20,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 	end
 
 	def create
-		clear_action_cache
+		
 		add_breadcrumb "New", :new_spud_admin_page_path
 		@page_name = "New Menu Item"
 		@menu_item = SpudMenuItem.new(params[:spud_menu_item])
@@ -57,7 +57,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 	end
 
 	def update
-		clear_action_cache
+		
 		add_breadcrumb "Edit #{@menu_item.name}", :edit_spud_admin_menu_menu_item_path
 		@page_name = "Edit #{@menu_item.name}"
 		if params[:spud_menu_item][:parent_id].blank?
@@ -74,7 +74,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
 	end
 
 	def destroy
-		clear_action_cache
+		
 		flash[:notice] = "Menu Item removed!" if @menu_item.destroy
 
 		respond_with @menu_item,:location => spud_admin_menu_menu_items_url
@@ -98,19 +98,7 @@ private
 		end
 	end
 
-	def clear_action_cache
 
-		if(Spud::Cms.enable_full_page_caching == false)
-			return
-		end
-		Rails.cache.clear
-		# @pages = SpudPage.published_pages.all
-		# if !@pages.blank?
-		# 	@pages.each do |page|
-		# 		expire_action page_url(:id => page.url_name)
-		# 	end
-		# end
-	end
 	
 
 

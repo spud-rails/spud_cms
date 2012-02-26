@@ -3,7 +3,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	add_breadcrumb "Pages", :spud_admin_pages_path
 	belongs_to_spud_app :pages
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
-	
+	cache_sweeper :page_sweeper,:only => [:update,:destroy]
 	def index
 		
 		@pages = SpudPage.where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
@@ -72,7 +72,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 	end
 
 	def update
-		expire_spud_page
+		
 		if @page.update_attributes(params[:spud_page])
 			flash[:notice] = "Page updated successfully!"
 			redirect_to spud_admin_pages_url() and return
@@ -85,7 +85,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 
 	def destroy
 		status = 500
-		expire_spud_page
+		
 		if @page.destroy
 			flash[:notice] = "Page removed successfully!"
 			status = 200
@@ -140,12 +140,6 @@ private
 		return true
 	end
 
-	def expire_spud_page
-		if @page.url_name == Spud::Cms.root_page_name
-        	expire_action root_url
-	    else
-			expire_action page_url(:id => @page.url_name)
-		end
-	end
+	
 
 end

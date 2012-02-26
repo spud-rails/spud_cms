@@ -4,7 +4,9 @@ module Spud
   module Cms
     class Engine < Rails::Engine
      engine_name :spud_cms
+     # config.autoload_paths << File.expand_path("../app/sweepers", __FILE__)
 
+     
      initializer :admin do
       Spud::Core.configure do |config|
           config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0}]
