@@ -44,7 +44,6 @@ class SpudPage < ActiveRecord::Base
 
 
      def generate_url_name
-     	# return false if self.name.blank?
      	return true if self.name.blank?
      	if !self.use_custom_url_name || self.url_name.blank?
      	  

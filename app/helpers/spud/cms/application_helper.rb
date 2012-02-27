@@ -74,13 +74,26 @@ module Spud::Cms::ApplicationHelper
 			end
 			content += "</li>"
 		end
-		# menu.spud_menu_items.order(:menu_order).each do |item|
-		# 	content += "<li><a href='#{item.spud_page_id ? page_path(:id => item.spud_page.url_name) : item.url}'>#{item.name}</a>"
-		# 	content += sp_list_menu_item(item)
-		# 	content += "</li>"
-		# end
+		
 		content += "</ul>"
 		return content.html_safe
+	end
+
+	def sp_menu_with_seperator(options={})
+		seperator = "&nbsp;|&nbsp;".html_safe
+		if(options.has_key?(:seperator))
+			seperator = options[:seperator]
+		end
+
+		menu = SpudMenu.where(:name => options[:name]).first
+		menu_items = menu.spud_menu_items_combined.select("spud_menu_items.id as id,spud_menu_items.url as url,spud_menu_items.classes as classes,spud_menu_items.parent_type as parent_type,spud_menu_items.menu_order as menu_order,spud_menu_items.parent_id as parent_id,spud_menu_items.name as name,spud_pages.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN spud_pages ON (spud_pages.id = spud_menu_items.spud_page_id)").all
+		
+		menu_tags = []		
+		menu_items.sort_by{|p| p.menu_order}.each do |item|
+			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"]
+		end
+
+		return menu_tags.join(seperator).html_safe
 	end
 private
 	def sp_list_menu_item(items,item_id,depth,max_depth)
@@ -115,20 +128,5 @@ private
 		return content.html_safe
 	end
 	
-	def sp_menu_with_seperator(options={})
-		seperator = "&nbsp;|&nbsp;".html_safe
-		if(options.has_key?(:seperator))
-			seperator = options[:seperator]
-		end
-
-		menu = SpudMenu.where(:name => options[:name]).first
-		menu_items = menu.spud_menu_items_combined.select("spud_menu_items.id as id,spud_menu_items.url as url,spud_menu_items.classes as classes,spud_menu_items.parent_type as parent_type,spud_menu_items.menu_order as menu_order,spud_menu_items.parent_id as parent_id,spud_menu_items.name as name,spud_pages.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN spud_pages ON (spud_pages.id = spud_menu_items.spud_page_id)").all
-		
-		menu_tags = []		
-		menu_items.sort_by{|p| p.menu_order}.each do |item|
-			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"]
-		end
-
-		return menu_tags.join(seperator).html_safe
-	end
+	
 end
