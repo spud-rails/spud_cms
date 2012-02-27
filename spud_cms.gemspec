@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "spud_cms"
-  s.version = "0.4.7"
+  s.version = "0.4.8"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["David Estes"]
-  s.date = "2012-02-26"
+  s.date = "2012-02-27"
   s.email = "destes@redwindsw.com"
   s.extra_rdoc_files = [
     "README.markdown"
@@ -17,15 +17,9 @@ Gem::Specification.new do |s|
   s.files = [
     "app/assets/images/spud/admin/menus_thumb.png",
     "app/assets/images/spud/admin/pages_thumb.png",
-    "app/assets/images/spud/admin/posts_thumb.png",
     "app/assets/images/spud/admin/templates_thumb.png",
-    "app/assets/javascripts/pages.js",
     "app/assets/javascripts/spud/admin/cms/application.js",
-    "app/assets/javascripts/spud/admin/templates.js",
-    "app/assets/javascripts/spud/cms/sitemaps.js",
-    "app/assets/stylesheets/pages.css",
     "app/assets/stylesheets/spud/admin/cms/application.css",
-    "app/assets/stylesheets/spud/cms/sitemaps.css",
     "app/controllers/pages_controller.rb",
     "app/controllers/spud/admin/menu_items_controller.rb",
     "app/controllers/spud/admin/menus_controller.rb",
