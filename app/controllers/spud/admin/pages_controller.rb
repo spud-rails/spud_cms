@@ -40,7 +40,7 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		@templates = SpudTemplate.all
 		@page = SpudPage.new
 		Spud::Cms.default_page_parts.each do |part|
-			@page.spud_page_partials.new(:name => part)
+			@page.spud_page_partials.new(:name => part.strip)
 		end
 		respond_with @page		
 	end
@@ -58,14 +58,14 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
 		@templates = SpudTemplate.all
 		if @page.spud_page_partials.blank?
 			Spud::Cms.default_page_parts.each do |part|
-				@page.spud_page_partials.new(:name => part)
+				@page.spud_page_partials.new(:name => part.strip)
 			end
 		end
 		if !@page.spud_template.blank?
 			@page.spud_template.page_parts.split(",").each do |part|
-				partial = @page.spud_page_partials.select{|p| p.name == part}
+				partial = @page.spud_page_partials.select{|p| p.name == part.strip}
 				if partial.blank?
-					@page.spud_page_partials.new(:name => part)
+					@page.spud_page_partials.new(:name => part.strip)
 				end
 			end
 		end
