@@ -16,7 +16,11 @@ Rails.application.routes.draw do
       end
    end
    root :to => 'pages#show'
-   match ":id", :controller => "pages",:action => "show", :as => "page"
+   
+   # This is located in lib/spud_cms/page_route.rb to make sure it is loaded last
+   # match "*id", :controller => "pages",:action => "show", :as => "page"
 
+end
+Spud::Cms::Engine.routes.draw do
 end
 

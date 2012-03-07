@@ -68,7 +68,17 @@ module Spud::Cms::ApplicationHelper
 		
 
 		grouped_items["SpudMenu"].sort_by{|p| p.menu_order}.each do |item|
-			content += "<li><a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"
+			active = false
+			if !item.url_name.blank?
+				if current_page?(page_path(:id => item.url_name))
+					active = true
+				elsif item.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+					active = true
+				end
+			elsif current_page?(item.url)
+				active = true
+			end
+			content += "<li><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url}'>#{item.name}</a>"
 			if max_depth == 0 || max_depth > 1
 				content += sp_list_menu_item(child_items,item.id,2,max_depth)
 			end
@@ -90,7 +100,7 @@ module Spud::Cms::ApplicationHelper
 		
 		menu_tags = []		
 		menu_items.sort_by{|p| p.menu_order}.each do |item|
-			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"]
+			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"]
 		end
 
 		return menu_tags.join(seperator).html_safe
@@ -105,7 +115,17 @@ private
 		content = "<ul>"
 		
 		spud_menu_items.sort_by{|p| p.menu_order}.each do |item|
-			content += "<li><a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? page_path(:id => item.url_name) : item.url}'>#{item.name}</a>"
+			active = false
+			if !item.url_name.blank?
+				if current_page?(page_path(:id => item.url_name))
+					active = true
+				elsif item.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+					active = true
+				end
+			elsif current_page?(item.url)
+				active = true
+			end
+			content += "<li><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"
 			if max_depth == 0 || max_depth > depth
 				content += sp_list_menu_item(items,item.id,depth+1,max_depth)
 			end

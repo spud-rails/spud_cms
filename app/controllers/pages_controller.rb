@@ -11,6 +11,11 @@ class PagesController < ApplicationController
 		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
 		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials]).first
 		if @page.blank?
+			@permalink = SpudPermalink.includes(:attachment).where(:url_name => url_name).first
+			if !@permalink.blank? && @permalink.attachment_type == 'SpudPage'
+				redirect_to @permalink.attachment.url_name == Spud::Cms.root_page_name ? root_url() : page_url(:id => @permalink.attachment.url_name) , :status => :moved_permanently and return
+			end
+
 			flash[:error] = "Page not found"
 			if !params[:id].blank?
 				redirect_to root_url() and return
