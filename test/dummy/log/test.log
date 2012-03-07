@@ -1,0 +1,2280 @@
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.5ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (54.8ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (4.9ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (87.7ms)
+Completed 200 OK in 148ms (Views: 146.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (25.7ms)
+Completed 200 OK in 34ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (5.6ms)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.5ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.4ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (28.4ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.1ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (4.6ms)
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.2ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.3ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (27.9ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.2ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (28.1ms)
+Completed 200 OK in 37ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.6ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.3ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (26.9ms)
+Completed 200 OK in 35ms (Views: 34.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.1ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (29.0ms)
+Completed 200 OK in 37ms (Views: 36.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.1ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (4.6ms)
+Completed 200 OK in 13ms (Views: 12.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.2ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (28.0ms)
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (27.5ms)
+Completed 200 OK in 36ms (Views: 35.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (18.8ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (26.2ms)
+Completed 200 OK in 36ms (Views: 34.8ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (51.0ms)[0m  [1mTRUNCATE TABLE `spud_menu_items`;[0m
+  [1m[35m (20.1ms)[0m  TRUNCATE TABLE `spud_menus`;
+  [1m[36m (2.1ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.4ms)[0m  [1mTRUNCATE TABLE `spud_templates`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (27.4ms)
+Completed 200 OK in 36ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-03-07 00:25:04', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, '2012-03-07 00:25:04', NULL, 'test', 1, 0)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.6ms)[0m  SELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY 'test' LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.5ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` 
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-03-07 00:25:04', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, '2012-03-07 00:25:04', NULL, 'test', 0, 0)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` 
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY 'test-1' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` [0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY 'page3' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-03-07 00:25:04', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, '2012-03-07 00:25:04', NULL, 'page3', 0, 0)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-03-07 00:25:04', NULL, 'Part1', 3, '2012-03-07 00:25:04')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSpudPagePartial Load (0.6ms)[0m  SELECT `spud_page_partials`.* FROM `spud_page_partials` WHERE `spud_page_partials`.`spud_page_id` = 3
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.3ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `updated_at`) VALUES ('application', NULL, '2012-03-07 00:25:05', 'test', 'Body', '2012-03-07 00:25:05')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `updated_at`) VALUES ('application', NULL, '2012-03-07 00:25:05', 'Template3', 'Body', '2012-03-07 00:25:05')
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE (id != 1)
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE `spud_pages`.`url_name` = BINARY 'page4' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-03-07 00:25:05', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, 2, '2012-03-07 00:25:05', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (7.5ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (2.2ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (28.1ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.8ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (26.4ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (4.7ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.3ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (18.5ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.3ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (4.7ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.7ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.0ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (4.9ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Mysql2::Error: Table 'spud_cms_test.spud_users' doesn't exist: SHOW FULL FIELDS FROM `spud_users`
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (20.4ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.4ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  Rendered /Users/davydotcom/projects/ruby/engines/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (4.8ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+Completed 406 Not Acceptable in 0ms (ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_pages' doesn't exist: SHOW FULL FIELDS FROM `spud_pages`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Mysql2::Error: Table 'spud_cms_test.spud_templates' doesn't exist: SHOW FULL FIELDS FROM `spud_templates`
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
