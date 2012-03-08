@@ -12,7 +12,7 @@ PATH
     spud_cms (0.7.0)
       codemirror-rails
       rails (~> 3.2.1)
-      spud_core (~> 0.7.0)
+      spud_core (~> 0.7.2)
       spud_permalinks (~> 0.0.1)
 
 GEM
@@ -120,7 +120,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    spud_core (0.7.1)
+    spud_core (0.7.2)
       authlogic
       breadcrumbs_on_rails
       jquery-rails
