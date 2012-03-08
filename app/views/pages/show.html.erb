@@ -1,4 +1,6 @@
-
+<%=content_for :title do%>
+	<%= @page.name %> | <%=Spud::Core.site_name%>
+<% end %>
 <%=content_for :head do%>
 	<%if !@page.meta_description.blank?%>
 		<meta name="description" content="<%=@page.meta_description%>" />
