@@ -6,6 +6,3 @@ module Spud
     end
 end
 
-# if defined?(Rails)
-# 	Rails.application.config.railties_order = [:main_app, :all,Spud::Cms::Engine]
-# end
