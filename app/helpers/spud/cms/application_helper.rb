@@ -37,6 +37,7 @@ module Spud::Cms::ApplicationHelper
 		max_depth = 0
 		menu = SpudMenu
 		if !options.blank?
+
 			if options.has_key?(:menu_id)
 				menu = menu.where(:id => options[:menu_id])
 			end
@@ -44,10 +45,12 @@ module Spud::Cms::ApplicationHelper
 				menu = menu.where(:name => options[:name])
 			end
 			if options.has_key?(:id)
-				content = "<ul id='#{options[:id]}'>"
+				content = "<ul id='#{options[:id]}' #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			else
-				content = "<ul>"
+				content = "<ul #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			end
+			
+
 			if options.has_key?(:max_depth)
 				max_depth = options[:max_depth]
 			end
@@ -78,7 +81,7 @@ module Spud::Cms::ApplicationHelper
 			elsif current_page?(item.url)
 				active = true
 			end
-			content += "<li><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url}'>#{item.name}</a>"
+			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url}'>#{item.name}</a>"
 			if max_depth == 0 || max_depth > 1
 				content += sp_list_menu_item(child_items,item.id,2,max_depth)
 			end
@@ -125,7 +128,7 @@ private
 			elsif current_page?(item.url)
 				active = true
 			end
-			content += "<li><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"
+			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"
 			if max_depth == 0 || max_depth > depth
 				content += sp_list_menu_item(items,item.id,depth+1,max_depth)
 			end
