@@ -9,7 +9,7 @@ GIT
 PATH
   remote: .
   specs:
-    spud_cms (0.7.0)
+    spud_cms (0.7.1)
       codemirror-rails
       rails (~> 3.2.1)
       spud_core (~> 0.7.2)
