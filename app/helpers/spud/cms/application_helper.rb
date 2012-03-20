@@ -2,6 +2,8 @@ module Spud::Cms::ApplicationHelper
 	def sp_list_pages(options = {})
 		pages = SpudPage.public.published_pages
 		start_page = nil
+		max_depth = 0
+		active_class = "menu-active"
 		if !options.blank?
 			if options.has_key?(:exclude)
 				
@@ -11,10 +13,17 @@ module Spud::Cms::ApplicationHelper
 				start_page = options[:start_page_id]
 			end
 			if options.has_key?(:id)
-				content = "<ul id='#{options[:id]}'>"
+				content = "<ul id='#{options[:id]}' #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			else
-				content = "<ul>"
+				content = "<ul #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			end
+			if option.has_key?(:active_class)
+				active_class = option[:acive_class]
+			end
+			if options.has_key?(:max_depth)
+				max_depth = options[:max_depth]
+			end
+			
 		else
 			content = "<ul>"
 		end
@@ -24,8 +33,19 @@ module Spud::Cms::ApplicationHelper
 			return ""
 		end
 		pages[start_page].sort_by{|p| p.page_order}.each do |page|
-			content += "<li><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
-			content += sp_list_page(page,pages)
+			active = false
+			if !page.url_name.blank?
+				if current_page?(page_path(:id => page.url_name))
+					active = true
+				elsif page.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+					active = true
+				end
+				active = true
+			end
+			content += "<li class='#{active_class if active}'><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
+			if max_depth == 0 || max_depth > 1
+				content += sp_list_page(page,pages,2,max_depth,options)
+			end
 			content += "</li>"
 		end
 		content += "</ul>"
@@ -137,14 +157,30 @@ private
 		content += "</ul>"
 		return content.html_safe
 	end
-	def sp_list_page(page,collection)
+	def sp_list_page(page,collection,depth,max_depth,options = {})
+		active_class = 'menu-active'
+		if options.has_key?(:active_class)
+			active_class = options[:active_class]
+		end
 		if collection[page.id].blank?
 			return ""
 		end
 		content = "<ul>"
 		collection[page.id].sort_by{|p| p.page_order}.each do |page|
-			content += "<li><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
-			content += sp_list_page(page,collection)
+			active = false
+			if !page.url_name.blank?
+				if current_page?(page_path(:id => page.url_name))
+					active = true
+				elsif page.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+					active = true
+				end
+				active = true
+			end
+
+			content += "<li class='#{active_class if active}'><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
+			if max_depth == 0 || max_depth > depth
+				content += sp_list_page(page,collection,depth+1,max_depth,options)
+			end
 			content += "</li>"
 		end
 		content += "</ul>"
