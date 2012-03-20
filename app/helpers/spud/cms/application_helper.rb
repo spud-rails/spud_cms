@@ -17,8 +17,8 @@ module Spud::Cms::ApplicationHelper
 			else
 				content = "<ul #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			end
-			if option.has_key?(:active_class)
-				active_class = option[:acive_class]
+			if options.has_key?(:active_class)
+				active_class = options[:acive_class]
 			end
 			if options.has_key?(:max_depth)
 				max_depth = options[:max_depth]
