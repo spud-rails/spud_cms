@@ -40,7 +40,6 @@ module Spud::Cms::ApplicationHelper
 				elsif page.url_name == Spud::Cms.root_page_name && current_page?(root_path)
 					active = true
 				end
-				active = true
 			end
 			content += "<li class='#{active_class if active}'><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
 			if max_depth == 0 || max_depth > 1
@@ -174,7 +173,6 @@ private
 				elsif page.url_name == Spud::Cms.root_page_name && current_page?(root_path)
 					active = true
 				end
-				active = true
 			end
 
 			content += "<li class='#{active_class if active}'><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
