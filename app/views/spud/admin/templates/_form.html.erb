@@ -1,23 +1,35 @@
 <%=error_messages_for(f.object)%>
 <fieldset>
-<ol>
-<li><%=f.label :name, :required=>true%>
-  <%=f.text_field :name,:title => "",:size=>40%>
-</li>
+
+<div class="control-group">
+  <%=f.label :name, :required=>true,:class=>"control-label"%>
+  <div class="controls">
+    <%=f.text_field :name,:title => "",:size=>40%>
+  </div>
+</div>
 
 
-<li><%=f.label :base_layout, "Base Layout"%>
-  <%=f.text_field :base_layout%>
-</li>
-<li><%=f.label :content, "Content"%>
-  <%=f.text_area :content, :rows => 20,:cols => 110%>
-</li>
-<li><%=f.label :page_parts, "Page Parts"%>
-  <%=f.text_field :page_parts%>
-</li>
+<div class="control-group">
+  <%=f.label :base_layout, "Base Layout",:class=>"control-label"%>
+  <div class="controls">
+    <%=f.text_field :base_layout%>
+  </div>
+</div>
+<div class="control-group">
+  <%=f.label :content, "Content",:class=>"control-label"%>
+  <div class="controls">
+    <%=f.text_area :content, :rows => 20,:cols => 110%>
+  </div>
+</div>
+<div class="control-group">
+  <%=f.label :page_parts, "Page Parts",:class=>"control-label"%>
+  <div class="controls">
+    <%=f.text_field :page_parts%>
+  </div>
+</div>
 
 
-</ol>
+
 </fieldset>
 
 

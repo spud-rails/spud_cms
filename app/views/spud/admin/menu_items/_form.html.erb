@@ -1,33 +1,50 @@
 <%=error_messages_for(f.object)%>
 <fieldset>
-<ol>
-<li><%=f.label :name, :required=>true%>
-  <%=f.text_field :name,:title => "",:size=>40%>
+<div class="control-group">
+	<%=f.label :name, :required=>true,:class => "control-label"%>
+	<div class="controls">
+		<%=f.text_field :name,:title => "",:size=>40%>
+	</div>
   
-</li>
-<li><%=f.label :menu_order, :required=>true%>
-  <%=f.text_field :menu_order,:title => "",:size=>5%>
+</div>
+<div class="control-group">
+
+	<%=f.label :menu_order, :required=>true,:class => "control-label"%>
+	<div class="controls">
+	  <%=f.text_field :menu_order,:title => "",:size=>5%>
+	</div>
   
-</li>
-<li><%=f.label :spud_page_id, "Page"%>
-    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
+</div>
+<div class="control-group">
+	<%=f.label :spud_page_id, "Page",:class => "control-label"%>
+	<div class="controls">
+	    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
+	</div>
   
-</li>
+</div>
 
 
 
-<li><%=f.label :url%>
-  <%=f.text_field :url,:title => "",:size=>40%>
-</li>
-<li><%=f.label :classes%>
-  <%=f.text_field :classes,:title => "",:size=>40%>
+<div class="control-group">
+	<%=f.label :url,:class => "control-label"%>
+	<div class="controls">
+		<%=f.text_field :url,:title => "",:size=>40%>
+	</div>
+</div>
+<div class="control-group">
+	<%=f.label :classes,:class => "control-label"%>
+	<div class="controls">
+		<%=f.text_field :classes,:title => "",:size=>40%>
+	</div>
+</div>
+<div class="control-group">
+	<%=f.label :parent, "Parent Menu",:class => "control-label"%>
+	<div class="controls">
+		<%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu,:filter => @menu_item),@menu_item.parent_type == 'SpudMenuItem' ? @menu_item.parent_id : nil),{:include_blank => "#{@menu.name}"},{:title => ""}%>
+	</div>
   
-</li>
-<li><%=f.label :parent, "Parent Menu"%>
-  <%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu,:filter => @menu_item),@menu_item.parent_type == 'SpudMenuItem' ? @menu_item.parent_id : nil),{:include_blank => "#{@menu.name}"},{:title => ""}%>
-  
-</li>
-</ol>
+</div>
+
 </fieldset>
 
 

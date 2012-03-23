@@ -1,10 +1,12 @@
 <%=error_messages_for(f.object)%>
 <fieldset>
+  <div class="control-group">
   <legend>Page Title</legend>
-  <p>
-    	<%=f.label :name, :required=>true, :style => "display:none;" %>
-      <%=f.text_field :name, :class => "full-width" %>
-  </p>
+    	<%=f.label :name, :required=>true,:style =>"display:none;", :class=>"control-label"%>
+      
+        <%=f.text_field :name, :class => "full-width"%>
+      
+  </div>
 </fieldset>
 <div id="page_partials_form" class="formtabs">
 	<ul class="formtab_buttons">
@@ -12,59 +14,83 @@
 	<%=f.fields_for :spud_page_partials do |b|%>
 		<div class="formtab">
 			<%=b.hidden_field :name,:class => "tab_name"%>
-			<%=b.text_area :content,:class => "wysiwym tinymce"%>
+			<%=b.text_area :content,:class => "tinymce"%>
 		</div>
 	<%end%>
 </div>
 <br />
 <fieldset>
   <legend>Advanced Settings (optional)</legend>
-  <ol>
+  
      <%if Spud::Cms.templates_enabled%>
-    	<li>
+    	<div class="control-group">
       	
-      	<%=f.label :template_id, "Template"%>
-      	<%=f.select :template_id, options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
-  	  </li>
+      	<%=f.label :template_id, "Template", :class=>"control-label"%>
+        <div class="controls">
+        	<%=f.select :template_id, options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
+          <span class="help-inline">Use this to control the layout template to be used for this page if they are available.</span>
+        </div>
+  	  </div>
       <%end%>
-    <li>
+    <div class="control-group">
       
-      <%=f.label :spud_page_id, "Parent Page"%>
-      <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
-    </li>
-    <li>
+      <%=f.label :spud_page_id, "Parent Page", :class=>"control-label"%>
+      <div class="controls">
+        <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
+
+      </div>
+    </div>
+    <div class="control-group">
       
-      <%=f.label :url_name, "Perma Link",:disabled => true%>
-      <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%><%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
-    </li>
-  </ol>
+      <%=f.label :url_name, "Perma Link",:disabled => true, :class=>"control-label"%>
+      <div class="controls">
+        <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
+        <label class="checkbox inline">
+        <%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
+        Customize this pages url
+        </label>
+      </div>
+    </div>
+  
 </fieldset>
 <fieldset>
   <legend>Meta Information (optional)</legend>
   <p>These fields are used to notify search engines about important keywords and the appropriate description to display in a search result.</p>
-  <ol>
-    <li>
-      <%=f.label :meta_keywords,"Keywords"%>
-      <%=f.text_field :meta_keywords,:title => "" %>
+  
+    <div class="control-group">
+      <%=f.label :meta_keywords,"Keywords", :class=>"control-label"%>
+      <div class="controls">
+        <%=f.text_field :meta_keywords,:title => "",:style=>"width:600px;" %>
+        <span class="help-inline">A Comma seperated list of keywords for search engines. Keep it short (no more than 10 keywords)</span>
+      </div>
       
-    </li>
-    <li>
-      <%=f.label :meta_description,"Description"%>
-      <%=f.text_area :meta_description,:rows => 4,:cols=>75%>
-      
-    </li>
-    <li>
-      <%=f.label :visibility%>
-  		<%=f.select :visibility, [["Public",0],["Private",1]]%>
-  	</li>
-  	<li>
-      <%=f.label :published%>
-  		<%=f.check_box :published%>
-  	</li>
-    <li>
-      <%=f.label :notes,"Notes"%>
-      <%=f.text_area :notes,:rows => 4,:cols=>75 %>
-    </li>
-  </ol>
+    </div>
+    <div class="control-group">
+      <%=f.label :meta_description,"Description", :class=>"control-label"%>
+      <div class="controls">
+        <%=f.text_area :meta_description,:style =>"width:600px;height:40px;"%>
+        <span class="help-inline">A short description of the page. This is what appears on a search engines search result page.</span>
+      </div>
+    </div>
+    <div class="control-group">
+      <%=f.label :visibility, :class=>"control-label"%>
+      <div class="controls">
+    		<%=f.select :visibility, [["Public",0],["Private",1]]%>
+      </div>
+  	</div>
+  	<div class="control-group">
+      <%=f.label :published, :class=>"control-label"%>
+      <div class="controls">
+    		<%=f.check_box :published%>
+      </div>
+  	</div>
+    <div class="control-group">
+      <%=f.label :notes,"Notes", :class=>"control-label"%>
+      <div class="controls">
+        <%=f.text_area :notes,:style =>"width:400px;height:40px;"%>
+        <span class="help-inline">Have a note to make about this page while you work? Place it here for later.</span>
+      </div>
+    </div>
+  
 </fieldset>
 

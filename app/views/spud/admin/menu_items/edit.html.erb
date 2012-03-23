@@ -1,13 +1,10 @@
 
   
 
-  <%=form_for @menu_item,:url => spud_admin_menu_menu_item_path(:id => @menu_item.id),:html=>{:class=>"right_aligned_form"} do |f|%>
+  <%=form_for @menu_item,:url => spud_admin_menu_menu_item_path(:id => @menu_item.id),:html=>{:class=>"form-horizontal"} do |f|%>
     <%=render :partial => "form",:locals => {:f => f}%>
-    <fieldset class="submit"><%=f.submit%> or <%=link_to "cancel",request.referer%></fieldset>
+    <div class="form-actions">
+    	<%=f.submit "Save Menu Item", :class=>"btn btn-primary"%> or <%=link_to "cancel",spud_admin_menu_menu_items_path,:class => "btn"%>
+    </div>
   <%end%>
-
-  <script type="text/javascript">
-  	$('input[type=submit],.close_dialog').button();
-  	
-  </script>
 

@@ -1,13 +1,11 @@
 
   
 
-  <%=form_for @template,:url => spud_admin_templates_path(),:html=>{:class=>"right_aligned_form"} do |f|%>
+  <%=form_for @template,:url => spud_admin_templates_path(),:html=>{:class=>"form-horizontal"} do |f|%>
     <%=render :partial => "form",:locals => {:f => f}%>
-    <fieldset class="submit"><%=f.submit%> or <%=link_to "cancel",request.referer%></fieldset>
+     <div class="form-actions">
+    	<%=f.submit "Create Template", :class=>"btn btn-primary"%> or <%=link_to "cancel",spud_admin_templates_path,:class => "btn"%>
+    </div>
   <%end%>
 
-  <script type="text/javascript">
-  	$('input[type=submit],.close_dialog').button();
-  	
-  </script>
 
