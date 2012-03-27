@@ -3,6 +3,7 @@ Rails.application.routes.draw do
    	namespace :admin do
          resources :pages do
            get :page_parts, :on => :collection
+           get :clear, :on => :collection
          end
          resources :templates 
    		

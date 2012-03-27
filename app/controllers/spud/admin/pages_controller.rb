@@ -130,6 +130,25 @@ class Spud::Admin::PagesController < Spud::Admin::ApplicationController
     end
   end
 
+  def clear
+  	Rails.cache.clear
+	SpudPage.published_pages.all.each do |record|
+		if Spud::Cms.enable_full_page_caching
+    		if record.url_name == Spud::Cms.root_page_name
+	        	expire_page root_path
+		    else
+  				expire_page page_path(:id => record.url_name)
+  			end
+    	elsif Spud::Cms.enable_action_caching
+    		if record.url_name == Spud::Cms.root_page_name
+	        	expire_action root_path
+		    else
+				expire_action page_path(:id => record.url_name)
+			end 
+		end
+	end
+  end
+
 private
 	def load_page
 		@page = SpudPage.where(:id => params[:id]).includes(:spud_page_partials).first
