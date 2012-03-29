@@ -36,7 +36,7 @@
       
       <%=f.label :spud_page_id, "Parent Page", :class=>"control-label"%>
       <div class="controls">
-        <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
+        <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page,:site_id => session[:admin_site]),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
 
       </div>
     </div>

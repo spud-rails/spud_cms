@@ -24,15 +24,15 @@ class SpudPage < ActiveRecord::Base
 	scope :public, where(:visibility => 0)
 
 
-	def self.grouped
-		return all.site(session[:admin_site]).group_by(&:spud_page_id)
+	def self.grouped(site_id=nil)
+		return site(site_id).all.group_by(&:spud_page_id)
 	end
 
 	# Returns an array of pages in order of heirarchy
 	# 	:fitler Filters out a page by ID, and all of its children
 	#   :value Pick an attribute to be used in the value field, defaults to ID
 	def self.options_tree_for_page(config={})
-		collection = config[:collection] || self.grouped
+		collection = config[:collection] || self.grouped(config[:site_id])
 		level 		 = config[:level] 		 || 0
 		parent_id  = config[:parent_id]  || nil
 		filter 		 = config[:filter] 		 || nil
@@ -64,7 +64,7 @@ class SpudPage < ActiveRecord::Base
 				if !self.id.blank?
 					pages = pages.where("id != #{self.id}")
 				end
-				url_names = pages.all.collect{|p| p.url_name}
+				url_names = pages.site(self.site_id).all.collect{|p| p.url_name}
 
 				counter = 1
 				url_name_new = url_name

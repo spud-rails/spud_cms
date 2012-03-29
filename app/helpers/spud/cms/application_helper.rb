@@ -2,6 +2,11 @@ module Spud::Cms::ApplicationHelper
 	def sp_list_pages(options = {})
 		
 		pages = SpudPage.public.published_pages
+		
+		if Spud::Core.multisite_mode_enabled
+			site_config = Spud::Core.site_config_for_host(request.host_with_port)
+			pages = pages.site(site_config[:site_id]) if !site_config.blank?
+		end
 		start_page = nil
 		max_depth = 0
 		active_class = "menu-active"
@@ -59,6 +64,10 @@ module Spud::Cms::ApplicationHelper
 
 		max_depth = 0
 		menu = SpudMenu
+		if Spud::Core.multisite_mode_enabled
+			site_config = Spud::Core.site_config_for_host(request.host_with_port)
+			menu = menu.site(site_config[:site_id]) if !site_config.blank?
+		end
 		if !options.blank?
 
 			if options.has_key?(:menu_id)
@@ -133,7 +142,12 @@ module Spud::Cms::ApplicationHelper
 			seperator = options[:seperator]
 		end
 
-		menu = SpudMenu.where(:name => options[:name]).first
+		menu = SpudMenu.where(:name => options[:name])
+		if Spud::Core.multisite_mode_enabled
+			site_config = Spud::Core.site_config_for_host(request.host_with_port)
+			menu = menu.site(site_config[:site_id]) if !site_config.blank?
+		end
+		menu = menu.first
 		menu_items = menu.spud_menu_items_combined.select("
 			#{SpudMenuItem.table_name}.id as id,
 			#{SpudMenuItem.table_name}.url as url,
