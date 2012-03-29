@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
 	caches_action :show, :if => Proc.new { |c| Spud::Cms.enable_action_caching }
+	around_filter :scope_multisite
 	# caches_page :show, :if => Proc.new { |c| Spud::Cms.enable_full_page_caching }
 	after_filter({:only => [:show]}) do |c|
 		return if !Spud::Cms.enable_full_page_caching
@@ -40,5 +41,28 @@ class PagesController < ApplicationController
 		end
 		render :layout => layout
 		
+	end
+
+private
+	def scope_multisite
+		if !Spud::Core.multisite_mode_enabled
+			yield and return
+		end
+		site_config = Spud::Core.multisite_config.select{|p| p[:hosts].include?(request.host_with_port)}
+		if !site_config.blank?
+			site_config = site_config[0]
+			SpudPage.set_table_name "#{site_config[:short_name]}_#{SpudPage.table_name}"
+			SpudPagePartial.set_table_name "#{site_config[:short_name]}_#{SpudPagePartial.table_name}"
+			SpudMenu.set_table_name "#{site_config[:short_name]}_#{SpudMenu.table_name}"
+			SpudMenuItem.set_table_name "#{site_config[:short_name]}_#{SpudMenuItem.table_name}"
+			SpudTemplate.set_table_name "#{site_config[:short_name]}_#{SpudTemplate.table_name}"
+		end
+		yield
+	ensure
+		SpudPage.set_table_name "spud_pages"
+		SpudPagePartial.set_table_name "spud_page_partials"
+		SpudMenu.set_table_name "spud_menus"
+		SpudMenuItem.set_table_name "spud_menu_items"
+		SpudTemplate.set_table_name "spud_templates"
 	end
 end

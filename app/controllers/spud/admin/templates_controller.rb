@@ -1,4 +1,4 @@
-class Spud::Admin::TemplatesController < Spud::Admin::ApplicationController
+class Spud::Admin::TemplatesController < Spud::Admin::CmsController
 	layout 'spud/admin/cms/detail'
 	add_breadcrumb "Templates", :spud_admin_templates_path
 	belongs_to_spud_app :templates

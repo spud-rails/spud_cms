@@ -1,4 +1,4 @@
-class Spud::Admin::PagesController < Spud::Admin::ApplicationController
+class Spud::Admin::PagesController < Spud::Admin::CmsController
 	layout 'spud/admin/cms/detail'
 	add_breadcrumb "Pages", :spud_admin_pages_path
 	belongs_to_spud_app :pages

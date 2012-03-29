@@ -1,5 +1,6 @@
 module Spud::Cms::ApplicationHelper
 	def sp_list_pages(options = {})
+		scope_cms_multisite
 		pages = SpudPage.public.published_pages
 		start_page = nil
 		max_depth = 0
@@ -30,6 +31,7 @@ module Spud::Cms::ApplicationHelper
 
 		pages = pages.all.group_by(&:spud_page_id)
 		if pages[start_page].blank?
+			unscope_cms_multisite
 			return ""
 		end
 		pages[start_page].sort_by{|p| p.page_order}.each do |page|
@@ -48,11 +50,13 @@ module Spud::Cms::ApplicationHelper
 			content += "</li>"
 		end
 		content += "</ul>"
+		unscope_cms_multisite
 		return content.html_safe
 	end
 
 
 	def sp_list_menu(options = {})
+		scope_cms_multisite
 		max_depth = 0
 		menu = SpudMenu
 		if !options.blank?
@@ -78,12 +82,14 @@ module Spud::Cms::ApplicationHelper
 		end
 		menu = menu.first
 		if menu.blank?
+			unscope_cms_multisite
 			return ""
 		end
 		menu_items = menu.spud_menu_items_combined.select("spud_menu_items.id as id,spud_menu_items.url as url,spud_menu_items.classes as classes,spud_menu_items.parent_type as parent_type,spud_menu_items.menu_order as menu_order,spud_menu_items.parent_id as parent_id,spud_menu_items.name as name,spud_pages.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN spud_pages ON (spud_pages.id = spud_menu_items.spud_page_id)").all
 
 		grouped_items = menu_items.group_by(&:parent_type)
 		if grouped_items["SpudMenu"].blank?
+			unscope_cms_multisite
 			return ""
 		end
 		child_items = grouped_items["SpudMenuItem"].blank? ? [] : grouped_items["SpudMenuItem"].group_by(&:parent_id)
@@ -108,10 +114,12 @@ module Spud::Cms::ApplicationHelper
 		end
 		
 		content += "</ul>"
+		unscope_cms_multisite
 		return content.html_safe
 	end
 
 	def sp_menu_with_seperator(options={})
+		scope_cms_multisite
 		seperator = "&nbsp;|&nbsp;".html_safe
 		if(options.has_key?(:seperator))
 			seperator = options[:seperator]
@@ -124,7 +132,7 @@ module Spud::Cms::ApplicationHelper
 		menu_items.sort_by{|p| p.menu_order}.each do |item|
 			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"]
 		end
-
+		unscope_cms_multisite
 		return menu_tags.join(seperator).html_safe
 	end
 private
@@ -185,5 +193,27 @@ private
 		return content.html_safe
 	end
 	
+
+	def scope_cms_multisite
+		if !Spud::Core.multisite_mode_enabled
+			return
+		end
+		site_config = Spud::Core.multisite_config.select{|p| p[:hosts].include?(request.host_with_port)}
+		if !site_config.blank?
+			site_config = site_config[0]
+			SpudPage.set_table_name "#{site_config[:short_name]}_spud_pages"
+			SpudPagePartial.set_table_name "#{site_config[:short_name]}_spud_page_partials"
+			SpudMenu.set_table_name "#{site_config[:short_name]}_spud_menus"
+			SpudMenuItem.set_table_name "#{site_config[:short_name]}_spud_menu_items"
+			SpudTemplate.set_table_name "#{site_config[:short_name]}_spud_templates"
+		end
+	end
+	def unscope_cms_multisite
+		SpudPage.set_table_name "spud_pages"
+		SpudPagePartial.set_table_name "spud_page_partials"
+		SpudMenu.set_table_name "spud_menus"
+		SpudMenuItem.set_table_name "spud_menu_items"
+		SpudTemplate.set_table_name "spud_templates"
+	end
 	
 end

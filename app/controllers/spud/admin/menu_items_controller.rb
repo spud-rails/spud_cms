@@ -1,4 +1,4 @@
-class Spud::Admin::MenuItemsController < Spud::Admin::ApplicationController
+class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 	add_breadcrumb "Menus", :spud_admin_menus_path
 	belongs_to_spud_app :menus
 	layout 'spud/admin/cms/detail'
