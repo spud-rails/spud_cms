@@ -17,7 +17,7 @@ class Spud::Admin::TemplatesController < Spud::Admin::CmsController
 		if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
 			site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
 			if !site_config.blank?
-				cms_config = Spud::Cms.site_config_for_short_name(site_config[:short_name])
+				cms_config = Spud::Cms.site_config_for_short_name(site_config[0][:short_name])
 				parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
 			end
 		end

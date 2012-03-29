@@ -15,7 +15,7 @@ module Spud
     self.enable_sitemap = true
     self.multisite_config = []
     def self.site_config_for_short_name(short_name)
-        configs = Spud::Cms.multisite_config.select{|p| p[:short_name] == short_name}
+        configs = Spud::Cms.multisite_config.select{|p| p[:short_name].to_s == short_name.to_s}
         if configs.blank?
           return nil
         else
