@@ -19,8 +19,13 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 	def create
 		add_breadcrumb "New", :new_spud_admin_menu_path
 		@menu = SpudMenu.new(params[:spud_menu])
-		flash[:notice] = "New menu created" if @menu.save
-		respond_with @menu,:location => spud_admin_menu_menu_items_url(:menu_id => @menu.id)
+		@menu.site_id = session[:admin_site]
+		if @menu.save
+			flash[:notice] = "New menu created" 
+			respond_with @menu,:location => spud_admin_menu_menu_items_url(:menu_id => @menu.id)
+		else
+			respond_with @menu
+		end
 	end
 
 	def edit
