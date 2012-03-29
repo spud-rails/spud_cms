@@ -85,7 +85,15 @@ module Spud::Cms::ApplicationHelper
 			unscope_cms_multisite
 			return ""
 		end
-		menu_items = menu.spud_menu_items_combined.select("spud_menu_items.id as id,spud_menu_items.url as url,spud_menu_items.classes as classes,spud_menu_items.parent_type as parent_type,spud_menu_items.menu_order as menu_order,spud_menu_items.parent_id as parent_id,spud_menu_items.name as name,spud_pages.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN spud_pages ON (spud_pages.id = spud_menu_items.spud_page_id)").all
+		menu_items = menu.spud_menu_items_combined.select("
+			#{SpudMenuItem.table_name}.id as id,
+			#{SpudMenuItem.table_name}.url as url,
+			#{SpudMenuItem.table_name}.classes as classes,
+			#{SpudMenuItem.table_name}.parent_type as parent_type,
+			#{SpudMenuItem.table_name}.menu_order as menu_order,
+			#{SpudMenuItem.table_name}.parent_id as parent_id,
+			#{SpudMenuItem.table_name}.name as name,
+			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
 
 		grouped_items = menu_items.group_by(&:parent_type)
 		if grouped_items["SpudMenu"].blank?
@@ -126,7 +134,15 @@ module Spud::Cms::ApplicationHelper
 		end
 
 		menu = SpudMenu.where(:name => options[:name]).first
-		menu_items = menu.spud_menu_items_combined.select("spud_menu_items.id as id,spud_menu_items.url as url,spud_menu_items.classes as classes,spud_menu_items.parent_type as parent_type,spud_menu_items.menu_order as menu_order,spud_menu_items.parent_id as parent_id,spud_menu_items.name as name,spud_pages.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN spud_pages ON (spud_pages.id = spud_menu_items.spud_page_id)").all
+		menu_items = menu.spud_menu_items_combined.select("
+			#{SpudMenuItem.table_name}.id as id,
+			#{SpudMenuItem.table_name}.url as url,
+			#{SpudMenuItem.table_name}.classes as classes,
+			#{SpudMenuItem.table_name}.parent_type as parent_type,
+			#{SpudMenuItem.table_name}.menu_order as menu_order,
+			#{SpudMenuItem.table_name}.parent_id as parent_id,
+			#{SpudMenuItem.table_name}.name as name,
+			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
 		
 		menu_tags = []		
 		menu_items.sort_by{|p| p.menu_order}.each do |item|
