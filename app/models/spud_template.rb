@@ -4,4 +4,7 @@ class SpudTemplate < ActiveRecord::Base
 	validates :base_layout, :presence => true
 	validates :page_parts, :presence => true
 	validates :name, :presence => true,:uniqueness => true
+
+	attr_protected :site_id
+	scope :site, lambda {|sid| where(:site_id => sid)}
 end

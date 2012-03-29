@@ -27,7 +27,7 @@
       	
       	<%=f.label :template_id, "Template", :class=>"control-label"%>
         <div class="controls">
-        	<%=f.select :template_id, options_for_select(SpudTemplate.all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
+        	<%=f.select :template_id, options_for_select(SpudTemplate.site(session[:admin_site]).all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
           <span class="help-inline">Use this to control the layout template to be used for this page if they are available.</span>
         </div>
   	  </div>

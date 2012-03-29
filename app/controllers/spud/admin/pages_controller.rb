@@ -6,7 +6,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	cache_sweeper :page_sweeper,:only => [:update,:destroy]
 	def index
 		
-		@pages = SpudPage.where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
+		@pages = SpudPage.site(session[:admin_site]).where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
 		respond_with @pages
 	end
 
@@ -39,7 +39,15 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 		
 		@templates = SpudTemplate.all
 		@page = SpudPage.new
-		Spud::Cms.default_page_parts.each do |part|
+		parts = Spud::Cms.default_page_parts
+		if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
+			site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
+			if !site_config.blank?
+				cms_config = Spud::Cms.site_config_for_short_name(site_config[:short_name])
+				parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
+			end
+		end
+		parts.each do |part|
 			@page.spud_page_partials.new(:name => part.strip)
 		end
 		respond_with @page		
@@ -47,6 +55,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 	def create
 		@page = SpudPage.new(params[:spud_page])
+		@page.site_id = session[:admin_site]
 		flash[:notice] = "Page Saved successfully" if @page.save
 		respond_with @page,:location => spud_admin_pages_url
 	end
@@ -57,7 +66,15 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 		
 		@templates = SpudTemplate.all
 		if @page.spud_page_partials.blank?
-			Spud::Cms.default_page_parts.each do |part|
+			parts = Spud::Cms.default_page_parts
+			if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
+				site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
+				if !site_config.blank?
+					cms_config = Spud::Cms.site_config_for_short_name(site_config[:short_name])
+					parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
+				end
+			end
+			parts.each do |part|
 				@page.spud_page_partials.new(:name => part.strip)
 			end
 		end
@@ -109,7 +126,15 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
         new_page_partials << page.spud_page_partials.build(:name => page_part.strip)
       end
     else
-    	Spud::Cms.default_page_parts.each do |part|
+    	parts = Spud::Cms.default_page_parts
+			if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
+				site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
+				if !site_config.blank?
+					cms_config = Spud::Cms.site_config_for_short_name(site_config[:short_name])
+					parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
+				end
+			end
+    	parts.each do |part|
 			new_page_partials << page.spud_page_partials.build(:name => part)
 		end
       
@@ -132,7 +157,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
   def clear
   	Rails.cache.clear
-	SpudPage.published_pages.all.each do |record|
+	SpudPage.site(session[:admin_site]).published_pages.all.each do |record|
 		if Spud::Cms.enable_full_page_caching
     		if record.url_name == Spud::Cms.root_page_name
 	        	expire_page root_path
@@ -151,7 +176,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 private
 	def load_page
-		@page = SpudPage.where(:id => params[:id]).includes(:spud_page_partials).first
+		@page = SpudPage.site(session[:admin_site]).where(:id => params[:id]).includes(:spud_page_partials).first
 		if @page.blank?
 			flash[:error] = "Page not found!"
 			redirect_to spud_admin_pages_url() and return false

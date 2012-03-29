@@ -5,7 +5,7 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 	before_filter :load_menu,:only => [:edit,:update,:show,:destroy]
 	
 	def index
-		@menus = SpudMenu.order(:name).paginate :page => params[:page]
+		@menus = SpudMenu.site(session[:admin_site]).order(:name).paginate :page => params[:page]
 		respond_with @menus
 	end
 	
@@ -42,7 +42,7 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 
 private
 	def load_menu
-		@menu = SpudMenu.find(params[:id])
+		@menu = SpudMenu.site(session[:admin_site]).where(:id => params[:id]).first
 		if @menu.blank?
 			flash[:error] = "Menu not found!"
 			redirect_to spud_admin_menus_url() and return false

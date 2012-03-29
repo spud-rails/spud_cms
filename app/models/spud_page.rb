@@ -8,18 +8,24 @@ class SpudPage < ActiveRecord::Base
 	belongs_to :created_by_user,:class_name => "SpudUser",:foreign_key => :created_by
 	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
 
+
+	
+	
 	before_validation :generate_url_name
 	validates :name,:presence => true
-	validates :url_name,:presence => true, :uniqueness => true
-
+	validates_uniqueness_of :name, :scope => [:site_id,:spud_page_id]
+	validates :url_name,:presence => true
+	validates_uniqueness_of :url_name, :scope => :site_id
+	attr_protected :site_id
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  where(:spud_page_id => nil)
+	scope :site, lambda {|sid| where(:site_id => sid)}
 	scope :published_pages, where(:published => true)
 	scope :public, where(:visibility => 0)
 
 
 	def self.grouped
-		return all.group_by(&:spud_page_id)
+		return all.site(session[:admin_site]).group_by(&:spud_page_id)
 	end
 
 	# Returns an array of pages in order of heirarchy
@@ -69,7 +75,7 @@ class SpudPage < ActiveRecord::Base
 				# url_name = url_name_new
 				# Check Permalinks List
 
-				permalink = SpudPermalink.where(:url_name => url_name_new).first
+				permalink = SpudPermalink.site(self.site_id).where(:url_name => url_name_new).first
 				counter = 1
 				while permalink.blank? == false
 				
@@ -79,20 +85,20 @@ class SpudPage < ActiveRecord::Base
 					else
 						url_name_new = url_name + "-#{counter}"
 			     	  	counter += 1
- 	  					permalink = SpudPermalink.where(:url_name => url_name_new).first
+ 	  					permalink = SpudPermalink.site(self.site_id).where(:url_name => url_name_new).first
 					end
 				end
 				url_name = url_name_new
 	     	end
 	      if self.url_name.blank? == false && url_name != self.url_name
-	      	self.spud_permalinks.create(:url_name => self.url_name)
+	      	self.spud_permalinks.create(:url_name => self.url_name,:site_id => self.site_id)
 	      end
           self.url_name = url_name
           self.use_custom_url_name = false
     	elsif self.id.to_i > 0
 			page = SpudPage.where(:id => self.id).first
 			if page.url_name.blank? == false && page.url_name != self.url_name
-				permalink = SpudPermalink.where(:url_name => self.url_name).first
+				permalink = SpudPermalink.site(self.site_id).where(:url_name => self.url_name).first
 				if permalink.blank? == false
 					if permalink.attachment == self
 						permalink.destroy
@@ -101,7 +107,7 @@ class SpudPage < ActiveRecord::Base
 						return false
 					end
 				end
-				self.spud_permalinks.create(:url_name => page.url_name)
+				self.spud_permalinks.create(:url_name => page.url_name,:site_id => self.site_id)
 			end
       	end
       	return true
