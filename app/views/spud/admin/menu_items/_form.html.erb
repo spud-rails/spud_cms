@@ -18,7 +18,7 @@
 <div class="control-group">
 	<%=f.label :spud_page_id, "Page",:class => "control-label"%>
 	<div class="controls">
-	    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
+	    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:site_id => session[:admin_site]),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
 	</div>
   
 </div>
