@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   	end
 	def show
 		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
-		@page = SpudPage.where(:published => 1,:url_name => url_name).includes([:spud_template,:spud_page_partials])
+		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials])
 
 		# MultiSite Code Block
 		if Spud::Core.multisite_mode_enabled
