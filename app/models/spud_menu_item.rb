@@ -9,6 +9,9 @@ class SpudMenuItem < ActiveRecord::Base
 	validates :parent_id,:presence => true
 
 
+	attr_accessible :name,:parent_type,:parent_id,:item_type,:spud_page_id,:menu_order,:url,:classes 
+
+
 	def options_tree(options,depth,current = nil)
 		sub_items = self.spud_menu_items
 		sub_items = sub_items.where(["id != ?",current.id]) if !current.blank? && !current.id.blank?
