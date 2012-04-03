@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 		# MultiSite Code Block
 		if Spud::Core.multisite_mode_enabled
 			site_config = Spud::Core.site_config_for_host(request.host_with_port)
-			@page = @page.site(site_config[:site_id]) if !site_config.blank?
+			@page = @page.site(!site_config.blank? ? site_config[:site_id] : nil) 
 		end
 
 		@page = @page.first
@@ -23,8 +23,8 @@ class PagesController < ApplicationController
 			@permalink = SpudPermalink.includes(:attachment).where(:url_name => url_name)
 
 			# MultiSite Code Block
-			if Spud::Core.multisite_mode_enabled && !site_config.blank?
-				@permalink = @permalink.site(site_config[:site_id])
+			if Spud::Core.multisite_mode_enabled
+				@permalink = @permalink.site(!site_config.blank? ? site_config[:site_id] : nil)
 			end
 			@permalink = @permalink.first
 
