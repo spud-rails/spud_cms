@@ -1,5 +1,5 @@
 <%=content_for :title do%>
-	<%= @page.name %> | <%=Spud::Core.site_name%>
+	<%= @page.name %> | <%=current_site_name%>
 <% end %>
 <%=content_for :head do%>
 	<%if !@page.meta_description.blank?%>
