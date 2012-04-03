@@ -172,6 +172,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 			end 
 		end
 	end
+	redirect_to spud_admin_pages_url
   end
 
 private
