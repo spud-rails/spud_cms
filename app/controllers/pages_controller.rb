@@ -10,6 +10,16 @@ class PagesController < ApplicationController
   	end
 	def show
 		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
+
+		# MultiSite Code Block
+		if params[:id].blank? && Spud::Core.multisite_mode_enabled
+			site_config = Spud::Core.site_config_for_host(request.host_with_port)
+			if !site_config.blank?
+				cms_config = Spud::Cms.site_config_for_short_name(site_config[:short_name])
+				url_name = cms_config[:root_page_name] if !cms_config.blank? && !cms_config[:root_page_name].blank?
+			end
+		end
+
 		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials])
 
 		# MultiSite Code Block
