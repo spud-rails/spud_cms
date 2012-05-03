@@ -9,14 +9,14 @@ class SpudPage < ActiveRecord::Base
 	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
 
 
-	
+	attr_accessible :name,:url_name,:created_by,:updated_by,:template_id,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes
 	
 	before_validation :generate_url_name
 	validates :name,:presence => true
 	validates_uniqueness_of :name, :scope => [:site_id,:spud_page_id]
 	validates :url_name,:presence => true
 	validates_uniqueness_of :url_name, :scope => :site_id
-	attr_protected :site_id
+	
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  where(:spud_page_id => nil)
 	scope :site, lambda {|sid| where(:site_id => sid)}
