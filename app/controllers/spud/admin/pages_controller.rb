@@ -54,8 +54,13 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	end
 
 	def create
+		
 		@page = SpudPage.new(params[:spud_page])
 		@page.site_id = session[:admin_site]
+		if params[:preview] && params[:preview].to_i == 1
+			preview
+			return
+		end
 		flash[:notice] = "Page Saved successfully" if @page.save
 		respond_with @page,:location => spud_admin_pages_url
 	end
@@ -90,13 +95,34 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 	def update
 		
-		if @page.update_attributes(params[:spud_page])
+		@page.attributes = params[:spud_page]
+		if params[:preview] && params[:preview].to_i == 1
+			preview
+			return
+		end
+		if @page.save
 			flash[:notice] = "Page updated successfully!"
 			redirect_to spud_admin_pages_url() and return
 		else
 			flash[:error] = "There was an error saving this page"
 			render :action => "edit"
 		end
+
+	end
+
+	def preview
+		# @page = SpudPage.new(params[:spud_page])
+		# @page.site_id = session[:admin_site]
+		layout = 'application'
+
+
+		if !@page.spud_template.blank?
+			if !@page.spud_template.base_layout.blank?
+				layout = @page.spud_template.base_layout
+			end
+			@inline = @page.spud_template.content
+		end
+		render :action => :show,:layout => layout
 
 	end
 

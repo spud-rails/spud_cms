@@ -4,6 +4,9 @@ Rails.application.routes.draw do
          resources :pages do
            get :page_parts, :on => :collection
            get :clear, :on => :collection
+           member do
+             post 'preview'
+           end
          end
          resources :templates 
    		
