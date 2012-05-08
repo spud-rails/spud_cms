@@ -120,7 +120,7 @@ module Spud::Cms::ApplicationHelper
 		
 		parent_items = grouped_items["SpudMenu"]
 		if start_menu_item != nil
-			parent_items = child_items[spud_menu_item]
+			parent_items = child_items[start_menu_item]
 		end
 
 		parent_items.sort_by{|p| p.menu_order}.each do |item|
