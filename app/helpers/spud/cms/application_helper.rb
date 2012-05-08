@@ -106,21 +106,24 @@ module Spud::Cms::ApplicationHelper
 			#{SpudMenuItem.table_name}.menu_order as menu_order,
 			#{SpudMenuItem.table_name}.parent_id as parent_id,
 			#{SpudMenuItem.table_name}.name as name,
-			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)")
-		if start_menu_item != nil
-			menu_items = menu_items.where(:parent_type => "SpudMenuItem",:parent_id => start_menu_item)
-		end
-		menu_items = menu_items.all
+			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
+		
+		
 
 		grouped_items = menu_items.group_by(&:parent_type)
+
 		if grouped_items["SpudMenu"].blank?
 			
 			return ""
 		end
 		child_items = grouped_items["SpudMenuItem"].blank? ? [] : grouped_items["SpudMenuItem"].group_by(&:parent_id)
 		
+		parent_items = grouped_items["SpudMenu"]
+		if start_menu_item != nil
+			parent_items = child_items[spud_menu_item]
+		end
 
-		grouped_items["SpudMenu"].sort_by{|p| p.menu_order}.each do |item|
+		parent_items.sort_by{|p| p.menu_order}.each do |item|
 			active = false
 			if !item.url_name.blank?
 				if current_page?(page_path(:id => item.url_name))
