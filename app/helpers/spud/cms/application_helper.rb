@@ -64,6 +64,7 @@ module Spud::Cms::ApplicationHelper
 
 		max_depth = 0
 		menu = SpudMenu
+		start_menu_item = nil
 		if Spud::Core.multisite_mode_enabled
 			site_config = Spud::Core.site_config_for_host(request.host_with_port)
 			menu = menu.site(site_config[:site_id]) if !site_config.blank?
@@ -75,6 +76,9 @@ module Spud::Cms::ApplicationHelper
 			end
 			if  options.has_key?(:name)
 				menu = menu.where(:name => options[:name])
+			end
+			if options.has_key?(:start_menu_item_id)
+				start_menu_item = options[:start_menu_item_id]
 			end
 			if options.has_key?(:id)
 				content = "<ul id='#{options[:id]}' #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
@@ -102,7 +106,11 @@ module Spud::Cms::ApplicationHelper
 			#{SpudMenuItem.table_name}.menu_order as menu_order,
 			#{SpudMenuItem.table_name}.parent_id as parent_id,
 			#{SpudMenuItem.table_name}.name as name,
-			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
+			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)")
+		if start_menu_item != nil
+			menu_items = menu_items.where(:parent_type => "SpudMenuItem",:parent_id => start_menu_item)
+		end
+		menu_items = menu_items.all
 
 		grouped_items = menu_items.group_by(&:parent_type)
 		if grouped_items["SpudMenu"].blank?
