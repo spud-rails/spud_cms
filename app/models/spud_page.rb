@@ -1,6 +1,7 @@
 class SpudPage < ActiveRecord::Base
 	searchable
 	belongs_to :spud_page
+	has_many :spud_page_partial_revisions
 	belongs_to :spud_template,:foreign_key => :template_id
 	has_many :spud_pages, :dependent => :nullify
 	has_many :spud_page_partials,:dependent => :destroy
