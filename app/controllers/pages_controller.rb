@@ -50,9 +50,11 @@ class PagesController < ApplicationController
 			end
 		end
 		if @page.is_private?
-			if self.respond_to?('require_user') && require_user == false
+			if defined?(require_user) && require_user == false
+				logger.debug("responds to require user!")
 				return
 			end
+			logger.debug("does not!")
 		end
 
 		layout = Spud::Cms.default_page_layout
