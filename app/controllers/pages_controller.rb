@@ -30,7 +30,7 @@ class PagesController < ApplicationController
 
 		@page = @page.first
 		if @page.blank?
-			@permalink = SpudPermalink.includes(:attachment).where(:url_name => url_name)
+			@permalink = SpudPermalink.where(:url_name => url_name)
 
 			# MultiSite Code Block
 			if Spud::Core.multisite_mode_enabled
