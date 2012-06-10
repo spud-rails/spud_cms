@@ -1,0 +1,1499 @@
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (19.8ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (107.7ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.3ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.1ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.4ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.1ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_users`;[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[36mSpudPage Load (0.4ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (17.4ms)
+Completed 200 OK in 59ms (Views: 51.3ms | ActiveRecord: 4.1ms)
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[36mSpudPage Load (0.3ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.3ms)
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudPage Exists (0.7ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 03:22:18', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 03:22:18', NULL, 'test', 1, 0)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.3ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1[0m
+Mysql2::Error: Unknown column 'spud_permalinks.site_id' in 'where clause': SELECT  `spud_permalinks`.* FROM `spud_permalinks`  WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+Mysql2::Error: Unknown column 'spud_permalinks.site_id' in 'where clause': SELECT  `spud_permalinks`.* FROM `spud_permalinks`  WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_2
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 03:22:18', 'test', 'Body', NULL, '2012-06-10 03:22:18')
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 03:22:18', 'Template3', 'Body', NULL, '2012-06-10 03:22:18')
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+Mysql2::Error: Unknown column 'spud_permalinks.site_id' in 'where clause': SELECT  `spud_permalinks`.* FROM `spud_permalinks`  WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_2
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (119.7ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (2.2ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.9ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.4ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.5ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.4ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.9ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (16.9ms)
+Completed 200 OK in 85ms (Views: 76.4ms | ActiveRecord: 4.4ms)
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.4ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.7ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:38:57', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:38:57', NULL, 'test', 1, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.1ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:38:57', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:38:57', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:38:57', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:38:57', NULL, 'page3', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:38:57', NULL, 'Part1', 3, '2012-06-10 12:38:57')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.5ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3
+  [1m[36mSpudPagePartial Load (0.2ms)[0m  [1mSELECT `spud_page_partials`.* FROM `spud_page_partials` WHERE `spud_page_partials`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.6ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:38:57', 'test', 'Body', NULL, '2012-06-10 12:38:57')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:38:57', 'Template3', 'Body', NULL, '2012-06-10 12:38:57')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:38:57', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:38:57', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (40.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.8ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.7ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (32.0ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.9ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.6ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.8ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (17.3ms)
+Completed 200 OK in 67ms (Views: 58.9ms | ActiveRecord: 4.4ms)
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.7ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:26', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:44:26', NULL, 'test', 1, 0)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.3ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:26', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:44:26', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.3ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.3ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.4ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:26', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:44:26', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:44:26', NULL, NULL, 3, '2012-06-10 12:44:26')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.3ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.5ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.3ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:44:27', 'test', 'Body', NULL, '2012-06-10 12:44:27')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:44:27', 'Template3', 'Body', NULL, '2012-06-10 12:44:27')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:27', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:44:27', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (112.5ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.4ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.3ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (2.0ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.6ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.0ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.7ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (17.0ms)
+Completed 200 OK in 64ms (Views: 55.7ms | ActiveRecord: 4.4ms)
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.5ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.7ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:50', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:44:50', NULL, 'test', 1, 0)
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:50', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:44:50', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.3ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.3ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:51', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:44:51', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:44:51', NULL, NULL, 3, '2012-06-10 12:44:51')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.4ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.5ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:44:51', 'test', 'Body', NULL, '2012-06-10 12:44:51')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (28.6ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:44:51', 'Template3', 'Body', NULL, '2012-06-10 12:44:51')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:44:51', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:44:51', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.2ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (111.8ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.4ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.7ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.8ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.3ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (16.9ms)
+Completed 200 OK in 67ms (Views: 58.5ms | ActiveRecord: 4.5ms)
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:45:06', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:45:06', NULL, 'test', 1, 0)
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.3ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.3ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.3ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:45:06', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:45:06', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:45:06', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:45:06', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:45:06', NULL, NULL, 3, '2012-06-10 12:45:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.4ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:45:06', 'test', 'Body', NULL, '2012-06-10 12:45:06')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.5ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:45:06', 'Template3', 'Body', NULL, '2012-06-10 12:45:06')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:45:06', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:45:06', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (113.8ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.7ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.4ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.8ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (16.8ms)
+Completed 200 OK in 67ms (Views: 58.2ms | ActiveRecord: 3.6ms)
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.5ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.5ms)
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.7ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:46:06', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:46:06', NULL, 'test', 1, 0)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.4ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:46:06', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:46:06', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.3ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.3ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:46:06', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:46:06', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:46:06', NULL, NULL, 3, '2012-06-10 12:46:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.5ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.5ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:46:06', 'test', 'Body', NULL, '2012-06-10 12:46:06')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.5ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:46:06', 'Template3', 'Body', NULL, '2012-06-10 12:46:06')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:46:06', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:46:06', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.2ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (118.8ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (2.3ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.4ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.0ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.4ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.2ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.1ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.8ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (17.0ms)
+Completed 200 OK in 64ms (Views: 55.6ms | ActiveRecord: 4.4ms)
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.4ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.3ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:48:07', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:48:07', NULL, 'test', 1, 0)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.3ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:48:07', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:48:07', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.1ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.3ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:48:07', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:48:07', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:48:07', NULL, NULL, 3, '2012-06-10 12:48:07')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.4ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.4ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:48:07', 'test', 'Body', NULL, '2012-06-10 12:48:07')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:48:07', 'Template3', 'Body', NULL, '2012-06-10 12:48:07')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:48:07', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:48:07', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.3ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.3ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (28.9ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (1.9ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (38.1ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (1.8ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (1.5ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (1.1ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (1.3ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (1.1ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (1.0ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.9ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (1.2ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.2ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (16.8ms)
+Completed 200 OK in 58ms (Views: 49.9ms | ActiveRecord: 4.4ms)
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.4ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:06', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:50:06', NULL, 'test', 1, 0)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.5ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:06', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:50:06', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.4ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:06', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:50:06', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:50:06', NULL, NULL, 3, '2012-06-10 12:50:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.5ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.4ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:50:06', 'test', 'Body', NULL, '2012-06-10 12:50:06')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:50:06', 'Template3', 'Body', NULL, '2012-06-10 12:50:06')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:06', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:50:06', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (0.4ms)[0m  [1mSELECT @@FOREIGN_KEY_CHECKS[0m
+  [1m[35m (0.1ms)[0m  SET FOREIGN_KEY_CHECKS = 0
+  [1m[36m (0.1ms)[0m  [1mSELECT DATABASE() as db[0m
+  [1m[35m (0.9ms)[0m  select table_name from information_schema.views where table_schema = 'spud_cms_test'
+  [1m[36m (0.6ms)[0m  [1mTRUNCATE TABLE `spud_admin_permissions`;[0m
+  [1m[35m (0.7ms)[0m  TRUNCATE TABLE `spud_menu_items`;
+  [1m[36m (0.5ms)[0m  [1mTRUNCATE TABLE `spud_menus`;[0m
+  [1m[35m (0.6ms)[0m  TRUNCATE TABLE `spud_page_partial_revisions`;
+  [1m[36m (0.6ms)[0m  [1mTRUNCATE TABLE `spud_page_partials`;[0m
+  [1m[35m (0.7ms)[0m  TRUNCATE TABLE `spud_pages`;
+  [1m[36m (0.7ms)[0m  [1mTRUNCATE TABLE `spud_permalinks`;[0m
+  [1m[35m (0.5ms)[0m  TRUNCATE TABLE `spud_templates`;
+  [1m[36m (0.5ms)[0m  [1mTRUNCATE TABLE `spud_user_settings`;[0m
+  [1m[35m (0.8ms)[0m  TRUNCATE TABLE `spud_users`;
+  [1m[36m (0.1ms)[0m  [1mSET FOREIGN_KEY_CHECKS = 1[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as XML
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+  Rendered /Users/ddeyoung/Projects/westlake/spud/spud_cms/app/views/spud/cms/sitemaps/show.xml.builder (17.2ms)
+Completed 200 OK in 58ms (Views: 50.6ms | ActiveRecord: 3.4ms)
+  [1m[36mSpudPage Load (0.7ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+Processing by Spud::Cms::SitemapsController#show as HTML
+  [1m[35mSpudPage Load (0.4ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`published` = 1 AND `spud_pages`.`visibility` = 0 ORDER BY spud_page_id
+Completed 406 Not Acceptable in 2ms (ActiveRecord: 0.4ms)
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudPage Exists (0.7ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY '' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY '' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page1' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:50', NULL, 'html', NULL, NULL, 'Page1', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:50:50', NULL, 'test', 1, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page2' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.6ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.3ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.3ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:50', NULL, 'html', NULL, NULL, 'test', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:50:50', NULL, 'test', 0, 0)[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'test-1' LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test-1' AND `spud_pages`.`site_id` IS NULL) LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.6ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL
+  [1m[36mSpudPermalink Load (0.4ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page3' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.4ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page3' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.4ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page3' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:50', NULL, 'html', NULL, NULL, 'Page3', NULL, NULL, NULL, 1, NULL, NULL, NULL, '2012-06-10 12:50:50', NULL, 'page3', 0, 0)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES (NULL, '2012-06-10 12:50:50', NULL, NULL, 3, '2012-06-10 12:50:50')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partials` [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.4ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 3[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `spud_page_partials` WHERE `spud_page_partials`.`id` = 1
+  [1m[36mSpudPermalink Load (0.2ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`attachment_id` = 3 AND `spud_permalinks`.`attachment_type` = 'SpudPage'[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `spud_pages` WHERE `spud_pages`.`id` = 3
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `spud_page_partials` 
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template1' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudTemplate Exists (0.2ms)[0m  SELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template2' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY '' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:50:50', 'test', 'Body', NULL, '2012-06-10 12:50:50')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.6ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'test' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36m (0.0ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSpudTemplate Exists (0.2ms)[0m  [1mSELECT 1 FROM `spud_templates` WHERE `spud_templates`.`name` = BINARY 'Template3' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_templates` (`base_layout`, `content`, `created_at`, `name`, `page_parts`, `site_id`, `updated_at`) VALUES ('application', NULL, '2012-06-10 12:50:50', 'Template3', 'Body', NULL, '2012-06-10 12:50:50')
+  [1m[36mSpudPage Load (0.2ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`template_id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_2[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` IS NULL AND (id != 1)
+  [1m[36mSpudPermalink Load (0.1ms)[0m  [1mSELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` IS NULL AND `spud_permalinks`.`url_name` = 'page4' LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.1ms)[0m  SELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'Page4' AND `spud_pages`.`site_id` IS NULL AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1
+  [1m[36mSpudPage Exists (0.1ms)[0m  [1mSELECT 1 FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'page4' AND `spud_pages`.`site_id` IS NULL) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `id`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `template_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-06-10 12:50:50', NULL, 'html', 1, NULL, NULL, 'Page4', NULL, NULL, NULL, 1, NULL, NULL, 2, '2012-06-10 12:50:50', NULL, 'page4', 0, 0)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_2[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_2
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `spud_templates` WHERE `spud_templates`.`id` = 2[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_2
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m

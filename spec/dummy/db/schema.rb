@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120510195151) do
+ActiveRecord::Schema.define(:version => 20120610123615) do
 
   create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20120510195151) do
     t.boolean  "access"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "scope"
   end
 
   create_table "spud_menu_items", :force => true do |t|
@@ -100,9 +101,11 @@ ActiveRecord::Schema.define(:version => 20120510195151) do
     t.integer  "attachment_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "site_id"
   end
 
   add_index "spud_permalinks", ["attachment_type", "attachment_id"], :name => "index_spud_permalinks_on_attachment_type_and_attachment_id"
+  add_index "spud_permalinks", ["site_id"], :name => "index_spud_permalinks_on_site_id"
 
   create_table "spud_templates", :force => true do |t|
     t.string   "name"
@@ -115,6 +118,14 @@ ActiveRecord::Schema.define(:version => 20120510195151) do
   end
 
   add_index "spud_templates", ["site_id"], :name => "index_spud_templates_on_site_id"
+
+  create_table "spud_user_settings", :force => true do |t|
+    t.integer  "spud_user_id"
+    t.string   "key"
+    t.string   "value"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "spud_users", :force => true do |t|
     t.string   "first_name"
@@ -136,6 +147,7 @@ ActiveRecord::Schema.define(:version => 20120510195151) do
     t.string   "last_login_ip"
     t.datetime "created_at",                         :null => false
     t.datetime "updated_at",                         :null => false
+    t.string   "time_zone"
   end
 
   add_index "spud_users", ["email"], :name => "index_spud_users_on_email"
