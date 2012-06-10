@@ -1,11 +1,3 @@
-GIT
-  remote: git://github.com/3den/shoulda.git
-  revision: b3dc4deec14924a3c6f6d54c505f245250571257
-  specs:
-    shoulda (3.0.0.beta2)
-      shoulda-context (~> 1.0.0)
-      shoulda-matchers (~> 1.0.0)
-
 PATH
   remote: .
   specs:
@@ -116,8 +108,15 @@ GEM
       activesupport (>= 3.0)
       railties (>= 3.0)
       rspec (~> 2.8.0)
+    shoulda (3.0.1)
+      shoulda-context (~> 1.0.0)
+      shoulda-matchers (~> 1.0.0)
     shoulda-context (1.0.0)
     shoulda-matchers (1.0.0)
+    simplecov (0.6.4)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.5.3)
+    simplecov-html (0.5.3)
     sprockets (2.1.3)
       hike (~> 1.2)
       rack (~> 1.0)
@@ -150,6 +149,7 @@ DEPENDENCIES
   mysql2 (= 0.3.11)
   rspec (= 2.8.0)
   rspec-rails (= 2.8.1)
-  shoulda!
+  shoulda (~> 3.0.1)
+  simplecov (~> 0.6.4)
   spud_cms!
   spud_permalinks

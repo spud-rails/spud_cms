@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120307003559) do
+ActiveRecord::Schema.define(:version => 20120510195151) do
 
   create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"
@@ -44,7 +44,21 @@ ActiveRecord::Schema.define(:version => 20120307003559) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "site_id"
   end
+
+  add_index "spud_menus", ["site_id"], :name => "index_spud_menus_on_site_id"
+
+  create_table "spud_page_partial_revisions", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "format"
+    t.integer  "spud_page_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "spud_page_partial_revisions", ["spud_page_id", "name"], :name => "revision_idx"
 
   create_table "spud_page_partials", :force => true do |t|
     t.integer  "spud_page_id"
@@ -75,7 +89,10 @@ ActiveRecord::Schema.define(:version => 20120307003559) do
     t.boolean  "published",           :default => true
     t.boolean  "use_custom_url_name", :default => false
     t.text     "notes"
+    t.integer  "site_id"
   end
+
+  add_index "spud_pages", ["site_id"], :name => "index_spud_pages_on_site_id"
 
   create_table "spud_permalinks", :force => true do |t|
     t.string   "url_name"
@@ -94,7 +111,10 @@ ActiveRecord::Schema.define(:version => 20120307003559) do
     t.text     "page_parts"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.integer  "site_id"
   end
+
+  add_index "spud_templates", ["site_id"], :name => "index_spud_templates_on_site_id"
 
   create_table "spud_users", :force => true do |t|
     t.string   "first_name"
