@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Modular CMS Engine"
   s.description = "Spud CMS is a full-featured light weight modular cms engine as a part of the spud suite of rails gems. This particular gem comes with page management, administrative dashboard, template management, menu management and more. It is also capable of handling full-page caching as well as action-caching for even faster performance. Add more modules like spud_blog, spud_inquiries, spud_events, or spud_media for more features."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", "~> 3.2.1"
