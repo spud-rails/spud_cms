@@ -18,8 +18,11 @@ Installation/Usage
 		bundle exec rake spud_core:install:migrations
 		bundle exec rake spud_cms:install:migrations
 		rake db:migrate
+4. Change ApplicationController to inherit from Spud::ApplicationController instead of ActionController::Base
 
-4. run a rails server instance and point your browser to /spud/admin
+		class ApplicationController < Spud::ApplicationController
+		
+5. run a rails server instance and point your browser to /spud/admin
 
 Routing to the CMS Engine
 --------------------------
