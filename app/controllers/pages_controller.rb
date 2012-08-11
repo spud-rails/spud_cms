@@ -5,10 +5,17 @@ class PagesController < ApplicationController
 	after_filter({:only => [:show]}) do |c|
 		return if !Spud::Cms.enable_full_page_caching
 		if @page && @page.is_private? == false
-		    c.cache_page(nil, nil, false)
+	    c.cache_page(nil, nil, false)
 		end
-  	end
+  end
+
 	def show
+		# prevents 500 errors if a url like "/home.jpg" is hit
+		if request.format != :html
+			render_404
+			return
+		end
+
 		url_name = !params[:id].blank? ? params[:id] : Spud::Cms.root_page_name
 
 		# MultiSite Code Block
@@ -48,9 +55,10 @@ class PagesController < ApplicationController
 			# else
 			# 	return
 			# end
-			Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404) : render(:text=>nil,:status => 404)
+			render_404
 			return
 		end
+
 		if @page.is_private?
 			if defined?(require_user) && require_user == false
 				logger.debug("responds to require user!")
@@ -67,18 +75,21 @@ class PagesController < ApplicationController
 			layout = cms_config[:default_page_layout] if !cms_config.blank? && !cms_config[:default_page_layout].blank?
 		end
 
-
 		if !@page.spud_template.blank?
 			if !@page.spud_template.base_layout.blank?
 				layout = @page.spud_template.base_layout
 			end
 			@inline = @page.spud_template.content
-
 		end
-		render :layout => layout
+
+		render :layout => layout, :content_type => :html
 
 	end
 
 private
+
+	def render_404
+		Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404) : render(:text=>nil,:status => 404)
+ 	end
 
 end
