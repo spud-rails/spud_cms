@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
 	caches_action :show, :if => Proc.new { |c| Spud::Cms.enable_action_caching }
 
+	respond_to :html
+
 	# caches_page :show, :if => Proc.new { |c| Spud::Cms.enable_full_page_caching }
 	after_filter({:only => [:show]}) do |c|
 		return if !Spud::Cms.enable_full_page_caching
@@ -82,7 +84,7 @@ class PagesController < ApplicationController
 			@inline = @page.spud_template.content
 		end
 
-		render :layout => layout, :content_type => :html
+		render :layout => layout
 
 	end
 
