@@ -2,11 +2,16 @@
 <%=link_to "New Menu Item",new_spud_admin_menu_menu_item_path(),:class => "btn btn-primary",:title => "New Menu Item"%>
 <%end%>
 <%=content_for :detail do%>
-	<div class="page_list">
+	<ul id="root_menu_list" class="menu_list page_list sortable connectedSortable">
 			<%@menu_items.each do |menu_item|%>
-				<%=render :partial => "menu_item_row",:locals => {:menu_item => menu_item}%>
+        <li>
+  				<%=render :partial => "menu_item_row",:locals => {:menu_item => menu_item}%>
+        </li>
 			<%end%>
-			<%=will_paginate @menu_items%>
-	</div>
 
+	</ul>
+
+<script type="text/javascript">
+$(document).ready(function() { Spud.Admin.Cms.MenuItems.init();})
+</script>
 <%end%>

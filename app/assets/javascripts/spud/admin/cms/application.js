@@ -4,6 +4,7 @@
 //= require codemirror/modes/css
 //= require codemirror/modes/htmlmixed
 //= require codemirror/modes/htmlembedded
+//= require spud/admin/cms/menu_items
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
@@ -14,8 +15,8 @@ $(document).ready(function() {
 		var $this = $(this);
 		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
 			$('.formtabs').tabs('destroy');
-			console.log($("#page_partials_form"))
-			
+
+
 			$('textarea.tinymce').each(function() {$(this).tinymce().execCommand('mceRemoveControl',false,this.id)});
 			$("#page_partials_form").replaceWith(data)
 			initFormTabs();

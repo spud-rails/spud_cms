@@ -1,18 +1,22 @@
-<div class="page_row">
-					
+<div class="page_row" menu_item_id="<%=menu_item.id%>">
+
 	<span class="row_meta"><%=prefix if defined? prefix%><%=link_to menu_item.name,edit_spud_admin_menu_menu_item_path(:id => menu_item.id)%></span>
 
 	<span class="edit_controls"><%=link_to "Edit",edit_spud_admin_menu_menu_item_path(:id => menu_item.id), :title => "Edit Menu Item",:class => 'btn'%>&nbsp;&nbsp;<%=link_to "Remove",spud_admin_menu_menu_item_path(:id => menu_item.id),:method => :delete,:class => 'btn btn-danger',:confirm => "Are you sure you want to remove this menu item?"%></span>
 	<br style="clear:both;"/>
 </div>
+<ul class="menu_list subitem sortable connectedSortable">
+
 <%if !menu_item.spud_menu_items.all.blank?%>
-	
-		<div class="left_guide">
-	
+
+
 	<%menu_item.spud_menu_items.order(:menu_order).each do |menu_item|%>
+	<li>
 		<%=render :partial => 'menu_item_row',:locals => {:menu_item => menu_item}%>
+	</li>
 	<%end%>
-	
-		</div>
-	
+
+
+
 <%end%>
+</ul>
