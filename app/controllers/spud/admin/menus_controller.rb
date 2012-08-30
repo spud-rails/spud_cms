@@ -3,12 +3,12 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 	belongs_to_spud_app :menus
 	add_breadcrumb "Menus", :spud_admin_menus_path
 	before_filter :load_menu,:only => [:edit,:update,:show,:destroy]
-	
+
 	def index
 		@menus = SpudMenu.site(session[:admin_site]).order(:name).paginate :page => params[:page]
 		respond_with @menus
 	end
-	
+
 
 	def new
 		add_breadcrumb "New", :new_spud_admin_menu_path
@@ -31,7 +31,7 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 
 	def update
 		add_breadcrumb "Edit #{@menu.name}", :edit_spud_admin_menu_path
-		
+
 		flash[:notice] = "Menu saved successfully" if @menu.update_attributes(params[:spud_menu])
 		respond_with @menu,:location => spud_admin_menu_menu_items_url(:menu_id => @menu.id)
 	end
@@ -46,6 +46,9 @@ private
 		@menu = SpudMenu.site(session[:admin_site]).where(:id => params[:id]).first
 		if @menu.blank?
 			flash[:error] = "Menu not found!"
+			redirect_to spud_admin_menus_url() and return false
+		elsif Spud::Core.multisite_mode_enabled && @menu.site_id != session[:admin_site]
+			flash[:warning] = "Site Context Changed. The menu you were viewing is not associated with the current site. Redirected back to menu selections."
 			redirect_to spud_admin_menus_url() and return false
 		end
 	end

@@ -5,14 +5,14 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
 	cache_sweeper :page_sweeper,:only => [:update,:destroy]
 	def index
-		
+
 		@pages = SpudPage.site(session[:admin_site]).where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
 		respond_with @pages
 	end
 
 	def show
-			
-		
+
+
 		if @page.blank?
 			flash[:error] = "Page not found"
 			if !params[:id].blank?
@@ -20,7 +20,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 			else
 				return
 			end
-		end		
+		end
 		layout = 'application'
 
 
@@ -36,7 +36,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	def new
 		add_breadcrumb "New", :new_spud_admin_page_path
 
-		
+
 		@templates = SpudTemplate.all
 		@page = SpudPage.new
 		parts = Spud::Cms.default_page_parts
@@ -50,11 +50,11 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 		parts.each do |part|
 			@page.spud_page_partials.new(:name => part.strip)
 		end
-		respond_with @page		
+		respond_with @page
 	end
 
 	def create
-		
+
 		@page = SpudPage.new(params[:spud_page])
 		@page.site_id = session[:admin_site]
 		if params[:preview] && params[:preview].to_i == 1
@@ -68,7 +68,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	def edit
 		add_breadcrumb "#{@page.name}", :spud_admin_page_path
 		add_breadcrumb "Edit", :edit_spud_admin_page_path
-		
+
 		@templates = SpudTemplate.all
 		if @page.spud_page_partials.blank?
 			parts = Spud::Cms.default_page_parts
@@ -94,7 +94,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	end
 
 	def update
-		
+
 		@page.attributes = params[:spud_page]
 		if params[:preview] && params[:preview].to_i == 1
 			preview
@@ -128,7 +128,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 	def destroy
 		status = 500
-		
+
 		if @page.destroy
 			flash[:notice] = "Page removed successfully!"
 			status = 200
@@ -140,7 +140,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 			format.html { redirect_to spud_admin_pages_url()}
 		end
 	end
-  
+
   def page_parts
     template =  params[:template] && !params[:template].blank? ? SpudTemplate.where(:id => params[:template]).first : nil
     page = SpudPage.where(:id => params[:page]).includes(:spud_page_partials).first
@@ -163,7 +163,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
     	parts.each do |part|
 			new_page_partials << page.spud_page_partials.build(:name => part)
 		end
-      
+
     end
     new_page_partials.each do |partial|
       old_partial = old_page_partials.select {|pp| partial.name.strip.downcase == pp.name.strip.downcase }
@@ -195,7 +195,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	        	expire_action root_path
 		    else
 				expire_action page_path(:id => record.url_name)
-			end 
+			end
 		end
 	end
 	redirect_to spud_admin_pages_url
@@ -203,14 +203,17 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 private
 	def load_page
-		@page = SpudPage.site(session[:admin_site]).where(:id => params[:id]).includes(:spud_page_partials).first
+		@page = SpudPage.where(:id => params[:id]).includes(:spud_page_partials).first
 		if @page.blank?
 			flash[:error] = "Page not found!"
+			redirect_to spud_admin_pages_url() and return false
+		elsif Spud::Core.multisite_mode_enabled && @page.site_id != session[:admin_site]
+			flash[:warning] = "Site Context Changed. The page you were viewing is not associated with the current site. Redirected back to page selections."
 			redirect_to spud_admin_pages_url() and return false
 		end
 		return true
 	end
 
-	
+
 
 end

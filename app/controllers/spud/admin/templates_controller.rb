@@ -31,7 +31,7 @@ class Spud::Admin::TemplatesController < Spud::Admin::CmsController
 		@template = SpudTemplate.new(params[:spud_template])
 		@template.site_id = session[:admin_site]
 		flash[:notice] = "Template created successfully!" if @template.save
-		
+
 		respond_with @template, :location => spud_admin_templates_url
 	end
 
@@ -41,30 +41,33 @@ class Spud::Admin::TemplatesController < Spud::Admin::CmsController
 	end
 
 	def update
-		
+
 		add_breadcrumb "Edit #{@template.name}", :edit_spud_admin_template_path
 		flash[:notice] = "Template updated successfully" if @template.update_attributes(params[:spud_template])
-		
+
 		respond_with @template, :location => spud_admin_templates_url
 	end
 
 
 	def destroy
-		
+
 		flash[:notice] = "Template removed" if @template.destroy
-		
+
 		respond_with @template, :location => spud_admin_templates_url
 	end
 
 private
 	def load_template
-		@template = SpudTemplate.site(session[:admin_site]).where(:id => params[:id]).first
+		@template = SpudTemplate.where(:id => params[:id]).first
 		if @template.blank?
 			flash[:error] = "Template not found!"
 			redirect_to spud_admin_templates_url and return false
+		elsif Spud::Core.multisite_mode_enabled && @template.site_id != session[:admin_site]
+			flash[:warning] = "Site Context Changed. The template you were viewing is not associated with the current site. Redirected back to template selections."
+			redirect_to spud_admin_templates_url() and return false
 		end
 	end
 
-	
+
 
 end

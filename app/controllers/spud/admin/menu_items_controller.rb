@@ -93,8 +93,12 @@ private
 	def load_menu
 
 		@menu = SpudMenu.find(params[:menu_id])
+
 		if @menu.blank?
 			flash[:error] = "Menu not found!"
+			redirect_to spud_admin_menus_url() and return false
+		elsif Spud::Core.multisite_mode_enabled && @menu.site_id != session[:admin_site]
+			flash[:warning] = "Site Context Changed. The menu you were viewing is not associated with the current site. Redirected back to menu selections."
 			redirect_to spud_admin_menus_url() and return false
 		end
 		add_breadcrumb "#{@menu.name}", :spud_admin_menu_menu_items_path
