@@ -36,6 +36,13 @@ private
   		end
     elsif record.is_a?(SpudPage)
     	if Spud::Cms.enable_full_page_caching
+        multisite_prefix = ""
+
+        if Spud::Core.multisite_mode_enabled
+            site_config = Spud::Core.site_config_for_id(session[:admin_site])
+            multisite_prefix = "/" + site_config[:short_name].to_s.downcase
+        end
+
     		if record.url_name == Spud::Cms.root_page_name
 	        	expire_page root_path
 		    else

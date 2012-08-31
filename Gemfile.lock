@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spud_cms (0.8.16)
+    spud_cms (0.8.17)
       codemirror-rails
       rails (~> 3.2.1)
       spud_core (>= 0.8.0, < 0.9.0)
@@ -41,7 +41,7 @@ GEM
     authlogic (3.1.3)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
-    bootstrap-will_paginate (0.0.7)
+    bootstrap-will_paginate (0.0.8)
       will_paginate
     breadcrumbs_on_rails (2.2.0)
     builder (3.0.0)
@@ -124,7 +124,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    spud_core (0.8.23)
+    spud_core (0.8.27)
       authlogic
       bootstrap-will_paginate
       breadcrumbs_on_rails
