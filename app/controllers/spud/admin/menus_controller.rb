@@ -43,7 +43,7 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 
 private
 	def load_menu
-		@menu = SpudMenu.site(session[:admin_site]).where(:id => params[:id]).first
+		@menu = SpudMenu.where(:id => params[:id]).first
 		if @menu.blank?
 			flash[:error] = "Menu not found!"
 			redirect_to spud_admin_menus_url() and return false

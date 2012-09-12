@@ -13,6 +13,8 @@ group :test do
   gem 'database_cleaner', '0.7.1'
 end
 
+gem 'spud_core',:path => "../spud_core_admin"
+
 gemspec
 
 # jquery-rails is used by the dummy application

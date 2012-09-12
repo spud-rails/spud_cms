@@ -51,17 +51,13 @@ class PagesController < ApplicationController
 				redirect_to @permalink.attachment.url_name == Spud::Cms.root_page_name ? root_url() : page_url(:id => @permalink.attachment.url_name) , :status => :moved_permanently and return
 			end
 
-			# flash[:error] = "Page not found"
-			# if !params[:id].blank?
-			# 	redirect_to root_url() and return
-			# else
-			# 	return
-			# end
+
 			render_404
 			return
 		end
 
 		if @page.is_private?
+
 			if defined?(require_user) && require_user == false
 				logger.debug("responds to require user!")
 				return

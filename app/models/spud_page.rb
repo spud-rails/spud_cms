@@ -25,8 +25,13 @@ class SpudPage < ActiveRecord::Base
 	scope :public, where(:visibility => 0)
 
 
-	def self.grouped(site_id=nil)
-		return site(site_id).all.group_by(&:spud_page_id)
+	def self.grouped(site_id=0)
+
+		if(Spud::Core.multisite_mode_enabled)
+			return site(site_id).all.group_by(&:spud_page_id)
+		else
+			return all.group_by(&:spud_page_id)
+		end
 	end
 
 	# Returns an array of pages in order of heirarchy

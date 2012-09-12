@@ -6,7 +6,7 @@ module Spud
 
     self.root_page_name = "home"
     self.menus_enabled = true
-    self.templates_enabled = false
+    self.templates_enabled = true
     self.default_page_layout = 'application'
     self.default_page_parts = ["Body"]
   	self.yield_body_as_content_block = false

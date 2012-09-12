@@ -31,7 +31,7 @@ describe SpudPage do
 		end
 
 		it "should dependantly destroy page_partials" do
-			t = Factory(:spud_page, :spud_page_partials => [SpudPagePartial.new()])
+			t = Factory(:spud_page, :spud_page_partials => [SpudPagePartial.new(:name => "body")])
       lambda {
   			t.destroy
       }.should change(SpudPagePartial, :count).from(1).to(0)

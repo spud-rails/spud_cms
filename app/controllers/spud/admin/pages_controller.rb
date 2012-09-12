@@ -7,6 +7,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	def index
 
 		@pages = SpudPage.site(session[:admin_site]).where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
+
 		respond_with @pages
 	end
 
