@@ -122,7 +122,6 @@ module Spud::Cms::ApplicationHelper
 			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
 
 
-
 		grouped_items = menu_items.group_by(&:parent_type)
 
 		if grouped_items["SpudMenu"].blank?
@@ -172,6 +171,9 @@ module Spud::Cms::ApplicationHelper
 			menu = menu.site(site_config[:site_id]) if !site_config.blank?
 		end
 		menu = menu.first
+		if(menu.blank?)
+			return ""
+		end
 		menu_items = menu.spud_menu_items_combined.select("
 			#{SpudMenuItem.table_name}.id as id,
 			#{SpudMenuItem.table_name}.url as url,
