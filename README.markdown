@@ -9,19 +9,17 @@ Installation/Usage
 
 1. In your Gemfile add the following
 
-		gem 'spud_core', :git => "git://github.com/davydotcom/spud_core_admin.git"
-		gem 'spud_cms', :git => "git://github.com/davydotcom/spud_cms.git"
+		gem 'spud_cms'
 
 2. Run bundle install
 3. Copy in database migrations to your new rails project
 
-		bundle exec rake spud_core:install:migrations
-		bundle exec rake spud_cms:install:migrations
+		bundle exec rake railties:install:migrations
 		rake db:migrate
 4. Change ApplicationController to inherit from Spud::ApplicationController instead of ActionController::Base
 
 		class ApplicationController < Spud::ApplicationController
-		
+
 5. run a rails server instance and point your browser to /spud/admin
 
 Routing to the CMS Engine
@@ -46,9 +44,9 @@ Using Menus
 -----------
 A lot of cms engines allow you to render your navigation links in a ul block by using your page tree structure. In a lot of cases this is insufficient as some sites have urls that redirect to pages outside of your cms. This is where menus come in. They can be built in the spud admin control panel.
 In your application layout file or any erb template you can render a ul block like so
-		
+
 		<%=sp_list_menu({:id => "navigation",:name => "Main"})%>
-		
+
 This will output a <ul id="navigation"></ul> block for the menu you created in admin named "Main"
 
 
@@ -75,7 +73,7 @@ Testing
 Spud uses RSpec for testing. Get the tests running with a few short commands:
 
 1. Create and migrate the databases:
-   
+
         rake db:create
         rake db:migrate
 
