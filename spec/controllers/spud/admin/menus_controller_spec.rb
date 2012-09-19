@@ -33,6 +33,23 @@ describe Spud::Admin::MenusController do
     end
   end
 
+  describe :create do
+    it "should create a new menu with a valid form submission" do
+      lambda {
+        post :create, :spud_menu => FactoryGirl.attributes_for(:spud_menu).reject{|k,v| k == 'site_id' || k == 'id'}
+      }.should change(SpudMenu,:count).by(1)
+      response.should be_redirect
+    end
+
+    it "should not create a menu with an invalid form entry" do
+      lambda {
+        post :create, :spud_menu => FactoryGirl.attributes_for(:spud_menu,:name => nil).reject{|k,v| k == 'site_id' || k == 'id'}
+      }.should_not change(SpudMenu,:count)
+
+
+    end
+  end
+
   describe :multisite do
     before(:each) do
       Spud::Core.configure do |config|
@@ -60,6 +77,44 @@ describe Spud::Admin::MenusController do
     it "should redirect to index if menu not found" do
       get :edit,:id => 3
       response.should redirect_to spud_admin_menus_url
+    end
+
+  end
+
+  describe :update do
+    it "should update the name when the name attribute is changed" do
+      menu = FactoryGirl.create(:spud_menu)
+      new_name = 'MyMenu'
+      lambda {
+        put :update,:id => menu.id, :spud_menu => menu.attributes.merge!(:name => new_name).reject{|k,v| k == 'site_id' || k == 'id'}
+        menu.reload
+      }.should change(menu,:name).to(new_name)
+
+    end
+
+    it "should redirect to the admin menus after a successful update" do
+      menu = FactoryGirl.create(:spud_menu)
+      put :update,:id => menu.id,:spud_menu => menu.attributes.merge!(:name => "MyMenu").reject{|k,v| k == 'site_id' || k == 'id'}
+
+      response.should redirect_to(spud_admin_menu_menu_items_url(:menu_id => menu.id))
+    end
+  end
+
+  describe :destroy do
+    it "should destroy the menu" do
+      menu = FactoryGirl.create(:spud_menu)
+      lambda {
+        delete :destroy, :id => menu.id
+      }.should change(SpudMenu,:count).by(-1)
+      response.should be_redirect
+    end
+
+    it "should not destroy the menu with a wrong id" do
+      menu = FactoryGirl.create(:spud_menu)
+      lambda {
+        delete :destroy,:id => "23532"
+      }.should_not change(SpudMenu,:count)
+      response.should be_redirect
     end
 
   end

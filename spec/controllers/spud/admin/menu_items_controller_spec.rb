@@ -36,4 +36,59 @@ describe Spud::Admin::MenuItemsController do
     end
   end
 
+  describe :create do
+    it "should create a new menu item with a valid form submission" do
+      lambda {
+        post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item).reject{|k,v| k == 'id' || k == :spud_menu_id}
+      }.should change(SpudMenuItem,:count).by(1)
+      response.should be_redirect
+    end
+
+    it "should not create a menu item with an invalid form entry" do
+      yamldata = FactoryGirl.attributes_for(:spud_menu_item,:name => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
+
+      lambda {
+        post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:name => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
+      }.should_not change(SpudMenuItem,:count)
+
+
+    end
+  end
+
+  describe :edit do
+    it "should respond with menu item by id" do
+      menu1 = FactoryGirl.create(:spud_menu_item)
+      menu2 = FactoryGirl.create(:spud_menu_item)
+      get :edit, :menu_id => @menu.id,:id => menu2.id
+      assigns(:menu_item).should == menu2
+    end
+
+    it "should redirect_to index if menu item not found" do
+      get :edit,:menu_id => @menu.id,:id => "345"
+      response.should redirect_to spud_admin_menu_menu_items_url(:menu_id => @menu.id)
+    end
+  end
+
+  describe :update do
+    it "should update the name when the name attribute is changed" do
+      menu_item = FactoryGirl.create(:spud_menu_item,:parent_id => @menu.id)
+      new_name = 'MyMenu'
+      lambda {
+        put :update,:menu_id => @menu.id,:id => menu_item.id, :spud_menu_item => menu_item.attributes.merge!(:name => new_name).reject{|k,v| k.to_sym == :spud_menu_id || k == 'id' || k.to_sym == :updated_at || k.to_sym == :created_at}
+        menu_item.reload
+      }.should change(menu_item,:name).to(new_name)
+
+    end
+  end
+
+
+  describe :destroy do
+    it "should destroy the menu item" do
+      menu_item = FactoryGirl.create(:spud_menu_item,:parent_id => @menu.id)
+      lambda {
+        delete :destroy,:menu_id => @menu.id,:id => menu_item.id
+      }.should change(SpudMenuItem,:count).by(-1)
+    end
+  end
+
   end

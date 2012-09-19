@@ -92,7 +92,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 private
 	def load_menu
 
-		@menu = SpudMenu.find(params[:menu_id])
+		@menu = SpudMenu.where(:id => params[:menu_id]).first
 
 		if @menu.blank?
 			flash[:error] = "Menu not found!"
@@ -105,7 +105,7 @@ private
 	end
 
 	def load_menu_item
-		@menu_item = SpudMenuItem.find(params[:id])
+		@menu_item = SpudMenuItem.where(:id =>params[:id]).first
 		if @menu_item.blank?
 			flash[:error] = "Menu Item not found!"
 			redirect_to spud_admin_menu_menu_items_url() and return false
