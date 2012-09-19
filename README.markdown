@@ -2,7 +2,7 @@ Spud CMS
 ========
 
 Spud CMS is a CMS Engine designed to be robust, easy to use, and light weight.
-NOTE: This project is still in its early infancy.
+
 
 Installation/Usage
 ------------------
