@@ -14,11 +14,13 @@ class Spud::Admin::TemplatesController < Spud::Admin::CmsController
 	def new
 		add_breadcrumb "New", :new_spud_admin_template_path
 		parts = Spud::Cms.default_page_parts
+		default_layout = Spud::Cms.default_page_layout
 		if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
 			site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
 			if !site_config.blank?
 				cms_config = Spud::Cms.site_config_for_short_name(site_config[0][:short_name])
 				parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
+				default_layout = cms_config[:default_page_layout] if !cms_config.blank? && !cms_config[:default_page_layout].blank?
 			end
 		end
 		@template = SpudTemplate.new(:base_layout => Spud::Cms.default_page_layout,:page_parts => parts.join(","))

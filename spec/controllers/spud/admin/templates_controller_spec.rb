@@ -12,6 +12,7 @@ describe Spud::Admin::TemplatesController do
         config.multisite_mode_enabled = false
         config.multisite_config = []
     end
+    session[:admin_site] = nil
   end
 
 
@@ -82,5 +83,38 @@ describe Spud::Admin::TemplatesController do
         delete :destroy,:id => template.id
       }.should change(SpudTemplate,:count).by(-1)
     end
+  end
+
+
+    describe :multisite do
+    before(:each) do
+      Spud::Core.configure do |config|
+        config.site_name = "Test Site"
+        config.multisite_mode_enabled = true
+        config.multisite_config = [{:hosts => ["test.host"], :site_name =>"Site B", :site_id => 1,:short_name => "siteb"}]
+      end
+      Spud::Cms.configure do |config|
+        config.multisite_config = [{:short_name => "siteb",:default_page_parts => ["Body","Sidebar"]}]
+      end
+      session[:admin_site] = 1
+    end
+      describe :new do
+        it "should prepopulate the page_parts field with the current config" do
+
+          get :new
+          assigns(:template).page_parts.should == 'Body,Sidebar'
+          response.should be_success
+        end
+      end
+
+      describe :edit do
+        it "should not allow editing of a template that is different from the current admin site" do
+          template = FactoryGirl.create(:spud_template)
+          get :edit,:id => template.id
+          response.should redirect_to spud_admin_templates_url
+          flash[:warning].should_not be_blank
+        end
+      end
+
   end
 end
