@@ -11,6 +11,13 @@ class SpudMenuItem < ActiveRecord::Base
 
 	attr_accessible :name,:parent_type,:parent_id,:item_type,:spud_page_id,:menu_order,:url,:classes 
 
+	def get_url
+		if !self.spud_page.blank?
+			return self.spud_page.url_name
+		else
+			return url
+		end
+	end
 
 	def options_tree(options,depth,current = nil)
 		sub_items = self.spud_menu_items
