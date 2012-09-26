@@ -1,8 +1,9 @@
 module Spud::Cms::ApplicationHelper
+	MENU_INDEX = {}
 	def sp_list_pages(options = {})
-		
+
 		pages = SpudPage.public.published_pages
-		
+
 		if Spud::Core.multisite_mode_enabled
 			site_config = Spud::Core.site_config_for_host(request.host_with_port)
 			pages = pages.site(site_config[:site_id]) if !site_config.blank?
@@ -12,7 +13,7 @@ module Spud::Cms::ApplicationHelper
 		active_class = "menu-active"
 		if !options.blank?
 			if options.has_key?(:exclude)
-				
+
 				pages = pages.where(["name NOT IN (?)",options[:exclude]])
 			end
 			if options.has_key?(:start_page_id)
@@ -29,14 +30,14 @@ module Spud::Cms::ApplicationHelper
 			if options.has_key?(:max_depth)
 				max_depth = options[:max_depth]
 			end
-			
+
 		else
 			content = "<ul>"
 		end
 
 		pages = pages.all.group_by(&:spud_page_id)
 		if pages[start_page].blank?
-			
+
 			return ""
 		end
 		pages[start_page].sort_by{|p| p.page_order}.each do |page|
@@ -55,7 +56,7 @@ module Spud::Cms::ApplicationHelper
 			content += "</li>"
 		end
 		content += "</ul>"
-		
+
 		return content.html_safe
 	end
 
@@ -64,18 +65,31 @@ module Spud::Cms::ApplicationHelper
 
 		max_depth = 0
 		menu = SpudMenu
+		menu_id = nil
+		menu_key = ""
 		start_menu_item = nil
 		if Spud::Core.multisite_mode_enabled
 			site_config = Spud::Core.site_config_for_host(request.host_with_port)
 			menu = menu.site(site_config[:site_id]) if !site_config.blank?
+			menu_key += "#{site_config[:site_id]}_"
 		end
 		if !options.blank?
 
 			if options.has_key?(:menu_id)
-				menu = menu.where(:id => options[:menu_id])
+				menu_id = options[:menu_id]
 			end
 			if  options.has_key?(:name)
+				menu_key +=  options[:name]
+
 				menu = menu.where(:name => options[:name])
+				menu_id = MENU_INDEX[menu_key]
+				if menu_id.blank?
+					menu = menu.first
+					if(!menu.blank?)
+						menu_id = menu.id
+						MENU_INDEX[menu_key] = menu.id
+					end
+				end
 			end
 			if options.has_key?(:start_menu_item_id)
 				start_menu_item = options[:start_menu_item_id]
@@ -85,7 +99,7 @@ module Spud::Cms::ApplicationHelper
 			else
 				content = "<ul #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			end
-			
+
 
 			if options.has_key?(:max_depth)
 				max_depth = options[:max_depth]
@@ -93,12 +107,11 @@ module Spud::Cms::ApplicationHelper
 		else
 			content = "<ul>"
 		end
-		menu = menu.first
-		if menu.blank?
-			
+
+		if menu_id.blank?
 			return ""
 		end
-		menu_items = menu.spud_menu_items_combined.select("
+		menu_items = SpudMenuItem.where(:spud_menu_id => menu_id).select("
 			#{SpudMenuItem.table_name}.id as id,
 			#{SpudMenuItem.table_name}.url as url,
 			#{SpudMenuItem.table_name}.classes as classes,
@@ -107,17 +120,16 @@ module Spud::Cms::ApplicationHelper
 			#{SpudMenuItem.table_name}.parent_id as parent_id,
 			#{SpudMenuItem.table_name}.name as name,
 			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
-		
-		
+
 
 		grouped_items = menu_items.group_by(&:parent_type)
 
 		if grouped_items["SpudMenu"].blank?
-			
+
 			return ""
 		end
 		child_items = grouped_items["SpudMenuItem"].blank? ? [] : grouped_items["SpudMenuItem"].group_by(&:parent_id)
-		
+
 		parent_items = grouped_items["SpudMenu"]
 		if start_menu_item != nil
 			parent_items = child_items[start_menu_item]
@@ -140,14 +152,14 @@ module Spud::Cms::ApplicationHelper
 			end
 			content += "</li>"
 		end
-		
+
 		content += "</ul>"
-		
+
 		return content.html_safe
 	end
 
 	def sp_menu_with_seperator(options={})
-		
+
 		seperator = "&nbsp;|&nbsp;".html_safe
 		if(options.has_key?(:seperator))
 			seperator = options[:seperator]
@@ -159,6 +171,9 @@ module Spud::Cms::ApplicationHelper
 			menu = menu.site(site_config[:site_id]) if !site_config.blank?
 		end
 		menu = menu.first
+		if(menu.blank?)
+			return ""
+		end
 		menu_items = menu.spud_menu_items_combined.select("
 			#{SpudMenuItem.table_name}.id as id,
 			#{SpudMenuItem.table_name}.url as url,
@@ -168,12 +183,12 @@ module Spud::Cms::ApplicationHelper
 			#{SpudMenuItem.table_name}.parent_id as parent_id,
 			#{SpudMenuItem.table_name}.name as name,
 			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
-		
-		menu_tags = []		
+
+		menu_tags = []
 		menu_items.sort_by{|p| p.menu_order}.each do |item|
 			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"]
 		end
-		
+
 		return menu_tags.join(seperator).html_safe
 	end
 private
@@ -184,7 +199,7 @@ private
 			return ""
 		end
 		content = "<ul>"
-		
+
 		spud_menu_items.sort_by{|p| p.menu_order}.each do |item|
 			active = false
 			if !item.url_name.blank?
@@ -233,8 +248,8 @@ private
 		content += "</ul>"
 		return content.html_safe
 	end
-	
 
-	
-	
+
+
+
 end

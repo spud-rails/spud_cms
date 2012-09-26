@@ -5,11 +5,12 @@ class SpudMenuItem < ActiveRecord::Base
 	has_many :spud_menu_items,:as => :parent,:dependent => :destroy
 
 	validates :name,:presence => true
+	validates :spud_menu_id,:presence => true
 	validates :parent_type,:presence => true
 	validates :parent_id,:presence => true
 
 
-	attr_accessible :name,:parent_type,:parent_id,:item_type,:spud_page_id,:menu_order,:url,:classes 
+	attr_accessible :name,:parent_type,:parent_id,:item_type,:spud_page_id,:menu_order,:url,:classes
 
 	def get_url
 		if !self.spud_page.blank?
@@ -64,19 +65,8 @@ class SpudMenuItem < ActiveRecord::Base
 				end
 			end
 		end
-		
+
 		return list
 	end
-	# def self.options_tree_for_item(item,menu)
-	# 	items = menu.spud_menu_items
-	# 	items = items.where(["id != ?",item.id]) if !item.blank? && !item.id.blank?
-			
 
-	# 	options = []
-	# 	items.each do |item|
-	# 	  options << ["#{item.name}",item.id]
-	# 	  options = item.options_tree(options,1,item)
-	# 	end
-	# 	return options
-	# end
 end

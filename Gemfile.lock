@@ -1,50 +1,62 @@
 PATH
   remote: .
   specs:
-    spud_cms (0.8.16)
+    spud_cms (0.9.0)
       codemirror-rails
       rails (~> 3.2.1)
-      spud_core (>= 0.8.0, < 0.9.0)
-      spud_permalinks (~> 0.0.4)
+      spud_core (>= 0.9.0, < 1.0.0)
+      spud_permalinks (~> 0.9.0)
+
+PATH
+  remote: ../spud_core_admin
+  specs:
+    spud_core (0.9.0)
+      authlogic
+      bootstrap-will_paginate
+      breadcrumbs_on_rails
+      jquery-rails
+      rails (~> 3.2.2)
+      retina_tag
+      will_paginate
 
 GEM
   remote: http://rubygems.org/
   specs:
-    actionmailer (3.2.3)
-      actionpack (= 3.2.3)
+    actionmailer (3.2.8)
+      actionpack (= 3.2.8)
       mail (~> 2.4.4)
-    actionpack (3.2.3)
-      activemodel (= 3.2.3)
-      activesupport (= 3.2.3)
+    actionpack (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
       builder (~> 3.0.0)
       erubis (~> 2.7.0)
-      journey (~> 1.0.1)
+      journey (~> 1.0.4)
       rack (~> 1.4.0)
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
-      sprockets (~> 2.1.2)
-    activemodel (3.2.3)
-      activesupport (= 3.2.3)
+      sprockets (~> 2.1.3)
+    activemodel (3.2.8)
+      activesupport (= 3.2.8)
       builder (~> 3.0.0)
-    activerecord (3.2.3)
-      activemodel (= 3.2.3)
-      activesupport (= 3.2.3)
+    activerecord (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
       arel (~> 3.0.2)
       tzinfo (~> 0.3.29)
-    activeresource (3.2.3)
-      activemodel (= 3.2.3)
-      activesupport (= 3.2.3)
-    activesupport (3.2.3)
+    activeresource (3.2.8)
+      activemodel (= 3.2.8)
+      activesupport (= 3.2.8)
+    activesupport (3.2.8)
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
     authlogic (3.1.3)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
-    bootstrap-will_paginate (0.0.7)
+    bootstrap-will_paginate (0.0.8)
       will_paginate
     breadcrumbs_on_rails (2.2.0)
-    builder (3.0.0)
+    builder (3.0.3)
     codemirror-rails (2.33)
       railties (~> 3.0)
     database_cleaner (0.7.1)
@@ -53,21 +65,21 @@ GEM
     factory_girl (2.5.0)
       activesupport
     hike (1.2.1)
-    i18n (0.6.0)
-    journey (1.0.3)
-    jquery-rails (2.0.2)
-      railties (>= 3.2.0, < 5.0)
+    i18n (0.6.1)
+    journey (1.0.4)
+    jquery-rails (2.1.2)
+      railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
-    json (1.7.0)
+    json (1.7.5)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     metaclass (0.0.1)
-    mime-types (1.18)
+    mime-types (1.19)
     mocha (0.10.3)
       metaclass (~> 0.0.1)
-    multi_json (1.3.4)
+    multi_json (1.3.6)
     mysql2 (0.3.11)
     polyglot (0.3.3)
     rack (1.4.1)
@@ -77,21 +89,21 @@ GEM
       rack
     rack-test (0.6.1)
       rack (>= 1.0)
-    rails (3.2.3)
-      actionmailer (= 3.2.3)
-      actionpack (= 3.2.3)
-      activerecord (= 3.2.3)
-      activeresource (= 3.2.3)
-      activesupport (= 3.2.3)
+    rails (3.2.8)
+      actionmailer (= 3.2.8)
+      actionpack (= 3.2.8)
+      activerecord (= 3.2.8)
+      activeresource (= 3.2.8)
+      activesupport (= 3.2.8)
       bundler (~> 1.0)
-      railties (= 3.2.3)
-    railties (3.2.3)
-      actionpack (= 3.2.3)
-      activesupport (= 3.2.3)
+      railties (= 3.2.8)
+    railties (3.2.8)
+      actionpack (= 3.2.8)
+      activesupport (= 3.2.8)
       rack-ssl (~> 1.3.2)
       rake (>= 0.8.7)
       rdoc (~> 3.4)
-      thor (~> 0.14.6)
+      thor (>= 0.14.6, < 2.0)
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
@@ -124,17 +136,9 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    spud_core (0.8.23)
-      authlogic
-      bootstrap-will_paginate
-      breadcrumbs_on_rails
-      jquery-rails
+    spud_permalinks (0.9.0)
       rails (~> 3.2.2)
-      retina_tag
-      will_paginate
-    spud_permalinks (0.0.4)
-      rails (~> 3.2.2)
-    thor (0.14.6)
+    thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.10)
       polyglot
@@ -156,4 +160,5 @@ DEPENDENCIES
   shoulda (~> 3.0.1)
   simplecov (~> 0.6.4)
   spud_cms!
+  spud_core!
   spud_permalinks

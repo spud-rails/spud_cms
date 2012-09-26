@@ -11,13 +11,13 @@ class SpudPage < ActiveRecord::Base
 
 
 	attr_accessible :name,:url_name,:created_by,:updated_by,:template_id,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes
-	
+
 	before_validation :generate_url_name
 	validates :name,:presence => true
 	validates_uniqueness_of :name, :scope => [:site_id,:spud_page_id]
 	validates :url_name,:presence => true
 	validates_uniqueness_of :url_name, :scope => :site_id
-	
+
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  where(:spud_page_id => nil)
 	scope :site, lambda {|sid| where(:site_id => sid)}
@@ -25,8 +25,13 @@ class SpudPage < ActiveRecord::Base
 	scope :public, where(:visibility => 0)
 
 
-	def self.grouped(site_id=nil)
-		return site(site_id).all.group_by(&:spud_page_id)
+	def self.grouped(site_id=0)
+
+		if(Spud::Core.multisite_mode_enabled)
+			return site(site_id).all.group_by(&:spud_page_id)
+		else
+			return all.group_by(&:spud_page_id)
+		end
 	end
 
 	# Returns an array of pages in order of heirarchy
@@ -61,7 +66,7 @@ class SpudPage < ActiveRecord::Base
      	  url_name += self.name.parameterize.downcase
 			if !self.use_custom_url_name
 				pages = SpudPage
-				
+
 				if !self.id.blank?
 					pages = pages.where("id != #{self.id}")
 				end
@@ -79,7 +84,7 @@ class SpudPage < ActiveRecord::Base
 				permalink = SpudPermalink.site(self.site_id).where(:url_name => url_name_new).first
 				counter = 1
 				while permalink.blank? == false
-				
+
 					if permalink.attachment == self
 						permalink.destroy
 						permalink = nil
@@ -97,21 +102,21 @@ class SpudPage < ActiveRecord::Base
           self.url_name = url_name
           self.use_custom_url_name = false
     	elsif self.id.to_i > 0
-			page = SpudPage.where(:id => self.id).first
-			if page.url_name.blank? == false && page.url_name != self.url_name
-				permalink = SpudPermalink.site(self.site_id).where(:url_name => self.url_name).first
-				if permalink.blank? == false
-					if permalink.attachment == self
-						permalink.destroy
-					else
-						self.errors.add :url_name, "This permalink has already been used by another page."
-						return false
+				page = SpudPage.where(:id => self.id).first
+				if page.url_name.blank? == false && page.url_name != self.url_name
+					permalink = SpudPermalink.site(self.site_id).where(:url_name => self.url_name).first
+					if permalink.blank? == false
+						if permalink.attachment == self
+							permalink.destroy
+						else
+							self.errors.add :url_name, "This permalink has already been used by another page."
+							return false
+						end
 					end
+					self.spud_permalinks.create(:url_name => page.url_name,:site_id => self.site_id)
 				end
-				self.spud_permalinks.create(:url_name => page.url_name,:site_id => self.site_id)
-			end
-      	end
-      	return true
+    	end
+    	return true
      end
 
      def is_private?

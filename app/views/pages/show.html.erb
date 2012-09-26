@@ -5,22 +5,22 @@
 	<%if !@page.meta_description.blank?%>
 		<meta name="description" content="<%=@page.meta_description%>" />
 	<%end%>
-	<%if !@page.meta_keywords.blank?%>
+
 		<meta name="keywords" content="<%=@page.meta_keywords%>" />
-	<%end%>
+
 <%end%>
 
 <%if !@inline.blank?%>
-	<%=render :inline => @inline%> 
+	<%=render :inline => @inline%>
 <%else%>
 	<h2><%=@page.name%></h2>
 <%end%>
 <%@page.spud_page_partials.each do |page_partial|%>
-	
-	<%if(page_partial.name.downcase == 'body' && Spud::Cms.yield_body_as_content_block == false)%>
+
+	<%if(page_partial.name.match(/^body$/i) && Spud::Cms.yield_body_as_content_block == false)%>
 		<%=page_partial.content.html_safe%>
 	<%else%>
-		<%=content_for page_partial.name.parameterize.underscore.to_sym do%>
+		<%=content_for page_partial.symbol_name.to_sym do%>
 			<%=page_partial.content.html_safe%>
 		<%end%>
 	<%end%>

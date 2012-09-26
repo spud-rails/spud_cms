@@ -31,11 +31,12 @@ describe SpudPage do
 		end
 
 		it "should dependantly destroy page_partials" do
-			t = Factory(:spud_page, :spud_page_partials => [SpudPagePartial.new()])
+			t = Factory(:spud_page, :spud_page_partials => [SpudPagePartial.new(:name => "body")])
       lambda {
   			t.destroy
       }.should change(SpudPagePartial, :count).from(1).to(0)
 		end
+
 
 	end
 
@@ -53,6 +54,111 @@ describe SpudPage do
 			SpudPage.public.to_sql.should == SpudPage.where(:visibility => 0).to_sql
 		end
 
+		it "should group pages by parent" do
+			parent_page = Factory.build(:spud_page,:name => "parent")
+			parent_page.save
+
+			page = Factory.build(:spud_page,:name => "Page 1")
+			page.spud_page = parent_page
+			page.save
+			page2 = Factory.build(:spud_page,:name => "Page 2")
+			page2.spud_page = parent_page
+			page2.save
+
+			SpudPage.grouped()[parent_page.id].count.should == 2
+
+
+		end
+
+		it "should return private if visibility is == 1" do
+			parent_page = Factory.build(:spud_page,:name => "parent",:visibility => 1)
+
+			parent_page.is_private?.should == true
+
+			parent_page.visibility = 0
+			parent_page.is_private?.should == false
+		end
+
+
 	end
+
+	describe "generate_url_name" do
+		it "should add the parent url name if a page has a parent" do
+			# Factory(:spud_page, :name => "test")
+			parent_page = Factory.build(:spud_page,:name => "about")
+			parent_page.save
+			t = Factory.build(:spud_page, :name => "test")
+			t.spud_page = parent_page
+			t.valid?
+
+			t.url_name.should == 'about/test'
+
+		end
+
+		it "should add a counter to url_name if the url_name is already in use" do
+			page = Factory.build(:spud_page,:name => "testimonials")
+			page.save
+
+			page2 = Factory.build(:spud_page,:name => "testimonials")
+			page2.valid?
+
+			page2.url_name.should == 'testimonials-1'
+		end
+
+		it "should add a counter to url_name if the url_name was once in use by another page that was renamed" do
+			page = Factory.build(:spud_page,:name => "another")
+			page.save
+			page.name = "again"
+			page.save
+
+			page2 = Factory.build(:spud_page,:name => "another")
+			page2.valid?
+
+			page2.url_name.should == 'another-1'
+		end
+
+		it "should destroy historical permalink if a page is renamed back to its previous name" do
+			page = Factory.build(:spud_page,:name => "permapage")
+			page.save
+
+			page.name = 'permapage new'
+			page.save
+
+			page.name = 'permapage'
+
+			basecount = SpudPermalink.count
+
+      lambda {
+  			page.valid?
+      }.should change(page.spud_permalinks.where(:url_name => 'permapage'), :count).from(1).to(0)
+		end
+
+		it "should not allow a custom url to be reused by another page" do
+			page = Factory.build(:spud_page,:name => "original")
+			page.save
+
+			page = Factory.build(:spud_page,:name => "new",:use_custom_url_name => true,:url_name => "original")
+
+			page.valid?.should == false
+		end
+
+		it "should not allow a custom url to be reused by another page even if it is a historical permalink" do
+			page = Factory.build(:spud_page,:name => "original")
+			page.save
+			page.name = "original2"
+			page.save
+
+			page = Factory.build(:spud_page,:name => "new")
+			page.save
+			page.use_custom_url_name = true
+			page.url_name = 'original'
+			page.valid?.should == false
+		end
+
+
+	end
+
+
+
 
 end

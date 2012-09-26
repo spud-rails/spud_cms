@@ -7,22 +7,12 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	def index
 
 		@pages = SpudPage.site(session[:admin_site]).where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
+
 		respond_with @pages
 	end
 
 	def show
-
-
-		if @page.blank?
-			flash[:error] = "Page not found"
-			if !params[:id].blank?
-				redirect_to spud_admin_pages_url() and return
-			else
-				return
-			end
-		end
-		layout = 'application'
-
+		layout = Spud::Cms.default_page_layout
 
 		if !@page.spud_template.blank?
 			if !@page.spud_template.base_layout.blank?

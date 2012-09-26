@@ -1,8 +1,17 @@
 class SpudPagePartial < ActiveRecord::Base
 	belongs_to :spud_page
+	validates :name,:presence => true
 	attr_accessible :name,:spud_page_id,:content,:format
 	before_save :maintain_revisions
+	before_save :update_symbol_name
 
+	def update_symbol_name
+		self.symbol_name = self.name.parameterize.underscore
+	end
+
+	def symbol_name
+		return @symbol_name || self.name.parameterize.underscore
+	end
 
 	def maintain_revisions
 		if !self.changed.include?('content')
