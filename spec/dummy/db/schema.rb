@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120912121313) do
+ActiveRecord::Schema.define(:version => 20121016233715) do
 
   create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"
@@ -66,9 +66,10 @@ ActiveRecord::Schema.define(:version => 20120912121313) do
     t.string   "name"
     t.text     "content"
     t.string   "format"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
     t.string   "symbol_name"
+    t.text     "content_processed"
   end
 
   add_index "spud_page_partials", ["spud_page_id"], :name => "index_spud_page_partials_on_spud_page_id"

@@ -49,6 +49,11 @@ In your application layout file or any erb template you can render a ul block li
 
 This will output a <ul id="navigation"></ul> block for the menu you created in admin named "Main"
 
+Using Liquid Template Engine
+----------------------------
+Spud CMS utilizes the liquid template syntax engine created by Shopify. This allows you to easily inject variables into your pages in the page editor. Example:
+
+    <h2>{{page.name}}</h2>
 
 Adding Your Own Engines
 -----------------------

@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.1"
   s.add_dependency 'spud_core', ">= 0.9.0","< 1.0.0"
   s.add_dependency 'spud_permalinks', "~>0.9.0"
+  s.add_dependency 'liquid'
   s.add_dependency 'codemirror-rails'
 
   s.add_development_dependency 'mysql2', '0.3.11'

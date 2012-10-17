@@ -1,9 +1,10 @@
 class SpudPagePartial < ActiveRecord::Base
 	belongs_to :spud_page
 	validates :name,:presence => true
-	attr_accessible :name,:spud_page_id,:content,:format
+	attr_accessible :name, :spud_page_id, :content, :format, :content_processed
 	before_save :maintain_revisions
 	before_save :update_symbol_name
+	before_save :postprocess_content
 
 	def update_symbol_name
 		self.symbol_name = self.name.parameterize.underscore
@@ -11,6 +12,22 @@ class SpudPagePartial < ActiveRecord::Base
 
 	def symbol_name
 		return @symbol_name || self.name.parameterize.underscore
+	end
+
+	def postprocess_content
+		template = Liquid::Template.parse(self.content) # Parses and compiles the template
+		self.content_processed = template.render('page' => self.spud_page)
+	end
+
+	def content_processed=(content)
+		write_attribute(:content_processed,content)
+	end
+
+	def content_processed
+		if read_attribute(:content_processed).blank?
+			self.update_column(:content_processed, postprocess_content)
+		end
+		return read_attribute(:content_processed)
 	end
 
 	def maintain_revisions

@@ -6,17 +6,15 @@
 <%end%>
 
 <%if !@inline.blank?%>
-	<%=render :inline => @inline%> 
-<%else%>
-	<h2><%=@page.name%></h2>
+	<%=render :inline => @inline%>
 <%end%>
 <%@page.spud_page_partials.each do |page_partial|%>
-	
+
 	<%if(page_partial.name.downcase == 'body' && Spud::Cms.yield_body_as_content_block == false)%>
-		<%=page_partial.content.html_safe%>
+		<%=page_partial.postprocess_content.html_safe%>
 	<%else%>
 		<%=content_for page_partial.name.parameterize.underscore.to_sym do%>
-			<%=page_partial.content.html_safe%>
+			<%=page_partial.postprocess_content.html_safe%>
 		<%end%>
 	<%end%>
 <%end%>

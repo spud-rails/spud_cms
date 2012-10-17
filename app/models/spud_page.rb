@@ -34,6 +34,10 @@ class SpudPage < ActiveRecord::Base
 		end
 	end
 
+	def to_liquid
+		return {'name' => self.name, 'url_name' => self.url_name}
+	end
+
 	# Returns an array of pages in order of heirarchy
 	# 	:fitler Filters out a page by ID, and all of its children
 	#   :value Pick an attribute to be used in the value field, defaults to ID

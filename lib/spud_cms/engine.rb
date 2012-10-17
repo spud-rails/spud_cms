@@ -1,6 +1,8 @@
 require 'spud_core'
 require 'spud_permalinks'
 require 'codemirror-rails'
+require 'liquid'
+
 module Spud
   module Cms
     class Engine < Rails::Engine
@@ -9,7 +11,7 @@ module Spud
     config.generators do |g|
       g.test_framework :rspec, :view_specs => false
     end
-     
+
      initializer :admin do
       Spud::Core.configure do |config|
           config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0}]
@@ -22,7 +24,7 @@ module Spud
           if Spud::Cms.enable_sitemap == true
             config.sitemap_urls += [:spud_cms_sitemap_url]
           end
-          
+
       end
      end
      initializer :spud_cms_routes do |config|
@@ -32,10 +34,10 @@ module Spud
       puts "Loading Railties Order"
       # Rails.application.config.railties_order = [:main_app, :all,Spud::Core::Engine,Spud::Cms::Engine]
      end
-     initializer :assets do |config| 
+     initializer :assets do |config|
     	Rails.application.config.assets.precompile += ["spud/admin/cms*"]
   	 end
 
-  end 
+  end
  end
 end
