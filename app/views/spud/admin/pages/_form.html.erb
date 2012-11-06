@@ -3,16 +3,16 @@
   <div class="control-group">
   <legend>Page Title</legend>
     	<%=f.label :name, :required=>true,:style =>"display:none;", :class=>"control-label"%>
-      
+
         <%=f.text_field :name, :class => "full-width"%>
-      
+
   </div>
 </fieldset>
-<div id="page_partials_form" class="formtabs">
-	<ul class="formtab_buttons">
+<div id="page_partials_form" class="formtabs tab-content">
+	<ul class="formtab_buttons nav nav-tabs">
 	</ul>
 	<%=f.fields_for :spud_page_partials do |b|%>
-		<div class="formtab">
+		<div class="formtab tab-pane">
 			<%=b.hidden_field :name,:class => "tab_name"%>
 			<%=b.text_area :content,:class => "tinymce"%>
 		</div>
@@ -21,10 +21,10 @@
 <br />
 <fieldset>
   <legend>Advanced Settings (optional)</legend>
-  
+
      <%if Spud::Cms.templates_enabled%>
     	<div class="control-group">
-      	
+
       	<%=f.label :template_id, "Template", :class=>"control-label"%>
         <div class="controls">
         	<%=f.select :template_id, options_for_select(SpudTemplate.site(session[:admin_site]).all.collect{|tp| [tp.name,tp.id]},@page.template_id), {:include_blank => 'Default'},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
@@ -33,7 +33,7 @@
   	  </div>
       <%end%>
     <div class="control-group">
-      
+
       <%=f.label :spud_page_id, "Parent Page", :class=>"control-label"%>
       <div class="controls">
         <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page,:site_id => session[:admin_site]),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
@@ -41,7 +41,7 @@
       </div>
     </div>
     <div class="control-group">
-      
+
       <%=f.label :url_name, "Perma Link",:disabled => true, :class=>"control-label"%>
       <div class="controls">
         <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
@@ -51,19 +51,19 @@
         </label>
       </div>
     </div>
-  
+
 </fieldset>
 <fieldset>
   <legend>Meta Information (optional)</legend>
   <p>These fields are used to notify search engines about important keywords and the appropriate description to display in a search result.</p>
-  
+
     <div class="control-group">
       <%=f.label :meta_keywords,"Keywords", :class=>"control-label"%>
       <div class="controls">
         <%=f.text_field :meta_keywords,:title => "",:style=>"width:600px;" %>
         <span class="help-inline">A Comma seperated list of keywords for search engines. Keep it short (no more than 10 keywords)</span>
       </div>
-      
+
     </div>
     <div class="control-group">
       <%=f.label :meta_description,"Description", :class=>"control-label"%>

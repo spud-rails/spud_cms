@@ -14,7 +14,7 @@ $(document).ready(function() {
 	$("#spud_page_template_id").bind('change', function() {
 		var $this = $(this);
 		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
-			$('.formtabs').tabs('destroy');
+			// $('.formtabs').tabs('destroy');
 
 
 			$('textarea.tinymce').each(function() {$(this).tinymce().execCommand('mceRemoveControl',false,this.id)});

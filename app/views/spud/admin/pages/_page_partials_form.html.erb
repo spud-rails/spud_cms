@@ -1,9 +1,9 @@
-<div id="page_partials_form" class="formtabs">
-	<ul class="formtab_buttons">
+<div id="page_partials_form" class="formtabs tab-content">
+	<ul class="formtab_buttons nav nav-tabs">
 	</ul>
 	<% last_index = 0 %>
 	<% spud_page_partials.each_with_index do |spud_page_partial, index| %>
-		<div class="formtab">
+		<div class="formtab tab-pane">
 			<input type="hidden" class="tab_name" name="spud_page[spud_page_partials_attributes][<%= index %>][name]" value="<%= spud_page_partial.name %>" />
 			<textarea class="wysiwym tinymce" name="spud_page[spud_page_partials_attributes][<%= index %>][content]">
 				<%= spud_page_partial.content %>
