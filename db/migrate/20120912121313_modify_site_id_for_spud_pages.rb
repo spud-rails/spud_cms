@@ -4,7 +4,6 @@ class ModifySiteIdForSpudPages < ActiveRecord::Migration
     change_column :spud_templates,:site_id,:integer,:default => 0,:null => false
     change_column :spud_menus,:site_id,:integer,:default => 0,:null => false
     SpudPage.where(:site_id => nil).each {|f| f.site_id = 0 ; f.save}
-    SpudTemplate.where(:site_id => nil).each {|f| f.site_id = 0 ; f.save}
     SpudMenu.where(:site_id => nil).each {|f| f.site_id = 0 ; f.save}
   end
 
