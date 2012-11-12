@@ -30,7 +30,6 @@ in your applications environment.rb file add a configure block as such
 
 		Spud::Cms.configure do |config|
 			config.menus_enabled = true
-			config.templates_enabled = false
 			config.root_page_name = "home"
 		end
 
@@ -48,6 +47,21 @@ In your application layout file or any erb template you can render a ul block li
 		<%=sp_list_menu({:id => "navigation",:name => "Main"})%>
 
 This will output a <ul id="navigation"></ul> block for the menu you created in admin named "Main"
+
+Defining Templates / Layouts
+----------------------------
+Spud CMS has recently changed its template structure. The admin templates area is no longer with us. In Spud CMS templates are defined similar to how an asset pipeline manifest is defined. At the top of your layout files a series of comments can be used to define the name of the template, and the content_for blocks that are editable by the user.
+
+Example:
+
+    <%
+    #template_name: 2 Column Page
+    #html: Left
+    #html: Right
+    %>
+
+Optionally a description can be passed as well as a `site_name: default` for multisite mode.
+
 
 Using Liquid Template Engine
 ----------------------------
