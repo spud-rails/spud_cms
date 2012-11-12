@@ -127,9 +127,8 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
       layout, layout_info = layouts.select{|k,v| v[:default]}.flatten
       page.layout = layout
     	layout_info[:partials].each do |part|
-			new_page_partials << page.spud_page_partials.build(:name => part)
-		end
-
+  			new_page_partials << page.spud_page_partials.build(:name => part)
+  		end
     end
     new_page_partials.each do |partial|
       old_partial = old_page_partials.select {|pp| partial.name.strip.downcase == pp.name.strip.downcase }

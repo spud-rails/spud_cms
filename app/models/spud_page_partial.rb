@@ -1,5 +1,6 @@
 class SpudPagePartial < ActiveRecord::Base
 	belongs_to :spud_page
+	has_many :spud_page_liquid_tags
 	validates :name,:presence => true
 	attr_accessible :name, :spud_page_id, :content, :format, :content_processed
 	before_save :maintain_revisions
@@ -16,7 +17,17 @@ class SpudPagePartial < ActiveRecord::Base
 
 	def postprocess_content
 		template = Liquid::Template.parse(self.content) # Parses and compiles the template
+		update_taglist(template)
 		self.content_processed = template.render('page' => self.spud_page)
+	end
+
+	def update_taglist(template)
+		self.spud_page_liquid_tags.delete_all
+		template.root.nodelist.each do |node|
+			if !node.is_a?(String) && defined?(node.tag_name) && defined?(node.tag_value)
+				self.spud_page_liquid_tags.create(:tag_name => node.tag_name,:value => node.tag_value)
+			end
+		end
 	end
 
 	def content_processed=(content)
