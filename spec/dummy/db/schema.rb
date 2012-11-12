@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016233715) do
+ActiveRecord::Schema.define(:version => 20121112151110) do
 
   create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"
@@ -85,7 +85,6 @@ ActiveRecord::Schema.define(:version => 20121016233715) do
     t.text     "meta_description"
     t.string   "meta_keywords"
     t.integer  "page_order"
-    t.integer  "template_id"
     t.datetime "created_at",                              :null => false
     t.datetime "updated_at",                              :null => false
     t.integer  "visibility",          :default => 0
@@ -93,6 +92,7 @@ ActiveRecord::Schema.define(:version => 20121016233715) do
     t.boolean  "use_custom_url_name", :default => false
     t.text     "notes"
     t.integer  "site_id",             :default => 0,      :null => false
+    t.string   "layout"
   end
 
   add_index "spud_pages", ["site_id"], :name => "index_spud_pages_on_site_id"
@@ -108,18 +108,6 @@ ActiveRecord::Schema.define(:version => 20121016233715) do
 
   add_index "spud_permalinks", ["attachment_type", "attachment_id"], :name => "index_spud_permalinks_on_attachment_type_and_attachment_id"
   add_index "spud_permalinks", ["site_id"], :name => "index_spud_permalinks_on_site_id"
-
-  create_table "spud_templates", :force => true do |t|
-    t.string   "name"
-    t.string   "base_layout"
-    t.text     "content"
-    t.text     "page_parts"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.integer  "site_id",     :default => 0, :null => false
-  end
-
-  add_index "spud_templates", ["site_id"], :name => "index_spud_templates_on_site_id"
 
   create_table "spud_user_settings", :force => true do |t|
     t.integer  "spud_user_id"

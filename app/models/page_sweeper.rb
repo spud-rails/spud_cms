@@ -1,5 +1,5 @@
 class PageSweeper < ActionController::Caching::Sweeper
-  observe SpudPage,SpudTemplate,SpudMenuItem
+  observe SpudPage,SpudMenuItem
 
   def before_save(record)
     if record.is_a?(SpudPage) && record.changed_attributes.has_key?("url_name")
@@ -30,11 +30,7 @@ class PageSweeper < ActionController::Caching::Sweeper
   end
 private
   def expire_cache_for(record)
-  	if(record.is_a?(SpudTemplate))
-  		record.spud_pages.each do |page|
-  			expire_cache_for(page)
-  		end
-    elsif record.is_a?(SpudPage)
+  	if record.is_a?(SpudPage)
     	if Spud::Cms.enable_full_page_caching
         multisite_prefix = ""
 

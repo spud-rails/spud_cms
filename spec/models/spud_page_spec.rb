@@ -3,7 +3,6 @@ require 'spec_helper'
 describe SpudPage do
 
 	it {should have_many(:spud_page_partials)}
-	it {should belong_to(:spud_template)}
 	it {should have_many(:spud_pages)}
 	it {should belong_to(:spud_page)}
 	it {should belong_to(:created_by_user)}

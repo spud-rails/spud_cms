@@ -250,6 +250,15 @@ private
 	end
 
 
+	def layout_options
+		layouts = Spud::Cms::Engine.template_parser.layouts
+		layout_options = []
+		layouts.each_pair do |key,value|
+			layout_options << [value[:template_name],key]
+		end
+		return layout_options
+	end
+
 
 
 end

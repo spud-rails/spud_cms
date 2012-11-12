@@ -37,17 +37,7 @@ describe PagesController do
 
     end
 
-    it "should render custom layout if template in use" do
-      t = FactoryGirl.build(:spud_template)
-      t.base_layout = 'content_left'
-      t.content = "&nbsp;"
-      t.save
-      p = FactoryGirl.create(:spud_page,:template_id => t.id)
 
-      get :show ,:id => p.url_name
-      assigns(:layout).should render_template(:layout => "layouts/#{t.base_layout}")
-      assigns(:inline).should == t.content
-    end
 
     it "should not allow access to private pages when logged out" do
       page = FactoryGirl.create(:spud_page,:name => "about",:visibility => 1)

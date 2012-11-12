@@ -29,7 +29,7 @@ class PagesController < ApplicationController
 			end
 		end
 
-		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_template,:spud_page_partials])
+		@page = SpudPage.published_pages.where(:url_name => url_name).includes([:spud_page_partials])
 
 		# MultiSite Code Block
 		if Spud::Core.multisite_mode_enabled
@@ -65,7 +65,7 @@ class PagesController < ApplicationController
 			logger.debug("does not!")
 		end
 
-		layout = Spud::Cms.default_page_layout
+		layout = @page.layout || Spud::Cms.default_page_layout
 
 		# MultiSite Code Block
 		if Spud::Core.multisite_mode_enabled && !site_config.blank?
@@ -73,12 +73,6 @@ class PagesController < ApplicationController
 			layout = cms_config[:default_page_layout] if !cms_config.blank? && !cms_config[:default_page_layout].blank?
 		end
 
-		if !@page.spud_template.blank?
-			if !@page.spud_template.base_layout.blank?
-				layout = @page.spud_template.base_layout
-			end
-			@inline = @page.spud_template.content
-		end
 
 		render :layout => layout
 

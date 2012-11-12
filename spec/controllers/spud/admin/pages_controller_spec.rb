@@ -34,15 +34,7 @@ describe Spud::Admin::PagesController do
       response.should be_success
     end
 
-    it "should render custom layout if template in use" do
-      t = FactoryGirl.build(:spud_template)
-      t.base_layout = 'content_left'
-      t.save
-      p = FactoryGirl.create(:spud_page,:template_id => t.id)
 
-      get :show ,:id => p.id
-      assigns(:layout).should render_template(:layout => "layouts/#{t.base_layout}")
-    end
 
     # it "should redirect if no id specified" do
     #   get :show,:id => nil

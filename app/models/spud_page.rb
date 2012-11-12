@@ -2,7 +2,6 @@ class SpudPage < ActiveRecord::Base
 	searchable
 	belongs_to :spud_page
 	has_many :spud_page_partial_revisions
-	belongs_to :spud_template,:foreign_key => :template_id
 	has_many :spud_pages, :dependent => :nullify
 	has_many :spud_page_partials,:dependent => :destroy
 	has_many :spud_permalinks,:as => :attachment, :dependent => :destroy
@@ -10,7 +9,7 @@ class SpudPage < ActiveRecord::Base
 	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
 
 
-	attr_accessible :name,:url_name,:created_by,:updated_by,:template_id,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes
+	attr_accessible :name,:url_name,:created_by,:updated_by,:layout,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes
 
 	before_validation :generate_url_name
 	validates :name,:presence => true

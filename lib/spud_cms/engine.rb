@@ -18,9 +18,7 @@ module Spud
           if Spud::Cms.menus_enabled
             config.admin_applications += [{:name => "Menus",:thumbnail => "spud/admin/menus_thumb.png",:url => "/spud/admin/menus",:order => 2}]
           end
-          if Spud::Cms.templates_enabled
-            config.admin_applications += [{:name => "Templates",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/templates",:order => 4}]
-          end
+
           if Spud::Cms.enable_sitemap == true
             config.sitemap_urls += [:spud_cms_sitemap_url]
           end
@@ -30,13 +28,18 @@ module Spud
      initializer :spud_cms_routes do |config|
       config.routes_reloader.paths << File.expand_path('../page_route.rb', __FILE__)
      end
-     initializer :load_priority, :after => :load_environment_config do |config|
-      puts "Loading Railties Order"
-      # Rails.application.config.railties_order = [:main_app, :all,Spud::Core::Engine,Spud::Cms::Engine]
-     end
+
      initializer :assets do |config|
     	Rails.application.config.assets.precompile += ["spud/admin/cms*"]
   	 end
+
+     initializer :template_parser do |config|
+      @template_parser = Spud::Cms::TemplateParser.new()
+     end
+
+     def template_parser
+      return @template_parser
+     end
 
   end
  end

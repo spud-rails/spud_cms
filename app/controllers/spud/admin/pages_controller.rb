@@ -12,31 +12,20 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	end
 
 	def show
-		layout = Spud::Cms.default_page_layout
+		layout = @page.layout || Spud::Cms.default_page_layout
 
-		if !@page.spud_template.blank?
-			if !@page.spud_template.base_layout.blank?
-				layout = @page.spud_template.base_layout
-			end
-			@inline = @page.spud_template.content
-		end
+
 		render :layout => layout
 	end
 
 	def new
 		add_breadcrumb "New", :new_spud_admin_page_path
 
+    layouts = Spud::Cms::Engine.template_parser.layouts(Spud::Core.site_config_for_id(session[:admin_site] || 0)[:short_name])
+    layout, layout_info = layouts.select{|k,v| v[:default]}.flatten
+		@page = SpudPage.new(:layout => layout)
+		parts = layout_info[:partials]
 
-		@templates = SpudTemplate.all
-		@page = SpudPage.new
-		parts = Spud::Cms.default_page_parts
-		if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
-			site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
-			if !site_config.blank?
-				cms_config = Spud::Cms.site_config_for_short_name(site_config[0][:short_name])
-				parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
-			end
-		end
 		parts.each do |part|
 			@page.spud_page_partials.new(:name => part.strip)
 		end
@@ -59,28 +48,20 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 		add_breadcrumb "#{@page.name}", :spud_admin_page_path
 		add_breadcrumb "Edit", :edit_spud_admin_page_path
 
-		@templates = SpudTemplate.all
-		if @page.spud_page_partials.blank?
-			parts = Spud::Cms.default_page_parts
-			if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
-				site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
-				if !site_config.blank?
-					cms_config = Spud::Cms.site_config_for_short_name(site_config[0][:short_name])
-					parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
-				end
-			end
-			parts.each do |part|
-				@page.spud_page_partials.new(:name => part.strip)
-			end
+    layouts = Spud::Cms::Engine.template_parser.layouts(Spud::Core.site_config_for_id(session[:admin_site] || 0)[:short_name])
+    layout, layout_info = layouts.select{|k,v| k == @page.layout}.flatten  if @page.layout.blank? == false
+    if layout.blank?
+      layout, layout_info = layouts.select{|k,v| v[:default]}.flatten
+    end
+		@page.layout = layout
+
+		layout_info[:partials].each do |part|
+			partial = @page.spud_page_partials.select{|p| p.name == part.strip}
+      if partial.blank?
+        @page.spud_page_partials.new(:name => part.strip)
+      end
 		end
-		if !@page.spud_template.blank?
-			@page.spud_template.page_parts.split(",").each do |part|
-				partial = @page.spud_page_partials.select{|p| p.name == part.strip}
-				if partial.blank?
-					@page.spud_page_partials.new(:name => part.strip)
-				end
-			end
-		end
+
 	end
 
 	def update
@@ -132,32 +113,29 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	end
 
   def page_parts
-    template =  params[:template] && !params[:template].blank? ? SpudTemplate.where(:id => params[:template]).first : nil
+    layouts = Spud::Cms::Engine.template_parser.layouts(Spud::Core.site_config_for_id(session[:admin_site] || 0)[:short_name])
+    template =  params[:template] && !params[:template].blank? ? layouts[params[:template]] : nil
     page = SpudPage.where(:id => params[:page]).includes(:spud_page_partials).first
     page = SpudPage.new if page.blank?
     old_page_partials = Array.new(page.spud_page_partials)
     new_page_partials = []
-    if !template.blank? && !template.page_parts.blank?
-      template.page_parts.split(',').each do |page_part|
+    if !template.blank?
+      template[:partials].each do |page_part|
         new_page_partials << page.spud_page_partials.build(:name => page_part.strip)
       end
     else
-    	parts = Spud::Cms.default_page_parts
-			if Spud::Core.multisite_mode_enabled && !session[:admin_site].blank?
-				site_config = Spud::Core.multisite_config.select{|c| c[:site_id] == session[:admin_site]}
-				if !site_config.blank?
-					cms_config = Spud::Cms.site_config_for_short_name(site_config[0][:short_name])
-					parts = cms_config[:default_page_parts] if !cms_config.blank? && !cms_config[:default_page_parts].blank?
-				end
-			end
-    	parts.each do |part|
+      layout, layout_info = layouts.select{|k,v| v[:default]}.flatten
+      page.layout = layout
+    	layout_info[:partials].each do |part|
 			new_page_partials << page.spud_page_partials.build(:name => part)
 		end
 
     end
     new_page_partials.each do |partial|
       old_partial = old_page_partials.select {|pp| partial.name.strip.downcase == pp.name.strip.downcase }
+      logger.debug "testing content swap"
       partial.content = old_partial[0].content if !old_partial.blank?
+      logger.debug partial.content
     end
 
     respond_to do |format|

@@ -8,8 +8,8 @@ Rails.application.routes.draw do
              post 'preview'
            end
          end
-         resources :templates 
-   		
+         resources :templates
+
    		resources :menus do
    			resources :menu_items
    		end
@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       end
    end
    root :to => 'pages#show'
-   
+
    # This is located in lib/spud_cms/page_route.rb to make sure it is loaded last
    # match "*id", :controller => "pages",:action => "show", :as => "page"
 

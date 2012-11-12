@@ -11,7 +11,7 @@
 $(document).ready(function() {
 	// initWysiwym();
 	initTinyMCE();
-	$("#spud_page_template_id").bind('change', function() {
+	$("#spud_page_layout").bind('change', function() {
 		var $this = $(this);
 		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
 			// $('.formtabs').tabs('destroy');
@@ -21,7 +21,7 @@ $(document).ready(function() {
 			$("#page_partials_form").replaceWith(data)
 			initFormTabs();
 			initTinyMCE();
-			// initWysiwym();
+
 		}, 'text').error(function(jqXHR) {
 			$('<p> Error: ' + jqXHR.responseText + '</p>').dialog();
 		});
