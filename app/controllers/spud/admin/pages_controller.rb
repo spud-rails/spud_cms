@@ -3,10 +3,15 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	add_breadcrumb "Pages", :spud_admin_pages_path
 	belongs_to_spud_app :pages
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
-	cache_sweeper :page_sweeper,:only => [:update,:destroy]
+
 	def index
 
 		@pages = SpudPage.site(session[:admin_site]).where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
+
+    home_page = SpudPage.where(:url_name => Spud::Cms.root_page_name).first
+    if home_page.blank?
+      flash.now[:warning] = "You have not setup your default CMS page. This page will be your homepage. To do so, create a page with the name '#{Spud::Cms.root_page_name.titlecase}'"
+    end
 
 		respond_with @pages
 	end

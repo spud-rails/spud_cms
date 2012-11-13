@@ -1,19 +1,18 @@
 class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 	add_breadcrumb "Menus", :spud_admin_menus_path
-	belongs_to_spud_app :menus
+	belongs_to_spud_app :menus, :page_title => "Menu Items"
 	layout 'spud/admin/cms/detail'
 	before_filter :load_menu
 	before_filter :load_menu_item, :only => [:edit,:update,:show,:destroy,:reorder]
-	cache_sweeper :page_sweeper,:only => [:create,:update,:destroy]
+
+
 	def index
-		@page_name = "Menu Items"
 		@menu_items = @menu.spud_menu_items.order(:menu_order).includes(:spud_menu_items)
 		respond_with @menu_items
 	end
 
 	def new
 		add_breadcrumb "New", :new_spud_admin_page_path
-		@page_name = "New Menu Item"
 
 		@menu_item = @menu.spud_menu_items.new
 		respond_with @menu_item
@@ -22,7 +21,6 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 	def create
 
 		add_breadcrumb "New", :new_spud_admin_page_path
-		@page_name = "New Menu Item"
 		@menu_item = SpudMenuItem.new(params[:spud_menu_item])
 		@menu_item.spud_menu_id = @menu.id
 		if params[:spud_menu_item][:parent_id].blank?
@@ -49,7 +47,6 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 
 	def edit
 		add_breadcrumb "Edit #{@menu_item.name}", :edit_spud_admin_menu_menu_item_path
-		@page_name = "Edit #{@menu_item.name}"
 		if @menu_item.parent_type == "SpudMenu"
 			@menu_item.parent_id = nil
 		end
@@ -59,7 +56,6 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 	def update
 
 		add_breadcrumb "Edit #{@menu_item.name}", :edit_spud_admin_menu_menu_item_path
-		@page_name = "Edit #{@menu_item.name}"
 		if params[:spud_menu_item][:parent_id].blank?
 			params[:spud_menu_item][:parent_type] = "SpudMenu"
 			params[:spud_menu_item][:parent_id] = @menu.id

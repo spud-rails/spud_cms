@@ -66,7 +66,7 @@ module Spud
         puts("Checking #{default_layout_path}")
         puts(layouts)
         if layouts[default_layout_path].blank?
-          layouts[default_layout_path] = {:template_name => "Default", :partials => Spud::Cms.default_page_parts, :sites => [Spud::Core.short_name.downcase], :default => true}
+          layouts[default_layout_path] = {:template_name => "Default", :partials => ["Body"], :sites => [Spud::Core.short_name.downcase], :default => true}
         else
           layouts[default_layout_path][:default] = true
         end
@@ -74,11 +74,10 @@ module Spud
         Spud::Core.multisite_config.each do |config|
           cms_config = Spud::Cms.site_config_for_short_name(config[:short_name])
           layout_path = cms_config.blank? == false && cms_config[:default_page_layout].blank? == false ? layout_path(Rails.application.root.join('app','views','layouts',cms_config[:default_page_layout])) : default_layout_path
-          page_parts = cms_config.blank? == false && cms_config[:default_page_parts].blank? == false ? cms_config[:default_page_parts] : Spud::Cms.default_page_parts
 
           layout = layouts[layout_path]
           if layout.blank?
-            layouts[layout_path] = {:template_name => "Default", :partials => page_parts, :sites => [config[:short_name].to_s.downcase], :default => true}
+            layouts[layout_path] = {:template_name => "Default", :partials => ["Body"], :sites => [config[:short_name].to_s.downcase], :default => true}
           else
             layout[layout_path][:sites] << config[:short_name].to_s.downcase
             layout[layout_path][:default] = true

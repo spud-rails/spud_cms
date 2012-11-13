@@ -2,12 +2,10 @@ module Spud
   module Cms
     include ActiveSupport::Configurable
 
-    config_accessor :menus_enabled,:root_page_name,:default_page_parts,:yield_body_as_content_block,:default_page_layout,:enable_sitemap,:enable_full_page_caching,:enable_action_caching,:multisite_config,:max_revisions,:template_404
-
-    self.root_page_name = "home"
+    config_accessor :menus_enabled,:root_page_name,:yield_body_as_content_block,:default_page_layout,:enable_sitemap,:enable_full_page_caching,:enable_action_caching,:multisite_config,:max_revisions,:template_404
     self.menus_enabled = true
+    self.root_page_name = "home"
     self.default_page_layout = 'application'
-    self.default_page_parts = ["Body"]
   	self.yield_body_as_content_block = false
     self.enable_full_page_caching = false
     self.enable_action_caching = false

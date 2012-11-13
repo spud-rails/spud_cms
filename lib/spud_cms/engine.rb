@@ -28,6 +28,17 @@ module Spud
 
       end
      end
+    initializer :model_overrides_cms do |config|
+      ActiveRecord::Base.class_eval do
+        include Spud::Searchable
+      end
+     end
+    initializer :cms_sweepers do |config|
+      Spud::Admin::ApplicationController.instance_eval do
+        cache_sweeper :page_sweeper, :except => [:show,:index]
+      end
+    end
+
      initializer :spud_cms_routes do |config|
       config.routes_reloader.paths << File.expand_path('../page_route.rb', __FILE__)
      end
