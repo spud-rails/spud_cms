@@ -9,7 +9,7 @@ describe PagesController do
         config.multisite_config = []
       end
       Spud::Cms.configure do |config|
-        config.enable_full_page_caching = false
+        config.cache_mode = false
       end
     end
     it "should render a page" do
@@ -49,7 +49,7 @@ describe PagesController do
     describe "page caching" do
       before(:each) do
         Spud::Cms.configure do |config|
-          config.enable_full_page_caching = false
+          config.cache_mode = nil
         end
       end
 
