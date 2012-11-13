@@ -102,13 +102,13 @@ module Spud
       end
 
       def process_directive(line,layout)
-        if template_matcher = line.match(/\%?\#template\_name\:(.*)/)
+        if template_matcher = line.match(/\-?\#template\_name\:(.*)/)
           layout[:template_name] = template_matcher[1].strip
         end
-        if template_matcher = line.match(/\%?\#html\:(.*)/)
+        if template_matcher = line.match(/\-?\#html\:(.*)/)
           layout[:partials] << template_matcher[1].strip
         end
-        if template_matcher = line.match(/\%?\#site_name\:(.*)/)
+        if template_matcher = line.match(/\-?\#site_name\:(.*)/)
           layout[:sites] = template_matcher[1].split(",").collect {|s| s.strip.downcase}
         end
       end
