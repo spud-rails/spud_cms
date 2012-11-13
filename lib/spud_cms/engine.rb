@@ -6,11 +6,14 @@ require 'liquid'
 module Spud
   module Cms
     class Engine < Rails::Engine
-     engine_name :spud_cms
-     # config.autoload_paths << File.expand_path("../app/sweepers", __FILE__)
-    config.generators do |g|
-      g.test_framework :rspec, :view_specs => false
-    end
+      engine_name :spud_cms
+
+      # config.active_record.observers = [] if config.active_record.observers.nil?
+      # config.active_record.observers += [:page_observer]
+
+      config.generators do |g|
+        g.test_framework :rspec, :view_specs => false
+      end
 
      initializer :admin do
       Spud::Core.configure do |config|

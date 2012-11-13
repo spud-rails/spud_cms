@@ -1,6 +1,6 @@
 class SpudPagePartial < ActiveRecord::Base
 	belongs_to :spud_page
-	has_many :spud_page_liquid_tags
+	has_many :spud_page_liquid_tags, :dependent => :destroy
 	validates :name,:presence => true
 	attr_accessible :name, :spud_page_id, :content, :format, :content_processed
 	before_save :maintain_revisions
@@ -22,7 +22,9 @@ class SpudPagePartial < ActiveRecord::Base
 	end
 
 	def update_taglist(template)
-		self.spud_page_liquid_tags.delete_all
+		self.spud_page_liquid_tags.all.each do |tag|
+			tag.destroy
+		end
 		template.root.nodelist.each do |node|
 			if !node.is_a?(String) && defined?(node.tag_name) && defined?(node.tag_value)
 				self.spud_page_liquid_tags.create(:tag_name => node.tag_name,:value => node.tag_value)
