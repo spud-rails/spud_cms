@@ -1,12 +1,11 @@
 class PagesController < ApplicationController
-	caches_action :show, :if => Proc.new { |c| Spud::Cms.enable_action_caching }
+	caches_action :show, :if => Proc.new { |c| Spud::Cms.cache_mode == :action }
 
 	respond_to :html
 
 	# caches_page :show, :if => Proc.new { |c| Spud::Cms.enable_full_page_caching }
 	after_filter({:only => [:show]}) do |c|
-		return if !Spud::Cms.enable_full_page_caching
-		if @page && @page.is_private? == false
+		if Spud::Cms.cache_mode == :full_page && @page && @page.is_private? == false
 	    c.cache_page(nil, nil, false)
 		end
   end

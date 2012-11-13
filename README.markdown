@@ -25,7 +25,7 @@ Installation/Usage
 Routing to the CMS Engine
 --------------------------
 Routing your home page to the CMS engine is fairly straight forward.
-in your applications environment.rb file add a configure block as such
+in your applications application.rb file add a configure block as such
 
 
 		Spud::Cms.configure do |config|
@@ -38,15 +38,6 @@ in your applications environment.rb file add a configure block as such
 Where "home" is the page name you wish to use.
 
 Pages will default render to the 'application' layout of your application. You can change this by using templates to specify base layouts.
-
-Using Menus
------------
-A lot of cms engines allow you to render your navigation links in a ul block by using your page tree structure. In a lot of cases this is insufficient as some sites have urls that redirect to pages outside of your cms. This is where menus come in. They can be built in the spud admin control panel.
-In your application layout file or any erb template you can render a ul block like so
-
-		<%=sp_list_menu({:id => "navigation",:name => "Main"})%>
-
-This will output a <ul id="navigation"></ul> block for the menu you created in admin named "Main"
 
 Defining Templates / Layouts
 ----------------------------
@@ -68,6 +59,15 @@ Using Liquid Template Engine
 Spud CMS utilizes the liquid template syntax engine created by Shopify. This allows you to easily inject variables into your pages in the page editor. Example:
 
     <h2>{{page.name}}</h2>
+
+Using Menus
+-----------
+A lot of cms engines allow you to render your navigation links in a ul block by using your page tree structure. In a lot of cases this is insufficient as some sites have urls that redirect to pages outside of your cms. This is where menus come in. They can be built in the spud admin control panel.
+In your application layout file or any erb template you can render a ul block like so
+
+    <%=sp_list_menu({:id => "navigation",:name => "Main"})%>
+
+This will output a <ul id="navigation"></ul> block for the menu you created in admin named "Main"
 
 Adding Your Own Engines
 -----------------------
