@@ -30,7 +30,7 @@ module Spud
   private
       def process_layouts(filepath)
         layouts = {}
-        Dir.glob(filepath.join("**","*.html.erb")) do |template|
+        Dir.glob(filepath.join("**","*.html.*")) do |template|
 
           layout = process_layout(template)
           layouts[layout_path(template)] = layout if !layout.blank?
@@ -48,7 +48,7 @@ module Spud
           end
           f.close
           # puts header
-          if header.blank? == false && header[0].strip == "<%"
+          if header.blank? == false
             layout = {:partials => []}
 
             header.each do |header_line|
@@ -56,7 +56,11 @@ module Spud
             end
             layout[:partials] = ["Body"] if layout[:partials].blank?
             layout[:sites] = [Spud::Core.config.short_name.downcase] if layout[:sites].blank?
-            return layout
+            if layout[:template_name].blank? == false
+              return layout
+            else
+              return nil
+            end
           end
           return nil
       end
@@ -98,13 +102,13 @@ module Spud
       end
 
       def process_directive(line,layout)
-        if template_matcher = line.match(/\#template\_name\:(.*)/)
+        if template_matcher = line.match(/\%?\#template\_name\:(.*)/)
           layout[:template_name] = template_matcher[1].strip
         end
-        if template_matcher = line.match(/\#html\:(.*)/)
+        if template_matcher = line.match(/\%?\#html\:(.*)/)
           layout[:partials] << template_matcher[1].strip
         end
-        if template_matcher = line.match(/\#site_name\:(.*)/)
+        if template_matcher = line.match(/\%?\#site_name\:(.*)/)
           layout[:sites] = template_matcher[1].split(",").collect {|s| s.strip.downcase}
         end
       end
