@@ -5,7 +5,7 @@ PATH
       codemirror-rails
       liquid
       rails (~> 3.2.1)
-      spud_core (>= 0.9.0, < 1.0.0)
+      spud_core (>= 0.9.0)
       spud_permalinks (~> 0.9.0)
 
 PATH
@@ -58,7 +58,7 @@ GEM
       will_paginate
     breadcrumbs_on_rails (2.2.0)
     builder (3.0.3)
-    codemirror-rails (2.34)
+    codemirror-rails (2.35)
       railties (~> 3.0)
     database_cleaner (0.7.1)
     diff-lcs (1.1.3)
