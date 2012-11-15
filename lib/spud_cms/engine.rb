@@ -45,6 +45,8 @@ module Spud
 
      initializer :assets do |config|
     	Rails.application.config.assets.precompile += ["spud/admin/cms*"]
+      Spud::Core.append_admin_javascripts('spud/admin/cms/application')
+      Spud::Core.append_admin_stylesheets('spud/admin/cms/application')
   	 end
 
      initializer :template_parser do |config|

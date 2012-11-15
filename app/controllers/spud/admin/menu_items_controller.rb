@@ -1,7 +1,7 @@
 class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 	add_breadcrumb "Menus", :spud_admin_menus_path
 	belongs_to_spud_app :menus, :page_title => "Menu Items"
-	layout 'spud/admin/cms/detail'
+	layout 'spud/admin/detail'
 	before_filter :load_menu
 	before_filter :load_menu_item, :only => [:edit,:update,:show,:destroy,:reorder]
 
