@@ -87,19 +87,8 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	end
 
 	def preview
-		# @page = SpudPage.new(params[:spud_page])
-		# @page.site_id = session[:admin_site]
-		layout = 'application'
-
-
-		if !@page.spud_template.blank?
-			if !@page.spud_template.base_layout.blank?
-				layout = @page.spud_template.base_layout
-			end
-			@inline = @page.spud_template.content
-		end
+    layout = @page.layout || Spud::Cms.default_page_layout
 		render :action => :show,:layout => layout
-
 	end
 
 	def destroy
