@@ -1,29 +1,25 @@
-//= require codemirror
-//= require codemirror/modes/xml
-//= require codemirror/modes/javascript
-//= require codemirror/modes/css
-//= require codemirror/modes/htmlmixed
-//= require codemirror/modes/htmlembedded
+//= require_self
+//= require spud/admin/cms/pages
 //= require spud/admin/cms/menu_items
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+
+spud.admin.cms = {};
 
 $(document).ready(function() {
-	// initWysiwym();
-	spud.admin.editor.init();
+	spud.admin.cms.pages.initFormTabs();
+
 	$("#spud_page_layout").bind('change', function() {
 		var $this = $(this);
 		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
-			// $('.formtabs').tabs('destroy');
 
+			spud.admin.editor.unload();
 
-			$('textarea.tinymce').each(function() {$(this).tinymce().execCommand('mceRemoveControl',false,this.id)});
-			$("#page_partials_form").replaceWith(data)
-			initFormTabs();
+			$("#page_partials_form").replaceWith(data);
+			spud.admin.cms.pages.initFormTabs();
+
 			spud.admin.editor.init();
 
 		}, 'text').error(function(jqXHR) {
-			$('<p> Error: ' + jqXHR.responseText + '</p>').dialog();
+			alert("Error: " + jqXHR.responseText);
 		});
 	});
 });
