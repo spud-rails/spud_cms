@@ -142,6 +142,26 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
     end
   end
 
+  def clear
+    Rails.cache.clear
+    SpudPage.site(session[:admin_site]).published_pages.all.each do |record|
+      if Spud::Cms.cache_mode == :full_page
+          if record.url_name == Spud::Cms.root_page_name
+              expire_page root_path
+          else
+            expire_page page_path(:id => record.url_name)
+          end
+        elsif Spud::Cms.cache_mode == :action
+          if record.url_name == Spud::Cms.root_page_name
+              expire_action root_path
+          else
+          expire_action page_path(:id => record.url_name)
+        end
+      end
+    end
+    redirect_to spud_admin_pages_url
+  end
+
 
 
 private
