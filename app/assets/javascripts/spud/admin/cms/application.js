@@ -10,7 +10,7 @@
 
 $(document).ready(function() {
 	// initWysiwym();
-	initTinyMCE();
+	spud.admin.editor.init();
 	$("#spud_page_layout").bind('change', function() {
 		var $this = $(this);
 		$.get($this.attr("data-source"), { template: $this.val() }, function(data) {
@@ -20,7 +20,7 @@ $(document).ready(function() {
 			$('textarea.tinymce').each(function() {$(this).tinymce().execCommand('mceRemoveControl',false,this.id)});
 			$("#page_partials_form").replaceWith(data)
 			initFormTabs();
-			initTinyMCE();
+			spud.admin.editor.init();
 
 		}, 'text').error(function(jqXHR) {
 			$('<p> Error: ' + jqXHR.responseText + '</p>').dialog();
