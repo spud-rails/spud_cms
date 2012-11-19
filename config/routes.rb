@@ -8,7 +8,8 @@ Rails.application.routes.draw do
              post 'preview'
            end
          end
-         resources :templates
+
+         resources :snippets
 
    		resources :menus do
    			resources :menu_items

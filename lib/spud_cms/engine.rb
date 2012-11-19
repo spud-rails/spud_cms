@@ -8,18 +8,19 @@ module Spud
     class Engine < Rails::Engine
       engine_name :spud_cms
 
-      # config.active_record.observers = [] if config.active_record.observers.nil?
-      # config.active_record.observers += [:page_observer]
-
       config.generators do |g|
         g.test_framework :rspec, :view_specs => false
       end
 
-     initializer :admin do
+    initializer :admin do
       Spud::Core.configure do |config|
           config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0}]
           if Spud::Cms.menus_enabled
             config.admin_applications += [{:name => "Menus",:thumbnail => "spud/admin/menus_thumb.png",:url => "/spud/admin/menus",:order => 2}]
+          end
+
+          if Spud::Cms.snippets_enabled
+            config.admin_applications += [{:name => "Snippets",:thumbnail => "spud/admin/snippets_thumb.png",:url => "/spud/admin/snippets",:order => 3}]
           end
 
           if Spud::Cms.enable_sitemap == true
@@ -27,7 +28,8 @@ module Spud
           end
 
       end
-     end
+    end
+
     initializer :model_overrides_cms do |config|
       ActiveRecord::Base.class_eval do
         include Spud::Searchable
@@ -57,6 +59,6 @@ module Spud
       return @template_parser
      end
 
+    end
   end
- end
 end

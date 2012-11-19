@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121112151110) do
+ActiveRecord::Schema.define(:version => 20121119030136) do
 
   create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"
@@ -49,6 +49,18 @@ ActiveRecord::Schema.define(:version => 20121112151110) do
   end
 
   add_index "spud_menus", ["site_id"], :name => "index_spud_menus_on_site_id"
+
+  create_table "spud_page_liquid_tags", :force => true do |t|
+    t.integer  "attachment_id"
+    t.string   "tag_name"
+    t.string   "value"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "attachment_type"
+  end
+
+  add_index "spud_page_liquid_tags", ["attachment_type", "attachment_id"], :name => "index_spud_page_liquid_tags_on_attachment_type_and_attachment_id"
+  add_index "spud_page_liquid_tags", ["tag_name", "value"], :name => "index_spud_page_liquid_tags_on_tag_name_and_value"
 
   create_table "spud_page_partial_revisions", :force => true do |t|
     t.string   "name"
@@ -108,6 +120,19 @@ ActiveRecord::Schema.define(:version => 20121112151110) do
 
   add_index "spud_permalinks", ["attachment_type", "attachment_id"], :name => "index_spud_permalinks_on_attachment_type_and_attachment_id"
   add_index "spud_permalinks", ["site_id"], :name => "index_spud_permalinks_on_site_id"
+
+  create_table "spud_snippets", :force => true do |t|
+    t.string   "name"
+    t.text     "content"
+    t.string   "format"
+    t.text     "content_processed"
+    t.integer  "site_id",           :default => 0
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "spud_snippets", ["name"], :name => "index_spud_snippets_on_name"
+  add_index "spud_snippets", ["site_id"], :name => "index_spud_snippets_on_site_id"
 
   create_table "spud_user_settings", :force => true do |t|
     t.integer  "spud_user_id"

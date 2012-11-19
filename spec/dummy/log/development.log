@@ -339,3 +339,49 @@ Connecting to database specified by database.yml
   [1m[35m (0.3ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20120911190030')
   [1m[36m (0.2ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20120912121313')[0m
   [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20121016233715')
+Connecting to database specified by database.yml
+Creating scope :public. Overwriting existing method SpudPage.public.
+  [1m[36m (6.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSpudPages (20120101192412)
+Migrating to CreateSpudMenus (20120101193138)
+Migrating to CreateSpudMenuItems (20120101193255)
+Migrating to CreateSpudTemplates (20120101194124)
+Migrating to CreateSpudPagePartials (20120103034659)
+Migrating to AddVisibilityToSpudPages (20120104194032)
+Migrating to AddMenuNameToSpudMenuItems (20120107181337)
+Migrating to AddUseCustomUrlNameToSpudPages (20120111134754)
+Migrating to AddNotesToSpudPages (20120118141852)
+Migrating to AddMenuIdToSpudMenuItems (20120126232428)
+Migrating to AddClassesToSpudMenuItems (20120128163601)
+Migrating to CreateSpudAdminPermissions (20120307002859)
+Migrating to CreateSpudUsers (20120307002860)
+Migrating to CreateSpudPermalinks (20120307003559)
+Migrating to AddSiteIdToSpudPages (20120329132314)
+Migrating to AddSiteIdToSpudTemplates (20120329132322)
+Migrating to AddSiteIdToSpudMenus (20120329132330)
+Migrating to CreateSpudPagePartialRevisions (20120510195151)
+Migrating to AddTimeZoneToSpudUser (20120610123555)
+Migrating to AddScopeToSpudAdminPermissions (20120610123556)
+Migrating to CreateSpudUserSettings (20120610123557)
+Migrating to AddSiteIdToSpudPermalinks (20120610123615)
+Migrating to AddSymbolNameToSpudPagePartials (20120911190030)
+Migrating to ModifySiteIdForSpudPages (20120912121313)
+Migrating to AddContentProcessedToSpudPagePartials (20121016233715)
+Migrating to AddLayoutToSpudPages (20121112151110)
+Migrating to CreateSpudPageLiquidTags (20121112212113)
+  [1m[35m (36.4ms)[0m  CREATE TABLE `spud_page_liquid_tags` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `spud_page_partial_id` int(11), `tag_name` varchar(255), `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (26.9ms)[0m  [1mCREATE INDEX `index_spud_page_liquid_tags_on_tag_name_and_value` ON `spud_page_liquid_tags` (`tag_name`, `value`)[0m
+  [1m[35m (1.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121112212113')
+Migrating to CreateSpudSnippets (20121119025608)
+  [1m[36m (14.6ms)[0m  [1mCREATE TABLE `spud_snippets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `content` text, `format` varchar(255), `content_processed` text, `site_id` int(11) DEFAULT 0, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (24.7ms)[0m  CREATE INDEX `index_spud_snippets_on_site_id` ON `spud_snippets` (`site_id`)
+  [1m[36m (14.6ms)[0m  [1mCREATE INDEX `index_spud_snippets_on_name` ON `spud_snippets` (`name`)[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121119025608')
+Migrating to ChangeLiquidTagsToPolymorphic (20121119030136)
+  [1m[36m (0.7ms)[0m  [1mSHOW COLUMNS FROM `spud_page_liquid_tags` LIKE 'spud_page_partial_id'[0m
+  [1m[35m (22.6ms)[0m  ALTER TABLE `spud_page_liquid_tags` CHANGE `spud_page_partial_id` `attachment_id` int(11) DEFAULT NULL
+  [1m[36m (18.2ms)[0m  [1mALTER TABLE `spud_page_liquid_tags` ADD `attachment_type` varchar(255)[0m
+  [1m[35m (13.3ms)[0m  CREATE INDEX `index_spud_page_liquid_tags_on_attachment_type_and_attachment_id` ON `spud_page_liquid_tags` (`attachment_type`, `attachment_id`)
+  [1m[36mSpudPageLiquidTag Load (0.1ms)[0m  [1mSELECT `spud_page_liquid_tags`.* FROM `spud_page_liquid_tags` [0m
+  [1m[35m (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121119030136')
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m

@@ -1,5 +1,25 @@
 module Spud::Cms::ApplicationHelper
 	MENU_INDEX = {}
+
+	def sp_snippet(name,snippets=nil)
+		if name.blank?
+			return ''
+		end
+
+		if !snippets.blank?
+			snippet = snippets.select {|s| s.name == name}
+		else
+			snippet = SpudSnippet.where(:name => name).first
+		end
+
+		if !snippet.blank?
+			return snippet.content_processed.html_safe
+		else
+			return nil
+		end
+
+	end
+
 	def sp_list_pages(options = {})
 
 		pages = SpudPage.public.published_pages
@@ -191,6 +211,7 @@ module Spud::Cms::ApplicationHelper
 
 		return menu_tags.join(seperator).html_safe
 	end
+
 private
 	def sp_list_menu_item(items,item_id,depth,max_depth)
 
@@ -220,6 +241,7 @@ private
 		content += "</ul>"
 		return content.html_safe
 	end
+
 	def sp_list_page(page,collection,depth,max_depth,options = {})
 		active_class = 'menu-active'
 		if options.has_key?(:active_class)
