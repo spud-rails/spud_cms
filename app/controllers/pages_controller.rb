@@ -58,13 +58,15 @@ class PagesController < ApplicationController
 			return if defined?(require_user) && require_user == false
 		end
 
-		layout = @page.layout || Spud::Cms.default_page_layout
+		layout = Spud::Cms.default_page_layout
 
 		# MultiSite Code Block
 		if Spud::Core.multisite_mode_enabled && !site_config.blank?
 			cms_config = Spud::Cms.site_config_for_short_name(site_config[:short_name])
 			layout = cms_config[:default_page_layout] if !cms_config.blank? && !cms_config[:default_page_layout].blank?
 		end
+
+		layout = @page.layout || layout
 
 
 		render :layout => layout
