@@ -2,7 +2,10 @@ class Spud::Admin::SnippetsController < Spud::Admin::ApplicationController
   belongs_to_spud_app :snippets
   layout '/spud/admin/detail'
   add_breadcrumb "Snippets", :spud_admin_snippets_url
+
   before_filter :load_snippet, :only => [:show, :edit, :update, :destroy]
+
+  cache_sweeper :snippet_sweeper, :only => [:update,:destroy,:create]
 
   def index
     @snippets = SpudSnippet.site(session[:admin_site]).order(:name).paginate :page => params[:page]

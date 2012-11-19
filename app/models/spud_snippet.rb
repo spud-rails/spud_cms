@@ -12,7 +12,7 @@ class SpudSnippet < ActiveRecord::Base
   def postprocess_content
     template = Liquid::Template.parse(self.content) # Parses and compiles the template
     update_taglist(template)
-    self.content_processed = template.render('page' => self.spud_page)
+    self.content_processed = template.render()
   end
 
   def content_processed=(content)
@@ -24,6 +24,18 @@ class SpudSnippet < ActiveRecord::Base
       self.update_column(:content_processed, postprocess_content)
     end
     return read_attribute(:content_processed)
+  end
+
+
+  def update_taglist(template)
+    self.spud_page_liquid_tags.all.each do |tag|
+      tag.destroy
+    end
+    template.root.nodelist.each do |node|
+      if !node.is_a?(String) && defined?(node.tag_name) && defined?(node.tag_value)
+        self.spud_page_liquid_tags.create(:tag_name => node.tag_name,:value => node.tag_value)
+      end
+    end
   end
 
 end

@@ -26,7 +26,6 @@ module Spud
           if Spud::Cms.enable_sitemap == true
             config.sitemap_urls += [:spud_cms_sitemap_url]
           end
-
       end
     end
 
@@ -50,6 +49,10 @@ module Spud
       Spud::Core.append_admin_javascripts('spud/admin/cms/application')
       Spud::Core.append_admin_stylesheets('spud/admin/cms/application')
   	 end
+
+     initializer :liquid do |config|
+      Liquid::Template.register_tag('snippet', Spud::Cms::LiquidSnippet)
+     end
 
      initializer :template_parser do |config|
       @template_parser = Spud::Cms::TemplateParser.new()

@@ -6,7 +6,7 @@
       <%@snippets.each do |snippet|%>
         <div class="page_row">
 
-          <span class="row_meta"><%=link_to snippet.name,spud_admin_snippet_path(:id => snippet.id)%></span>
+          <span class="row_meta"><%=link_to snippet.name,edit_spud_admin_snippet_path(:id => snippet.id)%></span>
 
           <span class="edit_controls">
 
