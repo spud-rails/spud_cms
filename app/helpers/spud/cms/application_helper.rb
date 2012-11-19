@@ -273,6 +273,8 @@ private
 
 
 	def layout_options
+    layouts = Spud::Cms::Engine.template_parser.layouts(Spud::Core.site_config_for_id(session[:admin_site] || 0)[:short_name])
+
 		layouts = Spud::Cms::Engine.template_parser.layouts
 		layout_options = []
 		layouts.each_pair do |key,value|
