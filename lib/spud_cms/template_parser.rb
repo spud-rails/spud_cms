@@ -5,7 +5,13 @@ module Spud
 
       def layouts(site_short_name=nil)
         if(site_short_name != nil)
-          return all_layouts.select {|k,v| v[:sites].include?(site_short_name.to_s.downcase)}
+          filtered_layouts = {}
+          all_layouts.each do |key,value|
+            if value[:sites].include?(site_short_name.to_s.downcase)
+              filtered_layouts[key] = value
+            end
+          end
+          return filtered_layouts
         else
           return all_layouts
         end
