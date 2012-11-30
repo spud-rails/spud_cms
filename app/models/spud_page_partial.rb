@@ -6,7 +6,7 @@ class SpudPagePartial < ActiveRecord::Base
 	before_save :maintain_revisions
 	before_save :update_symbol_name
 	before_save :postprocess_content
-
+	after_save :update_taglist
 	def update_symbol_name
 		self.symbol_name = self.name.parameterize.underscore
 	end
@@ -17,11 +17,13 @@ class SpudPagePartial < ActiveRecord::Base
 
 	def postprocess_content
 		template = Liquid::Template.parse(self.content) # Parses and compiles the template
-		update_taglist(template)
+
 		self.content_processed = template.render('page' => self.spud_page)
 	end
 
-	def update_taglist(template)
+	def update_taglist
+		template = Liquid::Template.parse(self.content) # Parses and compiles the template
+
 		self.spud_page_liquid_tags.all.each do |tag|
 			tag.destroy
 		end
