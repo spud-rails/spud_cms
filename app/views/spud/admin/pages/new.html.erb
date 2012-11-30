@@ -1,17 +1,17 @@
-<%=form_for @page,:url => spud_admin_pages_path(),:html=>{:class=>"form-horizontal page_form"} do |f|%>
+<%=form_for @page,:url => spud_core.admin_pages_path(),:html=>{:class=>"form-horizontal page_form"} do |f|%>
 	<%=render :partial => "form",:locals => {:f => f}%>
 	<div class="form-actions">
-    	<%=f.submit "Create Page", :class=>"btn btn-primary form-btn btn-save","data-loading-text"=>"Saving..."%>&nbsp;<%=f.submit "Preview", :class=>"btn btn-primary btn-preview"%> or <%=link_to "cancel",spud_admin_pages_path,:class => "btn"%>
+    	<%=f.submit "Create Page", :class=>"btn btn-primary form-btn btn-save","data-loading-text"=>"Saving..."%>&nbsp;<%=f.submit "Preview", :class=>"btn btn-primary btn-preview"%> or <%=link_to "cancel",spud_core.admin_pages_path,:class => "btn"%>
     </div>
 
 <%end%>
 
 
-  
+
 <script type="text/javascript">
 $(document).ready(function() {
 	$('input[type=submit].btn-preview').click(function(evt) {
-		
+
 		$(this).button('reset')
 		$('#preview').val(1);
 		var form = $('form.page_form')[0];
@@ -19,7 +19,7 @@ $(document).ready(function() {
 			window.open('about:blank','preview_window','width=500,height=400')
 		};
 		form.target = 'preview_window';
-		
+
 	});
 
 	$('input[type=submit].btn-save').click(function(evt) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
 			form.onsubmit = null;
 			form.target = null;
 	});
-	
+
 });
 
 </script>

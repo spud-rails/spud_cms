@@ -1,5 +1,5 @@
 <%=content_for :data_controls do%>
-<%=link_to "New Page",new_spud_admin_page_path(),:class => "btn btn-primary",:title => "New Page"%>&nbsp;<%=link_to "Clear Cache",clear_spud_admin_pages_path(),:class => "btn btn-warning",:title => "Clear Page Cache" if Spud::Cms.cache_mode %>
+<%=link_to "New Page",spud_core.new_admin_page_path(),:class => "btn btn-primary",:title => "New Page"%>&nbsp;<%=link_to "Clear Cache",clear_spud_core.admin_pages_path(),:class => "btn btn-warning",:title => "Clear Page Cache" if Spud::Cms.cache_mode %>
 <%end%>
 
 <%=content_for :detail do%>

@@ -63,7 +63,7 @@ describe Spud::Admin::MenusController do
       menu2 = FactoryGirl.create(:spud_menu,:site_id => 1)
       get :edit,:id => menu2.id
 
-      response.should redirect_to spud_admin_menus_url
+      response.should redirect_to spud_core.admin_menus_url
     end
   end
 
@@ -76,7 +76,7 @@ describe Spud::Admin::MenusController do
     end
     it "should redirect to index if menu not found" do
       get :edit,:id => 3
-      response.should redirect_to spud_admin_menus_url
+      response.should redirect_to spud_core.admin_menus_url
     end
 
   end
@@ -96,7 +96,7 @@ describe Spud::Admin::MenusController do
       menu = FactoryGirl.create(:spud_menu)
       put :update,:id => menu.id,:spud_menu => menu.attributes.merge!(:name => "MyMenu").reject{|k,v| k == 'site_id' || k == 'id'}
 
-      response.should redirect_to(spud_admin_menu_menu_items_url(:menu_id => menu.id))
+      response.should redirect_to(spud_core.admin_menu_menu_items_url(:menu_id => menu.id))
     end
   end
 

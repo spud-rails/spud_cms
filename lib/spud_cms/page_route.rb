@@ -1,5 +1,5 @@
-Rails.application.routes.append do
-	# constraints :path => /(?!assets)/ do
-		match "*id", :controller => "pages",:action => "show", :as => "page"
-	# end
+Rails.application.routes.draw do
+  if Spud::Cms.config.automount
+    mount Spud::Cms::Engine, :at => "/"
+  end
 end

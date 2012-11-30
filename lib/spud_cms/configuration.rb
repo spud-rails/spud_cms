@@ -2,7 +2,8 @@ module Spud
   module Cms
     include ActiveSupport::Configurable
 
-    config_accessor :menus_enabled,:root_page_name,:yield_body_as_content_block,:default_page_layout,:enable_sitemap,:multisite_config,:max_revisions,:template_404, :cache_mode, :snippets_enabled
+    config_accessor :menus_enabled,:root_page_name,:yield_body_as_content_block,:default_page_layout,:enable_sitemap,:multisite_config,:max_revisions,:template_404, :cache_mode, :snippets_enabled, :automount
+    self.automount = true
     self.menus_enabled = true
     self.snippets_enabled = true
     self.root_page_name = "home"

@@ -28,7 +28,7 @@ describe Spud::Admin::MenuItemsController do
     end
     it "should redirect if the menu is not found" do
       get :index,:menu_id => @menu.id + 1
-      response.should redirect_to spud_admin_menus_url
+      response.should redirect_to spud_core.admin_menus_url
       flash[:error].should_not be_blank
     end
   end
@@ -87,7 +87,7 @@ describe Spud::Admin::MenuItemsController do
 
     it "should redirect_to index if menu item not found" do
       get :edit,:menu_id => @menu.id,:id => "345"
-      response.should redirect_to spud_admin_menu_menu_items_url(:menu_id => @menu.id)
+      response.should redirect_to spud_core.admin_menu_menu_items_url(:menu_id => @menu.id)
     end
   end
 
@@ -139,7 +139,7 @@ describe Spud::Admin::MenuItemsController do
         it "should not allow editing of a menu_item in a menu that is different from the current admin site" do
           menu_item = FactoryGirl.create(:spud_menu_item)
           get :edit,:id => menu_item.id,:menu_id => @menu.id
-          response.should redirect_to spud_admin_menus_url
+          response.should redirect_to spud_core.admin_menus_url
           flash[:warning].should_not be_blank
         end
       end

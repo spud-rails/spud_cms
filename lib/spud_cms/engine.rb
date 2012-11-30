@@ -14,13 +14,13 @@ module Spud
 
     initializer :admin do
       Spud::Core.configure do |config|
-          config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => "/spud/admin/pages",:order => 0}]
+          config.admin_applications += [{:name => "Pages",:thumbnail => "spud/admin/pages_thumb.png",:url => {:controller => "/spud/admin/pages"},:order => 0}]
           if Spud::Cms.menus_enabled
-            config.admin_applications += [{:name => "Menus",:thumbnail => "spud/admin/menus_thumb.png",:url => "/spud/admin/menus",:order => 2}]
+            config.admin_applications += [{:name => "Menus",:thumbnail => "spud/admin/menus_thumb.png",:url => {:controller => "/spud/admin/menus"},:order => 2}]
           end
 
           if Spud::Cms.snippets_enabled
-            config.admin_applications += [{:name => "Snippets",:thumbnail => "spud/admin/snippets_thumb.png",:url => "/spud/admin/snippets",:order => 3}]
+            config.admin_applications += [{:name => "Snippets",:thumbnail => "spud/admin/snippets_thumb.png",:url => {:controller => "/spud/admin/snippets"},:order => 3}]
           end
 
           if Spud::Cms.enable_sitemap == true

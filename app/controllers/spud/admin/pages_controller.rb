@@ -1,6 +1,9 @@
 class Spud::Admin::PagesController < Spud::Admin::CmsController
 	layout 'spud/admin/detail'
-	add_breadcrumb "Pages", :spud_admin_pages_path
+	add_breadcrumb "Pages", {:action => :index}
+  add_breadcrumb "New", '', :only => [:new,:create]
+  add_breadcrumb "Edit", '', :only => [:edit,:update]
+
 	belongs_to_spud_app :pages
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
 
@@ -24,7 +27,6 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 	end
 
 	def new
-		add_breadcrumb "New", :new_spud_admin_page_path
 
     layouts = Spud::Cms::Engine.template_parser.layouts(Spud::Core.site_config_for_id(session[:admin_site] || 0)[:short_name])
     layout, layout_info = layouts.select{|k,v| v[:default]}.flatten
@@ -46,12 +48,10 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 			return
 		end
 		flash[:notice] = "Page Saved successfully" if @page.save
-		respond_with @page,:location => spud_admin_pages_url
+		respond_with @page,:location => spud_core.admin_pages_url
 	end
 
 	def edit
-		add_breadcrumb "#{@page.name}", :spud_admin_page_path
-		add_breadcrumb "Edit", :edit_spud_admin_page_path
 
     layouts = Spud::Cms::Engine.template_parser.layouts(Spud::Core.site_config_for_id(session[:admin_site] || 0)[:short_name])
     layout, layout_info = layouts.select{|k,v| k == @page.layout}.flatten  if @page.layout.blank? == false
@@ -78,7 +78,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 		end
 		if @page.save
 			flash[:notice] = "Page updated successfully!"
-			redirect_to spud_admin_pages_url() and return
+			redirect_to spud_core.admin_pages_url() and return
 		else
 			flash[:error] = "There was an error saving this page"
 			render :action => "edit"
@@ -102,7 +102,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 		end
 		respond_to do |format|
 			format.js {render :status => status}
-			format.html { redirect_to spud_admin_pages_url()}
+			format.html { redirect_to spud_core.admin_pages_url()}
 		end
 	end
 
@@ -159,7 +159,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
         end
       end
     end
-    redirect_to spud_admin_pages_url
+    redirect_to spud_core.admin_pages_url
   end
 
 
@@ -169,10 +169,10 @@ private
 		@page = SpudPage.where(:id => params[:id]).includes(:spud_page_partials).first
 		if @page.blank?
 			flash[:error] = "Page not found!"
-			redirect_to spud_admin_pages_url() and return false
+			redirect_to spud_core.admin_pages_url() and return false
 		elsif Spud::Core.multisite_mode_enabled && @page.site_id != session[:admin_site]
 			flash[:warning] = "Site Context Changed. The page you were viewing is not associated with the current site. Redirected back to page selections."
-			redirect_to spud_admin_pages_url() and return false
+			redirect_to spud_core.admin_pages_url() and return false
 		end
 		return true
 	end

@@ -1,13 +1,13 @@
 <%=content_for :data_controls do%>
-<%=link_to "New Template",new_spud_admin_template_path(),:class => "btn btn-primary",:title => "New Template"%>
+<%=link_to "New Template",spud_core.new_admin_template_path(),:class => "btn btn-primary",:title => "New Template"%>
 <%end%>
 <%=content_for :detail do%>
 	<div class="page_list">
 			<%@templates.each do |template|%>
 				<div class="page_row">
-					<span class="row_meta"><%=link_to template.name,edit_spud_admin_template_path(:id => template.id)%></span>
+					<span class="row_meta"><%=link_to template.name,spud_core.edit_admin_template_path(:id => template.id)%></span>
 
-					<span class="edit_controls"><%=link_to "Edit",edit_spud_admin_template_path(:id => template.id), :title => "Edit Template",:class => 'btn'%>&nbsp;&nbsp;<%=link_to "Remove",spud_admin_template_path(:id => template.id),:method => :delete,:class => 'btn btn-danger',:confirm => "Are you sure you want to remove this template?"%></span>
+					<span class="edit_controls"><%=link_to "Edit",spud_core.edit_admin_template_path(:id => template.id), :title => "Edit Template",:class => 'btn'%>&nbsp;&nbsp;<%=link_to "Remove",spud_core.admin_template_path(:id => template.id),:method => :delete,:class => 'btn btn-danger',:confirm => "Are you sure you want to remove this template?"%></span>
 					<br style="clear:both;"/>
 				</div>
 			<%end%>

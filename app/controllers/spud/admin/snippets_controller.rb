@@ -1,8 +1,9 @@
 class Spud::Admin::SnippetsController < Spud::Admin::ApplicationController
   belongs_to_spud_app :snippets
   layout '/spud/admin/detail'
-  add_breadcrumb "Snippets", :spud_admin_snippets_url
-
+  add_breadcrumb "Snippets", {:action => :index}
+  add_breadcrumb "New",'', :only => [:new,:create]
+  add_breadcrumb "Edit",'', :only => [:edit,:update]
   before_filter :load_snippet, :only => [:show, :edit, :update, :destroy]
 
   cache_sweeper :snippet_sweeper, :only => [:update,:destroy,:create]
@@ -14,36 +15,33 @@ class Spud::Admin::SnippetsController < Spud::Admin::ApplicationController
   end
 
   def new
-    add_breadcrumb "New", :new_spud_admin_snippet_url
+
     @snippet = SpudSnippet.new
     respond_with @snippet
   end
 
   def create
-    add_breadcrumb "New", :new_spud_admin_snippet_url
     @snippet = SpudSnippet.new(params[:spud_snippet])
     @snippet.site_id = session[:admin_site]
 
     @snippet.save
 
-    respond_with @snippet, :location => spud_admin_snippets_url
+    respond_with @snippet, :location => spud_core.admin_snippets_url
   end
 
   def edit
-    add_breadcrumb "Edit", :edit_spud_admin_snippet_url
 
     respond_with @snippet
   end
 
   def update
-    add_breadcrumb "Edit", :edit_spud_admin_snippet_url
     flash[:notice] = "Snippet saved successfully!" if @snippet.update_attributes(params[:spud_snippet])
-    respond_with @snippet, :location => spud_admin_snippets_url
+    respond_with @snippet, :location => spud_core.admin_snippets_url
   end
 
   def destroy
     flash[:notice] = "Snippet removed!" if @snippet.destroy
-    respond_with @snippet,:location => spud_admin_snippets_url
+    respond_with @snippet,:location => spud_core.admin_snippets_url
   end
 
 
@@ -52,10 +50,10 @@ private
     @snippet = SpudSnippet.where(:id => params[:id]).first
     if @snippet.blank?
       flash[:error] = "Snippet does not exist!"
-      redirect_to spud_admin_snippets_url and return false
+      redirect_to spud_core.admin_snippets_url and return false
     elsif Spud::Core.multisite_mode_enabled && @snippet.site_id != session[:admin_site]
       flash[:warning] = "This snippet is for a different site"
-      redirect_to spud_admin_snippets_url and return false
+      redirect_to spud_core.admin_snippets_url and return false
     end
   end
 end

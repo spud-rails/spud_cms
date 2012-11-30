@@ -5,8 +5,8 @@ class SpudPage < ActiveRecord::Base
 	has_many :spud_pages, :dependent => :nullify
 	has_many :spud_page_partials,:dependent => :destroy
 	has_many :spud_permalinks,:as => :attachment, :dependent => :destroy
-	belongs_to :created_by_user,:class_name => "SpudUser",:foreign_key => :created_by
-	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
+	belongs_to :created_by_user,:class_name => Spud::Core.config.user_model,:foreign_key => :created_by
+	belongs_to :updated_by_user,:class_name => Spud::Core.config.user_model,:foreign_key => :updated_by
 
 
 	attr_accessible :name,:url_name,:created_by,:updated_by,:layout,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes

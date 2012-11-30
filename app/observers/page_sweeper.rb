@@ -13,14 +13,14 @@ class PageSweeper < ActionController::Caching::Sweeper
 
   def after_save(record)
     expire_cache_for(record)
-    expire_page spud_cms_sitemap_path(:format => :xml)
-    expire_page spud_sitemap_path(:format => :xml)
+    expire_page spud_core.cms_sitemap_path(:format => :xml)
+    expire_page spud_core.sitemap_path(:format => :xml)
   end
 
   def after_destroy(record)
     expire_cache_for(record)
-    expire_page spud_cms_sitemap_path
-    expire_page spud_sitemap_path
+    expire_page spud_core.cms_sitemap_path
+    expire_page spud_core.sitemap_path
   end
 
 private
@@ -39,9 +39,9 @@ private
 
   def cache_path_for_page(url_name)
     if url_name == Spud::Cms.root_page_name
-      root_path
+      spud_cms.root_path
     else
-      page_path(:id => url_name)
+      spud_cms.page_path(:id => url_name)
     end
   end
 

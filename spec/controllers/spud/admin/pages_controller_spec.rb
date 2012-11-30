@@ -39,7 +39,7 @@ describe Spud::Admin::PagesController do
     # it "should redirect if no id specified" do
     #   get :show,:id => nil
 
-    #   response.should redirect_to spud_admin_pages_url
+    #   response.should redirect_to spud_core.admin_pages_url
     # end
 
   end
@@ -86,7 +86,7 @@ describe Spud::Admin::PagesController do
       new_name = "Adam"
       put :update, :id => page.id, :spud_page => page.attributes.merge!(:name => new_name).reject{ |key,value| key == 'id' || key == 'created_at' || key == 'updated_at' || key == 'site_id'}
 
-      response.should redirect_to(spud_admin_pages_url)
+      response.should redirect_to(spud_core.admin_pages_url)
     end
   end
 

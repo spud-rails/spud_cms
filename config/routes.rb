@@ -1,5 +1,5 @@
-Rails.application.routes.draw do
-   namespace :spud do
+Spud::Core::Engine.routes.draw do
+  scope :module => "spud" do
    	namespace :admin do
          resources :pages do
            get :page_parts, :on => :collection
@@ -20,12 +20,17 @@ Rails.application.routes.draw do
          resource :sitemap,:only => "show"
       end
    end
-   root :to => 'pages#show'
 
    # This is located in lib/spud_cms/page_route.rb to make sure it is loaded last
    # match "*id", :controller => "pages",:action => "show", :as => "page"
+end
 
-end
 Spud::Cms::Engine.routes.draw do
+     root :to => 'pages#show'
+     match "*id", :controller => "pages",:action => "show", :as => "page"
 end
+
+
+
+
 

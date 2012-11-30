@@ -26,7 +26,7 @@
 
       	<%=f.label :layout, "Template", :class=>"control-label"%>
         <div class="controls">
-        	<%=f.select :layout, options_for_select(layout_options,@page.layout),{},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
+        	<%=f.select :layout, options_for_select(layout_options,@page.layout),{},{:title => "", 'data-source' => spud_core.page_parts_admin_pages_path(:page => @page.id) }%>
           <span class="help-inline">Use this to control the layout template to be used for this page if they are available.</span>
         </div>
   	  </div>
@@ -43,7 +43,7 @@
 
       <%=f.label :url_name, "Perma Link",:disabled => true, :class=>"control-label"%>
       <div class="controls">
-        <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
+        <%=spud_cms.root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
         <label class="checkbox inline">
         <%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
         Customize this pages url

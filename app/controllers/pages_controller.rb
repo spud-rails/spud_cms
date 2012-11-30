@@ -46,7 +46,7 @@ class PagesController < ApplicationController
 			@permalink = @permalink.first
 
 			if !@permalink.blank? && @permalink.attachment_type == 'SpudPage'
-				redirect_to @permalink.attachment.url_name == Spud::Cms.root_page_name ? root_url() : page_url(:id => @permalink.attachment.url_name) , :status => :moved_permanently and return
+				redirect_to @permalink.attachment.url_name == Spud::Cms.root_page_name ? spud_cms.root_url() : spud_cms.page_url(:id => @permalink.attachment.url_name) , :status => :moved_permanently and return
 			end
 
 

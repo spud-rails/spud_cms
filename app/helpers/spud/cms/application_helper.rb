@@ -63,13 +63,13 @@ module Spud::Cms::ApplicationHelper
 		pages[start_page].sort_by{|p| p.page_order}.each do |page|
 			active = false
 			if !page.url_name.blank?
-				if current_page?(page_path(:id => page.url_name))
+				if current_page?(spud_cms.page_path(:id => page.url_name))
 					active = true
-				elsif page.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+				elsif page.url_name == Spud::Cms.root_page_name && current_page?(spud_cms.root_path)
 					active = true
 				end
 			end
-			content += "<li class='#{active_class if active}'><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
+			content += "<li class='#{active_class if active}'><a href='#{spud_cms.page_path(:id => page.url_name)}'>#{page.name}</a>"
 			if max_depth == 0 || max_depth > 1
 				content += sp_list_page(page,pages,2,max_depth,options)
 			end
@@ -158,15 +158,15 @@ module Spud::Cms::ApplicationHelper
 		parent_items.sort_by{|p| p.menu_order}.each do |item|
 			active = false
 			if !item.url_name.blank?
-				if current_page?(page_path(:id => item.url_name))
+				if current_page?(spud_cms.page_path(:id => item.url_name))
 					active = true
-				elsif item.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+				elsif item.url_name == Spud::Cms.root_page_name && current_page?(spud_cms.root_path)
 					active = true
 				end
 			elsif current_page?(item.url)
 				active = true
 			end
-			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url}'>#{item.name}</a>"
+			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? spud_cms.root_path() : spud_cms.page_path(:id => item.url_name))  : item.url}'>#{item.name}</a>"
 			if max_depth == 0 || max_depth > 1
 				content += sp_list_menu_item(child_items,item.id,2,max_depth)
 			end
@@ -206,7 +206,7 @@ module Spud::Cms::ApplicationHelper
 
 		menu_tags = []
 		menu_items.sort_by{|p| p.menu_order}.each do |item|
-			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"]
+			menu_tags += ["<a #{"class='#{item.classes}' " if !item.classes.blank?}href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? spud_cms.root_path() : spud_cms.page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"]
 		end
 
 		return menu_tags.join(seperator).html_safe
@@ -224,15 +224,15 @@ private
 		spud_menu_items.sort_by{|p| p.menu_order}.each do |item|
 			active = false
 			if !item.url_name.blank?
-				if current_page?(page_path(:id => item.url_name))
+				if current_page?(spud_cms.page_path(:id => item.url_name))
 					active = true
-				elsif item.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+				elsif item.url_name == Spud::Cms.root_page_name && current_page?(spud_cms.root_path)
 					active = true
 				end
 			elsif current_page?(item.url)
 				active = true
 			end
-			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"
+			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? spud_cms.root_path() : spud_cms.page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"
 			if max_depth == 0 || max_depth > depth
 				content += sp_list_menu_item(items,item.id,depth+1,max_depth)
 			end
@@ -254,14 +254,14 @@ private
 		collection[page.id].sort_by{|p| p.page_order}.each do |page|
 			active = false
 			if !page.url_name.blank?
-				if current_page?(page_path(:id => page.url_name))
+				if current_page?(spud_cms.page_path(:id => page.url_name))
 					active = true
-				elsif page.url_name == Spud::Cms.root_page_name && current_page?(root_path)
+				elsif page.url_name == Spud::Cms.root_page_name && current_page?(spud_cms.root_path)
 					active = true
 				end
 			end
 
-			content += "<li class='#{active_class if active}'><a href='#{page_path(:id => page.url_name)}'>#{page.name}</a>"
+			content += "<li class='#{active_class if active}'><a href='#{spud_cms.page_path(:id => page.url_name)}'>#{page.name}</a>"
 			if max_depth == 0 || max_depth > depth
 				content += sp_list_page(page,collection,depth+1,max_depth,options)
 			end
