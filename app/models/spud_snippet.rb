@@ -11,7 +11,6 @@ class SpudSnippet < ActiveRecord::Base
   after_save :update_taglist
   def postprocess_content
     template = Liquid::Template.parse(self.content) # Parses and compiles the template
-    update_taglist(template)
     self.content_processed = template.render()
   end
 
