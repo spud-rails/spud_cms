@@ -8,10 +8,9 @@ class SpudSnippet < ActiveRecord::Base
   scope :site, lambda {|sid| where(:site_id => sid)}
 
   before_save :postprocess_content
-
+  after_save :update_taglist
   def postprocess_content
     template = Liquid::Template.parse(self.content) # Parses and compiles the template
-    update_taglist(template)
     self.content_processed = template.render()
   end
 
@@ -27,7 +26,9 @@ class SpudSnippet < ActiveRecord::Base
   end
 
 
-  def update_taglist(template)
+  def update_taglist
+    template = Liquid::Template.parse(self.content) # Parses and compiles the template
+
     self.spud_page_liquid_tags.all.each do |tag|
       tag.destroy
     end
