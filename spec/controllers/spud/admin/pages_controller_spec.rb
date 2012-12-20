@@ -12,7 +12,7 @@ describe Spud::Admin::PagesController do
   describe :index do
     it "should return an array of parent pages" do
       2.times {|x|  s = FactoryGirl.create(:spud_page)}
-      get :index
+      get :index, :use_route => :spud_core
 
       assigns(:pages).count.should be > 1
     end
@@ -21,7 +21,7 @@ describe Spud::Admin::PagesController do
       2.times {|x| FactoryGirl.create(:spud_page) }
       FactoryGirl.create(:spud_page,:spud_page_id => 1)
 
-      get :index
+      get :index, :use_route => :spud_core
       assigns(:pages).count.should == 2
     end
   end
@@ -29,7 +29,7 @@ describe Spud::Admin::PagesController do
   describe :show do
     it "should respond successfully" do
       p = FactoryGirl.create(:spud_page)
-      get :show ,:id => p.id
+      get :show, :use_route => :spud_core ,:id => p.id
       assigns(:layout).should render_template(:layout => "layouts/#{Spud::Cms.default_page_layout}")
       response.should be_success
     end

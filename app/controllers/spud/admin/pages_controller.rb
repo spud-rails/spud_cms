@@ -6,6 +6,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 	belongs_to_spud_app :pages
 	before_filter :load_page,:only => [:edit,:update,:show,:destroy]
+  # before_filter :enable_responsive_layout
 
 	def index
 

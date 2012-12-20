@@ -12,13 +12,13 @@ describe Spud::Cms::SitemapsController do
       end
     it "should return the sitemap urls" do
 
-      get :show, :format => :xml
+      get :show, :use_route => :spud_core, :format => :xml
 
       assigns(:pages).should == SpudPage.published_pages.public.order(:spud_page_id)
     end
 
     it "should only respond to an XML format" do
-      get :show
+      get :show, :use_route => :spud_core
       response.response_code.should == 406
     end
 
@@ -35,7 +35,7 @@ describe Spud::Cms::SitemapsController do
         2.times {|x|  s = FactoryGirl.create(:spud_page)}
         3.times {|x|  s = FactoryGirl.create(:spud_page,:site_id => 1)}
 
-        get :show, :format => :xml
+        get :show, :use_route => :spud_core, :format => :xml
 
         assigns(:pages).should == SpudPage.published_pages.public.order(:spud_page_id).site(1)
 

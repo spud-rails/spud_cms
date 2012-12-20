@@ -385,3 +385,1053 @@ Migrating to ChangeLiquidTagsToPolymorphic (20121119030136)
   [1m[36mSpudPageLiquidTag Load (0.1ms)[0m  [1mSELECT `spud_page_liquid_tags`.* FROM `spud_page_liquid_tags` [0m
   [1m[35m (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121119030136')
   [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+Creating scope :public. Overwriting existing method SpudPage.public.
+Connecting to database specified by database.yml
+Creating scope :public. Overwriting existing method SpudPage.public.
+Connecting to database specified by database.yml
+Creating scope :public. Overwriting existing method SpudPage.public.
+Connecting to database specified by database.yml
+Creating scope :public. Overwriting existing method SpudPage.public.
+
+
+Started GET "/spud/admin" for 127.0.0.1 at 2012-12-20 09:29:44 -0500
+Processing by Spud::Admin::DashboardController#index as HTML
+  [1m[36mSpudUser Load (0.3ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1[0m
+Redirected to http://localhost:3000/spud/user_session/new
+Filter chain halted as :require_admin_user rendered or redirected
+Completed 302 Found in 253ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/spud/user_session/new" for 127.0.0.1 at 2012-12-20 09:29:45 -0500
+Processing by Spud::UserSessionsController#new as HTML
+  [1m[35mSpudUser Load (0.4ms)[0m  SELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `spud_users` [0m
+NO USERS!
+Redirected to http://localhost:3000/spud/setup
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/spud/setup" for 127.0.0.1 at 2012-12-20 09:29:45 -0500
+Processing by Spud::SetupController#index as HTML
+  [1m[35mSpudUser Load (0.3ms)[0m  SELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `spud_users` [0m
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/spud/setup/index.html.erb within layouts/spud/setup (3.1ms)
+Compiled bootstrap/css/bootstrap.css  (0ms)  (pid 16904)
+Compiled datepicker/css/datepicker.css  (0ms)  (pid 16904)
+Compiled jquery-ui/css/flick/jquery-ui-1.9.1.custom.css  (0ms)  (pid 16904)
+Compiled spud/admin/responsive.css  (0ms)  (pid 16904)
+Compiled spud/admin/application.css  (60ms)  (pid 16904)
+Compiled jquery.js  (3ms)  (pid 16904)
+Compiled jquery_ujs.js  (0ms)  (pid 16904)
+Compiled spud/admin/preinit.js  (0ms)  (pid 16904)
+Compiled tiny_mce/jquery.tinymce.js  (0ms)  (pid 16904)
+Compiled tiny_mce/tiny_mce_src.js  (3ms)  (pid 16904)
+Compiled spud/admin/jquery.dataTables.min.js  (0ms)  (pid 16904)
+Compiled bootstrap/js/bootstrap.js  (0ms)  (pid 16904)
+Compiled datepicker/js/bootstrap-datepicker.js  (0ms)  (pid 16904)
+Compiled jquery-ui/js/jquery-ui-1.9.1.custom.js  (1ms)  (pid 16904)
+Compiled spud/admin/dashboard.js  (0ms)  (pid 16904)
+Compiled spud/admin/date_picker.js  (0ms)  (pid 16904)
+Compiled spud/admin/editor.js  (0ms)  (pid 16904)
+Compiled retina_tag.js  (0ms)  (pid 16904)
+Compiled spud/admin/application.js  (235ms)  (pid 16904)
+Completed 500 Internal Server Error in 450ms
+
+ActionView::Template::Error (undefined method `render_breadcrumbs' for #<#<Class:0x007fc04ef7f3f8>:0x007fc04e7d8820>):
+    13: 	
+    14: </div>
+    15: <div id="breadcrumbs">
+    16: <%= render_breadcrumbs :separator => ' / ' %>
+    17: </div>
+    18: <div id="content">
+    19: <div id="detail_wrapper">
+  /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/layouts/spud/setup.html.erb:16:in `___sers_davydotcom_projects_ruby_engines_spud_core_admin_app_views_layouts_spud_setup_html_erb__777375189653527873_70231966781820'
+  actionpack (3.2.8) lib/action_view/template.rb:145:in `block in render'
+  activesupport (3.2.8) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.8) lib/action_view/template.rb:143:in `render'
+  actionpack (3.2.8) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionpack (3.2.8) lib/action_view/renderer/template_renderer.rb:45:in `render_template'
+  actionpack (3.2.8) lib/action_view/renderer/template_renderer.rb:18:in `render'
+  actionpack (3.2.8) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.8) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.8) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.8) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.8) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.8) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.8) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/davydotcom/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.8) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.8) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.8) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.8) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:437:in `block in _run__313994707111049895__process_action__4181886113274449530__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:215:in `block in _conditional_callback_around_322'
+  /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/controllers/spud/application_controller.rb:71:in `set_time_zone'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:214:in `_conditional_callback_around_322'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:425:in `_run__313994707111049895__process_action__4181886113274449530__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.8) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.8) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.8) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.8) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.8) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.8) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.8) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.8) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/railtie/configurable.rb:30:in `method_missing'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.8) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/cookies.rb:339:in `call'
+  activerecord (3.2.8) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `_run__219105786323650460__call__3357808889967981572__callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.8) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.8) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.8) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.8) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.8) lib/rails/engine.rb:479:in `call'
+  railties (3.2.8) lib/rails/application.rb:223:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.8) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/davydotcom/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/davydotcom/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/davydotcom/.rvm/rubies/ruby-1.9.3-p194/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/davydotcom/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/davydotcom/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/davydotcom/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.5ms)
+Connecting to database specified by database.yml
+Creating scope :public. Overwriting existing method SpudPage.public.
+
+
+Started GET "/spud/setup" for 127.0.0.1 at 2012-12-20 09:31:01 -0500
+Processing by Spud::SetupController#index as HTML
+  [1m[36mSpudUser Load (0.4ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `spud_users` 
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/spud/setup/index.html.erb within layouts/spud/setup (3.7ms)
+Completed 200 OK in 427ms (Views: 86.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /jquery.js - 200 OK (41ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/retina_tag.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /retina_tag.js - 200 OK (1ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/spud/admin/users_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:02 -0500
+Served asset /spud/admin/users_thumb.png - 304 Not Modified (6ms)
+
+
+Started POST "/spud/setup" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Processing by Spud::SetupController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LiDKHgO8FfbvWTrUlT75k3XozkwRmLNaFGS5BOTIhSw=", "login"=>"", "email"=>"destes", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"loading..."}
+  [1m[36mSpudUser Load (0.2ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `spud_users` 
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudUser Exists (0.3ms)[0m  SELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`email` = 'destes' LIMIT 1
+  [1m[36mSpudUser Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`login` = '' LIMIT 1[0m
+  [1m[35mSpudUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`persistence_token` = BINARY '0e7583f81cf884fecea818ff27b890f1bdfe9e896dab71b1215e18d2192a4b2baf6bf83fe8f614e53d8f5c2f45d8da1caa6ca5d6f54298fd9516b5957e599342' LIMIT 1
+  [1m[36mSpudUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`single_access_token` = BINARY 'PmvnYh2sEflWxeZI6RC' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/spud/setup/index.html.erb within layouts/spud/setup (0.8ms)
+Completed 200 OK in 71ms (Views: 11.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/users_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:05 -0500
+Served asset /spud/admin/users_thumb.png - 304 Not Modified (0ms)
+
+
+Started POST "/spud/setup" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Processing by Spud::SetupController#index as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LiDKHgO8FfbvWTrUlT75k3XozkwRmLNaFGS5BOTIhSw=", "login"=>"destes", "email"=>"destes@redwindsw.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"loading..."}
+  [1m[36mSpudUser Load (0.3ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `spud_users` 
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSpudUser Exists (0.2ms)[0m  SELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`email` = 'destes@redwindsw.com' LIMIT 1
+  [1m[36mSpudUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`login` = 'destes' LIMIT 1[0m
+  [1m[35mSpudUser Exists (0.1ms)[0m  SELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`persistence_token` = BINARY '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1
+  [1m[36mSpudUser Exists (0.1ms)[0m  [1mSELECT 1 AS one FROM `spud_users` WHERE `spud_users`.`single_access_token` = BINARY 'qp78C2o5EfQecIrx18Z' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO `spud_users` (`created_at`, `crypted_password`, `current_login_at`, `current_login_ip`, `email`, `failed_login_count`, `first_name`, `last_login_at`, `last_login_ip`, `last_name`, `last_request_at`, `login`, `login_count`, `password_salt`, `perishable_token`, `persistence_token`, `single_access_token`, `super_admin`, `time_zone`, `updated_at`) VALUES ('2012-12-20 14:31:12', '33e39244c60c37e02f578d3a1d4314b09e815164a4ab877a6731232c632d7ee2a4b183cf3e6ad44020d88b9639d6313b517ec382abc8b2d62f050bbc03c558c1', '2012-12-20 14:31:12', '127.0.0.1', 'destes@redwindsw.com', 0, NULL, NULL, NULL, NULL, '2012-12-20 14:31:12', 'destes', 1, 'pWH7EYHdt2Vl6wsXPB', '8ASEqjhLpToxX6dmxPYv', '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6', 'qp78C2o5EfQecIrx18Z', 1, NULL, '2012-12-20 14:31:12')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/spud/admin
+Completed 302 Found in 15ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/spud/admin" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Processing by Spud::Admin::DashboardController#index as HTML
+  [1m[36mSpudUser Load (0.3ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`persistence_token` = '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE `spud_users` SET `last_request_at` = '2012-12-20 14:31:12', `perishable_token` = '6p82zD7o4tdxePBr5TR', `updated_at` = '2012-12-20 14:31:12' WHERE `spud_users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mSpudAdminPermission Load (0.2ms)[0m  [1mSELECT `spud_admin_permissions`.* FROM `spud_admin_permissions` WHERE `spud_admin_permissions`.`user_id` = 1 AND `spud_admin_permissions`.`access` = 1[0m
+  [1m[35mSpudUserSetting Load (0.2ms)[0m  SELECT `spud_user_settings`.* FROM `spud_user_settings` WHERE `spud_user_settings`.`spud_user_id` = 1 AND `spud_user_settings`.`key` = 'app_order' LIMIT 1
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/spud/admin/dashboard/index.html.erb within layouts/spud/admin/application (52.5ms)
+Compiled codemirror.css  (0ms)  (pid 16934)
+Compiled codemirror/themes/night.css  (0ms)  (pid 16934)
+Compiled spud/admin/cms/application.css  (13ms)  (pid 16934)
+Compiled spud/admin/cms/pages.js  (0ms)  (pid 16934)
+Compiled spud/admin/cms/menu_items.js  (0ms)  (pid 16934)
+Compiled spud/admin/cms/application.js  (12ms)  (pid 16934)
+Completed 200 OK in 236ms (Views: 161.0ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /codemirror.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/codemirror/themes/night.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /codemirror/themes/night.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/spud/admin/cms/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/cms/application.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/cms/application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/spud/admin/cms/pages.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/cms/pages.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/spud/admin/cms/menu_items.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/cms/menu_items.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/spud/admin/pages_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/pages_thumb.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/spud/admin/snippets_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/snippets_thumb.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/spud/admin/menus_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/menus_thumb.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/spud/admin/users_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:12 -0500
+Served asset /spud/admin/users_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/spud/admin/pages" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Processing by Spud::Admin::PagesController#index as HTML
+  [1m[36mSpudUser Load (0.3ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`persistence_token` = '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mUPDATE `spud_users` SET `last_request_at` = '2012-12-20 14:31:17', `perishable_token` = '3nJeJeNOZeQdsiIpx64m', `updated_at` = '2012-12-20 14:31:17' WHERE `spud_users`.`id` = 1[0m
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mSpudPage Load (0.1ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`url_name` = 'home' LIMIT 1[0m
+  [1m[35mSpudPage Load (0.3ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` = 0 AND `spud_pages`.`spud_page_id` IS NULL ORDER BY page_order LIMIT 30 OFFSET 0
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_cms/app/views/spud/admin/pages/index.html.erb within layouts/spud/admin/detail (3.6ms)
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/layouts/spud/admin/application.html.erb (6.5ms)
+Completed 200 OK in 30ms (Views: 17.5ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/night.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /codemirror/themes/night.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/cms/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/cms/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/pages.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/cms/pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/menu_items.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/cms/menu_items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/pages_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:17 -0500
+Served asset /spud/admin/pages_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/spud/admin/pages/new" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Processing by Spud::Admin::PagesController#new as HTML
+  [1m[36mSpudUser Load (0.3ms)[0m  [1mSELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`persistence_token` = '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mUPDATE `spud_users` SET `last_request_at` = '2012-12-20 14:31:18', `perishable_token` = 'zOaQxEf3SC82NlWVaAf', `updated_at` = '2012-12-20 14:31:18' WHERE `spud_users`.`id` = 1[0m
+  [1m[35m (1.5ms)[0m  COMMIT
+  [1m[36mSpudPage Load (0.3ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` [0m
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_cms/app/views/spud/admin/pages/_form.html.erb (10.3ms)
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_cms/app/views/spud/admin/pages/new.html.erb within layouts/spud/admin/detail (14.5ms)
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/layouts/spud/admin/application.html.erb (6.9ms)
+Completed 200 OK in 99ms (Views: 28.6ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/night.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /codemirror/themes/night.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /spud/admin/cms/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:18 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/cms/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/pages.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/cms/pages.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/spud/admin/cms/menu_items.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/cms/menu_items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/langs/en.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/langs/en.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/langs/en.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/themes/advanced/editor_template.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/themes/advanced/editor_template.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/themes/advanced/editor_template.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/plugins/layer/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/layer/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/layer/editor_plugin.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/plugins/lists/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/lists/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/lists/editor_plugin.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/plugins/autolink/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/autolink/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/autolink/editor_plugin.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/tiny_mce/plugins/table/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/table/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/table/editor_plugin.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/plugins/tableDropdown/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/tableDropdown/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/tableDropdown/editor_plugin.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/tiny_mce/plugins/advhr/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/advhr/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/advhr/editor_plugin.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/tiny_mce/plugins/advimage/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/advimage/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/advimage/editor_plugin.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/tiny_mce/plugins/advlink/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/advlink/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/advlink/editor_plugin.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/tiny_mce/plugins/iespell/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/iespell/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/iespell/editor_plugin.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/plugins/inlinepopups/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/inlinepopups/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/inlinepopups/editor_plugin.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/tiny_mce/plugins/media/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/media/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/media/editor_plugin.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/tiny_mce/plugins/paste/editor_plugin.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/paste/editor_plugin.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/paste/editor_plugin.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/tiny_mce/themes/advanced/langs/en.js" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/themes/advanced/langs/en.js  (0ms)  (pid 16934)
+Served asset /tiny_mce/themes/advanced/langs/en.js - 304 Not Modified (38ms)
+
+
+Started GET "/assets/spud/admin/pages_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Served asset /spud/admin/pages_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/themes/advanced/skins/default/ui.css" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/themes/advanced/skins/default/ui.css  (0ms)  (pid 16934)
+Served asset /tiny_mce/themes/advanced/skins/default/ui.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css  (0ms)  (pid 16934)
+Served asset /tiny_mce/plugins/inlinepopups/skins/clearlooks2/window.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/tiny_mce/themes/advanced/skins/default/content.css" for 127.0.0.1 at 2012-12-20 09:31:19 -0500
+Compiled tiny_mce/themes/advanced/skins/default/content.css  (0ms)  (pid 16934)
+Served asset /tiny_mce/themes/advanced/skins/default/content.css - 304 Not Modified (7ms)
+
+
+Started POST "/spud/admin/pages" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Processing by Spud::Admin::PagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LiDKHgO8FfbvWTrUlT75k3XozkwRmLNaFGS5BOTIhSw=", "spud_page"=>{"name"=>"test", "spud_page_partials_attributes"=>{"0"=>{"name"=>"Body", "content"=>"<p>test</p>"}}, "layout"=>"application", "spud_page_id"=>"", "url_name"=>"", "use_custom_url_name"=>"0", "meta_keywords"=>"", "meta_description"=>"", "visibility"=>"0", "published"=>"1", "notes"=>""}, "preview"=>"0", "commit"=>"Saving..."}
+  [1m[35mSpudUser Load (0.4ms)[0m  SELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`persistence_token` = '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `spud_users` SET `last_request_at` = '2012-12-20 14:31:22', `perishable_token` = 'GyC0zwROQ6uNm09TwN6', `updated_at` = '2012-12-20 14:31:22' WHERE `spud_users`.`id` = 1
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSpudPage Load (0.3ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` = 0[0m
+  [1m[35mSpudPermalink Load (0.2ms)[0m  SELECT `spud_permalinks`.* FROM `spud_permalinks` WHERE `spud_permalinks`.`site_id` = 0 AND `spud_permalinks`.`url_name` = 'test' LIMIT 1
+  [1m[36mSpudPage Exists (0.2ms)[0m  [1mSELECT 1 AS one FROM `spud_pages` WHERE (`spud_pages`.`name` = BINARY 'test' AND `spud_pages`.`site_id` = 0 AND `spud_pages`.`spud_page_id` IS NULL) LIMIT 1[0m
+  [1m[35mSpudPage Exists (0.2ms)[0m  SELECT 1 AS one FROM `spud_pages` WHERE (`spud_pages`.`url_name` = BINARY 'test' AND `spud_pages`.`site_id` = 0) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `spud_pages` (`created_at`, `created_by`, `format`, `layout`, `meta_description`, `meta_keywords`, `name`, `notes`, `page_order`, `publish_at`, `published`, `site_id`, `spud_page_id`, `updated_at`, `updated_by`, `url_name`, `use_custom_url_name`, `visibility`) VALUES ('2012-12-20 14:31:22', NULL, 'html', 'application', '', '', 'test', '', NULL, NULL, 1, 0, NULL, '2012-12-20 14:31:22', NULL, 'test', 0, 0)[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `spud_page_partial_revisions` (`content`, `created_at`, `format`, `name`, `spud_page_id`, `updated_at`) VALUES ('<p>test</p>', '2012-12-20 14:31:22', NULL, 'Body', 1, '2012-12-20 14:31:22')
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `spud_page_partial_revisions` WHERE `spud_page_partial_revisions`.`spud_page_id` = 1 AND `spud_page_partial_revisions`.`name` = 'Body'[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `spud_page_partials` (`content`, `content_processed`, `created_at`, `format`, `name`, `spud_page_id`, `symbol_name`, `updated_at`) VALUES ('<p>test</p>', '<p>test</p>', '2012-12-20 14:31:22', NULL, 'Body', 1, 'body', '2012-12-20 14:31:22')[0m
+  [1m[35mSpudPageLiquidTag Load (0.2ms)[0m  SELECT `spud_page_liquid_tags`.* FROM `spud_page_liquid_tags` WHERE `spud_page_liquid_tags`.`attachment_id` = 1 AND `spud_page_liquid_tags`.`attachment_type` = 'SpudPagePartial'
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/spud/admin/pages
+Completed 302 Found in 91ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/spud/admin/pages" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Processing by Spud::Admin::PagesController#index as HTML
+  [1m[35mSpudUser Load (0.3ms)[0m  SELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`persistence_token` = '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `spud_users` SET `last_request_at` = '2012-12-20 14:31:22', `perishable_token` = 'TaVvdBjrFNz2IShlHupe', `updated_at` = '2012-12-20 14:31:22' WHERE `spud_users`.`id` = 1
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpudPage Load (0.2ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`url_name` = 'home' LIMIT 1
+  [1m[36mSpudPage Load (0.3ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`site_id` = 0 AND `spud_pages`.`spud_page_id` IS NULL ORDER BY page_order LIMIT 30 OFFSET 0[0m
+  [1m[35mSpudPage Load (0.4ms)[0m  SELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` IN (1)
+  [1m[36mSpudPage Load (0.3ms)[0m  [1mSELECT `spud_pages`.* FROM `spud_pages` WHERE `spud_pages`.`spud_page_id` = 1[0m
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_cms/app/views/spud/admin/pages/_page_row.html.erb (2.3ms)
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_cms/app/views/spud/admin/pages/index.html.erb within layouts/spud/admin/detail (9.0ms)
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/layouts/spud/admin/application.html.erb (6.9ms)
+Completed 200 OK in 27ms (Views: 21.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/night.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /codemirror/themes/night.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/cms/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/cms/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/pages.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/cms/pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/menu_items.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/cms/menu_items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/pages_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:22 -0500
+Served asset /spud/admin/pages_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/spud/admin" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Processing by Spud::Admin::DashboardController#index as HTML
+  [1m[35mSpudUser Load (0.4ms)[0m  SELECT `spud_users`.* FROM `spud_users` WHERE `spud_users`.`persistence_token` = '957efa9f7617ba83f4a0544211893e3ce4e521b244129079c41dd982415702cb98ec78dac470e45eb1e4400c451a38f9582260ebae6a5157768547bf4861d7d6' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  UPDATE `spud_users` SET `last_request_at` = '2012-12-20 14:31:28', `perishable_token` = 'xpF2EX764h4clOS9oZ0q', `updated_at` = '2012-12-20 14:31:28' WHERE `spud_users`.`id` = 1
+  [1m[36m (2.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mSpudAdminPermission Load (0.3ms)[0m  SELECT `spud_admin_permissions`.* FROM `spud_admin_permissions` WHERE `spud_admin_permissions`.`user_id` = 1 AND `spud_admin_permissions`.`access` = 1
+  [1m[36mSpudUserSetting Load (0.2ms)[0m  [1mSELECT `spud_user_settings`.* FROM `spud_user_settings` WHERE `spud_user_settings`.`spud_user_id` = 1 AND `spud_user_settings`.`key` = 'app_order' LIMIT 1[0m
+  Rendered /Users/davydotcom/projects/ruby/engines/spud_core_admin/app/views/spud/admin/dashboard/index.html.erb within layouts/spud/admin/application (9.9ms)
+Completed 200 OK in 26ms (Views: 18.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/assets/bootstrap/css/bootstrap.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /bootstrap/css/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/css/datepicker.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /datepicker/css/datepicker.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/css/flick/jquery-ui-1.9.1.custom.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /jquery-ui/css/flick/jquery-ui-1.9.1.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /codemirror.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/responsive.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/codemirror/themes/night.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /codemirror/themes/night.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.css?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/cms/application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/preinit.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/preinit.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/jquery.tinymce.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /tiny_mce/jquery.tinymce.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/tiny_mce/tiny_mce_src.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /tiny_mce/tiny_mce_src.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/jquery.dataTables.min.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/jquery.dataTables.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap/js/bootstrap.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /bootstrap/js/bootstrap.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/datepicker/js/bootstrap-datepicker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /datepicker/js/bootstrap-datepicker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui/js/jquery-ui-1.9.1.custom.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /jquery-ui/js/jquery-ui-1.9.1.custom.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/spud/admin/dashboard.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/dashboard.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/date_picker.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/date_picker.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/editor.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/editor.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/application.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/cms/application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/pages.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/cms/pages.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/cms/menu_items.js?body=1" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/cms/menu_items.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/users_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/users_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/snippets_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/snippets_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/menus_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/menus_thumb.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/spud/admin/pages_thumb.png" for 127.0.0.1 at 2012-12-20 09:31:28 -0500
+Served asset /spud/admin/pages_thumb.png - 304 Not Modified (0ms)

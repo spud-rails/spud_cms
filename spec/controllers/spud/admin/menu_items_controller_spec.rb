@@ -27,7 +27,7 @@ describe Spud::Admin::MenuItemsController do
       assigns(:menu_items).count.should be > 1
     end
     it "should redirect if the menu is not found" do
-      get :index,:menu_id => @menu.id + 1
+      get :index,:menu_id => @menu.id + 1, :use_route => :spud_core
       response.should redirect_to spud_core.admin_menus_url
       flash[:error].should_not be_blank
     end
@@ -35,7 +35,7 @@ describe Spud::Admin::MenuItemsController do
 
   describe :new do
     it "should assign a new menu" do
-      get :new,:menu_id =>@menu.id
+      get :new,:menu_id =>@menu.id, :use_route => :spud_core
       assigns(:menu_item).should_not be_blank
       response.should be_success
     end
@@ -44,7 +44,7 @@ describe Spud::Admin::MenuItemsController do
   describe :create do
     it "should create a new menu item with a valid form submission" do
       lambda {
-        post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
+        post :create, :use_route => :spud_core,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
       }.should change(SpudMenuItem,:count).by(1)
       response.should be_redirect
     end
@@ -53,26 +53,26 @@ describe Spud::Admin::MenuItemsController do
       yamldata = FactoryGirl.attributes_for(:spud_menu_item,:name => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
 
       lambda {
-        post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:name => nil,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
+        post :create, :use_route => :spud_core,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:name => nil,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
       }.should_not change(SpudMenuItem,:count)
     end
 
     it "should autoset order if not specified" do
       menuitem = FactoryGirl.create(:spud_menu_item,:parent_id => @menu.id)
 
-      post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:menu_order => nil,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
+      post :create, :use_route => :spud_core,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:menu_order => nil,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
       assigns(:menu_item).menu_order.should == 1
     end
 
     it "should assign the menu name based on page name if left blank" do
       page = FactoryGirl.create(:spud_page)
-      post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:name => nil,:spud_page_id => page.id).reject{|k,v| k == 'id' || k == :spud_menu_id}
+      post :create, :use_route => :spud_core,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:name => nil,:spud_page_id => page.id).reject{|k,v| k == 'id' || k == :spud_menu_id}
       assigns(:menu_item).name.should == page.name
     end
 
     it "should set the parent to a submenu if specified" do
       menuitem = FactoryGirl.create(:spud_menu_item,:parent_id => @menu.id)
-      post :create,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:parent_id => menuitem.id).reject{|k,v| k == 'id' || k == :spud_menu_id}
+      post :create, :use_route => :spud_core,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:parent_id => menuitem.id).reject{|k,v| k == 'id' || k == :spud_menu_id}
       assigns(:menu_item).parent.should == menuitem
     end
   end
@@ -81,12 +81,12 @@ describe Spud::Admin::MenuItemsController do
     it "should respond with menu item by id" do
       menu1 = FactoryGirl.create(:spud_menu_item)
       menu2 = FactoryGirl.create(:spud_menu_item)
-      get :edit, :menu_id => @menu.id,:id => menu2.id
+      get :edit, :use_route => :spud_core, :menu_id => @menu.id,:id => menu2.id
       assigns(:menu_item).should == menu2
     end
 
     it "should redirect_to index if menu item not found" do
-      get :edit,:menu_id => @menu.id,:id => "345"
+      get :edit, :use_route => :spud_core,:menu_id => @menu.id,:id => "345"
       response.should redirect_to spud_core.admin_menu_menu_items_url(:menu_id => @menu.id)
     end
   end
@@ -96,7 +96,7 @@ describe Spud::Admin::MenuItemsController do
       menu_item = FactoryGirl.create(:spud_menu_item)
       new_name = 'MyMenu'
       lambda {
-        put :update,:menu_id => @menu.id,:id => menu_item.id, :spud_menu_item => menu_item.attributes.merge!(:name => new_name,:parent_id => nil).reject{|k,v| k.to_sym == :spud_menu_id || k == 'id' || k.to_sym == :updated_at || k.to_sym == :created_at}
+        put :update, :use_route => :spud_core,:menu_id => @menu.id,:id => menu_item.id, :spud_menu_item => menu_item.attributes.merge!(:name => new_name,:parent_id => nil).reject{|k,v| k.to_sym == :spud_menu_id || k == 'id' || k.to_sym == :updated_at || k.to_sym == :created_at}
         menu_item.reload
       }.should change(menu_item,:name).to(new_name)
     end
@@ -105,7 +105,7 @@ describe Spud::Admin::MenuItemsController do
       menu_item = FactoryGirl.create(:spud_menu_item)
 
       lambda {
-        put :update,:menu_id => @menu.id,:id => menu_item.id, :spud_menu_item => menu_item.attributes.merge!(:parent_id => menu_item1.id).reject{|k,v| k.to_sym == :spud_menu_id || k == 'id' || k.to_sym == :updated_at || k.to_sym == :created_at}
+        put :update, :use_route => :spud_core,:menu_id => @menu.id,:id => menu_item.id, :spud_menu_item => menu_item.attributes.merge!(:parent_id => menu_item1.id).reject{|k,v| k.to_sym == :spud_menu_id || k == 'id' || k.to_sym == :updated_at || k.to_sym == :created_at}
         menu_item.reload
       }.should change(menu_item,:parent).to(menu_item1)
     end
@@ -116,7 +116,7 @@ describe Spud::Admin::MenuItemsController do
     it "should destroy the menu item" do
       menu_item = FactoryGirl.create(:spud_menu_item,:parent_id => @menu.id)
       lambda {
-        delete :destroy,:menu_id => @menu.id,:id => menu_item.id
+        delete :destroy, :use_route => :spud_core,:menu_id => @menu.id,:id => menu_item.id
       }.should change(SpudMenuItem,:count).by(-1)
     end
   end
@@ -138,7 +138,7 @@ describe Spud::Admin::MenuItemsController do
       describe :edit do
         it "should not allow editing of a menu_item in a menu that is different from the current admin site" do
           menu_item = FactoryGirl.create(:spud_menu_item)
-          get :edit,:id => menu_item.id,:menu_id => @menu.id
+          get :edit, :use_route => :spud_core,:id => menu_item.id,:menu_id => @menu.id
           response.should redirect_to spud_core.admin_menus_url
           flash[:warning].should_not be_blank
         end

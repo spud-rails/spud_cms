@@ -1,5 +1,6 @@
 class PageSweeper < ActionController::Caching::Sweeper
   observe :spud_page,:spud_menu_item
+  # include Spud::Core::Engine.routes.url_helpers
 
   def before_save(record)
     if record.is_a?(SpudPage) && record.url_name_was != record.url_name

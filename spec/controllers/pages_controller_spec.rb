@@ -14,14 +14,14 @@ describe PagesController do
     end
     it "should render a page" do
       page = FactoryGirl.create(:spud_page)
-      get :show ,:id => page.url_name
+      get :show, :use_route => :spud_cms ,:id => page.url_name
       assigns(:layout).should render_template(:layout => "layouts/#{Spud::Cms.default_page_layout}")
       response.should be_success
     end
 
     it "should render home page if id is blank" do
       page = FactoryGirl.create(:spud_page,:name => "home")
-      get :show
+      get :show, :use_route => :spud_cms
       assigns(:page).should == page
       response.should be_success
     end
@@ -31,7 +31,7 @@ describe PagesController do
       page.name = "about us"
       page.save
 
-      get :show, :id => "about"
+      get :show, :use_route => :spud_cms, :id => "about"
 
      response.should redirect_to page_url(:id => "about-us")
 
@@ -42,8 +42,8 @@ describe PagesController do
     it "should not allow access to private pages when logged out" do
       page = FactoryGirl.create(:spud_page,:name => "about",:visibility => 1)
 
-      get :show, :id => "about"
-      response.should redirect_to new_spud_user_session_url()
+      get :show, :use_route => :spud_cms, :id => "about"
+      response.should redirect_to new_user_session_url()
     end
 
     describe "page caching" do
@@ -68,7 +68,7 @@ describe PagesController do
       it "should allow access to private pages when logged in" do
         page = FactoryGirl.create(:spud_page,:name => "about",:visibility => 1)
 
-        get :show, :id => "about"
+        get :show, :use_route => :spud_cms, :id => "about"
         response.should be_success
       end
     end
@@ -84,14 +84,14 @@ describe PagesController do
 
         it "should not show a page on a different site" do
           page = FactoryGirl.create(:spud_page,:name => "about",:site_id => 0)
-          get :show,:id=>"about"
+          get :show, :use_route => :spud_cms,:id=>"about"
           response.response_code.should == 404
         end
 
         it "should show the right page" do
           page = FactoryGirl.create(:spud_page,:name => "about",:site_id => 0)
           page2 = FactoryGirl.create(:spud_page,:name => "about",:site_id => 1)
-          get :show,:id=>"about"
+          get :show, :use_route => :spud_cms,:id=>"about"
           assigns(:page).should == page2
         end
 
@@ -99,7 +99,7 @@ describe PagesController do
           page = FactoryGirl.create(:spud_page,:name => "home",:site_id => 0)
           page_site1 = FactoryGirl.create(:spud_page,:name => "home",:site_id => 1)
 
-          get :show
+          get :show, :use_route => :spud_cms
           assigns(:page).should == page_site1
         end
 

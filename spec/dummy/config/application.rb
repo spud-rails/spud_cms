@@ -3,6 +3,7 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 
 Bundler.require
+require "spud_core"
 require "spud_cms"
 
 module Dummy
@@ -39,6 +40,7 @@ module Dummy
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
     # config.active_record.schema_format = :sql
+    config.railties_order = [Spud::Core::Engine,Spud::Cms::Engine, :main_app, :all]
 
     # Enforce whitelist mode for mass assignment.
     # This will create an empty whitelist of attributes available for mass-assignment for all models
