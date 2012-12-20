@@ -22,7 +22,7 @@ describe Spud::Admin::MenuItemsController do
   describe :index do
     it "should return an array of menus" do
       2.times {|x|  s = FactoryGirl.create(:spud_menu_item,:spud_menu_id => @menu.id,:parent_id => @menu.id)}
-      get :index,:menu_id =>@menu.id
+      get :index,:menu_id =>@menu.id, :use_route => :spud_core
 
       assigns(:menu_items).count.should be > 1
     end
@@ -44,7 +44,7 @@ describe Spud::Admin::MenuItemsController do
   describe :create do
     it "should create a new menu item with a valid form submission" do
       lambda {
-        post :create, :use_route => :spud_core,:menu_id => @menu.id, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
+        post :create, :menu_id => @menu.id,:use_route => :spud_core, :spud_menu_item => FactoryGirl.attributes_for(:spud_menu_item,:parent_id => nil).reject{|k,v| k == 'id' || k == :spud_menu_id}
       }.should change(SpudMenuItem,:count).by(1)
       response.should be_redirect
     end

@@ -43,7 +43,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 
 
 
-		respond_with @menu_item,:location => spud_core.admin_menu_menu_items_url
+		respond_with @menu_item,:location => spud_core.admin_menu_menu_items_url(:menu_id => @menu.id)
 	end
 
 	def edit
@@ -64,14 +64,14 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 		@menu_item.spud_menu_id = @menu.id
 		flash[:notice] = "Menu saved successfully!" if @menu_item.save
 
-		respond_with @menu_item,:location => spud_core.admin_menu_menu_items_url
+		respond_with @menu_item,:location => spud_core.admin_menu_menu_items_url(:menu_id => @menu.id)
 	end
 
 	def destroy
 
 		flash[:notice] = "Menu Item removed!" if @menu_item.destroy
 
-		respond_with @menu_item,:location => spud_core.admin_menu_menu_items_url
+		respond_with @menu_item,:location => spud_core.admin_menu_menu_items_url(:menu_id => @menu.id)
 	end
 
 	def reorder
@@ -102,7 +102,7 @@ private
 		@menu_item = SpudMenuItem.where(:id =>params[:id]).first
 		if @menu_item.blank?
 			flash[:error] = "Menu Item not found!"
-			redirect_to spud_core.admin_menu_menu_items_url() and return false
+			redirect_to spud_core.admin_menu_menu_items_url(:menu_id => @menu.id) and return false
 		end
 	end
 

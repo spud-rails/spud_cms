@@ -33,7 +33,7 @@ describe PagesController do
 
       get :show, :use_route => :spud_cms, :id => "about"
 
-     response.should redirect_to page_url(:id => "about-us")
+     response.should redirect_to spud_cms.page_url(:id => "about-us")
 
     end
 
@@ -43,7 +43,7 @@ describe PagesController do
       page = FactoryGirl.create(:spud_page,:name => "about",:visibility => 1)
 
       get :show, :use_route => :spud_cms, :id => "about"
-      response.should redirect_to new_user_session_url()
+      response.should redirect_to spud_core.new_user_session_url()
     end
 
     describe "page caching" do

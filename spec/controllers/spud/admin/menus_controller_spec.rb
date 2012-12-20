@@ -75,7 +75,7 @@ describe Spud::Admin::MenusController do
       assigns(:menu).should == menu2
     end
     it "should redirect to index if menu not found" do
-      get :edit,:id => 3
+      get :edit, :use_route => :spud_core,:id => 3
       response.should redirect_to spud_core.admin_menus_url
     end
 

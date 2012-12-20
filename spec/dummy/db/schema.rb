@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20121119030136) do
 
-  create_table "spud_core.admin_permissions", :force => true do |t|
+  create_table "spud_admin_permissions", :force => true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.boolean  "access"

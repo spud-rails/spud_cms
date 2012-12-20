@@ -46,13 +46,13 @@ describe Spud::Admin::PagesController do
 
   describe :new do
     it "should respond successfully" do
-      get :new
+      get :new, :use_route => :spud_core
 
       response.should be_success
     end
 
     it "should build a page object for the form" do
-      get :new
+      get :new, :use_route => :spud_core
 
       assigns(:page).should_not be_blank
     end
@@ -62,7 +62,7 @@ describe Spud::Admin::PagesController do
     context "HTML format" do
       it "should load the correct page for the edit form" do
         page = FactoryGirl.create(:spud_page)
-        get :edit, :id => page.id
+        get :edit, :use_route => :spud_core, :id => page.id
 
         assigns(:page).id.should == page.id
       end
@@ -76,7 +76,7 @@ describe Spud::Admin::PagesController do
       page = FactoryGirl.create(:spud_page)
       new_name = "Adam"
       lambda {
-        put :update, :id => page.id, :spud_page => page.attributes.merge!(:name => new_name).reject{ |key,value| key == 'id' || key == 'created_at' || key == 'updated_at' || key == 'site_id'}
+        put :update, :use_route => :spud_core, :id => page.id, :spud_page => page.attributes.merge!(:name => new_name).reject{ |key,value| key == 'id' || key == 'created_at' || key == 'updated_at' || key == 'site_id'}
         page.reload
       }.should change(page, :name).to(new_name)
     end
@@ -84,7 +84,7 @@ describe Spud::Admin::PagesController do
     it "should redirect to the page root index after a successful update" do
       page = FactoryGirl.create(:spud_page)
       new_name = "Adam"
-      put :update, :id => page.id, :spud_page => page.attributes.merge!(:name => new_name).reject{ |key,value| key == 'id' || key == 'created_at' || key == 'updated_at' || key == 'site_id'}
+      put :update, :use_route => :spud_core, :id => page.id, :spud_page => page.attributes.merge!(:name => new_name).reject{ |key,value| key == 'id' || key == 'created_at' || key == 'updated_at' || key == 'site_id'}
 
       response.should redirect_to(spud_core.admin_pages_url)
     end
@@ -94,7 +94,7 @@ describe Spud::Admin::PagesController do
     it "should destroy the page" do
       page = FactoryGirl.create(:spud_page)
       lambda {
-        delete :destroy, :id => page.id
+        delete :destroy, :use_route => :spud_core, :id => page.id
       }.should change(SpudPage, :count).by(-1)
       response.should be_redirect
     end
@@ -102,7 +102,7 @@ describe Spud::Admin::PagesController do
     it "should destroy the user with the wrong id" do
       page = FactoryGirl.create(:spud_page)
       lambda {
-        delete :destroy, :id => "23532"
+        delete :destroy, :use_route => :spud_core, :id => "23532"
       }.should_not change(SpudPage, :count)
       response.should be_redirect
     end
