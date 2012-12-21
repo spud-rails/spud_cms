@@ -3,6 +3,6 @@ FactoryGirl.define do
       "Menu#{n}"
   end
   factory :spud_menu do
-    name { Factory.next(:menu_name) }
+    name { FactoryGirl.generate(:menu_name) }
   end
 end

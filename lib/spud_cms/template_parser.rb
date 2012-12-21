@@ -73,7 +73,6 @@ module Spud
 
       def check_for_defaults(layouts)
         default_layout_path = layout_path(Rails.application.root.join('app','views','layouts',Spud::Cms.default_page_layout))
-        puts("Checking #{default_layout_path}")
         puts(layouts)
         if layouts[default_layout_path].blank?
           layouts[default_layout_path] = {:template_name => "Default", :partials => ["Body"], :sites => [Spud::Core.short_name.downcase], :default => true}

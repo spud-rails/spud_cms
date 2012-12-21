@@ -3,7 +3,7 @@ FactoryGirl.define do
       "Menu Item #{n}"
   end
   factory :spud_menu_item do
-    name { Factory.next(:menu_item_name) }
+    name { FactoryGirl.generate(:menu_item_name) }
     parent_type "SpudMenu"
     parent_id 1
     spud_menu_id 1

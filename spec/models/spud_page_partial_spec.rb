@@ -4,12 +4,12 @@ describe SpudPagePartial do
   describe "validations" do
 
     it "should require a name" do
-      p = Factory.build(:spud_page_partial,:name => nil)
+      p = FactoryGirl.build(:spud_page_partial,:name => nil)
       p.should_not be_valid
     end
 
     it "should respond with a symbol_name based on name" do
-      p = Factory.build(:spud_page_partial,:name => "Test Page")
+      p = FactoryGirl.build(:spud_page_partial,:name => "Test Page")
       p.symbol_name.should == "test_page"
     end
   end
