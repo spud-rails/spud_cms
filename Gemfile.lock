@@ -1,7 +1,7 @@
 GIT
   remote: git://github.com/spud-rails/spud_core_admin.git
   revision: ba0e8ee73f2fe3d9dedf8af886313d2d2d0112c5
-  ref: mountable
+  branch: mountable
   specs:
     spud_core (0.10.0)
       authlogic

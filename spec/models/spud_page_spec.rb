@@ -11,19 +11,19 @@ describe SpudPage do
 	describe "validations" do
 
 		it "should require a name" do
-			p = Factory.build(:spud_page,:name => nil)
+			p = FactoryGirl.build(:spud_page,:name => nil)
 			p.should_not be_valid
 		end
 
 		it "should require a unique url_name" do
 			Factory(:spud_page, :url_name => "test", :use_custom_url_name => true)
-			t = Factory.build(:spud_page, :url_name => "test", :use_custom_url_name => true)
+			t = FactoryGirl.build(:spud_page, :url_name => "test", :use_custom_url_name => true)
 			t.should_not be_valid
 		end
 
 		it "should generate a url_name if taken" do
 			Factory(:spud_page, :name => "test")
-			t = Factory.build(:spud_page, :name => "test")
+			t = FactoryGirl.build(:spud_page, :name => "test")
 			lambda {
         t.valid?
       }.should change(t, :url_name)
@@ -54,13 +54,13 @@ describe SpudPage do
 		end
 
 		it "should group pages by parent" do
-			parent_page = Factory.build(:spud_page,:name => "parent")
+			parent_page = FactoryGirl.build(:spud_page,:name => "parent")
 			parent_page.save
 
-			page = Factory.build(:spud_page,:name => "Page 1")
+			page = FactoryGirl.build(:spud_page,:name => "Page 1")
 			page.spud_page = parent_page
 			page.save
-			page2 = Factory.build(:spud_page,:name => "Page 2")
+			page2 = FactoryGirl.build(:spud_page,:name => "Page 2")
 			page2.spud_page = parent_page
 			page2.save
 
@@ -70,7 +70,7 @@ describe SpudPage do
 		end
 
 		it "should return private if visibility is == 1" do
-			parent_page = Factory.build(:spud_page,:name => "parent",:visibility => 1)
+			parent_page = FactoryGirl.build(:spud_page,:name => "parent",:visibility => 1)
 
 			parent_page.is_private?.should == true
 
@@ -84,9 +84,9 @@ describe SpudPage do
 	describe "generate_url_name" do
 		it "should add the parent url name if a page has a parent" do
 			# Factory(:spud_page, :name => "test")
-			parent_page = Factory.build(:spud_page,:name => "about")
+			parent_page = FactoryGirl.build(:spud_page,:name => "about")
 			parent_page.save
-			t = Factory.build(:spud_page, :name => "test")
+			t = FactoryGirl.build(:spud_page, :name => "test")
 			t.spud_page = parent_page
 			t.valid?
 
@@ -95,29 +95,29 @@ describe SpudPage do
 		end
 
 		it "should add a counter to url_name if the url_name is already in use" do
-			page = Factory.build(:spud_page,:name => "testimonials")
+			page = FactoryGirl.build(:spud_page,:name => "testimonials")
 			page.save
 
-			page2 = Factory.build(:spud_page,:name => "testimonials")
+			page2 = FactoryGirl.build(:spud_page,:name => "testimonials")
 			page2.valid?
 
 			page2.url_name.should == 'testimonials-1'
 		end
 
 		it "should add a counter to url_name if the url_name was once in use by another page that was renamed" do
-			page = Factory.build(:spud_page,:name => "another")
+			page = FactoryGirl.build(:spud_page,:name => "another")
 			page.save
 			page.name = "again"
 			page.save
 
-			page2 = Factory.build(:spud_page,:name => "another")
+			page2 = FactoryGirl.build(:spud_page,:name => "another")
 			page2.valid?
 
 			page2.url_name.should == 'another-1'
 		end
 
 		it "should destroy historical permalink if a page is renamed back to its previous name" do
-			page = Factory.build(:spud_page,:name => "permapage")
+			page = FactoryGirl.build(:spud_page,:name => "permapage")
 			page.save
 
 			page.name = 'permapage new'
@@ -133,21 +133,21 @@ describe SpudPage do
 		end
 
 		it "should not allow a custom url to be reused by another page" do
-			page = Factory.build(:spud_page,:name => "original")
+			page = FactoryGirl.build(:spud_page,:name => "original")
 			page.save
 
-			page = Factory.build(:spud_page,:name => "new",:use_custom_url_name => true,:url_name => "original")
+			page = FactoryGirl.build(:spud_page,:name => "new",:use_custom_url_name => true,:url_name => "original")
 
 			page.valid?.should == false
 		end
 
 		it "should not allow a custom url to be reused by another page even if it is a historical permalink" do
-			page = Factory.build(:spud_page,:name => "original")
+			page = FactoryGirl.build(:spud_page,:name => "original")
 			page.save
 			page.name = "original2"
 			page.save
 
-			page = Factory.build(:spud_page,:name => "new")
+			page = FactoryGirl.build(:spud_page,:name => "new")
 			page.save
 			page.use_custom_url_name = true
 			page.url_name = 'original'
