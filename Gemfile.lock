@@ -97,7 +97,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
-    retina_tag (1.1.5)
+    retina_tag (1.1.6)
       jquery-rails
       rails (~> 3.1)
     rspec (2.8.0)
