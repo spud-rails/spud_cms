@@ -3,6 +3,6 @@ FactoryGirl.define do
 	    "Part#{n}"
 	end
 	factory :spud_page_partial do
-		name { Factory.next(:part_name) }
+		name { FactoryGirl.generate(:part_name) }
 	end
 end

@@ -3,7 +3,7 @@ FactoryGirl.define do
       "Snippet#{n}"
   end
   factory :spud_snippet do
-    name { Factory.next(:snippet_name) }
+    name { FactoryGirl.generate(:snippet_name) }
     content "Test Content"
   end
 end

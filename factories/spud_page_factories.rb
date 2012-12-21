@@ -3,7 +3,7 @@ FactoryGirl.define do
 	    "Page#{n}"
 	end
 	factory :spud_page do
-		name { Factory.next(:page_name) }
+		name { FactoryGirl.generate(:page_name) }
 		published true
 	end
 end
