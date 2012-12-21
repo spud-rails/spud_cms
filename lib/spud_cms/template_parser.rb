@@ -89,8 +89,8 @@ module Spud
           if layout.blank?
             layouts[layout_path] = {:template_name => "Default", :partials => ["Body"], :sites => [config[:short_name].to_s.downcase], :default => true}
           else
-            layout[layout_path][:sites] << config[:short_name].to_s.downcase
-            layout[layout_path][:default] = true
+            layouts[layout_path][:sites] << config[:short_name].to_s.downcase
+            layouts[layout_path][:default] = true
           end
         end
 
