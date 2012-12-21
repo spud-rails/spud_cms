@@ -1,6 +1,6 @@
 Spud CMS
 ========
-
+[![Build Status](https://travis-ci.org/spud-rails/spud_cms.png?branch=mountable)](https://travis-ci.org/spud-rails/spud_cms)
 Spud CMS is a CMS Engine designed to be robust, easy to use, and light weight.
 
 
