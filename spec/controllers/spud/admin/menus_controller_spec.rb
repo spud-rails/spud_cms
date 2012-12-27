@@ -45,8 +45,6 @@ describe Spud::Admin::MenusController do
       lambda {
         post :create, :use_route => :spud_core, :spud_menu => FactoryGirl.attributes_for(:spud_menu,:name => nil).reject{|k,v| k == 'site_id' || k == 'id'}
       }.should_not change(SpudMenu,:count)
-
-
     end
   end
 
@@ -116,6 +114,5 @@ describe Spud::Admin::MenusController do
       }.should_not change(SpudMenu,:count)
       response.should be_redirect
     end
-
   end
 end
