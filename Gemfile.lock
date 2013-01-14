@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spud_cms (0.9.9)
+    spud_cms (0.9.10)
       codemirror-rails
       liquid
       rails (~> 3.2.1)
@@ -97,7 +97,7 @@ GEM
     rake (10.0.3)
     rdoc (3.12)
       json (~> 1.4)
-    retina_tag (1.1.6)
+    retina_tag (1.1.7)
       jquery-rails
       rails (~> 3.1)
     rspec (2.8.0)
@@ -143,7 +143,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
-    will_paginate (3.0.3)
+    will_paginate (3.0.4)
 
 PLATFORMS
   ruby
