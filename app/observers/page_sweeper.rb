@@ -33,7 +33,7 @@ private
       end
     else
       Rails.cache.clear
-      SpudPage.site(session[:admin_site]).published_pages.all.each {|page| expire_cache_for(page)}
+      SpudPage.published_pages.all.each {|page| expire_cache_for(page)}
     end
   end
 
