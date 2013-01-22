@@ -1,5 +1,5 @@
 class SpudPage < ActiveRecord::Base
-	searchable
+	spud_searchable
 	belongs_to :spud_page
 	has_many :spud_page_partial_revisions
 	has_many :spud_pages, :dependent => :nullify

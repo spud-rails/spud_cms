@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    spud_cms (0.9.12)
+    spud_cms (0.9.13)
       codemirror-rails
       liquid
       rails (~> 3.2.1)
-      spud_core (>= 0.9.4)
+      spud_core (>= 0.9.10)
       spud_permalinks (~> 0.9.0)
 
 GEM
@@ -127,10 +127,11 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    spud_core (0.9.7)
+    spud_core (0.9.10)
       authlogic
       bootstrap-will_paginate
       breadcrumbs_on_rails
+      codemirror-rails
       jquery-rails
       rails (~> 3.2.2)
       retina_tag
