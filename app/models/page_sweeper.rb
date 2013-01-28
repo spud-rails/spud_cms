@@ -39,7 +39,7 @@ private
         multisite_prefix = ""
 
         if Spud::Core.multisite_mode_enabled
-            site_config = Spud::Core.site_config_for_id(session[:admin_site])
+            site_config = Spud::Core.site_config_for_id(record.site_id)
             multisite_prefix = "/" + site_config[:short_name].to_s.downcase
         end
 
@@ -57,7 +57,7 @@ private
     	end
     else
     	Rails.cache.clear
-    	SpudPage.site(session[:admin_site]).published_pages.all.each {|page| expire_cache_for(page)}
+    	SpudPage.site(record.spud_menu.site_id).published_pages.all.each {|page| expire_cache_for(page)}
     end
   end
 end
