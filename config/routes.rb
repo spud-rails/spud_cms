@@ -26,6 +26,4 @@ Rails.application.routes.draw do
    # match "*id", :controller => "pages",:action => "show", :as => "page"
 
 end
-Spud::Cms::Engine.routes.draw do
-end
 

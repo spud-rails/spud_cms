@@ -35,8 +35,10 @@ module Spud
       end
      end
     initializer :cms_sweepers do |config|
-      Spud::Admin::ApplicationController.instance_eval do
-        cache_sweeper :page_sweeper, :except => [:show,:index]
+      if ActiveRecord::Base.connection.tables.include?('spud_pages')
+        Spud::Admin::ApplicationController.instance_eval do
+          cache_sweeper :page_sweeper, :except => [:show,:index]
+        end
       end
     end
 
