@@ -1,7 +1,11 @@
 PATH
   remote: .
   specs:
+<<<<<<< HEAD
     spud_cms (0.9.14)
+=======
+    spud_cms (0.9.15)
+>>>>>>> 99813add67914b2b34f7dafd0d8f414ea9fceae8
       codemirror-rails
       liquid
       rails (~> 3.2.1)

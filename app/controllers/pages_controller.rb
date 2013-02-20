@@ -3,6 +3,8 @@ class PagesController < ApplicationController
 
 	respond_to :html
 
+	before_filter :set_default_content_type
+
 	after_filter({:only => [:show]}) do |c|
 		if Spud::Cms.cache_mode == :full_page && @page && @page.is_private? == false
 	    c.cache_page(nil, nil, false)
@@ -76,7 +78,13 @@ class PagesController < ApplicationController
 private
 
 	def render_404
-		Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404) : render(:text=>nil,:status => 404)
+		Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404, :formats => [:html]) : render(:text=>nil,:status => 404)
+ 	end
+
+ 	def set_default_content_type
+ 		if params[:format].blank?
+			request.format = :html
+		end
  	end
 
 end
