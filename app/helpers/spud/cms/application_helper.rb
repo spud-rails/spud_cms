@@ -87,6 +87,7 @@ module Spud::Cms::ApplicationHelper
 		menu = SpudMenu
 		menu_id = nil
 		menu_key = ""
+		link_options = {}
 		start_menu_item = nil
 		if Spud::Core.multisite_mode_enabled
 			site_config = Spud::Core.site_config_for_host(request.host_with_port)
@@ -95,12 +96,10 @@ module Spud::Cms::ApplicationHelper
 		end
 		if !options.blank?
 
-			if options.has_key?(:menu_id)
-				menu_id = options[:menu_id]
-			end
+			menu_id = options[:menu_id] if options.has_key?(:menu_id)
+			link_options = options[:link_options] if options.has_key?(:link_options)
 			if  options.has_key?(:name)
 				menu_key +=  options[:name]
-
 				menu = menu.where(:name => options[:name])
 				menu_id = MENU_INDEX[menu_key]
 				if menu_id.blank?
@@ -111,19 +110,13 @@ module Spud::Cms::ApplicationHelper
 					end
 				end
 			end
-			if options.has_key?(:start_menu_item_id)
-				start_menu_item = options[:start_menu_item_id]
-			end
+			start_menu_item = options[:start_menu_item_id] if options.has_key?(:start_menu_item_id)
 			if options.has_key?(:id)
 				content = "<ul id='#{options[:id]}' #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			else
 				content = "<ul #{"class='#{options[:class]}'" if options.has_key?(:class)}>"
 			end
-
-
-			if options.has_key?(:max_depth)
-				max_depth = options[:max_depth]
-			end
+			max_depth = options[:max_depth] if options.has_key?(:max_depth)
 		else
 			content = "<ul>"
 		end
@@ -166,9 +159,10 @@ module Spud::Cms::ApplicationHelper
 			elsif current_page?(item.url)
 				active = true
 			end
-			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url}'>#{item.name}</a>"
+			link_tag = link_to item.name, !item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url, {:class => "#{'menu-active' if active} #{item.classes if !item.classes.blank?}"}.merge(link_options)
+			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'>#{link_tag}"
 			if max_depth == 0 || max_depth > 1
-				content += sp_list_menu_item(child_items,item.id,2,max_depth)
+				content += sp_list_menu_item(child_items,item.id,2,max_depth,options)
 			end
 			content += "</li>"
 		end
@@ -213,8 +207,8 @@ module Spud::Cms::ApplicationHelper
 	end
 
 private
-	def sp_list_menu_item(items,item_id,depth,max_depth)
-
+	def sp_list_menu_item(items,item_id,depth,max_depth, options = {})
+		link_options = options.has_key?(:link_options) ? options[:link_options] : {}
 		spud_menu_items = items[item_id]
 		if spud_menu_items == nil
 			return ""
@@ -232,7 +226,8 @@ private
 			elsif current_page?(item.url)
 				active = true
 			end
-			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'><a class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}' href='#{!item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name)) : item.url}'>#{item.name}</a>"
+			link_tag = link_to item.name, !item.url_name.blank? ? (item.url_name == Spud::Cms.root_page_name ? root_path() : page_path(:id => item.url_name))  : item.url, {:class => "#{'menu-active' if active} #{item.classes if !item.classes.blank?}"}.merge(link_options)
+			content += "<li class='#{"menu-active" if active} #{item.classes if !item.classes.blank?}'>#{link_tag}"
 			if max_depth == 0 || max_depth > depth
 				content += sp_list_menu_item(items,item.id,depth+1,max_depth)
 			end
