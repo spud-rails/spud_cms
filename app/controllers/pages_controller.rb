@@ -1,6 +1,4 @@
 class PagesController < ApplicationController
-	caches_action :show, :if => Proc.new { |c| Spud::Cms.cache_mode == :action }
-
 	respond_to :html
 
 	before_filter :set_default_content_type

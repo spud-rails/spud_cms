@@ -10,7 +10,7 @@ group :test do
   gem 'shoulda', '~> 3.0.1'
   gem 'factory_girl', '2.5.0'
   gem 'mocha', '0.10.3'
-  gem 'database_cleaner', '0.7.1'
+  gem 'database_cleaner', '1.0.0.RC1'
 end
 
 #gem 'spud_core',:path => "../spud_core_admin"

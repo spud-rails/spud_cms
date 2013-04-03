@@ -9,9 +9,6 @@ class SpudMenuItem < ActiveRecord::Base
 	validates :parent_type,:presence => true
 	validates :parent_id,:presence => true
 
-
-	attr_accessible :name,:parent_type,:parent_id,:item_type,:spud_page_id,:menu_order,:url,:classes
-
 	def get_url
 		if !self.spud_page.blank?
 			return self.spud_page.url_name

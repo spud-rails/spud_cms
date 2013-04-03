@@ -1,5 +1,4 @@
 class SpudSnippet < ActiveRecord::Base
-  attr_accessible :content, :content_processed, :format, :name
   has_many :spud_page_liquid_tags, :as => :attachment, :dependent => :destroy
 
   validates :name, :presence => true

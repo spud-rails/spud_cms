@@ -18,7 +18,7 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 
 	def create
 		add_breadcrumb "New", :new_spud_admin_menu_path
-		@menu = SpudMenu.new(params[:spud_menu])
+		@menu = SpudMenu.new(menu_params)
 		@menu.site_id = session[:admin_site]
 		flash[:notice] = "New menu created" if @menu.save
 		respond_with @menu,:location => @menu.id != nil ? spud_admin_menu_menu_items_url(:menu_id => @menu.id) : spud_admin_menus_url
@@ -32,7 +32,7 @@ class Spud::Admin::MenusController < Spud::Admin::CmsController
 	def update
 		add_breadcrumb "Edit #{@menu.name}", :edit_spud_admin_menu_path
 
-		flash[:notice] = "Menu saved successfully" if @menu.update_attributes(params[:spud_menu])
+		flash[:notice] = "Menu saved successfully" if @menu.update_attributes(menu_params)
 		respond_with @menu,:location => spud_admin_menu_menu_items_url(:menu_id => @menu.id)
 	end
 
@@ -51,5 +51,9 @@ private
 			flash[:warning] = "Site Context Changed. The menu you were viewing is not associated with the current site. Redirected back to menu selections."
 			redirect_to spud_admin_menus_url() and return false
 		end
+	end
+
+	def menu_params
+		params.require(:spud_menu).permit(:name, :description)
 	end
 end

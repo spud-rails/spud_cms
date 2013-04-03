@@ -2,7 +2,6 @@ class SpudPagePartial < ActiveRecord::Base
 	belongs_to :spud_page
 	has_many :spud_page_liquid_tags, :as => :attachment, :dependent => :destroy
 	validates :name,:presence => true
-	attr_accessible :name, :spud_page_id, :content, :format, :content_processed
 	before_save :maintain_revisions
 	before_save :update_symbol_name
 	before_save :postprocess_content

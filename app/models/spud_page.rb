@@ -9,8 +9,6 @@ class SpudPage < ActiveRecord::Base
 	belongs_to :updated_by_user,:class_name => "SpudUser",:foreign_key => :updated_by
 
 
-	attr_accessible :name,:url_name,:created_by,:updated_by,:layout,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes
-
 	before_validation :generate_url_name
 	validates :name,:presence => true
 	validates_uniqueness_of :name, :scope => [:site_id,:spud_page_id]
@@ -38,7 +36,7 @@ class SpudPage < ActiveRecord::Base
 	end
 
 	# Returns an array of pages in order of heirarchy
-	# 	:fitler Filters out a page by ID, and all of its children
+	# 	:filter Filters out a page by ID, and all of its children
 	#   :value Pick an attribute to be used in the value field, defaults to ID
 	def self.options_tree_for_page(config={})
 		collection = config[:collection] || self.grouped(config[:site_id])

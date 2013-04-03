@@ -39,7 +39,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 	def create
 
-		@page = SpudPage.new(params[:spud_page])
+		@page = SpudPage.new(page_params)
 		@page.site_id = session[:admin_site]
 		if params[:preview] && params[:preview].to_i == 1
 			preview
@@ -71,7 +71,7 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 	def update
 
-		@page.attributes = params[:spud_page]
+		@page.attributes = page_params
 		if params[:preview] && params[:preview].to_i == 1
 			preview
 			return
@@ -176,6 +176,11 @@ private
 		end
 		return true
 	end
+
+
+  def page_params
+    params.require(:spud_page).permit(:name,:url_name,:created_by,:updated_by,:layout,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes)
+  end
 
 
 

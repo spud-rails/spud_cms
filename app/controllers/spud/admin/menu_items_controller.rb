@@ -21,7 +21,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 	def create
 
 		add_breadcrumb "New", :new_spud_admin_page_path
-		@menu_item = SpudMenuItem.new(params[:spud_menu_item])
+		@menu_item = SpudMenuItem.new(menu_item_params)
 		@menu_item.spud_menu_id = @menu.id
 		if params[:spud_menu_item][:parent_id].blank?
 			@menu_item.parent_id = @menu.id
@@ -62,7 +62,7 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 		else
 			params[:spud_menu_item][:parent_type] = "SpudMenuItem"
 		end
-		@menu_item.attributes = params[:spud_menu_item]
+		@menu_item.attributes = menu_item_params
 		@menu_item.spud_menu_id = @menu.id
 		flash[:notice] = "Menu saved successfully!" if @menu_item.save
 
@@ -108,8 +108,8 @@ private
 		end
 	end
 
-
-
-
+	def menu_item_params
+		params.require(:spud_menu_item).permit(:name,:parent_type,:parent_id,:item_type,:spud_page_id,:menu_order,:url,:classes)
+	end
 
 end

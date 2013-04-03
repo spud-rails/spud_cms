@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.markdown"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency "rails", "~> 3.2.1"
-  s.add_dependency 'spud_core', ">= 0.9.10"
-  s.add_dependency 'spud_permalinks', "~>0.9.0"
+  s.add_dependency "rails", "~> 4.0.0.beta1"
+  s.add_dependency 'spud_core', ">= 1.0.0.rc1"
+  s.add_dependency 'spud_permalinks', ">=1.0.0.rc1"
   s.add_dependency 'liquid'
   s.add_dependency 'codemirror-rails'
 
@@ -28,6 +28,6 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda', '~> 3.0.1'
   s.add_development_dependency 'factory_girl', '2.5.0'
   s.add_development_dependency 'mocha', '0.10.3'
-  s.add_development_dependency 'database_cleaner', '0.7.1'
+  s.add_development_dependency 'database_cleaner', '1.0.0.RC1'
   s.add_development_dependency 'simplecov', '~> 0.6.4'
 end
