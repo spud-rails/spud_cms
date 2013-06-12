@@ -7,6 +7,8 @@ class SpudPagePartial < ActiveRecord::Base
 	before_save :update_symbol_name
 	before_save :postprocess_content
 	after_save :update_taglist
+
+
 	def update_symbol_name
 		self.symbol_name = self.name.parameterize.underscore
 	end
@@ -46,18 +48,21 @@ class SpudPagePartial < ActiveRecord::Base
 	end
 
 	def maintain_revisions
-		if !self.changed.include?('content')
-			return true
+		if self.changed.include?('content')
+			revision = SpudPagePartialRevision.create(:spud_page_id => self.spud_page_id,:name => self.name,:format => self.format,:content => self.content)
+			drop_old_revisions if Spud::Cms.max_revisions > 0
 		end
-		revision = SpudPagePartialRevision.new(:spud_page_id => self.spud_page_id,:name => self.name,:format => self.format,:content => self.content)
-			revision.save
-			if Spud::Cms.max_revisions > 0
-				revision_count = SpudPagePartialRevision.where(:spud_page_id => self.spud_page_id,:name => self.name).count
-				if revision_count > Spud::Cms.max_revisions
-					revision_bye = SpudPagePartialRevision.where(:spud_page_id => self.spud_page_id,:name => self.name).order("created_at ASC").first
-					revision_bye.destroy if !revision_bye.blank?
-				end
-			end
+
 		return true
+	end
+
+private
+
+	def drop_old_revisions
+		revision_count = SpudPagePartialRevision.for_partial(self).count
+		if revision_count > Spud::Cms.max_revisions
+			revision_bye = SpudPagePartialRevision.for_partial(self).order("created_at ASC").first
+			revision_bye.destroy if !revision_bye.blank?
+		end
 	end
 end
