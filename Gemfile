@@ -6,10 +6,10 @@ source "http://rubygems.org"
 group :test do
   gem 'mysql2', '0.3.11'
   gem 'spud_permalinks'
-  gem 'rspec', '2.8.0'
+  gem 'rspec', '2.14.0'
   gem 'shoulda', '~> 3.0.1'
   gem 'factory_girl', '2.5.0'
-  gem 'mocha', '0.10.3'
+  gem 'mocha', '0.14.0'
   gem 'database_cleaner', '0.7.1'
 end
 
