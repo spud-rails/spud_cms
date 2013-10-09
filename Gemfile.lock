@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spud_cms (0.9.18)
+    spud_cms (0.9.20)
       codemirror-rails
       liquid
       rails (~> 3.2.1)
@@ -42,11 +42,11 @@ GEM
     authlogic (3.3.0)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
-    bootstrap-will_paginate (0.0.9)
+    bootstrap-will_paginate (0.0.10)
       will_paginate
     breadcrumbs_on_rails (2.3.0)
     builder (3.0.4)
-    codemirror-rails (3.13)
+    codemirror-rails (3.16)
       railties (>= 3.0, < 5)
     database_cleaner (0.7.1)
     diff-lcs (1.1.3)
@@ -60,7 +60,7 @@ GEM
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
     json (1.7.5)
-    liquid (2.5.0)
+    liquid (2.5.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -127,13 +127,13 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    spud_core (0.9.18)
+    spud_core (0.9.20)
       authlogic
       bootstrap-will_paginate
       breadcrumbs_on_rails
       codemirror-rails
       jquery-rails
-      rails (~> 3.2.2)
+      rails (>= 3.2.2)
       retina_tag
       will_paginate
     spud_permalinks (0.9.1)
@@ -144,7 +144,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.35)
-    will_paginate (3.0.4)
+    will_paginate (3.0.5)
 
 PLATFORMS
   ruby
