@@ -57,6 +57,7 @@ class PagesController < ApplicationController
 		end
 
 		if @page.is_private?
+			@rendered_action_cache = true if Spud::Cms.cache_mode == :action
 			return if defined?(require_user) && require_user == false
 		end
 
