@@ -79,7 +79,8 @@ class PagesController < ApplicationController
 private
 
 	def render_404
-		Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404, :formats => [:html]) : render(:text=>nil,:status => 404)
+	  raise ActionController::RoutingError.new('Not Found')
+		# Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404, :formats => [:html]) : render(:text=>nil,:status => 404)
  	end
 
  	def set_default_content_type
