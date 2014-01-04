@@ -16,12 +16,12 @@ describe SpudPagePartial do
 
   describe "save hooks" do
     it "should save the symbol name" do
-      p = Factory.create(:spud_page_partial,:name => "Test Page")
+      p = FactoryGirl.create(:spud_page_partial,:name => "Test Page")
       p.attributes["symbol_name"].should == "test_page"
     end
 
     it "should create a new revision if content is changed" do
-      p = Factory.create(:spud_page_partial,:name => "Test Page",:content =>"Home Sweet Home",:spud_page_id => 1)
+      p = FactoryGirl.create(:spud_page_partial,:name => "Test Page",:content =>"Home Sweet Home",:spud_page_id => 1)
       SpudPagePartialRevision.where(:spud_page_id => 1,:name => "Test Page").count.should == 1
     end
 
@@ -29,7 +29,7 @@ describe SpudPagePartial do
       Spud::Cms.configure do |config|
         config.max_revisions = 2
       end
-      p = Factory.create(:spud_page_partial,:name => "Test Page",:content =>"Home Sweet Home",:spud_page_id => 1)
+      p = FactoryGirl.create(:spud_page_partial,:name => "Test Page",:content =>"Home Sweet Home",:spud_page_id => 1)
       p.content = "Nah"
       p.save
 

@@ -32,7 +32,7 @@ class SpudPagePartial < ActiveRecord::Base
 	def update_taglist
 		template = Liquid::Template.parse(self.content) # Parses and compiles the template
 
-		self.spud_page_liquid_tags.all.each do |tag|
+		self.spud_page_liquid_tags.each do |tag|
 			tag.destroy
 		end
 		template.root.nodelist.each do |node|

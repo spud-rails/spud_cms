@@ -57,7 +57,7 @@ module Spud::Cms::ApplicationHelper
 			content = "<ul>"
 		end
 
-		pages = pages.all.group_by(&:spud_page_id)
+		pages = pages.load.group_by(&:spud_page_id)
 		if pages[start_page].blank?
 
 			return ""
@@ -138,7 +138,7 @@ module Spud::Cms::ApplicationHelper
 			#{SpudMenuItem.table_name}.menu_order as menu_order,
 			#{SpudMenuItem.table_name}.parent_id as parent_id,
 			#{SpudMenuItem.table_name}.name as name,
-			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
+			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").load
 
 
 		grouped_items = menu_items.group_by(&:parent_type)
@@ -203,7 +203,7 @@ module Spud::Cms::ApplicationHelper
 			#{SpudMenuItem.table_name}.menu_order as menu_order,
 			#{SpudMenuItem.table_name}.parent_id as parent_id,
 			#{SpudMenuItem.table_name}.name as name,
-			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").all
+			#{SpudPage.table_name}.url_name as url_name").order(:parent_type,:parent_id).joins("LEFT JOIN #{SpudPage.table_name} ON (#{SpudPage.table_name}.id = #{SpudMenuItem.table_name}.spud_page_id)").load
 
 		menu_tags = []
 		menu_items.sort_by{|p| p.menu_order}.each do |item|

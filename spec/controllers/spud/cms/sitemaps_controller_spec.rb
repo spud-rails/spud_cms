@@ -18,8 +18,9 @@ describe Spud::Cms::SitemapsController do
     end
 
     it "should only respond to an XML format" do
-      get :show
-      response.response_code.should == 406
+      expect {
+        get :show
+      }.to raise_exception(ActionController::UnknownFormat)
     end
 
     describe :multisite do

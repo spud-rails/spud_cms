@@ -16,13 +16,13 @@ describe SpudPage do
 		end
 
 		it "should require a unique url_name" do
-			Factory(:spud_page, :url_name => "test", :use_custom_url_name => true)
+			FactoryGirl.create(:spud_page, :url_name => "test", :use_custom_url_name => true)
 			t = FactoryGirl.build(:spud_page, :url_name => "test", :use_custom_url_name => true)
 			t.should_not be_valid
 		end
 
 		it "should generate a url_name if taken" do
-			Factory(:spud_page, :name => "test")
+			FactoryGirl.create(:spud_page, :name => "test")
 			t = FactoryGirl.build(:spud_page, :name => "test")
 			lambda {
         t.valid?
@@ -30,7 +30,7 @@ describe SpudPage do
 		end
 
 		it "should dependantly destroy page_partials" do
-			t = Factory(:spud_page, :spud_page_partials => [SpudPagePartial.new(:name => "body")])
+			t = FactoryGirl.create(:spud_page, :spud_page_partials => [SpudPagePartial.new(:name => "body")])
       lambda {
   			t.destroy
       }.should change(SpudPagePartial, :count).from(1).to(0)

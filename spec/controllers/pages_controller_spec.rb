@@ -84,8 +84,11 @@ describe PagesController do
 
         it "should not show a page on a different site" do
           page = FactoryGirl.create(:spud_page,:name => "about",:site_id => 0)
-          get :show,:id=>"about"
-          response.response_code.should == 404
+          expect {
+            get :show,:id=>"about"
+          }.to raise_exception(ActionController::RoutingError)
+
+          # response.response_code.should == 404
         end
 
         it "should show the right page" do

@@ -11,8 +11,8 @@ class SpudPage < ActiveRecord::Base
 
 
 	before_validation :generate_url_name
-	validates :name,:presence => true, :uniqueness => [:site_id, :spud_page_id]
-	validates :url_name,:presence => true, :uniqueness => [:site_id]
+	validates :name,:presence => true, :uniqueness => {:scope => [:site_id, :spud_page_id]}
+	validates :url_name,:presence => true, :uniqueness => {:scope => :site_id}
 
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
 	scope :parent_pages,  -> {where(:spud_page_id => nil)}
@@ -24,7 +24,7 @@ class SpudPage < ActiveRecord::Base
 	def self.grouped(site_id=0)
 
 		if(Spud::Core.multisite_mode_enabled)
-			return site(site_id).all.group_by(&:spud_page_id)
+			return site(site_id).load.group_by(&:spud_page_id)
 		else
 			return all.group_by(&:spud_page_id)
 		end
@@ -70,7 +70,7 @@ class SpudPage < ActiveRecord::Base
 				if !self.id.blank?
 					pages = pages.where("id != #{self.id}")
 				end
-				url_names = pages.site(self.site_id).all.collect{|p| p.url_name}
+				url_names = pages.site(self.site_id).collect{|p| p.url_name}
 
 				counter = 1
 				url_name_new = url_name
