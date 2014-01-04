@@ -5,7 +5,7 @@ class Spud::Admin::SnippetsController < Spud::Admin::ApplicationController
 
   before_filter :load_snippet, :only => [:show, :edit, :update, :destroy]
 
-  cache_sweeper :snippet_sweeper, :only => [:update,:destroy,:create]
+  # cache_sweeper :snippet_sweeper, :only => [:update,:destroy,:create]
 
   def index
     @snippets = SpudSnippet.site(session[:admin_site]).order(:name).paginate :page => params[:page]

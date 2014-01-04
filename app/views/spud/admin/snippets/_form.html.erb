@@ -4,5 +4,12 @@
 </fieldset>
 <br/>
 <div>
-  <%= f.text_area :content,:style => "width:100%;", :class => 'tinymce full-width' %>
+  <div class="control-group">
+	  <div class="controls">
+	    <%=f.select :format,Spud::Core.renderers.collect { |k,v| [v[:description] || k, k]}, {:include_blank => false}, :class => "pull-right", "data-formatter" => "spud_snippet_content_area"%>
+	  </div>
+	</div>
+	<div style="clear:both;">
+	  <%= f.text_area :content,:style => "width:100%;", :id => "spud_snippet_content_area", :class => 'spud-formatted-editor full-width',"data-format" => f.object.format %>
+	</div>
 </div>

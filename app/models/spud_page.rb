@@ -2,6 +2,7 @@ class SpudPage < ActiveRecord::Base
 	spud_searchable
 	belongs_to :spud_page
 	has_many :spud_page_partial_revisions
+	has_many :spud_menu_items
 	has_many :spud_pages, :dependent => :nullify
 	has_many :spud_page_partials,:dependent => :destroy
 	has_many :spud_permalinks,:as => :attachment, :dependent => :destroy
@@ -10,16 +11,14 @@ class SpudPage < ActiveRecord::Base
 
 
 	before_validation :generate_url_name
-	validates :name,:presence => true
-	validates_uniqueness_of :name, :scope => [:site_id,:spud_page_id]
-	validates :url_name,:presence => true
-	validates_uniqueness_of :url_name, :scope => :site_id
+	validates :name,:presence => true, :uniqueness => [:site_id, :spud_page_id]
+	validates :url_name,:presence => true, :uniqueness => [:site_id]
 
 	accepts_nested_attributes_for :spud_page_partials, :allow_destroy => true
-	scope :parent_pages,  where(:spud_page_id => nil)
+	scope :parent_pages,  -> {where(:spud_page_id => nil)}
 	scope :site, lambda {|sid| where(:site_id => sid)}
-	scope :published_pages, where(:published => true)
-	scope :public, where(:visibility => 0)
+	scope :published_pages, -> { where(:published => true)}
+	scope :public, -> {where(:visibility => 0)}
 
 
 	def self.grouped(site_id=0)

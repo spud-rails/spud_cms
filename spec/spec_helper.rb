@@ -13,7 +13,7 @@ require 'rspec/autorun'
 require 'database_cleaner'
 require 'shoulda'
 require 'factory_girl'
-require 'mocha'
+require 'mocha/setup'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

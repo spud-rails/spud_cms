@@ -4,13 +4,14 @@ source "http://rubygems.org"
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 group :test do
-  gem 'mysql2', '0.3.11'
-  gem 'spud_permalinks'
-  gem 'rspec', '2.8.0'
+  gem 'mysql2'
+  gem 'rspec', '2.14.0'
   gem 'shoulda', '~> 3.0.1'
-  gem 'factory_girl', '2.5.0'
-  gem 'mocha', '0.10.3'
-  gem 'database_cleaner', '1.0.0.RC1'
+  gem 'factory_girl', '~> 3.0'
+  gem 'mocha', '0.14.0'
+  gem "database_cleaner", "1.0.0.RC1"
+  # gem 'spud_permalinks'
+  gem 'rake'
 end
 
 #gem 'spud_core',:path => "../spud_core_admin"

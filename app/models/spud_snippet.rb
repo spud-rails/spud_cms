@@ -8,10 +8,23 @@ class SpudSnippet < ActiveRecord::Base
 
   before_save :postprocess_content
   after_save :update_taglist
+  after_destroy :expire_cache
+
   def postprocess_content
-    template = Liquid::Template.parse(self.content) # Parses and compiles the template
-    self.content_processed = template.render()
+    rendererClass = Spud::Core.renderer(self.format)
+    if rendererClass
+      renderer = rendererClass.new()
+      self.content_processed = renderer.render self.content
+    else
+      self.content_processed = content
+    end
+    # template = Liquid::Template.parse(self.content) # Parses and compiles the template
+
+    # self.content_processed = template.render('page' => self.spud_page)
   end
+  # def postprocess_content
+    #
+  # end
 
   def content_processed=(content)
     write_attribute(:content_processed,content)
@@ -21,7 +34,8 @@ class SpudSnippet < ActiveRecord::Base
     if read_attribute(:content_processed).blank?
       self.update_column(:content_processed, postprocess_content)
     end
-    return read_attribute(:content_processed)
+    template = Liquid::Template.parse(read_attribute(:content_processed)) # Parses and compiles the template
+    return template.render()
   end
 
 
@@ -36,6 +50,16 @@ class SpudSnippet < ActiveRecord::Base
         self.spud_page_liquid_tags.create(:tag_name => node.tag_name,:value => node.tag_value)
       end
     end
+
   end
 
+  def expire_cache
+    # Now Time to Update Parent Entries
+    old_name = self.name_was
+    values = [self.name]
+    values << old_name if !old_name.blank?
+    SpudPageLiquidTag.where(:tag_name => "snippet",:value => values).includes(:attachment).each do |tag|
+      partial = tag.touch
+    end
+  end
 end

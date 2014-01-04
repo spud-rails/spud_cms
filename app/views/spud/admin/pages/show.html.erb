@@ -4,17 +4,19 @@
 
 	  <meta name="keywords" content="<%=@page.meta_keywords%>" />
 <%end%>
-
-<%if !@inline.blank?%>
-	<%=render :inline => @inline%>
-<%end%>
-<%@page.spud_page_partials.each do |page_partial|%>
-
-	<%if(page_partial.name.downcase == 'body' && Spud::Cms.yield_body_as_content_block == false)%>
-		<%=page_partial.postprocess_content.html_safe%>
-	<%else%>
-		<%=content_for page_partial.name.parameterize.underscore.to_sym do%>
-			<%=page_partial.postprocess_content.html_safe%>
+<%cache @page do%>
+	<%if !@inline.blank?%>
+		<%=render :inline => @inline%>
+	<%end%>
+	<%@page.spud_page_partials.each do |page_partial|%>
+		<%cache page_partial do%>
+			<%if(page_partial.name.downcase == 'body' && Spud::Cms.yield_body_as_content_block == false)%>
+				<%=page_partial.postprocess_content.html_safe%>
+			<%else%>
+				<%=content_for page_partial.name.parameterize.underscore.to_sym do%>
+					<%=page_partial.postprocess_content.html_safe%>
+				<%end%>
+			<%end%>
 		<%end%>
 	<%end%>
 <%end%>

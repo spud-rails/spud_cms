@@ -2,7 +2,8 @@ require 'spud_core'
 require 'spud_permalinks'
 require 'codemirror-rails'
 require 'liquid'
-
+require 'rails/observers/activerecord/active_record'
+require 'rails/observers/action_controller/caching/sweeping'
 module Spud
   module Cms
     class Engine < Rails::Engine
@@ -34,13 +35,15 @@ module Spud
         include Spud::Searchable
       end
      end
-    initializer :cms_sweepers do |config|
-      if ActiveRecord::Base.connection.tables.include?('spud_pages')
-        Spud::Admin::ApplicationController.instance_eval do
-          cache_sweeper :page_sweeper, :except => [:show,:index]
-        end
-      end
-    end
+    # initializer :cms_sweepers do |config|
+
+    #   ActionController::Base.extend ActionController::Caching::Sweeping::ClassMethods
+    #   if ActiveRecord::Base.connection.tables.include?('spud_pages')
+    #     Spud::Admin::ApplicationController.instance_eval do
+    #       cache_sweeper :page_sweeper, :except => [:show,:index]
+    #     end
+    #   end
+    # end
 
      initializer :spud_cms_routes do |config|
       config.routes_reloader.paths << File.expand_path('../page_route.rb', __FILE__)

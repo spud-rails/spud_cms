@@ -1,6 +1,6 @@
 class SpudMenuItem < ActiveRecord::Base
-	belongs_to :parent, :polymorphic=>true
-	belongs_to :spud_menu
+	belongs_to :parent, :polymorphic=>true, :touch => true
+	belongs_to :spud_menu, :touch => true
 	belongs_to :spud_page
 	has_many :spud_menu_items,:as => :parent,:dependent => :destroy
 

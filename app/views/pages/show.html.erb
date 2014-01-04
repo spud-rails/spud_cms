@@ -14,11 +14,16 @@
 	<%=render :inline => @inline%>
 <%end%>
 <%@page.spud_page_partials.each do |page_partial|%>
+
 	<%if(page_partial.name.match(/^body$/i) && Spud::Cms.yield_body_as_content_block == false)%>
-		<%=page_partial.content_processed.html_safe%>
+		<%cache page_partial do%>
+			<%=page_partial.content_processed.html_safe%>
+		<%end%>
 	<%else%>
 		<%=content_for page_partial.symbol_name.to_sym do%>
-			<%=page_partial.content_processed.html_safe%>
+			<%cache page_partial do%>
+				<%=page_partial.content_processed.html_safe%>
+			<%end%>
 		<%end%>
 	<%end%>
 <%end%>

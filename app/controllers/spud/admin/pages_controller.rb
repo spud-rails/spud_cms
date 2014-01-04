@@ -8,10 +8,12 @@ class Spud::Admin::PagesController < Spud::Admin::CmsController
 
 		@pages = SpudPage.site(session[:admin_site]).where(:spud_page_id => nil).order(:page_order).includes(:spud_pages).paginate :page => params[:page]
 
-    home_page = SpudPage.where(:url_name => Spud::Cms.root_page_name).first
-    if home_page.blank?
-      flash.now[:warning] = "You have not setup your default CMS page. This page will be your homepage. To do so, create a page with the name '#{Spud::Cms.root_page_name.titlecase}'"
-    end
+		if Spud::Cms.root_page_name
+	    home_page = SpudPage.where(:url_name => Spud::Cms.root_page_name).first
+	    if home_page.blank?
+	      flash.now[:warning] = "You have not setup your default CMS page. This page will be your homepage. To do so, create a page with the name '#{Spud::Cms.root_page_name.titlecase}'"
+	    end
+	  end
 
 		respond_with @pages
 	end
@@ -179,7 +181,7 @@ private
 
 
   def page_params
-    params.require(:spud_page).permit(:name,:url_name,:created_by,:updated_by,:layout,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,:spud_page_partials_attributes,:use_custom_url_name,:published,:notes)
+    params.require(:spud_page).permit(:name,:url_name,:created_by,:updated_by,:layout,:visibility,:spud_page_id,:publish_at,:format,:meta_description,:meta_keywords,:page_order,{:spud_page_partials_attributes => [:id,:name, :content, :format]},:use_custom_url_name,:published,:notes)
   end
 
 

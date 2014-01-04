@@ -14,7 +14,14 @@
 	<%=f.fields_for :spud_page_partials do |b|%>
 		<div class="formtab tab-pane">
 			<%=b.hidden_field :name,:class => "tab_name"%>
-			<%=b.text_area :content,:class => "tinymce"%>
+      <div class="control-group">
+        <div class="controls">
+          <%=b.select :format,Spud::Core.renderers.collect { |k,v| [v[:description] || k, k]}, {:include_blank => false}, :class => "pull-right", "data-formatter" => "spud_partial_#{b.object.name.parameterize}"%>
+        </div>
+      </div>
+      <div style="clear:both;">
+  			<%=b.text_area :content,:class => "spud-formatted-editor", :rows => 10, :id => "spud_partial_#{b.object.name.parameterize}","data-format" => b.object.format%>
+      </div>
 		</div>
 	<%end%>
 </div>

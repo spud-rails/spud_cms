@@ -20,7 +20,10 @@ Rails.application.routes.draw do
          resource :sitemap,:only => "show"
       end
    end
-   root :to => 'pages#show'
+
+   if Spud::Cms.config.root_page_name
+     root :to => 'pages#show'
+   end
 
    # This is located in lib/spud_cms/page_route.rb to make sure it is loaded last
    # match "*id", :controller => "pages",:action => "show", :as => "page"

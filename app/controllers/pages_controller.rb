@@ -3,11 +3,11 @@ class PagesController < ApplicationController
 
 	before_filter :set_default_content_type
 
-	after_filter({:only => [:show]}) do |c|
-		if Spud::Cms.cache_mode == :full_page && @page && @page.is_private? == false
-	    c.cache_page(nil, nil, false)
-		end
-  end
+	# after_filter({:only => [:show]}) do |c|
+	# 	if Spud::Cms.cache_mode == :full_page && @page && @page.is_private? == false
+	#     c.cache_page(nil, nil, false)
+	# 	end
+ #  end
 
 	def show
 		# prevents 500 errors if a url like "/home.jpg" is hit
@@ -76,7 +76,8 @@ class PagesController < ApplicationController
 private
 
 	def render_404
-		Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404, :formats => [:html]) : render(:text=>nil,:status => 404)
+	  raise ActionController::RoutingError.new('Not Found')
+		# Spud::Cms.template_404 ? render(Spud::Cms.template_404,:status => 404, :formats => [:html]) : render(:text=>nil,:status => 404)
  	end
 
  	def set_default_content_type
