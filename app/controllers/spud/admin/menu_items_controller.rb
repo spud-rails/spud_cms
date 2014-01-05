@@ -76,7 +76,12 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 		respond_with @menu_item,:location => spud_admin_menu_menu_items_url
 	end
 
-	def reorder
+	def sort
+	  menu_orders = ActiveSupport::JSON.decode(params[:menu_order])
+	  sort_menu_items_to_parent(@menu, menu_orders)
+    render :nothing => true, :status => 200
+
+
 		#id param
 		#source position
 		#destination position
@@ -86,6 +91,23 @@ class Spud::Admin::MenuItemsController < Spud::Admin::CmsController
 
 	end
 private
+
+	def sort_menu_items_to_parent(parent,menu_orders)
+		sort_position = 0
+		menu_orders.each do |menu_meta|
+			menu_item = SpudMenuItem.find(menu_meta["id"])
+			if menu_item
+				menu_item.menu_order = sort_position
+				menu_item.parent = parent
+				menu_item.save!
+				if menu_meta["order"].nil? == false
+					sort_menu_items_to_parent(menu_item, menu_meta["order"])
+				end
+				sort_position += 1
+			end
+		end
+	end
+
 	def load_menu
 
 		@menu = SpudMenu.where(:id => params[:menu_id]).first

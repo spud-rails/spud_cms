@@ -2,6 +2,7 @@
 <%=link_to "New Menu Item",new_spud_admin_menu_menu_item_path(),:class => "btn btn-primary",:title => "New Menu Item"%>
 <%end%>
 <%=content_for :detail do%>
+<p class="lead">Drag and drop to rearrange your menus.</p>
 	<ul id="root_menu_list" class="menu_list page_list sortable connectedSortable">
 			<%@menu_items.each do |menu_item|%>
         <li>
@@ -11,7 +12,8 @@
 
 	</ul>
 
+
 <script type="text/javascript">
-$(document).ready(function() { spud.admin.cms.menu_items.init();})
+$(document).ready(function() { spud.admin.cms.menu_items.init(<%=@menu.id%>);})
 </script>
 <%end%>

@@ -18,13 +18,8 @@ class SpudSnippet < ActiveRecord::Base
     else
       self.content_processed = content
     end
-    # template = Liquid::Template.parse(self.content) # Parses and compiles the template
-
-    # self.content_processed = template.render('page' => self.spud_page)
   end
-  # def postprocess_content
-    #
-  # end
+
 
   def content_processed=(content)
     write_attribute(:content_processed,content)

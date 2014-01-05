@@ -5,22 +5,15 @@
 	<div class="controls">
 		<%=f.text_field :name,:title => "",:size=>40%>
 	</div>
-  
-</div>
-<div class="control-group">
 
-	<%=f.label :menu_order, :required=>true,:class => "control-label"%>
-	<div class="controls">
-	  <%=f.text_field :menu_order,:title => "",:size=>5%>
-	</div>
-  
 </div>
+
 <div class="control-group">
 	<%=f.label :spud_page_id, "Page",:class => "control-label"%>
 	<div class="controls">
 	    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:site_id => session[:admin_site]),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
 	</div>
-  
+
 </div>
 
 
@@ -42,7 +35,7 @@
 	<div class="controls">
 		<%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu,:filter => @menu_item),@menu_item.parent_type == 'SpudMenuItem' ? @menu_item.parent_id : nil),{:include_blank => "#{@menu.name}"},{:title => ""}%>
 	</div>
-  
+
 </div>
 
 </fieldset>

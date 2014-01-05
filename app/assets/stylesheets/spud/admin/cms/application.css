@@ -2,8 +2,12 @@
 //= require codemirror
 //= require codemirror/themes/night
 */
+#root_menu_list {
+	padding-bottom: 15px;
+}
 .menu_list {
   list-style-type:none;
+
 }
 .page_row {
   background:white;

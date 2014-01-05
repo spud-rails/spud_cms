@@ -12,7 +12,9 @@ Rails.application.routes.draw do
          resources :snippets
 
    		resources :menus do
-   			resources :menu_items
+   			resources :menu_items do
+          put :sort, :on => :collection
+        end
    		end
    		resources :contacts
    	end
