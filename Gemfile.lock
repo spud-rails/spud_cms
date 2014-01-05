@@ -8,24 +8,6 @@ PATH
       spud_core (>= 1.0.0.rc1)
       spud_permalinks (>= 1.0.0.rc1)
 
-PATH
-  remote: ../spud_core_admin
-  specs:
-    spud_core (1.0.0.rc1)
-      actionpack-action_caching
-      actionpack-page_caching
-      authlogic
-      bootstrap-will_paginate
-      breadcrumbs_on_rails
-      codemirror-rails
-      jquery-rails
-      protected_attributes
-      rails (~> 4.0.0)
-      rails-observers
-      retina_tag
-      tinymce-rails (= 3.5.9)
-      will_paginate
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -147,6 +129,20 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    spud_core (1.0.0.rc1)
+      actionpack-action_caching
+      actionpack-page_caching
+      authlogic
+      bootstrap-will_paginate
+      breadcrumbs_on_rails
+      codemirror-rails
+      jquery-rails
+      protected_attributes
+      rails (~> 4.0.0)
+      rails-observers
+      retina_tag
+      tinymce-rails (= 3.5.9)
+      will_paginate
     spud_permalinks (1.0.0.rc1)
       rails (>= 3.2.2)
     thor (0.18.1)
@@ -170,10 +166,8 @@ DEPENDENCIES
   jquery-rails
   mocha (= 0.14.0)
   mysql2
-  rake
   rspec (= 2.14.0)
   rspec-rails (= 2.14.0)
   shoulda (~> 3.0.1)
   simplecov (~> 0.6.4)
   spud_cms!
-  spud_core!
