@@ -9,6 +9,8 @@ class SpudSnippet < ActiveRecord::Base
   before_save :postprocess_content
   after_save :update_taglist
   after_destroy :expire_cache
+  after_touch   :expire_cache
+  after_save    :expire_cache
 
   def postprocess_content
     rendererClass = Spud::Core.renderer(self.format)
