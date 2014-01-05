@@ -3,6 +3,7 @@ rvm:
   - 1.9.2
   - 1.9.3
 script: "bundle exec rspec spec"
+install: "bundle install"
 before_script:
   - "mysql -e 'create database spud_cms_test;'"
   - "bundle exec rake db:schema:load"
