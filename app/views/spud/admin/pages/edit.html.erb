@@ -1,7 +1,7 @@
-<%=form_for @page,:url => spud_admin_page_path(:id => @page.id),:html=>{:class=>"form-horizontal page_form",:target => "report" } do |f|%>
+<%=form_for @page,:url => spud_admin_page_path(:id => @page.id),:html=>{:class=>"form-horizontal page_form" } do |f|%>
 	<%=render :partial => "form",:locals => {:f => f}%>
     <div class="form-actions">
-    	<%=f.submit "Save Page", :class=>"btn btn-primary btn-save",:onclick => "savePage();"%>&nbsp;<%=f.submit "Preview", :class=>"btn btn-info btn-preview"%> or <%=link_to "cancel",spud_admin_pages_path,:class => "btn"%>
+    	<%=f.submit "Save Page", :class=>"btn btn-primary btn-save"%>&nbsp;<%=f.submit "Preview", :class=>"btn btn-info btn-preview"%> or <%=link_to "cancel",spud_admin_pages_path,:class => "btn"%>
     </div>
 <%end%>
 <br />
@@ -21,9 +21,9 @@ $(document).ready(function() {
 
 	$('input[type=submit].btn-save').click(function(evt) {
 		$('#preview').val(0);
-			var form = $('form.page_form')[0];
-			form.onsubmit = null;
-			form.target = null;
+		var form = $('form.page_form')[0];
+		form.onsubmit = null;
+		form.target = null;
 	});
 	
 });
