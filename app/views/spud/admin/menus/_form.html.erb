@@ -1,11 +1,10 @@
 <%=error_messages_for(f.object)%>
 <fieldset>
-<div class="control-group">
-	<%=f.label :name, :required=>true,:class => "control-label"%>
-	<div class="controls">
-	  <%=f.text_field :name,:title => "",:size=>40%>
+<div class="form-group">
+	<%=f.label :name, :required=>true,:class => "control-label col-sm-2"%>
+	<div class="col-sm-8">
+		<%=f.text_field :name,:title => "",:size=>40, :class => "form-control"%>
 	</div>
-
 </div>
 </fieldset>
 

@@ -1,60 +1,62 @@
 <%=error_messages_for(f.object)%>
 <fieldset>
-  <div class="control-group">
   <legend>Page Title</legend>
-    	<%=f.label :name, :required=>true,:style =>"display:none;", :class=>"control-label"%>
-
-        <%=f.text_field :name, :class => "full-width"%>
-
+  <div class="form-group">
+  
+    <%=f.label :name, :required=>true,:style =>"display:none;", :class=>"control-label"%>
+    <div class="col-sm-12">
+      <%=f.text_field :name, :class => "form-control full-width"%>
+    </div>
   </div>
 </fieldset>
 <div id="page_partials_form" class="formtabs tab-content">
-	<ul class="formtab_buttons nav nav-tabs">
-	</ul>
-	<%=f.fields_for :spud_page_partials do |b|%>
-		<div class="formtab tab-pane">
-			<%=b.hidden_field :name,:class => "tab_name"%>
-      <div class="control-group">
-        <div class="controls">
+  <ul class="formtab_buttons nav nav-tabs">
+  </ul>
+  <%=f.fields_for :spud_page_partials do |b|%>
+    <div class="formtab tab-pane">
+      <%=b.hidden_field :name,:class => "tab_name"%>
+      <div class="form-group">
+        <div class="col-sm-12">
           <%=b.select :format,Spud::Core.renderers.collect { |k,v| [v[:description] || k, k]}, {:include_blank => false}, :class => "pull-right", "data-formatter" => "spud_partial_#{b.object.name.parameterize}"%>
         </div>
       </div>
       <div style="clear:both;">
-  			<%=b.text_area :content,:class => "spud-formatted-editor", :rows => 10, :id => "spud_partial_#{b.object.name.parameterize}","data-format" => b.object.format%>
+        <%=b.text_area :content,:class => "spud-formatted-editor", :rows => 10, :id => "spud_partial_#{b.object.name.parameterize}","data-format" => b.object.format%>
       </div>
-		</div>
-	<%end%>
+    </div>
+  <%end%>
 </div>
 <br />
 <fieldset>
   <legend>Advanced Settings (optional)</legend>
 
-    	<div class="control-group">
+      <div class="form-group">
 
-      	<%=f.label :layout, "Template", :class=>"control-label"%>
-        <div class="controls">
-        	<%=f.select :layout, options_for_select(layout_options,@page.layout),{},{:title => "", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
+        <%=f.label :layout, "Template", :class=>"control-label col-sm-2"%>
+        <div class="col-sm-8">
+          <%=f.select :layout, options_for_select(layout_options,@page.layout),{},{:title => "", :class => "form-control", 'data-source' => page_parts_spud_admin_pages_path(:page => @page.id) }%>
           <span class="help-inline">Use this to control the layout template to be used for this page if they are available.</span>
         </div>
-  	  </div>
+      </div>
 
-    <div class="control-group">
-
-      <%=f.label :spud_page_id, "Parent Page", :class=>"control-label"%>
-      <div class="controls">
-        <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page,:site_id => session[:admin_site]),@page.spud_page_id),{:include_blank => 'None'},{:title => ""}%>
-
+    <div class="form-group">
+      <%=f.label :spud_page_id, "Parent Page", :class=>"control-label col-sm-2"%>
+      <div class="col-sm-8">
+        <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:filter => @page,:site_id => session[:admin_site]),@page.spud_page_id),{:include_blank => 'None'},{:title => "", :class => "form-control"}%>
       </div>
     </div>
-    <div class="control-group">
+    <div class="form-group">
 
-      <%=f.label :url_name, "Perma Link",:disabled => true, :class=>"control-label"%>
-      <div class="controls">
-        <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20%>
-        <label class="checkbox inline">
-        <%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
-        Customize this pages url
-        </label>
+      <%=f.label :url_name, "Perma Link",:disabled => true, :class=>"control-label col-sm-2"%>
+      <div class="col-sm-8">
+        <%=root_url%><%=f.text_field :url_name,:title => "",:size=>20, :class => "form-control", :disabled => (f.object.use_custom_url_name ? nil : true)%>
+        <div class="checkbox">
+          <label>
+            <%=f.check_box :use_custom_url_name,:onchange => "$('#spud_page_url_name').attr('disabled',!this.checked);"%>
+            Customize this pages url    
+          </label>
+        
+        </div>
       </div>
     </div>
 
@@ -63,36 +65,36 @@
   <legend>Meta Information (optional)</legend>
   <p>These fields are used to notify search engines about important keywords and the appropriate description to display in a search result.</p>
 
-    <div class="control-group">
-      <%=f.label :meta_keywords,"Keywords", :class=>"control-label"%>
-      <div class="controls">
-        <%=f.text_field :meta_keywords,:title => "",:style=>"width:600px;" %>
+    <div class="form-group">
+      <%=f.label :meta_keywords,"Keywords", :class=>"control-label col-sm-2"%>
+      <div class="col-sm-8">
+        <%=f.text_field :meta_keywords,:title => "", :class => "form-control"%>
         <span class="help-inline">A Comma seperated list of keywords for search engines. Keep it short (no more than 10 keywords)</span>
       </div>
 
     </div>
-    <div class="control-group">
-      <%=f.label :meta_description,"Description", :class=>"control-label"%>
-      <div class="controls">
-        <%=f.text_area :meta_description,:style =>"width:600px;height:40px;"%>
+    <div class="form-group">
+      <%=f.label :meta_description,"Description", :class => "control-label col-sm-2"%>
+      <div class="col-sm-8">
+        <%=f.text_area :meta_description,:style => "height:60px;", :class => "form-control"%>
         <span class="help-inline">A short description of the page. This is what appears on a search engines search result page.</span>
       </div>
     </div>
-    <div class="control-group">
-      <%=f.label :visibility, :class=>"control-label"%>
-      <div class="controls">
-    		<%=f.select :visibility, [["Public",0],["Private",1]]%>
+    <div class="form-group">
+      <%=f.label :visibility, :class=>"control-label col-sm-2"%>
+      <div class="col-sm-8">
+        <%=f.select :visibility, [["Public",0],["Private",1]], :class => "form-control"%>
       </div>
-  	</div>
-  	<div class="control-group">
-      <%=f.label :published, :class=>"control-label"%>
-      <div class="controls">
-    		<%=f.check_box :published%>
+    </div>
+    <div class="form-group">
+      <%=f.label :published, :class=>"control-label col-sm-2"%>
+      <div class="col-sm-8">
+        <%=f.check_box :published%>
       </div>
-  	</div>
-    <div class="control-group">
-      <%=f.label :notes,"Notes", :class=>"control-label"%>
-      <div class="controls">
+    </div>
+    <div class="form-group">
+      <%=f.label :notes,"Notes", :class=>"control-label col-sm-2"%>
+      <div class="col-sm-8">
         <%=f.text_area :notes,:style =>"width:400px;height:40px;"%>
         <span class="help-inline">Have a note to make about this page while you work? Place it here for later.</span>
       </div>

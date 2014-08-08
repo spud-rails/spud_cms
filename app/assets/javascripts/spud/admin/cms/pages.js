@@ -25,13 +25,6 @@ spud.admin.cms.pages = {};
       tabButtons.append(tabButton);
 
     }
-    pages.tabMonitor();
   };
-  pages.tabMonitor = function() {
-    $('a.spud-page-tab-button[data-toggle="tab"]').on('shown', function (e) {
-      var editors = $(e.target).find('.spud-formatted-editor');
-      spud.admin.editor.unload();//'.formtab [code-mirror-id]'
-      spud.admin.editor.init(editors);
-    })
-  };
+  
 })();

@@ -10,7 +10,9 @@
 
           <span class="edit_controls">
 
-            <%=link_to "Remove",spud_admin_snippet_path(:id => snippet.id),:method => :delete,:class => 'btn btn-danger',:confirm => "Are you sure you want to remove this snippet?"%>
+            <%=link_to spud_admin_snippet_path(:id => snippet.id),:method => :delete,:class => 'btn btn-sm btn-danger',:confirm => "Are you sure you want to remove this snippet?" do%>
+              <span class="glyphicon glyphicon-trash"></span>
+            <%end%>
           </span>
           <br style="clear:both;"/>
         </div>

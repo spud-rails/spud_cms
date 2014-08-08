@@ -1,7 +1,9 @@
 <%=form_for @snippet,:url => spud_admin_snippets_path,:html=>{:class=>"form-horizontal"} do |f|%>
   <%=render :partial => "form",:locals => {:f => f}%>
-  <div class="form-actions">
-    <%=f.submit "Create Snippet", :class=>"btn btn-primary"%> or <%=link_to "cancel",spud_admin_snippets_path,:class => "btn"%>
+  <div class="form-group">
+		<div class="col-sm-8 col-sm-offset-2">
+		    <%=f.submit "Create Snippet", :class=>"btn btn-primary"%> or <%=link_to "cancel",spud_admin_snippets_path,:class => "btn btn-default"%>
+	    </div>
   </div>
 
 <%end%>

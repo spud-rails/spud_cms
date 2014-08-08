@@ -9,8 +9,10 @@
 					<span class="row_meta"><%=link_to menu.name,spud_admin_menu_menu_items_path(:menu_id => menu.id)%></span>
 
 					<span class="edit_controls">
-						<%=link_to "Edit",edit_spud_admin_menu_path(:id => menu.id),:class => 'btn'%>
-						<%=link_to "Remove",spud_admin_menu_path(:id => menu.id),:method => :delete,:class => 'btn btn-danger',:confirm => "Are you sure you want to remove this menu and all items associated with it?"%>
+						<%=link_to "Edit",edit_spud_admin_menu_path(:id => menu.id),:class => 'btn btn-link btn-sm'%>
+						<%=link_to spud_admin_menu_path(:id => menu.id),:method => :delete,:class => 'btn btn-sm btn-danger',:confirm => "Are you sure you want to remove this menu and all items associated with it?" do%>
+							<span class="glyphicon glyphicon-trash"></span>
+						<%end%>
 					</span>
 					<br style="clear:both;"/>
 				</div>

@@ -1,39 +1,39 @@
 <%=error_messages_for(f.object)%>
 <fieldset>
-<div class="control-group">
-	<%=f.label :name, :required=>true,:class => "control-label"%>
-	<div class="controls">
-		<%=f.text_field :name,:title => "",:size=>40%>
+<div class="form-group">
+	<%=f.label :name, :required=>true,:class => "control-label col-sm-2"%>
+	<div class="col-sm-8">
+		<%=f.text_field :name,:title => "",:class => "form-control"%>
 	</div>
 
 </div>
 
-<div class="control-group">
-	<%=f.label :spud_page_id, "Page",:class => "control-label"%>
-	<div class="controls">
-	    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:site_id => session[:admin_site]),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
+<div class="form-group">
+	<%=f.label :spud_page_id, "Page",:class => "control-label col-sm-2"%>
+	<div class="col-sm-8">
+	    <%=f.select :spud_page_id,options_for_select(SpudPage.options_tree_for_page(:site_id => session[:admin_site]),@menu_item.spud_page_id),{:include_blank => 'Use URL instead'},{:title => "", :class => "form-control",:onchange => "if($(this).val() != '') {$('#spud_menu_item_url').val('');}"}%>
 	</div>
 
 </div>
 
 
 
-<div class="control-group">
-	<%=f.label :url,:class => "control-label"%>
-	<div class="controls">
-		<%=f.text_field :url,:title => "",:size=>40%>
+<div class="form-group">
+	<%=f.label :url,:class => "control-label col-sm-2"%>
+	<div class="col-sm-8">
+		<%=f.text_field :url,:title => "",:class => "form-control"%>
 	</div>
 </div>
-<div class="control-group">
-	<%=f.label :classes,:class => "control-label"%>
-	<div class="controls">
-		<%=f.text_field :classes,:title => "",:size=>40%>
+<div class="form-group">
+	<%=f.label :classes,:class => "control-label col-sm-2"%>
+	<div class="col-sm-8">
+		<%=f.text_field :classes,:title => "",:class => "form-control"%>
 	</div>
 </div>
-<div class="control-group">
-	<%=f.label :parent, "Parent Menu",:class => "control-label"%>
-	<div class="controls">
-		<%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu,:filter => @menu_item),@menu_item.parent_type == 'SpudMenuItem' ? @menu_item.parent_id : nil),{:include_blank => "#{@menu.name}"},{:title => ""}%>
+<div class="form-group">
+	<%=f.label :parent, "Parent Menu",:class => "control-label col-sm-2"%>
+	<div class="col-sm-8">
+		<%=f.select :parent_id,options_for_select(SpudMenuItem.options_tree_for_item(@menu,:filter => @menu_item),@menu_item.parent_type == 'SpudMenuItem' ? @menu_item.parent_id : nil),{:include_blank => "#{@menu.name}"},{:title => "", :class => "form-control"}%>
 	</div>
 
 </div>

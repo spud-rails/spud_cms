@@ -1,7 +1,10 @@
 <%=form_for @page,:url => spud_admin_pages_path(),:html=>{:class=>"form-horizontal page_form"} do |f|%>
 	<%=render :partial => "form",:locals => {:f => f}%>
-	<div class="form-actions">
-    	<%=f.submit "Create Page", :class=>"btn btn-primary form-btn btn-save","data-loading-text"=>"Saving..."%>&nbsp;<%=f.submit "Preview", :class=>"btn btn-primary btn-preview"%> or <%=link_to "cancel",spud_admin_pages_path,:class => "btn"%>
+	<div class="form-group">
+		<div class="col-sm-8 col-sm-offset-2">
+	    	<%=f.submit "Create Page", :class=>"btn btn-primary form-btn btn-save","data-loading-text"=>"Saving..."%>
+	    	&nbsp;
+	    	<%=f.submit "Preview", :class=>"btn btn-primary btn-preview"%> or <%=link_to "cancel",spud_admin_pages_path,:class => "btn btn-link"%>
     </div>
 
 <%end%>

@@ -3,8 +3,14 @@ spud.admin.cms.menu_items = {};
 (function() {
   var menu_items = spud.admin.cms.menu_items;
   var menuId = 0;
-  menu_items.init = function(id) {
+  var menuUrl = "/spud/admin/menus/"
+  menu_items.init = function(id, url) {
     menuId = id;
+    if(url) {
+      menuUrl = url
+    } else {
+      menuUrl = menuUrl + menuId + "/menu_items/sort"
+    }
     $('.sortable').sortable({
       connectWith:".connectedSortable",
       start: function(event,ui) {
@@ -41,7 +47,7 @@ spud.admin.cms.menu_items = {};
 
     // Post To Menu Items Save method
     $.ajax({
-      url: "/spud/admin/menus/" + menuId + "/menu_items/sort",
+      url: menuUrl,
       type: 'post',
       data: {menu_order: JSON.stringify(orderArray), _method: 'put'}
     });

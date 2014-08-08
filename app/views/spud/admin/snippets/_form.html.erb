@@ -1,11 +1,17 @@
 <fieldset>
-  <%= f.label :name, :required=>true,:style =>"display:none;" %>
-  <%= f.text_field :name, :class => "full-width",:placeholder=>"Enter title here" %>
+<div class="form-group">
+	<%= f.label :name, :required=>true,:style =>"display:none;", :class => "control-label" %>
+	<div class="col-sm-12 ">
+		<%= f.text_field :name, :class => "full-width form-control",:placeholder=>"Enter title here" %>
+	</div>
+</div>
+  
+  
 </fieldset>
 <br/>
 <div>
-  <div class="control-group">
-	  <div class="controls">
+  <div class="form-group">
+	  <div class="col-sm-12">
 	    <%=f.select :format,Spud::Core.renderers.collect { |k,v| [v[:description] || k, k]}, {:include_blank => false}, :class => "pull-right", "data-formatter" => "spud_snippet_content_area"%>
 	  </div>
 	</div>
