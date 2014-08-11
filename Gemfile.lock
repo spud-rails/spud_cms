@@ -1,12 +1,12 @@
 PATH
   remote: .
   specs:
-    spud_cms (1.0.0.rc1.4)
+    spud_cms (1.0.0)
       codemirror-rails
       liquid
       rails (~> 4.0.0.beta1)
-      spud_core (>= 1.0.0.rc1)
-      spud_permalinks (>= 1.0.0.rc1)
+      spud_core (>= 1.0.0)
+      spud_permalinks (>= 1.0.0)
 
 GEM
   remote: http://rubygems.org/
@@ -41,20 +41,26 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.2)
     atomic (1.1.14)
-    authlogic (3.3.0)
+    authlogic (3.4.2)
       activerecord (>= 3.2)
       activesupport (>= 3.2)
+      request_store (~> 1.0)
+    bcrypt (3.1.7)
     bootstrap-will_paginate (0.0.10)
       will_paginate
     breadcrumbs_on_rails (2.3.0)
     builder (3.1.4)
-    codemirror-rails (3.22)
+    codemirror-rails (4.4)
       railties (>= 3.0, < 5)
     database_cleaner (1.0.0.RC1)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (3.6.2)
       activesupport (>= 3.0.0)
+    ffi (1.9.3)
+    ffi-compiler (0.1.3)
+      ffi (>= 1.0.0)
+      rake
     hike (1.2.3)
     i18n (0.6.9)
     jquery-rails (3.0.4)
@@ -71,8 +77,8 @@ GEM
       metaclass (~> 0.0.1)
     multi_json (1.8.2)
     mysql2 (0.3.14)
-    polyglot (0.3.4)
-    protected_attributes (1.0.5)
+    polyglot (0.3.5)
+    protected_attributes (1.0.8)
       activemodel (>= 4.0.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -93,9 +99,10 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.1)
-    retina_tag (1.2.2)
+    request_store (1.0.8)
+    retina_tag (1.3.1)
       jquery-rails
-      rails (>= 4.0)
+      rails (>= 3.1)
     rspec (2.14.0)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -111,6 +118,9 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    scrypt (1.2.1)
+      ffi-compiler (>= 0.0.2)
+      rake
     shoulda (3.0.1)
       shoulda-context (~> 1.0.0)
       shoulda-matchers (~> 1.0.0)
@@ -120,7 +130,7 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.5.3)
     simplecov-html (0.5.3)
-    sprockets (2.11.0)
+    sprockets (2.12.1)
       hike (~> 1.2)
       multi_json (~> 1.0)
       rack (~> 1.0)
@@ -129,10 +139,11 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    spud_core (1.0.0.rc1.1)
+    spud_core (1.0.0)
       actionpack-action_caching
       actionpack-page_caching
-      authlogic
+      authlogic (~> 3.4.0)
+      bcrypt
       bootstrap-will_paginate
       breadcrumbs_on_rails
       codemirror-rails
@@ -141,9 +152,10 @@ GEM
       rails (~> 4.0.0)
       rails-observers
       retina_tag
+      scrypt
       tinymce-rails (= 3.5.9)
       will_paginate
-    spud_permalinks (1.0.0.rc1)
+    spud_permalinks (1.0.0)
       rails (>= 3.2.2)
     thor (0.18.1)
     thread_safe (0.1.3)
@@ -155,7 +167,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.38)
-    will_paginate (3.0.5)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
