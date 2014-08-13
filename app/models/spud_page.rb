@@ -18,7 +18,7 @@ class SpudPage < ActiveRecord::Base
 	scope :parent_pages,  -> {where(:spud_page_id => nil)}
 	scope :site, lambda {|sid| where(:site_id => sid)}
 	scope :published_pages, -> { where(:published => true)}
-	scope :public, -> {where(:visibility => 0)}
+	scope :is_public, -> {where(:visibility => 0)}
 
 
 	def self.grouped(site_id=0)

@@ -119,7 +119,8 @@ module Spud
       end
 
       def engines
-        Rails::Application::Railties.engines
+        Rails::Engine.subclasses.map(&:instance)
+        # Rails::Application::Railties.engines
       end
     end
   end

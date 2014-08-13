@@ -1,11 +1,11 @@
 PATH
   remote: .
   specs:
-    spud_cms (1.0.0)
+    spud_cms (1.0.1)
       codemirror-rails
       liquid
-      rails (~> 4.0.0.beta1)
-      spud_core (>= 1.0.0)
+      rails (>= 4.0.0)
+      spud_core (>= 1.0.4)
       spud_permalinks (>= 1.0.0)
 
 GEM
@@ -139,7 +139,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    spud_core (1.0.0)
+    spud_core (1.0.4)
       actionpack-action_caching
       actionpack-page_caching
       authlogic (~> 3.4.0)
@@ -149,7 +149,7 @@ GEM
       codemirror-rails
       jquery-rails
       protected_attributes
-      rails (~> 4.0.0)
+      rails (>= 4.0.0)
       rails-observers
       retina_tag
       scrypt

@@ -24,7 +24,7 @@ module Spud::Cms::ApplicationHelper
 
 	def sp_list_pages(options = {})
 
-		pages = SpudPage.public.published_pages
+		pages = SpudPage.is_public.published_pages
 
 		if Spud::Core.multisite_mode_enabled
 			site_config = Spud::Core.site_config_for_host(request.host_with_port)

@@ -14,7 +14,7 @@ describe Spud::Cms::SitemapsController do
 
       get :show, :format => :xml
 
-      assigns(:pages).should == SpudPage.published_pages.public.order(:spud_page_id)
+      assigns(:pages).should == SpudPage.published_pages.is_public.order(:spud_page_id)
     end
 
     it "should only respond to an XML format" do
@@ -38,7 +38,7 @@ describe Spud::Cms::SitemapsController do
 
         get :show, :format => :xml
 
-        assigns(:pages).should == SpudPage.published_pages.public.order(:spud_page_id).site(1)
+        assigns(:pages).should == SpudPage.published_pages.is_public.order(:spud_page_id).site(1)
 
       end
 

@@ -50,7 +50,7 @@ describe SpudPage do
 		end
 
 		it "should only show public pages" do
-			SpudPage.public.to_sql.should == SpudPage.where(:visibility => 0).to_sql
+			SpudPage.is_public.to_sql.should == SpudPage.where(:visibility => 0).to_sql
 		end
 
 		it "should group pages by parent" do
