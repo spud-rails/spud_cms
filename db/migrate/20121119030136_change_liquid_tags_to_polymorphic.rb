@@ -3,7 +3,7 @@ class ChangeLiquidTagsToPolymorphic < ActiveRecord::Migration
     rename_column :spud_page_liquid_tags, :spud_page_partial_id, :attachment_id
     add_column :spud_page_liquid_tags, :attachment_type, :string
 
-    add_index :spud_page_liquid_tags, [:attachment_type,:attachment_id]
+    add_index :spud_page_liquid_tags, [:attachment_type,:attachment_id], :name => "idx_spliquid_attachment"
 
     SpudPageLiquidTag.all.each do |f|
       f.update_attributes(:attachment_type => "SpudPagePartial")

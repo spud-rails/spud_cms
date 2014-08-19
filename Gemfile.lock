@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    spud_cms (1.0.1)
+    spud_cms (1.0.2)
       codemirror-rails
       liquid
       rails (>= 4.0.0)
@@ -99,7 +99,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.1.1)
-    request_store (1.0.8)
+    request_store (1.1.0)
     retina_tag (1.3.1)
       jquery-rails
       rails (>= 3.1)
